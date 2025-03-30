@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -107,7 +106,7 @@ const Houses = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16 bg-[url('/lovable-uploads/98cb101b-d9f1-4c0f-b54e-91842e7b9500.png')] bg-cover bg-center bg-no-repeat">
+      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Наши проекты домов</h1>
