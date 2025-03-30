@@ -3,6 +3,11 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import {
+  Card,
+  CardContent,
+  CardFooter
+} from "@/components/ui/card";
 
 interface HouseCardProps {
   id: number;
@@ -15,7 +20,7 @@ interface HouseCardProps {
 
 const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
       <Link to={`/houses/${id}`} className="block">
         <div className="relative aspect-video overflow-hidden">
           <img 
@@ -27,20 +32,22 @@ const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProp
             {area}
           </div>
         </div>
-        <div className="p-6">
+        <CardContent className="p-6">
           <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
           <div className="flex justify-between items-center mb-4">
             <span className="text-gray-600">{bedrooms} спален</span>
             <span className="font-bold text-nature-dark">{price}</span>
           </div>
+        </CardContent>
+        <CardFooter className="p-0 pb-6 px-6">
           <div 
             className="block w-full text-center py-2 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
           >
             Подробнее
           </div>
-        </div>
+        </CardFooter>
       </Link>
-    </div>
+    </Card>
   );
 };
 
@@ -100,8 +107,8 @@ const Houses = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16 bg-[url('https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=2070')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/50"></div>
+      <div className="relative py-20 md:py-24 bg-[url('/lovable-uploads/2bf310d0-5018-4336-aef6-3598068c0862.png')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Наши проекты домов</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
