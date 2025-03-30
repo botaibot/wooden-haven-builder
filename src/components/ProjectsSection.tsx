@@ -52,9 +52,9 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Норвежский дом",
-      area: "95 м²",
-      imageUrl: "https://images.unsplash.com/photo-1501685532562-aa6846b14a0e?q=80&w=1970"
+      title: "Ecopino 25",
+      area: "25 м²",
+      imageUrl: "/lovable-uploads/2b12f2ef-202f-41f7-860e-f90fa03c15d7.png"
     }
   ];
 

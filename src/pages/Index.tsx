@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import CategorySection from "@/components/CategorySection";
 import FeatureSection from "@/components/FeatureSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import ProjectGalleryCarousel from "@/components/ProjectGalleryCarousel";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -17,7 +17,7 @@ const Index = () => {
       <CategorySection />
       <FeatureSection />
       <ProjectsSection />
-      <TestimonialsSection />
+      <ProjectGalleryCarousel />
       
       <section className="py-16">
         <div className="container mx-auto px-4">
