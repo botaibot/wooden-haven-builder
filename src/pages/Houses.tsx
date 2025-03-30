@@ -16,29 +16,30 @@ interface HouseCardProps {
 const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="relative aspect-video overflow-hidden">
-        <img 
-          src={imageUrl} 
-          alt={title} 
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-        <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
-          {area}
+      <Link to={`/houses/${id}`} className="block">
+        <div className="relative aspect-video overflow-hidden">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+          <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
+            {area}
+          </div>
         </div>
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-gray-600">{bedrooms} спален</span>
-          <span className="font-bold text-nature-dark">{price}</span>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-gray-600">{bedrooms} спален</span>
+            <span className="font-bold text-nature-dark">{price}</span>
+          </div>
+          <div 
+            className="block w-full text-center py-2 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+          >
+            Подробнее
+          </div>
         </div>
-        <Link 
-          to={`/houses/${id}`}
-          className="block w-full text-center py-2 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
-        >
-          Подробнее
-        </Link>
-      </div>
+      </Link>
     </div>
   );
 };

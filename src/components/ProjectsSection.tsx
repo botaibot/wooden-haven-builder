@@ -14,24 +14,26 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, area, imageUrl, id }: ProjectCardProps) => {
   return (
     <div className="group overflow-hidden rounded-lg">
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img 
-          src={imageUrl} 
-          alt={title} 
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
-          {area}
+      <Link to={`/houses/${id}`} className="block">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
+            {area}
+          </div>
         </div>
-      </div>
-      <div className="p-4 bg-white border border-t-0 border-gray-200 rounded-b-lg">
-        <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
-        <Button asChild variant="link" className="p-0 text-nature-dark hover:text-nature-dark/80">
-          <Link to={`/houses/${id}`} className="flex items-center gap-1">
-            Подробнее <ArrowRight size={16} />
-          </Link>
-        </Button>
-      </div>
+        <div className="p-4 bg-white border border-t-0 border-gray-200 rounded-b-lg">
+          <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
+          <Button variant="link" className="p-0 text-nature-dark hover:text-nature-dark/80">
+            <span className="flex items-center gap-1">
+              Подробнее <ArrowRight size={16} />
+            </span>
+          </Button>
+        </div>
+      </Link>
     </div>
   );
 };
