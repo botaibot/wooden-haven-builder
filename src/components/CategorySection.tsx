@@ -37,22 +37,22 @@ const CategoryCard = ({ title, description, imageUrl, link }: CategoryCardProps)
 const CategorySection = () => {
   const categories = [
     {
-      title: "Деревянные дома",
-      description: "Экологичные и комфортные дома из натурального дерева высокого качества",
+      title: "Дома из клееного бруса",
+      description: "Экологичные и комфортные дома из натурального клееного бруса высокого качества",
       imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1965",
       link: "/houses"
+    },
+    {
+      title: "Каркасные дома",
+      description: "Современные, энергоэффективные каркасные дома с быстрыми сроками строительства",
+      imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070",
+      link: "/services"
     },
     {
       title: "Строительные материалы",
       description: "Широкий ассортимент строительного леса: брус, фанера, доска, вагонка",
       imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992",
       link: "/materials"
-    },
-    {
-      title: "Строительные услуги",
-      description: "Профессиональное строительство и отделка деревянных домов на Тенерифе",
-      imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070",
-      link: "/services"
     }
   ];
 
