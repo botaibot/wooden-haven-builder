@@ -24,7 +24,7 @@ const images = [
   "/lovable-uploads/fc859307-802f-4db4-8f30-54aee918bf8a.png",
   "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png",
   "/lovable-uploads/08325bc9-f5c2-4e44-a92f-ac24d1fdd2e1.png",
-  "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png", // Новое фото - дом в горах
+  "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png", // Дом в горах
   
   // 2. Процесс строительства и укладка стен
   "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
@@ -34,7 +34,10 @@ const images = [
   "/lovable-uploads/e4aade66-f345-47ad-99e4-df3bdd828a4d.png",
   "/lovable-uploads/cd50dce6-b79a-4ef1-a511-db6164273120.png",
   "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png",
-  "/lovable-uploads/cc4b9d36-d466-477d-965b-74b0d11ba405.png", // Новое фото - крыша дома
+  "/lovable-uploads/cc4b9d36-d466-477d-965b-74b0d11ba405.png", // Крыша дома
+  "/lovable-uploads/d3ecd02b-51fb-4cf0-bf73-0818bc3de3b4.png", // Новая фотография - интерьер с выходом
+  "/lovable-uploads/53432e33-734e-4c37-a618-ec4d69f342a5.png", // Новая фотография - интерьер с выходом на террасу
+  "/lovable-uploads/f970ba98-1128-4b9a-8186-fd09325c62ad.png", // Новая фотография - комната с деревянными стенами
   
   // 3. Детали, соединения и коммуникации
   "/lovable-uploads/9e0b6fcd-bd9a-4149-a72b-14151871ab5b.png",
@@ -47,7 +50,8 @@ const images = [
   "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png", 
   "/lovable-uploads/bf7ab5e2-5ac4-4b64-8c23-2eb608fb3266.png",
   "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png",
-  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Новое фото - деталь кровли
+  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Деталь кровли
+  "/lovable-uploads/6c56f6d2-bc2d-474b-a5f5-2596108b177c.png", // Новая фотография - чёрный радиатор
   
   // 4. Материалы, утепление, кровля, гидроизоляция
   "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
@@ -58,10 +62,13 @@ const images = [
   "/lovable-uploads/9ccc4b6f-aa86-4287-a1c4-ebd682a85303.png",
   "/lovable-uploads/220a31fc-ad86-4fde-9794-e2a2b8659011.png",
   "/lovable-uploads/2369764e-e4f1-4111-b81d-1338106e01d5.png",
-  "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png", // Новое фото - кровельный материал
+  "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png", // Кровельный материал
   
-  // 5. Интерьер и внешнее окружение (новая категория)
-  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png" // Террасы с креслами ночью
+  // 5. Интерьер и внешнее окружение
+  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Террасы с креслами ночью
+  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Новая фотография - светлый интерьер
+  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Новая фотография - интерьер с окном
+  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png" // Новая фотография - светлая комната с окном
 ];
 
 const ProjectGalleryCarousel = () => {
