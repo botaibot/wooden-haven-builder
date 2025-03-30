@@ -71,11 +71,11 @@ const Houses = () => {
     },
     {
       id: 4,
-      title: "Каркасный дом Модерн",
-      imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1970",
-      area: "110 м²",
-      bedrooms: 3,
-      price: "от €105,000"
+      title: "Ecopino 25",
+      imageUrl: "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png",
+      area: "25 м²",
+      bedrooms: 1,
+      price: "от €45,000"
     },
     {
       id: 5,
