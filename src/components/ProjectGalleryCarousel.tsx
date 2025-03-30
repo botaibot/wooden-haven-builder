@@ -16,6 +16,7 @@ import type { UseEmblaCarouselType } from "embla-carousel-react";
 // 2. Процесс строительства
 // 3. Детали и соединения
 // 4. Материалы, кровля и утепление
+// 5. Интерьер и окружение
 const images = [
   // 1. Готовые конструкции и общие виды
   "/lovable-uploads/dab85b12-7deb-4a1a-8368-7094f85c69ca.png",
@@ -23,6 +24,7 @@ const images = [
   "/lovable-uploads/fc859307-802f-4db4-8f30-54aee918bf8a.png",
   "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png",
   "/lovable-uploads/08325bc9-f5c2-4e44-a92f-ac24d1fdd2e1.png",
+  "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png", // Новое фото - дом в горах
   
   // 2. Процесс строительства и укладка стен
   "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
@@ -32,6 +34,7 @@ const images = [
   "/lovable-uploads/e4aade66-f345-47ad-99e4-df3bdd828a4d.png",
   "/lovable-uploads/cd50dce6-b79a-4ef1-a511-db6164273120.png",
   "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png",
+  "/lovable-uploads/cc4b9d36-d466-477d-965b-74b0d11ba405.png", // Новое фото - крыша дома
   
   // 3. Детали, соединения и коммуникации
   "/lovable-uploads/9e0b6fcd-bd9a-4149-a72b-14151871ab5b.png",
@@ -44,6 +47,7 @@ const images = [
   "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png", 
   "/lovable-uploads/bf7ab5e2-5ac4-4b64-8c23-2eb608fb3266.png",
   "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png",
+  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Новое фото - деталь кровли
   
   // 4. Материалы, утепление, кровля, гидроизоляция
   "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
@@ -53,7 +57,11 @@ const images = [
   "/lovable-uploads/853a0e4d-0c9a-4047-a26e-b360ebeb321d.png",
   "/lovable-uploads/9ccc4b6f-aa86-4287-a1c4-ebd682a85303.png",
   "/lovable-uploads/220a31fc-ad86-4fde-9794-e2a2b8659011.png",
-  "/lovable-uploads/2369764e-e4f1-4111-b81d-1338106e01d5.png"
+  "/lovable-uploads/2369764e-e4f1-4111-b81d-1338106e01d5.png",
+  "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png", // Новое фото - кровельный материал
+  
+  // 5. Интерьер и внешнее окружение (новая категория)
+  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png" // Террасы с креслами ночью
 ];
 
 const ProjectGalleryCarousel = () => {
