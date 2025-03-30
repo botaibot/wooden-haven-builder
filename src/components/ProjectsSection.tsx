@@ -79,7 +79,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-[url('/lovable-uploads/1f1845e1-7dfc-4723-9681-23f362625d4a.png')] bg-cover bg-center bg-fixed bg-no-repeat relative">
+    <section className="py-16 bg-[url('https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992')] bg-cover bg-center bg-fixed bg-no-repeat relative">
       <div className="absolute inset-0 bg-white/80"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
