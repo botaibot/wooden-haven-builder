@@ -39,13 +39,13 @@ const CategorySection = () => {
     {
       title: "Дома из клееного бруса",
       description: "Экологичные и комфортные дома из натурального клееного бруса высокого качества",
-      imageUrl: "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png", // Updated to use Ecopino 42 image
+      imageUrl: "/lovable-uploads/4502481e-10c5-4b4d-b49a-100502ad1986.png", // Updated to use the new uploaded image
       link: "/houses"
     },
     {
       title: "Каркасные дома",
       description: "Современные, энергоэффективные каркасные дома с быстрыми сроками строительства",
-      imageUrl: "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png", // Updated to use the same image as was previously in the first category
+      imageUrl: "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png", // Keeping the same image as before
       link: "/services"
     },
     {
