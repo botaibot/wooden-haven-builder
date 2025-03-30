@@ -40,9 +40,9 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Финский домик",
-      area: "80 м²",
-      imageUrl: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965"
+      title: "Ecopino 60",
+      area: "60 м²",
+      imageUrl: "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
     },
     {
       id: 2,
