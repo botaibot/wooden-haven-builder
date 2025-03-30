@@ -17,6 +17,20 @@ const images = [
 ];
 
 const ProjectGalleryCarousel = () => {
+  const handlePrevClick = () => {
+    const prevButton = document.querySelector('[data-carousel-button-prev]');
+    if (prevButton instanceof HTMLElement) {
+      prevButton.click();
+    }
+  };
+
+  const handleNextClick = () => {
+    const nextButton = document.querySelector('[data-carousel-button-next]');
+    if (nextButton instanceof HTMLElement) {
+      nextButton.click();
+    }
+  };
+
   return (
     <section className="py-16 bg-wood-light/20">
       <div className="container mx-auto px-4">
@@ -49,13 +63,13 @@ const ProjectGalleryCarousel = () => {
           <div className="flex justify-center mt-6 md:hidden gap-4">
             <button 
               className="p-2 bg-white rounded-full shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
-              onClick={() => document.querySelector('[data-carousel-button-prev]')?.click()}
+              onClick={handlePrevClick}
             >
               <ArrowLeft size={20} />
             </button>
             <button 
               className="p-2 bg-white rounded-full shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
-              onClick={() => document.querySelector('[data-carousel-button-next]')?.click()}
+              onClick={handleNextClick}
             >
               <ArrowRight size={20} />
             </button>
