@@ -51,7 +51,7 @@ const CategorySection = () => {
     {
       title: "Строительные материалы",
       description: "Широкий ассортимент строительного леса: брус, фанера, доска, вагонка",
-      imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992",
+      imageUrl: "/lovable-uploads/e47f2c25-2d3d-4390-b011-2e62a58e041e.png",
       link: "/materials"
     }
   ];
