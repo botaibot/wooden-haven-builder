@@ -1,21 +1,17 @@
 
 import React from "react";
-import { Home, Package, Construction, Tree } from "lucide-react";
+import { Shield, Truck, Trees, HandHelping } from "lucide-react";
 
-interface FeatureProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const Feature = ({ icon, title, description }: FeatureProps) => {
+const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => {
   return (
-    <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
-      <div className="bg-nature-light/20 p-4 rounded-full mb-4">
-        <div className="text-nature-dark">{icon}</div>
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <div className="flex flex-col items-center text-center">
+        <div className="mb-4 text-nature-dark p-3 bg-nature-light/50 rounded-full">
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-wood-dark">{title}</h3>
+        <p className="text-gray-600">{description}</p>
       </div>
-      <h3 className="text-xl font-semibold text-wood-darkest mb-3">{title}</h3>
-      <p className="text-gray-600">{description}</p>
     </div>
   );
 };
@@ -23,38 +19,45 @@ const Feature = ({ icon, title, description }: FeatureProps) => {
 const FeatureSection = () => {
   const features = [
     {
-      icon: <Home size={32} />,
-      title: "Экологичные дома",
-      description: "Мы строим дома из экологически чистых материалов, безопасных для здоровья."
+      icon: <Shield size={32} />,
+      title: "Качество и долговечность",
+      description: "Мы используем только высококачественные материалы и передовые технологии строительства."
     },
     {
-      icon: <Package size={32} />,
-      title: "Качественные материалы",
-      description: "Большой выбор высококачественных строительных материалов для любых проектов."
+      icon: <Trees size={32} />,
+      title: "Экологичность",
+      description: "Наши деревянные дома экологически чистые и безопасные для здоровья и окружающей среды."
     },
     {
-      icon: <Construction size={32} />,
-      title: "Опытные мастера",
-      description: "Наши специалисты имеют многолетний опыт в строительстве деревянных домов."
+      icon: <Truck size={32} />,
+      title: "Доставка по всему острову",
+      description: "Организуем доставку материалов и готовых конструкций в любую точку Тенерифе."
     },
     {
-      icon: <Tree size={32} />,
-      title: "Забота о природе",
-      description: "Мы используем только сертифицированную древесину и заботимся об окружающей среде."
+      icon: <HandHelping size={32} />,
+      title: "Полное сопровождение",
+      description: "Мы помогаем с оформлением документов, получением разрешений и вводом дома в эксплуатацию."
     }
   ];
 
   return (
-    <section className="py-16 bg-wood-light/30">
+    <section className="py-16 bg-muted">
       <div className="container mx-auto px-4">
-        <h2 className="section-title text-center mx-auto">Почему выбирают нас</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+        <div className="text-center mb-12">
+          <h2 className="section-title mx-auto">Почему выбирают нас</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Мы предлагаем полный спектр услуг от проектирования до строительства 
+            и обеспечиваем высокое качество на каждом этапе работы.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Feature 
-              key={index} 
-              icon={feature.icon} 
-              title={feature.title} 
-              description={feature.description} 
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
             />
           ))}
         </div>
