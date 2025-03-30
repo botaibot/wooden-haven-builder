@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -28,7 +29,7 @@ const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProp
             src={imageUrl} 
             alt={title} 
             className={`h-full w-full transition-transform duration-500 hover:scale-105 ${
-              isEcopino25 ? "object-contain scale-90" : "object-cover"
+              isEcopino25 ? "object-contain p-4" : "object-cover"
             }`}
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
