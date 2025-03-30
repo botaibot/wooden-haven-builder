@@ -6,9 +6,37 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[80vh] flex items-center bg-[url('https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2069')] bg-cover bg-center">
-      <div className="absolute inset-0 hero-gradient"></div>
-      <div className="container mx-auto px-4 relative z-10">
+    <div className="relative min-h-[80vh] flex items-center">
+      {/* Фоновое видео или GIF */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <div className="absolute inset-0 hero-gradient z-10"></div>
+        {/* Для MP4 видео */}
+        <video 
+          className="w-full h-full object-cover" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/path-to-your-video.mp4" type="video/mp4" />
+          {/* Если видео не загрузится, покажем статичный фон */}
+          <img 
+            src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2069" 
+            alt="Деревянные дома фон" 
+            className="w-full h-full object-cover"
+          />
+        </video>
+        
+        {/* Для GIF - раскомментируйте этот блок и закомментируйте video-блок выше если хотите использовать GIF
+        <img 
+          src="/path-to-your-animation.gif" 
+          alt="Деревянные дома анимация" 
+          className="w-full h-full object-cover"
+        />
+        */}
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fade-in">
             Деревянные дома <br />
