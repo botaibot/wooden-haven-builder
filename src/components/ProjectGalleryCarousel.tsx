@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { 
@@ -35,9 +34,14 @@ const images = [
   "/lovable-uploads/cd50dce6-b79a-4ef1-a511-db6164273120.png",
   "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png",
   "/lovable-uploads/cc4b9d36-d466-477d-965b-74b0d11ba405.png", // Крыша дома
-  "/lovable-uploads/d3ecd02b-51fb-4cf0-bf73-0818bc3de3b4.png", // Новая фотография - интерьер с выходом
-  "/lovable-uploads/53432e33-734e-4c37-a618-ec4d69f342a5.png", // Новая фотография - интерьер с выходом на террасу
-  "/lovable-uploads/f970ba98-1128-4b9a-8186-fd09325c62ad.png", // Новая фотография - комната с деревянными стенами
+  "/lovable-uploads/d3ecd02b-51fb-4cf0-bf73-0818bc3de3b4.png", // Интерьер с выходом
+  "/lovable-uploads/53432e33-734e-4c37-a618-ec4d69f342a5.png", // Интерьер с выходом на террасу
+  "/lovable-uploads/f970ba98-1128-4b9a-8186-fd09325c62ad.png", // Комната с деревянными стенами
+  
+  // Новые изображения процесса строительства
+  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png", // Светлая комната с видом на лес
+  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Комната с окном и видом на лес
+  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Светлый интерьер деревянного дома
   
   // 3. Детали, соединения и коммуникации
   "/lovable-uploads/9e0b6fcd-bd9a-4149-a72b-14151871ab5b.png",
@@ -51,7 +55,7 @@ const images = [
   "/lovable-uploads/bf7ab5e2-5ac4-4b64-8c23-2eb608fb3266.png",
   "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png",
   "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Деталь кровли
-  "/lovable-uploads/6c56f6d2-bc2d-474b-a5f5-2596108b177c.png", // Новая фотография - чёрный радиатор
+  "/lovable-uploads/6c56f6d2-bc2d-474b-a5f5-2596108b177c.png", // Чёрный радиатор
   
   // 4. Материалы, утепление, кровля, гидроизоляция
   "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
@@ -66,9 +70,9 @@ const images = [
   
   // 5. Интерьер и внешнее окружение
   "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Террасы с креслами ночью
-  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Новая фотография - светлый интерьер
-  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Новая фотография - интерьер с окном
-  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png" // Новая фотография - светлая комната с окном
+  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Светлый интерьер
+  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Интерьер с окном
+  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png"  // Светлая комната с окном
 ];
 
 const ProjectGalleryCarousel = () => {
@@ -104,7 +108,6 @@ const ProjectGalleryCarousel = () => {
               setEmblaRef(api);
               if (api) {
                 api.on('select', () => onSelect(api));
-                // Initialize the active index
                 setActiveIndex(api.selectedScrollSnap());
               }
             }}
