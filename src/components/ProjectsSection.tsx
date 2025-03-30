@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -79,8 +78,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-cover bg-center bg-fixed bg-no-repeat relative"
-             style={{ backgroundImage: "url('/lovable-uploads/c28186ff-7691-4b71-ba26-a5acbb17fa49.png')" }}>
+    <section className="py-16 bg-[url('/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png')] bg-cover bg-center bg-fixed bg-no-repeat relative">
       <div className="absolute inset-0 bg-white/80"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
