@@ -107,7 +107,8 @@ const Houses = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16 bg-[url('/lovable-uploads/c28186ff-7691-4b71-ba26-a5acbb17fa49.png')] bg-cover bg-center bg-no-repeat">
+      <div className="relative py-16 bg-cover bg-center bg-no-repeat" 
+           style={{ backgroundImage: "url('/lovable-uploads/c28186ff-7691-4b71-ba26-a5acbb17fa49.png')" }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Наши проекты домов</h1>
