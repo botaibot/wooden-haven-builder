@@ -107,7 +107,7 @@ const Houses = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-20 md:py-24 bg-[url('/lovable-uploads/2bf310d0-5018-4336-aef6-3598068c0862.png')] bg-cover bg-center">
+      <div className="relative py-20 md:py-24 bg-[url('/lovable-uploads/cdbfc857-a3af-46d9-8311-921a28f35340.png')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Наши проекты домов</h1>
