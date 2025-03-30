@@ -9,7 +9,7 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { EmblaCarouselType } from "embla-carousel-react";
+import type { UseEmblaCarouselType } from "embla-carousel-react";
 
 // Организованный массив изображений по категориям:
 // 1. Готовые конструкции
@@ -49,7 +49,7 @@ const images = [
 const ProjectGalleryCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [emblaRef, setEmblaRef] = useState<EmblaCarouselType | null>(null);
+  const [emblaRef, setEmblaRef] = useState<UseEmblaCarouselType[1] | null>(null);
 
   const handlePrevClick = () => {
     if (emblaRef) emblaRef.scrollPrev();
@@ -59,7 +59,7 @@ const ProjectGalleryCarousel = () => {
     if (emblaRef) emblaRef.scrollNext();
   };
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+  const onSelect = useCallback((emblaApi: UseEmblaCarouselType[1]) => {
     setActiveIndex(emblaApi.selectedScrollSnap());
   }, []);
 
