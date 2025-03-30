@@ -18,6 +18,8 @@ interface HouseCardProps {
 }
 
 const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
+  const isEcopino25 = title === "Ecopino 25";
+
   return (
     <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
       <Link to={`/houses/${id}`} className="block">
@@ -25,7 +27,9 @@ const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProp
           <img 
             src={imageUrl} 
             alt={title} 
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            className={`h-full w-full transition-transform duration-500 hover:scale-105 ${
+              isEcopino25 ? "object-contain scale-90" : "object-cover"
+            }`}
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
             {area}
