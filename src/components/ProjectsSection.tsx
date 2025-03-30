@@ -46,9 +46,9 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: "Шале Альпика",
-      area: "120 м²",
-      imageUrl: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=1974"
+      title: "Ecopino 50",
+      area: "50 м²",
+      imageUrl: "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png"
     },
     {
       id: 3,
