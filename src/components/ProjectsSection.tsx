@@ -83,9 +83,8 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-wood-light/30" style={{ backgroundImage: "url('/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat" }}>
-      <div className="absolute inset-0 bg-white/80"></div>
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-16 bg-wood-light/30">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <h2 className="section-title">Популярные проекты</h2>
           <Button asChild variant="outline" className="mt-4 md:mt-0 border-wood">
