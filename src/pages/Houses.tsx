@@ -87,11 +87,11 @@ const Houses = () => {
     },
     {
       id: 6,
-      title: "Барнхаус Лофт",
-      imageUrl: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=1974",
-      area: "150 м²",
-      bedrooms: 4,
-      price: "от €140,000"
+      title: "Ecopino 42",
+      imageUrl: "/lovable-uploads/108c9bf4-9a3c-4594-8df1-47a97a499bf2.png",
+      area: "42 м²",
+      bedrooms: 2,
+      price: "от €50,000"
     }
   ];
 

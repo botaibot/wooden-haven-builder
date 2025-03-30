@@ -15,7 +15,7 @@ const images = [
   "/lovable-uploads/2b12f2ef-202f-41f7-860e-f90fa03c15d7.png",
   "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png",
   "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
-  "/lovable-uploads/b1de1130-1bc6-43ca-bdc5-31d236f8d8e9.png"
+  "/lovable-uploads/108c9bf4-9a3c-4594-8df1-47a97a499bf2.png"
 ];
 
 const ProjectGalleryCarousel = () => {
