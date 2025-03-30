@@ -89,7 +89,7 @@ const Houses = () => {
     {
       id: 6,
       title: "Ecopino 42",
-      imageUrl: "/lovable-uploads/108c9bf4-9a3c-4594-8df1-47a97a499bf2.png",
+      imageUrl: "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
       area: "42 м²",
       bedrooms: 2,
       price: "от €50,000"

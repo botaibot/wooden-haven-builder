@@ -57,6 +57,24 @@ const ProjectsSection = () => {
       title: "Ecopino 25",
       area: "25 м²",
       imageUrl: "/lovable-uploads/2b12f2ef-202f-41f7-860e-f90fa03c15d7.png"
+    },
+    {
+      id: 4,
+      title: "Ecopino 25",
+      area: "25 м²",
+      imageUrl: "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png"
+    },
+    {
+      id: 5,
+      title: "Ecopino 25",
+      area: "25 м²",
+      imageUrl: "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png"
+    },
+    {
+      id: 6,
+      title: "Ecopino 42",
+      area: "42 м²",
+      imageUrl: "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png"
     }
   ];
 
