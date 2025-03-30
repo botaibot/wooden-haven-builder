@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -12,8 +11,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, area, imageUrl, id }: ProjectCardProps) => {
-  const isEcopino25 = title === "Ecopino 25";
-  
   return (
     <div className="group overflow-hidden rounded-lg">
       <Link to={`/houses/${id}`} className="block">
@@ -21,9 +18,7 @@ const ProjectCard = ({ title, area, imageUrl, id }: ProjectCardProps) => {
           <img 
             src={imageUrl} 
             alt={title} 
-            className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
-              isEcopino25 ? "object-contain scale-90" : "object-cover"
-            }`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
             {area}
