@@ -16,7 +16,7 @@ interface HouseCardProps {
 const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-video overflow-hidden">
         <img 
           src={imageUrl} 
           alt={title} 
@@ -79,11 +79,11 @@ const Houses = () => {
     },
     {
       id: 5,
-      title: "Дом-баня Релакс",
-      imageUrl: "https://images.unsplash.com/photo-1575517111839-3a3843ee7f5d?q=80&w=1970",
-      area: "70 м²",
+      title: "Ecopino 25",
+      imageUrl: "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
+      area: "25 м²",
       bedrooms: 1,
-      price: "от €65,000"
+      price: "от €45,000"
     },
     {
       id: 6,

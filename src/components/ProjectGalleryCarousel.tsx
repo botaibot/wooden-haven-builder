@@ -13,6 +13,8 @@ const images = [
   "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
   "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png",
   "/lovable-uploads/2b12f2ef-202f-41f7-860e-f90fa03c15d7.png",
+  "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png",
+  "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
   "/lovable-uploads/b1de1130-1bc6-43ca-bdc5-31d236f8d8e9.png"
 ];
 
@@ -41,7 +43,7 @@ const ProjectGalleryCarousel = () => {
               {images.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <div className="overflow-hidden rounded-lg aspect-[4/3]">
+                    <div className="overflow-hidden rounded-lg aspect-video">
                       <img 
                         src={image} 
                         alt={`Проект ${index + 1}`}
