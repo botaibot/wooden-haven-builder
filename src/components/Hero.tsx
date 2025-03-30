@@ -11,11 +11,11 @@ const Hero = () => {
         {/* Левая колонка с текстом */}
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-wood-dark mb-4 animate-fade-in">
-            Деревянные дома <br />
-            <span className="text-nature">на Тенерифе</span>
+            Деревянные дома из клееного бруса или каркасные <br />
+            <span className="text-nature">на Канарских островах</span>
           </h1>
           <p className="text-xl text-gray-700 mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
-            Строительство экологичных деревянных домов и продажа высококачественных строительных материалов на солнечном острове Тенерифе
+            Строительство экологичных деревянных домов и продажа высококачественных строительных материалов на Канарских островах
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
             <Button asChild className="bg-wood hover:bg-wood-dark text-white px-8 py-6 text-lg">
