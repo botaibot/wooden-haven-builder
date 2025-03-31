@@ -1,11 +1,12 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar } from "@/components/ui/avatar";
 import { AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { useToast } from "@/hooks/use-toast";
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +18,24 @@ const ChatAssistant = () => {
     },
   ]);
   const [newMessage, setNewMessage] = useState("");
+  const [lastActivity, setLastActivity] = useState(Date.now());
+  const [reminderCount, setReminderCount] = useState(0);
+  const { toast } = useToast();
+
+  // Проактивные сообщения, которые будут отображаться случайным образом
+  const proactiveMessages = [
+    "Здравствуйте! Могу я вам помочь с выбором деревянного дома?",
+    "Мы подготовили для Вас специальное предложение! Расскажу подробнее. Напишите мне!",
+    "У вас остались вопросы? Я здесь, чтобы помочь!",
+    "Интересуют наши проекты? Я могу предоставить больше информации.",
+    "Хотите узнать о текущих акциях и скидках? Спросите меня!"
+  ];
 
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
+
+    // Обновляем время последней активности
+    setLastActivity(Date.now());
 
     // Добавляем сообщение пользователя
     setMessages([
@@ -51,6 +67,59 @@ const ChatAssistant = () => {
       handleSendMessage();
     }
   };
+
+  // Обновляем время последней активности пользователя при движении мыши, клике или нажатии клавиш
+  useEffect(() => {
+    const updateLastActivity = () => setLastActivity(Date.now());
+    
+    window.addEventListener("mousemove", updateLastActivity);
+    window.addEventListener("click", updateLastActivity);
+    window.addEventListener("keypress", updateLastActivity);
+    
+    return () => {
+      window.removeEventListener("mousemove", updateLastActivity);
+      window.removeEventListener("click", updateLastActivity);
+      window.removeEventListener("keypress", updateLastActivity);
+    };
+  }, []);
+
+  // Проверяем, прошло ли 2 минуты с момента последней активности
+  useEffect(() => {
+    const checkInactivity = setInterval(() => {
+      const currentTime = Date.now();
+      const inactiveTime = currentTime - lastActivity;
+      
+      // Если прошло 2 минуты (120000 мс) и чат не открыт, показываем напоминание
+      if (inactiveTime > 120000 && !isOpen && reminderCount < 3) {
+        const randomMessage = proactiveMessages[Math.floor(Math.random() * proactiveMessages.length)];
+        
+        // Добавляем проактивное сообщение в чат
+        setMessages(prev => [
+          ...prev,
+          {
+            id: prev.length + 1,
+            text: randomMessage,
+            isUser: false,
+          }
+        ]);
+        
+        // Показываем уведомление
+        toast({
+          title: "Новое сообщение от консультанта",
+          description: randomMessage,
+          duration: 5000,
+        });
+        
+        // Увеличиваем счетчик напоминаний
+        setReminderCount(prev => prev + 1);
+        
+        // Обновляем время последней активности
+        setLastActivity(currentTime);
+      }
+    }, 30000); // Проверяем каждые 30 секунд
+
+    return () => clearInterval(checkInactivity);
+  }, [isOpen, lastActivity, reminderCount, toast]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
