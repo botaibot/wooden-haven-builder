@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -103,6 +104,11 @@ const MaterialCard = ({
     return selectedSizeObj?.length || 0;
   };
 
+  // Calculate total cost
+  const calculateTotalCost = () => {
+    return getSelectedSizePrice() * quantity;
+  };
+
   const handleAddToCart = () => {
     if (!selectedSize) {
       toast({
@@ -198,6 +204,16 @@ const MaterialCard = ({
                 <Plus className="h-3 w-3" />
               </Button>
             </div>
+          </div>
+        )}
+        
+        {/* Display total cost when size is selected */}
+        {selectedSize && sizes.length > 0 && (
+          <div className="bg-nature-light/20 p-3 rounded-md mb-4">
+            <p className="font-medium text-nature-dark">
+              Общая стоимость: €{calculateTotalCost().toFixed(2)}
+              <span className="text-sm text-gray-600 ml-1">за {quantity} шт.</span>
+            </p>
           </div>
         )}
         
