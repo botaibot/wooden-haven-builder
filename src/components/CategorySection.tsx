@@ -21,10 +21,9 @@ const CategoryCard = ({ title, imageUrl, link }: CategoryCardProps) => {
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end">
-        <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
         <Button asChild className="w-full sm:w-auto bg-wood hover:bg-wood-dark">
           <Link to={link} className="flex items-center justify-center gap-2">
-            Подробнее <ArrowRight size={16} />
+            {title} <ArrowRight size={16} />
           </Link>
         </Button>
       </div>
