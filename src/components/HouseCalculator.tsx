@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from "react";
-import { Calculator, House, SquareUser, PalmTree, Warehouse } from "lucide-react";
+import { Calculator, House, SquareUser, TreePalm, Warehouse } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
@@ -22,7 +21,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
 
-// Define the form schema with Zod
 const formSchema = z.object({
   houseType: z.string(),
   houseSize: z.number().min(20).max(200),
@@ -35,7 +33,6 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-// Price constants (base prices in rubles)
 const PRICES = {
   HOUSE_BASE_PRICE_PER_SQM: {
     economy: 40000,
@@ -55,7 +52,6 @@ const HouseCalculator = () => {
   const { toast } = useToast();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // Set default form values
   const defaultValues: FormValues = {
     houseType: "standard",
     houseSize: 50,
@@ -66,37 +62,30 @@ const HouseCalculator = () => {
     gazeboSize: 0,
   };
 
-  // Initialize the form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues,
   });
 
-  // Watch form values for calculations
   const watchAllFields = form.watch();
   
-  // Calculate price whenever form values change
   useEffect(() => {
     calculateTotalPrice(watchAllFields);
   }, [watchAllFields]);
 
   const calculateTotalPrice = (values: FormValues) => {
-    // Base house price
     const houseBasePrice = PRICES.HOUSE_BASE_PRICE_PER_SQM[values.houseType as keyof typeof PRICES.HOUSE_BASE_PRICE_PER_SQM] || 0;
     const materialMultiplier = PRICES.MATERIALS[values.materials as keyof typeof PRICES.MATERIALS] || 1;
     const housePrice = values.houseSize * houseBasePrice * materialMultiplier;
     
-    // Terrace price
     const terracePrice = values.terrace && values.terraceSize 
       ? values.terraceSize * PRICES.TERRACE_PRICE_PER_SQM 
       : 0;
     
-    // Gazebo price
     const gazeboPrice = values.gazebo && values.gazeboSize 
       ? values.gazeboSize * PRICES.GAZEBO_PRICE_PER_SQM 
       : 0;
     
-    // Total price
     const calculatedPrice = housePrice + terracePrice + gazeboPrice;
     setTotalPrice(calculatedPrice);
   };
@@ -132,7 +121,6 @@ const HouseCalculator = () => {
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {/* House Type */}
               <FormField
                 control={form.control}
                 name="houseType"
@@ -183,7 +171,6 @@ const HouseCalculator = () => {
                 )}
               />
 
-              {/* House Size */}
               <FormField
                 control={form.control}
                 name="houseSize"
@@ -221,7 +208,6 @@ const HouseCalculator = () => {
                 )}
               />
 
-              {/* Materials */}
               <FormField
                 control={form.control}
                 name="materials"
@@ -250,7 +236,6 @@ const HouseCalculator = () => {
                 )}
               />
 
-              {/* Terrace */}
               <FormField
                 control={form.control}
                 name="terrace"
@@ -258,7 +243,7 @@ const HouseCalculator = () => {
                   <FormItem className="space-y-4">
                     <div className="flex items-center justify-between">
                       <FormLabel className="text-lg font-medium flex items-center gap-2">
-                        <PalmTree className="h-5 w-5" /> Терраса
+                        <TreePalm className="h-5 w-5" /> Терраса
                       </FormLabel>
                       <FormControl>
                         <Switch
@@ -275,7 +260,6 @@ const HouseCalculator = () => {
                 )}
               />
 
-              {/* Terrace Size (conditional) */}
               {form.watch("terrace") && (
                 <FormField
                   control={form.control}
@@ -313,7 +297,6 @@ const HouseCalculator = () => {
                 />
               )}
 
-              {/* Gazebo */}
               <FormField
                 control={form.control}
                 name="gazebo"
@@ -321,7 +304,7 @@ const HouseCalculator = () => {
                   <FormItem className="space-y-4">
                     <div className="flex items-center justify-between">
                       <FormLabel className="text-lg font-medium flex items-center gap-2">
-                        <PalmTree className="h-5 w-5" /> Беседка
+                        <TreePalm className="h-5 w-5" /> Беседка
                       </FormLabel>
                       <FormControl>
                         <Switch
@@ -338,7 +321,6 @@ const HouseCalculator = () => {
                 )}
               />
 
-              {/* Gazebo Size (conditional) */}
               {form.watch("gazebo") && (
                 <FormField
                   control={form.control}
@@ -376,7 +358,6 @@ const HouseCalculator = () => {
                 />
               )}
 
-              {/* Total Price and Submit */}
               <div className="pt-6 border-t">
                 <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
                   <div>
