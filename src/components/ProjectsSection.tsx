@@ -47,6 +47,20 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 const ProjectsSection = () => {
   // Увеличиваем количество отображаемых домов до 8, чтобы включить новый дом в галерею
   const featuredHouses = houses.slice(0, 8);
+  
+  // Создаем копию массива для модификации
+  const modifiedHouses = [...featuredHouses];
+  
+  // Заменяем изображение для третьей карточки (индекс 2)
+  if (modifiedHouses.length > 2) {
+    modifiedHouses[2] = {
+      ...modifiedHouses[2],
+      images: [
+        "/lovable-uploads/e2b94f32-710e-4383-b6df-6454a49cd09e.png",
+        ...modifiedHouses[2].images.slice(1)
+      ]
+    };
+  }
 
   return (
     <section className="py-16 bg-wood-light/30">
@@ -60,7 +74,7 @@ const ProjectsSection = () => {
           </Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredHouses.map((house) => (
+          {modifiedHouses.map((house) => (
             <ProjectCard 
               key={house.id}
               id={house.id}
