@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -301,6 +302,23 @@ const Materials = () => {
         { label: "2500 мм x 1220 мм x 15 мм", value: "15mm", price: 62 },
         { label: "2500 мм x 1220 мм x 18 мм", value: "18mm", price: 72 },
         { label: "2500 мм x 1220 мм x 22 мм", value: "22mm", price: 80 },
+      ],
+      isNew: true,
+      category: "Фанера"
+    },
+    {
+      id: "osb-3-panels",
+      title: "Плиты OSB-3 сертифицированы PEFC",
+      description: "Применяется для стен, полов, кровельных конструкций снаружи и внутри помещений. Цена OSB зависит от толщины листа (9, 12, 15, 18 или 22 мм).",
+      imageUrl: "/lovable-uploads/3598cb51-5ce6-45ce-876c-836cdde70585.png",
+      priceRange: "€19,50–€47,00",
+      unit: "шт",
+      sizes: [
+        { label: "2500 мм x 1250 мм x 9 мм", value: "9mm", price: 20 },
+        { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 25 },
+        { label: "2500 мм x 1250 мм x 15 мм", value: "15mm", price: 33 },
+        { label: "2500 мм x 1250 мм x 18 мм", value: "18mm", price: 37 },
+        { label: "2500 мм x 1250 мм x 22 мм", value: "22mm", price: 47 },
       ],
       isNew: true,
       category: "Фанера"
