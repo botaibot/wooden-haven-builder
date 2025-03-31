@@ -56,7 +56,7 @@ const ProjectsSection = () => {
       id: 3,
       title: "Ecopino 25",
       area: "25 м²",
-      imageUrl: "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png"
+      imageUrl: "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png"
     },
     {
       id: 4,

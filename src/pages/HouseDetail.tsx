@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -88,7 +89,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 1 900 000 ₽",
     images: [
-      "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png",
+      "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png",
       "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
@@ -149,9 +150,10 @@ const houses: HouseData[] = [
     turnkeyCost: "от 2 750 000 ₽",
     images: [
       "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
-      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png"
+      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
+      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
     ],
-    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
+    floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   }
 ];
 
