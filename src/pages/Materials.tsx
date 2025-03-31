@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -58,7 +59,7 @@ const MaterialCard = ({
   isNew = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedSize, setSelectedSize] = useState(sizes.length > 0 ? sizes[0].value : "");
+  const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
   const { toast } = useToast();
@@ -86,6 +87,15 @@ const MaterialCard = ({
   };
 
   const handleAddToCart = () => {
+    if (!selectedSize) {
+      toast({
+        title: "Выберите размер",
+        description: "Пожалуйста, выберите размер перед добавлением в корзину",
+        variant: "destructive"
+      });
+      return;
+    }
+
     addToCart({
       id,
       title,
@@ -172,7 +182,9 @@ const MaterialCard = ({
         <div className="flex justify-between items-center">
           <span className="font-bold text-nature-dark">
             {sizes.length > 0 
-              ? `€${getSelectedSizePrice().toFixed(2)} / шт`
+              ? selectedSize 
+                ? `€${getSelectedSizePrice().toFixed(2)} / шт`
+                : "Выберите размер" 
               : priceRange 
                 ? priceRange 
                 : `от €8`} 
