@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -348,7 +349,7 @@ const Materials = () => {
       id: "vagonka",
       title: "Вагонка толщина шипа и паза",
       description: "Используется для облицовки стен и потолков.\n\nЦена указана за м². В корзине вы можете указать площадь каждого товара в вашем заказе.\n\nДля расчета необходимого количества укажите размеры длины и ширины желаемой стены или потолка.",
-      imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
+      imageUrl: "/lovable-uploads/76474101-721d-46a4-bdbf-74bd93975e88.png",
       priceRange: "€13,50–€20,00",
       unit: "м²",
       sizes: [
@@ -382,7 +383,7 @@ const Materials = () => {
       id: "block-haus",
       title: "Блок-хаус",
       description: "Декоративная обшивка для фасадов и внутренней отделки",
-      imageUrl: "https://images.unsplash.com/photo-1594237258022-a74b1fc8e0b9?q=80&w=1974",
+      imageUrl: "/lovable-uploads/872f1d26-02ec-45ff-8558-1ba9416ee81a.png",
       priceRange: "от €10",
       unit: "м²",
       category: "Отделочные материалы"
