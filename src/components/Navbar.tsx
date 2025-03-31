@@ -34,6 +34,9 @@ const Navbar = () => {
           <Link to="/materials" className="text-wood-darkest hover:text-nature-dark transition-colors">
             Материалы
           </Link>
+          <Link to="/furniture" className="text-wood-darkest hover:text-nature-dark transition-colors">
+            Мебель
+          </Link>
           <Link to="/about" className="text-wood-darkest hover:text-nature-dark transition-colors">
             О нас
           </Link>
@@ -86,6 +89,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Материалы
+            </Link>
+            <Link 
+              to="/furniture" 
+              className="text-wood-darkest hover:text-nature-dark py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Мебель
             </Link>
             <Link 
               to="/about" 
