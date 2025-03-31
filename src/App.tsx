@@ -11,6 +11,7 @@ import Materials from "./pages/Materials";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Furniture from "./pages/Furniture";
+import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
 import ChatAssistant from "./components/ChatAssistant";
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/furniture" element={<Furniture />} />
+          <Route path="/calculator" element={<Calculator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
