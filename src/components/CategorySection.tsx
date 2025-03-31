@@ -45,7 +45,7 @@ const CategorySection = () => {
     },
     {
       title: "Строительные материалы",
-      imageUrl: "/lovable-uploads/a8ce0721-491d-4a0c-9ccf-0fa41a802fe4.png",
+      imageUrl: "/lovable-uploads/4501b6c8-2e0c-45cb-a4d0-53a0225e82ba.png",
       link: "/materials"
     },
     {

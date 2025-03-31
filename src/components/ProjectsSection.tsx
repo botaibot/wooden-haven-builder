@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -56,7 +55,7 @@ const ProjectsSection = () => {
       id: 3,
       title: "Ecopino 25",
       area: "25 м²",
-      imageUrl: "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png"
+      imageUrl: "/lovable-uploads/4501b6c8-2e0c-45cb-a4d0-53a0225e82ba.png"
     },
     {
       id: 4,
