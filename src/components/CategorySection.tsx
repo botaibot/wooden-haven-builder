@@ -50,7 +50,7 @@ const CategorySection = () => {
     },
     {
       title: "Мебель",
-      imageUrl: "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png",
+      imageUrl: "/lovable-uploads/b1b65c60-7995-441c-9888-57e6e6a91a98.png",
       link: "/furniture"
     }
   ];
