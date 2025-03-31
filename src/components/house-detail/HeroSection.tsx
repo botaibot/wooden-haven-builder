@@ -3,6 +3,7 @@ import React from "react";
 import { HouseData } from "@/data/housesData";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Euro } from "lucide-react";
 
 interface HeroSectionProps {
   house: HouseData;
@@ -26,21 +27,21 @@ const HeroSection = ({ house }: HeroSectionProps) => {
             <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
               <div className="flex flex-col items-center">
                 <span className="font-bold">СИЛОВОЙ КАРКАС</span>
-                <span>{house.frameCost}</span>
+                <span className="flex items-center">{house.frameCost}</span>
               </div>
             </Button>
             
             <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
               <div className="flex flex-col items-center">
                 <span className="font-bold">ТЁПЛЫЙ КОНТУР</span>
-                <span>{house.warmContourCost}</span>
+                <span className="flex items-center">{house.warmContourCost}</span>
               </div>
             </Button>
             
             <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
               <div className="flex flex-col items-center">
                 <span className="font-bold">ПОД КЛЮЧ</span>
-                <span>{house.turnkeyCost}</span>
+                <span className="flex items-center">{house.turnkeyCost}</span>
               </div>
             </Button>
             
