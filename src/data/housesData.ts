@@ -94,7 +94,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 1 900 000 ₽",
     images: [
-      "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png",
+      "/lovable-uploads/f6dc5a1e-aede-4698-911e-e45ebca21f9d.png",
       "/lovable-uploads/7395f239-f442-4b96-a7de-aba63a604ea0.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"

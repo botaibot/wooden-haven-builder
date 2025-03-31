@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -79,7 +80,7 @@ const Houses = () => {
     {
       id: 4,
       title: "Ecopino 25",
-      imageUrl: "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png",
+      imageUrl: "/lovable-uploads/f6dc5a1e-aede-4698-911e-e45ebca21f9d.png",
       area: "25 м²",
       bedrooms: 1,
       price: "от €45,000"
