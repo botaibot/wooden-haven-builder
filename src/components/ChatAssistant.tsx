@@ -8,6 +8,9 @@ import { AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
 
+// Make.com webhook URL
+const WEBHOOK_URL = "https://hook.eu2.make.com/b8rvmk3jo41mbxpuf88jkn1vtt4zw1fe";
+
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -31,33 +34,68 @@ const ChatAssistant = () => {
     "Хотите узнать о текущих акциях и скидках? Спросите меня!"
   ];
 
+  // Отправка данных в webhook
+  const sendToWebhook = async (messageData) => {
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // Используем no-cors для обхода CORS-ограничений
+        body: JSON.stringify(messageData),
+      });
+      console.log("Сообщение отправлено в webhook:", messageData);
+    } catch (error) {
+      console.error("Ошибка при отправке в webhook:", error);
+    }
+  };
+
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
 
     // Обновляем время последней активности
     setLastActivity(Date.now());
 
-    // Добавляем сообщение пользователя
-    setMessages([
-      ...messages,
-      {
-        id: messages.length + 1,
-        text: newMessage,
-        isUser: true,
-      },
-    ]);
+    // Формируем сообщение пользователя
+    const userMessage = {
+      id: messages.length + 1,
+      text: newMessage,
+      isUser: true,
+      timestamp: new Date().toISOString(),
+    };
+
+    // Добавляем сообщение пользователя в чат
+    setMessages([...messages, userMessage]);
     setNewMessage("");
+
+    // Отправляем сообщение пользователя в webhook
+    sendToWebhook({
+      type: "user_message",
+      message: userMessage.text,
+      timestamp: userMessage.timestamp,
+      page: window.location.pathname,
+    });
 
     // Имитация ответа помощника через 1 секунду
     setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          id: prevMessages.length + 1,
-          text: "Спасибо за ваше сообщение! Я подготовлю для вас индивидуальное предложение. Оставьте, пожалуйста, свой контактный номер, и наш менеджер свяжется с вами в ближайшее время.",
-          isUser: false,
-        },
-      ]);
+      const assistantMessage = {
+        id: messages.length + 2,
+        text: "Спасибо за ваше сообщение! Я подготовлю для вас индивидуальное предложение. Оставьте, пожалуйста, свой контактный номер, и наш менеджер свяжется с вами в ближайшее время.",
+        isUser: false,
+        timestamp: new Date().toISOString(),
+      };
+
+      // Добавляем ответ помощника в чат
+      setMessages(prevMessages => [...prevMessages, assistantMessage]);
+
+      // Отправляем ответ помощника в webhook
+      sendToWebhook({
+        type: "assistant_message",
+        message: assistantMessage.text,
+        timestamp: assistantMessage.timestamp,
+        page: window.location.pathname,
+      });
     }, 1000);
   };
 
@@ -92,6 +130,7 @@ const ChatAssistant = () => {
       // Если прошло 2 минуты (120000 мс) и чат не открыт, показываем напоминание
       if (inactiveTime > 120000 && !isOpen && reminderCount < 3) {
         const randomMessage = proactiveMessages[Math.floor(Math.random() * proactiveMessages.length)];
+        const timestamp = new Date().toISOString();
         
         // Добавляем проактивное сообщение в чат
         setMessages(prev => [
@@ -100,6 +139,7 @@ const ChatAssistant = () => {
             id: prev.length + 1,
             text: randomMessage,
             isUser: false,
+            timestamp: timestamp,
           }
         ]);
         
@@ -108,6 +148,14 @@ const ChatAssistant = () => {
           title: "Новое сообщение от консультанта",
           description: randomMessage,
           duration: 5000,
+        });
+        
+        // Отправляем проактивное сообщение в webhook
+        sendToWebhook({
+          type: "proactive_message",
+          message: randomMessage,
+          timestamp: timestamp,
+          page: window.location.pathname,
         });
         
         // Увеличиваем счетчик напоминаний
@@ -120,6 +168,15 @@ const ChatAssistant = () => {
 
     return () => clearInterval(checkInactivity);
   }, [isOpen, lastActivity, reminderCount, toast]);
+
+  // Отправляем информацию о первом посещении страницы
+  useEffect(() => {
+    sendToWebhook({
+      type: "page_visit",
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname,
+    });
+  }, []);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
