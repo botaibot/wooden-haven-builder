@@ -3,33 +3,98 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sofa, Table, Bed, Lamp } from "lucide-react";
+import { ShoppingCart, Sofa, Table, Bed, Lamp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import MaterialCardCarousel from "@/components/MaterialCardCarousel";
+
+interface FurnitureItem {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  images: string[];
+  icon: React.ElementType;
+}
+
+const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
+  return (
+    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+      <MaterialCardCarousel images={item.images} alt={item.title} />
+      
+      <CardContent className="p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <item.icon className="text-wood-dark" size={24} />
+          <h3 className="text-xl font-semibold text-wood-darkest">{item.title}</h3>
+        </div>
+        
+        <p className="text-gray-600 mb-6">{item.description}</p>
+        
+        <div className="flex justify-between items-center">
+          <span className="font-bold text-nature-dark">
+            от €{item.price}
+          </span>
+          <a 
+            href="/contact"
+            className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+          >
+            <ShoppingCart size={16} />
+            <span>Заказать</span>
+          </a>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 const Furniture = () => {
-  const furnitureItems = [
+  const furnitureItems: FurnitureItem[] = [
     {
+      id: "tables",
       title: "Столы из массива дерева",
-      description: "Прочные и элегантные столы различных размеров из натурального дерева",
-      icon: Table,
-      imageUrl: "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png"
+      description: "Прочные и элегантные столы различных размеров из натурального дерева. Изготавливаются по индивидуальным заказам с учетом ваших пожеланий.",
+      price: 350,
+      images: [
+        "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png",
+        "/lovable-uploads/a8ce0721-491d-4a0c-9ccf-0fa41a802fe4.png",
+        "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png"
+      ],
+      icon: Table
     },
     {
+      id: "chairs",
       title: "Стулья и кресла",
-      description: "Комфортные стулья и кресла, идеально дополняющие интерьер деревянного дома",
-      icon: Sofa,
-      imageUrl: "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png"
+      description: "Комфортные стулья и кресла, идеально дополняющие интерьер деревянного дома. Каждое изделие имеет эргономичную форму и прочную конструкцию.",
+      price: 150,
+      images: [
+        "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png",
+        "/lovable-uploads/4502481e-10c5-4b4d-b49a-100502ad1986.png", 
+        "/lovable-uploads/853a0e4d-0c9a-4047-a26e-b360ebeb321d.png"
+      ],
+      icon: Sofa
     },
     {
+      id: "beds",
       title: "Кровати и тумбы",
-      description: "Спальная мебель из экологически чистых материалов",
-      icon: Bed,
-      imageUrl: "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png"
+      description: "Спальная мебель из экологически чистых материалов. Удобные кровати и практичные тумбы для спальни, создающие атмосферу уюта и комфорта.",
+      price: 450,
+      images: [
+        "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
+        "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
+        "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png"
+      ],
+      icon: Bed
     },
     {
+      id: "benches",
       title: "Лавки и скамьи",
-      description: "Функциональные и стильные лавки для сада и дома",
-      icon: Lamp,
-      imageUrl: "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png"
+      description: "Функциональные и стильные лавки для сада и дома. Отлично подходят как для интерьера, так и для экстерьера благодаря специальной обработке древесины.",
+      price: 220,
+      images: [
+        "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png",
+        "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
+        "/lovable-uploads/f79d17e0-4d4c-4c28-b9e9-e29fa9dcca20.png"
+      ],
+      icon: Lamp
     }
   ];
 
@@ -52,22 +117,7 @@ const Furniture = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {furnitureItems.map((item, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-[16/9] w-full">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <item.icon className="text-wood-dark" size={24} />
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                  </div>
-                  <p className="text-gray-600">{item.description}</p>
-                </CardContent>
-              </Card>
+              <FurnitureCard key={index} item={item} />
             ))}
           </div>
           
