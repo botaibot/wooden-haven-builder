@@ -348,7 +348,7 @@ const Materials = () => {
       imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
       priceRange: "от €7",
       unit: "м²",
-      category: "Вагонка"
+      category: "Отделочные материалы"
     },
     {
       id: "terras-doska",
@@ -389,7 +389,7 @@ const Materials = () => {
   ];
 
   const categories = [
-    "Все материалы", "Брус и доска", "Фанера", "Вагонка", "Отделочные материалы"
+    "Все материалы", "Брус и доска", "Фанера", "Отделочные материалы"
   ];
   
   const [activeCategory, setActiveCategory] = useState(categories[0]);
