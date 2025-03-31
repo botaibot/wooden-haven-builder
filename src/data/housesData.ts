@@ -125,7 +125,7 @@ const houses: HouseData[] = [
     area: "42 м²",
     dimensions: "7 x 6 м",
     floors: 1,
-    bedrooms: 2,
+    bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,

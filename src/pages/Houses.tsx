@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,11 +13,10 @@ interface HouseCardProps {
   title: string;
   imageUrl: string;
   area: string;
-  bedrooms: number;
   price: string;
 }
 
-const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
+const HouseCard = ({ id, title, imageUrl, area, price }: HouseCardProps) => {
   return (
     <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
       <Link to={`/houses/${id}`} className="h-full flex flex-col">
@@ -35,7 +33,6 @@ const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProp
         <CardContent className="p-6 flex-grow">
           <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
           <div className="flex justify-between items-center mb-4">
-            <span className="text-gray-600">{bedrooms} спален</span>
             <span className="font-bold text-nature-dark">{price}</span>
           </div>
         </CardContent>
@@ -58,7 +55,6 @@ const Houses = () => {
       title: "Ecopino 60",
       imageUrl: "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
       area: "60 м²",
-      bedrooms: 2,
       price: "от €75,000"
     },
     {
@@ -66,7 +62,6 @@ const Houses = () => {
       title: "Ecopino 50",
       imageUrl: "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png",
       area: "50 м²",
-      bedrooms: 2,
       price: "от €70,000"
     },
     {
@@ -74,7 +69,6 @@ const Houses = () => {
       title: "Ecopino 25",
       imageUrl: "/lovable-uploads/4501b6c8-2e0c-45cb-a4d0-53a0225e82ba.png",
       area: "25 м²",
-      bedrooms: 1,
       price: "от €45,000"
     },
     {
@@ -82,7 +76,6 @@ const Houses = () => {
       title: "Ecopino 25",
       imageUrl: "/lovable-uploads/f6dc5a1e-aede-4698-911e-e45ebca21f9d.png",
       area: "25 м²",
-      bedrooms: 1,
       price: "от €45,000"
     },
     {
@@ -90,7 +83,6 @@ const Houses = () => {
       title: "Ecopino 25",
       imageUrl: "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
       area: "25 м²",
-      bedrooms: 1,
       price: "от €45,000"
     },
     {
@@ -98,7 +90,6 @@ const Houses = () => {
       title: "Ecopino 42",
       imageUrl: "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
       area: "42 м²",
-      bedrooms: 2,
       price: "от €50,000"
     }
   ];
