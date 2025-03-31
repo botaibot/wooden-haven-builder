@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -288,6 +287,25 @@ const Materials = () => {
       category: "Брус и доска"
     },
     {
+      id: "plywood-eucalyptus",
+      title: "Фанера из эвкалипта/топола",
+      description: "Легкая плита с сердцевиной из европейского тополя и декоративными фасадами из плантационного эвкалипта, отличительной особенностью которой является ее высокая прочность и плотность. Основа из тополя, высаженного с соблюдением принципов устойчивого развития, помимо исключительной легкости и простоты обработки, придает этим доскам отличную устойчивость и качество поверхности.\n\nЦена указана за одну тарелку. В корзине вы можете указать количество листов для каждого товара в вашем заказе.",
+      imageUrl: "/lovable-uploads/103ea832-15f8-4db1-a9a3-e179a0796d34.png",
+      priceRange: "€20.00–€80.00",
+      unit: "шт",
+      sizes: [
+        { label: "2500 мм x 1220 мм x 3,6 мм", value: "3.6mm", price: 20 },
+        { label: "2500 мм x 1220 мм x 5 мм", value: "5mm", price: 25 },
+        { label: "2500 мм x 1220 мм x 9 мм", value: "9mm", price: 38 },
+        { label: "2500 мм x 1220 мм x 12 мм", value: "12mm", price: 48 },
+        { label: "2500 мм x 1220 мм x 15 мм", value: "15mm", price: 62 },
+        { label: "2500 мм x 1220 мм x 18 мм", value: "18mm", price: 72 },
+        { label: "2500 мм x 1220 мм x 22 мм", value: "22mm", price: 80 },
+      ],
+      isNew: true,
+      category: "Фанера"
+    },
+    {
       id: "plywood",
       title: "Фанера влагостойкая",
       description: "Влагостойкая фанера различных размеров и толщины",
@@ -358,7 +376,6 @@ const Materials = () => {
   
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  // Filter materials based on the selected category
   const filteredMaterials = activeCategory === "Все материалы" 
     ? materials 
     : materials.filter(material => material.category === activeCategory);
