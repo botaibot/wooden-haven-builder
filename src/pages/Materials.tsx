@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -108,9 +109,12 @@ const Materials = () => {
       <Navbar />
       
       <div 
-        className="relative py-16 bg-cover bg-center bg-no-repeat"
+        className="relative py-16"
         style={{
-          backgroundImage: "url('/lovable-uploads/50993a52-ddf8-4b27-a105-f7bdb868a185.png')"
+          backgroundImage: "url('/lovable-uploads/48c9ad1f-99f5-4a25-8872-403ade0c2296.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
