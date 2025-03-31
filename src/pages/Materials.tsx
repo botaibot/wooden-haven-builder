@@ -362,6 +362,21 @@ const Materials = () => {
       showCalculator: true
     },
     {
+      id: "imitation-brus",
+      title: "Эммитация бруса с соединением шип-паз",
+      description: "Выберите характеристики материала из доступных вариантов (цена зависит от качества) и добавьте его в корзину. В корзине вы можете указать площадь каждого товара в вашем заказе.",
+      imageUrl: "/lovable-uploads/7dbef968-1865-4d4c-87f9-e8329a8d5fb5.png",
+      priceRange: "€20,00–€27,00",
+      unit: "м²",
+      sizes: [
+        { label: "4000 мм x 116 мм x 19 мм", value: "19mm", price: 20, width: 116, length: 4000 },
+        { label: "4000 мм x 116 мм x 24 мм", value: "24mm", price: 27, width: 116, length: 4000 },
+      ],
+      isNew: true,
+      category: "Отделочные материалы",
+      showCalculator: true
+    },
+    {
       id: "plywood",
       title: "Фанера влагостойкая",
       description: "Влагостойкая фанера различных размеров и толщины",
@@ -396,15 +411,6 @@ const Materials = () => {
       priceRange: "от €20",
       unit: "м",
       category: "Брус и доска"
-    },
-    {
-      id: "imitation-brus",
-      title: "Имитация бруса",
-      description: "Доска с имитацией натурального бруса для отделки",
-      imageUrl: "https://images.unsplash.com/photo-1533155925277-bb0098f4b78d?q=80&w=1970",
-      priceRange: "от €9",
-      unit: "м²",
-      category: "Отделочные материалы"
     }
   ];
 
