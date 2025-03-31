@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +8,7 @@ import {
   CardContent,
   CardFooter
 } from "@/components/ui/card";
+import houses from "@/data/housesData";
 
 interface HouseCardProps {
   id: number;
@@ -49,50 +51,13 @@ const HouseCard = ({ id, title, imageUrl, area, price }: HouseCardProps) => {
 };
 
 const Houses = () => {
-  const houses = [
-    {
-      id: 1,
-      title: "Ecopino 60",
-      imageUrl: "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
-      area: "60 м²",
-      price: "от €75,000"
-    },
-    {
-      id: 2,
-      title: "Ecopino 50",
-      imageUrl: "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png",
-      area: "50 м²",
-      price: "от €70,000"
-    },
-    {
-      id: 3,
-      title: "Ecopino 25",
-      imageUrl: "/lovable-uploads/4501b6c8-2e0c-45cb-a4d0-53a0225e82ba.png",
-      area: "25 м²",
-      price: "от €45,000"
-    },
-    {
-      id: 4,
-      title: "Ecopino 25",
-      imageUrl: "/lovable-uploads/f6dc5a1e-aede-4698-911e-e45ebca21f9d.png",
-      area: "25 м²",
-      price: "от €45,000"
-    },
-    {
-      id: 5,
-      title: "Ecopino 25",
-      imageUrl: "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
-      area: "25 м²",
-      price: "от €45,000"
-    },
-    {
-      id: 6,
-      title: "Ecopino 42",
-      imageUrl: "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
-      area: "42 м²",
-      price: "от €50,000"
-    }
-  ];
+  const displayHouses = houses.map(house => ({
+    id: house.id,
+    title: house.title,
+    imageUrl: house.images[0],
+    area: house.area,
+    price: house.turnkeyCost
+  }));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -112,7 +77,7 @@ const Houses = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {houses.map((house) => (
+            {displayHouses.map((house) => (
               <HouseCard key={house.id} {...house} />
             ))}
           </div>

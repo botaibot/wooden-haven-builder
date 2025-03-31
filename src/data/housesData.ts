@@ -1,4 +1,3 @@
-
 export interface HouseData {
   id: number;
   title: string;
@@ -158,6 +157,25 @@ const houses: HouseData[] = [
       "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
     ],
     floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
+  },
+  {
+    id: 8,
+    title: "Black Eco Box",
+    area: "35 м²",
+    dimensions: "7 x 5 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "от 450 000 ₽",
+    warmContourCost: "Цену уточняйте",
+    turnkeyCost: "от 2 100 000 ₽",
+    images: [
+      "/lovable-uploads/aea18e32-2f4c-467e-801c-a6f8a3b67628.png"
+    ],
+    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   }
 ];
 

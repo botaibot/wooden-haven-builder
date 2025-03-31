@@ -45,7 +45,8 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  const featuredHouses = houses.slice(0, 6); // Get first 6 houses
+  // Увеличиваем количество отображаемых домов до 8, чтобы включить новый дом в галерею
+  const featuredHouses = houses.slice(0, 8);
 
   return (
     <section className="py-16 bg-wood-light/30">
