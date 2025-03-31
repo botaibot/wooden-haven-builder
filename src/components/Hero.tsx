@@ -29,26 +29,13 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Правая колонка с видео */}
+        {/* Правая колонка с изображением */}
         <div className="relative h-[400px] md:h-auto overflow-hidden rounded-xl shadow-xl">
-          <iframe 
-            src="https://streamable.com/e/sdagys?autoplay=1&muted=1" 
-            frameBorder="0" 
-            width="100%" 
-            height="100%" 
-            allowFullScreen 
+          <img 
+            src="/lovable-uploads/18ed6fd7-42fa-44a8-83a0-f5c39131b3aa.png" 
+            alt="Деревянные дома в горах" 
             className="absolute inset-0 w-full h-full object-cover"
-            allow="autoplay"
-          ></iframe>
-          
-          {/* Запасное изображение, только если видео не загрузится */}
-          <div className="absolute inset-0 z-[-1] bg-gray-200">
-            <img 
-              src="/lovable-uploads/fac2c745-0513-44c6-a1e9-5d0430c85ded.png" 
-              alt="Деревянные дома фон" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+          />
         </div>
       </div>
     </div>
