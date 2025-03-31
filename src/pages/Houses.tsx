@@ -20,8 +20,8 @@ interface HouseCardProps {
 
 const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProps) => {
   return (
-    <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <Link to={`/houses/${id}`} className="block">
+    <Card className="overflow-hidden shadow-md hover:shadow-lg transition-shadow h-full">
+      <Link to={`/houses/${id}`} className="block h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           <img 
             src={imageUrl} 
@@ -32,7 +32,7 @@ const HouseCard = ({ id, title, imageUrl, area, bedrooms, price }: HouseCardProp
             {area}
           </div>
         </div>
-        <CardContent className="p-6">
+        <CardContent className="p-6 flex-grow">
           <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
           <div className="flex justify-between items-center mb-4">
             <span className="text-gray-600">{bedrooms} спален</span>
