@@ -28,6 +28,9 @@ const Navbar = () => {
           <Link to="/houses" className="text-wood-darkest hover:text-nature-dark transition-colors">
             Дома
           </Link>
+          <Link to="/calculator" className="text-wood-darkest hover:text-nature-dark transition-colors">
+            Калькулятор
+          </Link>
           <Link to="/materials" className="text-wood-darkest hover:text-nature-dark transition-colors">
             Материалы
           </Link>
@@ -69,6 +72,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Дома
+            </Link>
+            <Link 
+              to="/calculator" 
+              className="text-wood-darkest hover:text-nature-dark py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Калькулятор
             </Link>
             <Link 
               to="/materials" 
