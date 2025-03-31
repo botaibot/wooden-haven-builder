@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from "react";
-import { Calculator, House, SquareUser, TreePalm, Warehouse } from "lucide-react";
+import { Calculator, House, SquareUser, TreePalm, Ruler } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
@@ -20,46 +21,45 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const formSchema = z.object({
-  houseType: z.string(),
-  houseSize: z.number().min(20).max(200),
-  materials: z.string(),
+  houseType: z.enum(["frame", "glued_beam"]),
+  width: z.number().min(3).max(15),
+  length: z.number().min(3).max(20),
+  thickness: z.string(),
   terrace: z.boolean(),
   terraceSize: z.number().min(0).max(100).optional(),
-  gazebo: z.boolean(),
-  gazeboSize: z.number().min(0).max(50).optional(),
+  canopy: z.boolean(),
+  canopySize: z.number().min(0).max(50).optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const PRICES = {
-  HOUSE_BASE_PRICE_PER_SQM: {
-    economy: 40000,
-    standard: 55000,
-    premium: 75000
+  BASE_PRICE_PER_SQM: {
+    frame: 550,
+    glued_beam: 800
   },
-  MATERIALS: {
-    pine: 1,
-    cedar: 1.3,
-    oak: 1.5
-  },
-  TERRACE_PRICE_PER_SQM: 25000,
-  GAZEBO_PRICE_PER_SQM: 30000
+  TERRACE_PRICE_PER_SQM: 300,
+  CANOPY_PRICE_PER_SQM: 300
 };
 
 const HouseCalculator = () => {
   const { toast } = useToast();
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalArea, setTotalArea] = useState(0);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   const defaultValues: FormValues = {
-    houseType: "standard",
-    houseSize: 50,
-    materials: "pine",
+    houseType: "frame",
+    width: 6,
+    length: 8,
+    thickness: "standard",
     terrace: false,
     terraceSize: 0,
-    gazebo: false,
-    gazeboSize: 0,
+    canopy: false,
+    canopySize: 0,
   };
 
   const form = useForm<FormValues>({
@@ -68,40 +68,62 @@ const HouseCalculator = () => {
   });
 
   const watchAllFields = form.watch();
+  const watchHouseType = form.watch("houseType");
   
   useEffect(() => {
     calculateTotalPrice(watchAllFields);
   }, [watchAllFields]);
 
+  useEffect(() => {
+    // Reset thickness when house type changes
+    if (watchHouseType === "frame") {
+      form.setValue("thickness", "standard");
+    } else {
+      form.setValue("thickness", "100mm");
+    }
+  }, [watchHouseType, form]);
+
   const calculateTotalPrice = (values: FormValues) => {
-    const houseBasePrice = PRICES.HOUSE_BASE_PRICE_PER_SQM[values.houseType as keyof typeof PRICES.HOUSE_BASE_PRICE_PER_SQM] || 0;
-    const materialMultiplier = PRICES.MATERIALS[values.materials as keyof typeof PRICES.MATERIALS] || 1;
-    const housePrice = values.houseSize * houseBasePrice * materialMultiplier;
+    const houseArea = values.width * values.length;
+    const basePrice = PRICES.BASE_PRICE_PER_SQM[values.houseType];
+    
+    // Apply thickness multiplier if needed
+    let thicknessMultiplier = 1;
+    if (values.houseType === "glued_beam" && values.thickness === "200mm") {
+      thicknessMultiplier = 1.2; // 20% increase for thicker beams
+    } else if (values.houseType === "frame" && values.thickness === "250mm") {
+      thicknessMultiplier = 1.15; // 15% increase for thicker frame
+    }
+    
+    const housePrice = houseArea * basePrice * thicknessMultiplier;
     
     const terracePrice = values.terrace && values.terraceSize 
       ? values.terraceSize * PRICES.TERRACE_PRICE_PER_SQM 
       : 0;
     
-    const gazeboPrice = values.gazebo && values.gazeboSize 
-      ? values.gazeboSize * PRICES.GAZEBO_PRICE_PER_SQM 
+    const canopyPrice = values.canopy && values.canopySize 
+      ? values.canopySize * PRICES.CANOPY_PRICE_PER_SQM 
       : 0;
     
-    const calculatedPrice = housePrice + terracePrice + gazeboPrice;
+    const calculatedPrice = housePrice + terracePrice + canopyPrice;
+    
+    setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
   };
 
   const onSubmit = (values: FormValues) => {
     toast({
       title: "Предварительный расчет стоимости",
-      description: `Общая стоимость: ${totalPrice.toLocaleString()} ₽`,
+      description: `Общая стоимость: ${formatCurrency(totalPrice)}`,
     });
     
     console.log("Form values:", values);
     console.log("Total price:", totalPrice);
+    console.log("Total area:", totalArea);
   };
 
   const formatCurrency = (value: number) => {
-    return value.toLocaleString() + " ₽";
+    return value.toLocaleString() + " €";
   };
 
   return (
@@ -115,7 +137,7 @@ const HouseCalculator = () => {
             </h2>
             <p className="text-muted-foreground">
               Укажите параметры вашего будущего дома, чтобы получить предварительную оценку стоимости.
-              Окончательная цена может отличаться и будет рассчитана после консультации.
+              Окончательная цена может отличаться и будет рассчитана после консультации со специалистом.
             </p>
           </div>
 
@@ -135,101 +157,146 @@ const HouseCalculator = () => {
                         defaultValue={field.value}
                         className="flex flex-col space-y-1"
                       >
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <FormItem className="flex items-center space-x-3 space-y-0 border rounded-md p-4">
                             <FormControl>
-                              <RadioGroupItem value="economy" />
+                              <RadioGroupItem value="frame" />
                             </FormControl>
                             <FormLabel className="font-normal">
-                              Эконом (40 000 ₽/м²)
+                              Каркасный дом (от 550 €/м²)
                             </FormLabel>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0 border rounded-md p-4">
                             <FormControl>
-                              <RadioGroupItem value="standard" />
+                              <RadioGroupItem value="glued_beam" />
                             </FormControl>
                             <FormLabel className="font-normal">
-                              Стандарт (55 000 ₽/м²)
-                            </FormLabel>
-                          </FormItem>
-                          <FormItem className="flex items-center space-x-3 space-y-0 border rounded-md p-4">
-                            <FormControl>
-                              <RadioGroupItem value="premium" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Премиум (75 000 ₽/м²)
+                              Дом из клееного бруса (от 800 €/м²)
                             </FormLabel>
                           </FormItem>
                         </div>
                       </RadioGroup>
                     </FormControl>
                     <FormDescription>
-                      Выберите комплектацию дома, влияющую на базовую стоимость.
+                      Выберите тип конструкции вашего будущего дома.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="houseSize"
-                render={({ field: { value, onChange } }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg font-medium flex items-center gap-2">
-                      <SquareUser className="h-5 w-5" /> Площадь дома
-                    </FormLabel>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <FormControl>
-                          <Slider
-                            value={[value]}
-                            min={20}
-                            max={200}
-                            step={1}
-                            onValueChange={(vals) => onChange(vals[0])}
-                            className="w-full"
-                          />
-                        </FormControl>
-                        <span className="ml-4 min-w-16 text-right">
-                          {value} м²
-                        </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
+                  control={form.control}
+                  name="width"
+                  render={({ field: { value, onChange } }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium flex items-center gap-2">
+                        <SquareUser className="h-5 w-5" /> Ширина дома (м)
+                      </FormLabel>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <FormControl>
+                            <Slider
+                              value={[value]}
+                              min={3}
+                              max={15}
+                              step={0.5}
+                              onValueChange={(vals) => onChange(vals[0])}
+                              className="w-full"
+                            />
+                          </FormControl>
+                          <span className="ml-4 min-w-16 text-right">
+                            {value} м
+                          </span>
+                        </div>
+                        <div className="flex justify-between text-xs text-muted-foreground">
+                          <span>3 м</span>
+                          <span>15 м</span>
+                        </div>
                       </div>
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>20 м²</span>
-                        <span>200 м²</span>
+                      <FormDescription>
+                        Укажите желаемую ширину дома.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="length"
+                  render={({ field: { value, onChange } }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium flex items-center gap-2">
+                        <SquareUser className="h-5 w-5" /> Длина дома (м)
+                      </FormLabel>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <FormControl>
+                            <Slider
+                              value={[value]}
+                              min={3}
+                              max={20}
+                              step={0.5}
+                              onValueChange={(vals) => onChange(vals[0])}
+                              className="w-full"
+                            />
+                          </FormControl>
+                          <span className="ml-4 min-w-16 text-right">
+                            {value} м
+                          </span>
+                        </div>
+                        <div className="flex justify-between text-xs text-muted-foreground">
+                          <span>3 м</span>
+                          <span>20 м</span>
+                        </div>
                       </div>
-                    </div>
-                    <FormDescription>
-                      Укажите желаемую площадь дома в квадратных метрах.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormDescription>
+                        Укажите желаемую длину дома.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-md border border-slate-100">
+                <h3 className="text-md font-medium mb-2">Площадь дома: {(form.watch("width") * form.watch("length")).toFixed(1)} м²</h3>
+              </div>
 
               <FormField
                 control={form.control}
-                name="materials"
+                name="thickness"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg font-medium flex items-center gap-2">
-                      <Warehouse className="h-5 w-5" /> Материал
+                      <Ruler className="h-5 w-5" /> Толщина {form.watch("houseType") === "frame" ? "каркаса" : "бруса"}
                     </FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Выберите материал" />
+                          <SelectValue placeholder="Выберите толщину" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="pine">Сосна (стандартная цена)</SelectItem>
-                        <SelectItem value="cedar">Кедр (+30% к стоимости)</SelectItem>
-                        <SelectItem value="oak">Дуб (+50% к стоимости)</SelectItem>
+                        {form.watch("houseType") === "frame" ? (
+                          <>
+                            <SelectItem value="standard">Стандарт (200 мм)</SelectItem>
+                            <SelectItem value="250mm">Усиленный (250 мм, +15% к стоимости)</SelectItem>
+                          </>
+                        ) : (
+                          <>
+                            <SelectItem value="100mm">Стандарт (100 мм)</SelectItem>
+                            <SelectItem value="200mm">Усиленный (200 мм, +20% к стоимости)</SelectItem>
+                          </>
+                        )}
                       </SelectContent>
                     </Select>
                     <FormDescription>
-                      Выберите материал для строительства дома.
+                      {form.watch("houseType") === "glued_beam" && (
+                        <span className="text-amber-600">Уточните с менеджером возможность изготовления из бруса 200мм (требуется дополнительное время на доставку).</span>
+                      )}
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -253,7 +320,7 @@ const HouseCalculator = () => {
                       </FormControl>
                     </div>
                     <FormDescription>
-                      Добавить террасу к дому (25 000 ₽/м²)
+                      Добавить террасу к дому (300 €/м²)
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -299,12 +366,12 @@ const HouseCalculator = () => {
 
               <FormField
                 control={form.control}
-                name="gazebo"
+                name="canopy"
                 render={({ field }) => (
                   <FormItem className="space-y-4">
                     <div className="flex items-center justify-between">
                       <FormLabel className="text-lg font-medium flex items-center gap-2">
-                        <TreePalm className="h-5 w-5" /> Беседка
+                        <TreePalm className="h-5 w-5" /> Навес
                       </FormLabel>
                       <FormControl>
                         <Switch
@@ -314,20 +381,20 @@ const HouseCalculator = () => {
                       </FormControl>
                     </div>
                     <FormDescription>
-                      Добавить беседку (30 000 ₽/м²)
+                      Добавить навес (300 €/м²)
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              {form.watch("gazebo") && (
+              {form.watch("canopy") && (
                 <FormField
                   control={form.control}
-                  name="gazeboSize"
+                  name="canopySize"
                   render={({ field: { value, onChange } }) => (
                     <FormItem>
-                      <FormLabel>Площадь беседки</FormLabel>
+                      <FormLabel>Площадь навеса</FormLabel>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <FormControl>
@@ -350,7 +417,7 @@ const HouseCalculator = () => {
                         </div>
                       </div>
                       <FormDescription>
-                        Укажите желаемую площадь беседки в квадратных метрах.
+                        Укажите желаемую площадь навеса в квадратных метрах.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -359,15 +426,76 @@ const HouseCalculator = () => {
               )}
 
               <div className="pt-6 border-t">
-                <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">Предварительная стоимость:</p>
-                    <p className="text-2xl font-bold text-wood-dark">{formatCurrency(totalPrice)}</p>
+                <Collapsible 
+                  open={isDetailsOpen} 
+                  onOpenChange={setIsDetailsOpen}
+                  className="mb-4"
+                >
+                  <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 mb-4">
+                    <div>
+                      <p className="text-sm font-medium text-muted-foreground">Предварительная стоимость:</p>
+                      <p className="text-2xl font-bold text-wood-dark">{formatCurrency(totalPrice)}</p>
+                    </div>
+                    <CollapsibleTrigger asChild>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="text-sm"
+                      >
+                        {isDetailsOpen ? "Скрыть детали" : "Показать детали"}
+                      </Button>
+                    </CollapsibleTrigger>
                   </div>
-                  <Button type="submit" className="bg-wood text-white hover:bg-wood-dark">
-                    Получить расчет
-                  </Button>
-                </div>
+
+                  <CollapsibleContent className="space-y-2">
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="text-muted-foreground">Тип дома:</div>
+                      <div>
+                        {form.watch("houseType") === "frame" 
+                          ? "Каркасный дом" 
+                          : "Дом из клееного бруса"}
+                      </div>
+                      
+                      <div className="text-muted-foreground">Базовая стоимость:</div>
+                      <div>
+                        {formatCurrency(PRICES.BASE_PRICE_PER_SQM[form.watch("houseType")])} за м²
+                      </div>
+                      
+                      <div className="text-muted-foreground">Размеры дома:</div>
+                      <div>
+                        {form.watch("width")} × {form.watch("length")} м
+                      </div>
+                      
+                      <div className="text-muted-foreground">Площадь дома:</div>
+                      <div>
+                        {(form.watch("width") * form.watch("length")).toFixed(1)} м²
+                      </div>
+                      
+                      {form.watch("terrace") && (
+                        <>
+                          <div className="text-muted-foreground">Площадь террасы:</div>
+                          <div>{form.watch("terraceSize")} м²</div>
+                        </>
+                      )}
+                      
+                      {form.watch("canopy") && (
+                        <>
+                          <div className="text-muted-foreground">Площадь навеса:</div>
+                          <div>{form.watch("canopySize")} м²</div>
+                        </>
+                      )}
+                      
+                      <div className="text-muted-foreground">Общая площадь:</div>
+                      <div>
+                        {totalArea.toFixed(1)} м²
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <Button type="submit" className="bg-wood text-white hover:bg-wood-dark w-full md:w-auto">
+                  Получить детальный расчет
+                </Button>
               </div>
             </form>
           </Form>
