@@ -46,6 +46,7 @@ interface MaterialCardProps {
   unit?: string;
   sizes?: SizeOption[];
   isNew?: boolean;
+  category: string;
 }
 
 const MaterialCard = ({ 
@@ -56,7 +57,8 @@ const MaterialCard = ({
   priceRange,
   unit = "м", 
   sizes = [],
-  isNew = false
+  isNew = false,
+  category
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
@@ -229,7 +231,8 @@ const Materials = () => {
         { label: "3900 мм x 48 мм x 38 мм", value: "48x38", price: 5.75 },
         { label: "3900 мм x 48 мм x 23 мм", value: "48x23", price: 3.5 },
       ],
-      isNew: true
+      isNew: true,
+      category: "Брус и доска"
     },
     {
       id: "planed-beam",
@@ -247,7 +250,8 @@ const Materials = () => {
         { label: "3900 мм x 195 мм x 195 мм", value: "195x195", price: 94 },
         { label: "3900 мм x 200 мм x 200 мм", value: "200x200", price: 110 },
       ],
-      isNew: true
+      isNew: true,
+      category: "Брус и доска"
     },
     {
       id: "beam-with-grooves",
@@ -260,7 +264,8 @@ const Materials = () => {
         { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 65 },
         { label: "6000 мм x 200 мм x 100 мм", value: "200x100", price: 90 },
       ],
-      isNew: true
+      isNew: true,
+      category: "Брус и доска"
     },
     {
       id: "glued-beam",
@@ -279,7 +284,8 @@ const Materials = () => {
         { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 110 },
         { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 96 },
       ],
-      isNew: true
+      isNew: true,
+      category: "Брус и доска"
     },
     {
       id: "plywood",
@@ -287,7 +293,8 @@ const Materials = () => {
       description: "Влагостойкая фанера различных размеров и толщины",
       imageUrl: "https://images.unsplash.com/photo-1595514535415-dae8970c1406?q=80&w=1932",
       priceRange: "от €15",
-      unit: "м²"
+      unit: "м²",
+      category: "Фанера"
     },
     {
       id: "obrez-doska",
@@ -295,7 +302,8 @@ const Materials = () => {
       description: "Обрезная доска из различных пород дерева для строительства",
       imageUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=1970",
       priceRange: "от €6",
-      unit: "м"
+      unit: "м",
+      category: "Брус и доска"
     },
     {
       id: "vagonka",
@@ -303,7 +311,8 @@ const Materials = () => {
       description: "Высококачественная вагонка для внутренней и внешней отделки",
       imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
       priceRange: "от €7",
-      unit: "м²"
+      unit: "м²",
+      category: "Вагонка"
     },
     {
       id: "terras-doska",
@@ -311,7 +320,8 @@ const Materials = () => {
       description: "Долговечная террасная доска для наружного применения",
       imageUrl: "https://images.unsplash.com/photo-1594124303341-eb05b08258a7?q=80&w=1974",
       priceRange: "от €12",
-      unit: "м²"
+      unit: "м²",
+      category: "Отделочные материалы"
     },
     {
       id: "block-haus",
@@ -319,7 +329,8 @@ const Materials = () => {
       description: "Декоративная обшивка для фасадов и внутренней отделки",
       imageUrl: "https://images.unsplash.com/photo-1594237258022-a74b1fc8e0b9?q=80&w=1974",
       priceRange: "от €10",
-      unit: "м²"
+      unit: "м²",
+      category: "Отделочные материалы"
     },
     {
       id: "kleeny-brus",
@@ -327,7 +338,8 @@ const Materials = () => {
       description: "Высокопрочный клееный брус для долговечных конструкций",
       imageUrl: "https://images.unsplash.com/photo-1593195749622-8754ff0b69db?q=80&w=1974",
       priceRange: "от €20",
-      unit: "м"
+      unit: "м",
+      category: "Брус и доска"
     },
     {
       id: "imitation-brus",
@@ -335,7 +347,8 @@ const Materials = () => {
       description: "Доска с имитацией натурального бруса для отделки",
       imageUrl: "https://images.unsplash.com/photo-1533155925277-bb0098f4b78d?q=80&w=1970",
       priceRange: "от €9",
-      unit: "м²"
+      unit: "м²",
+      category: "Отделочные материалы"
     }
   ];
 
@@ -344,6 +357,11 @@ const Materials = () => {
   ];
   
   const [activeCategory, setActiveCategory] = useState(categories[0]);
+
+  // Filter materials based on the selected category
+  const filteredMaterials = activeCategory === "Все материалы" 
+    ? materials 
+    : materials.filter(material => material.category === activeCategory);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -391,7 +409,7 @@ const Materials = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {materials.map((material, index) => (
+            {filteredMaterials.map((material, index) => (
               <MaterialCard key={index} {...material} />
             ))}
           </div>
