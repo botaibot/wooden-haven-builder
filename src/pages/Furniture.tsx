@@ -3,32 +3,32 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { sofa, tool } from "lucide-react";
+import { Sofa, Table, Bed, Lamp } from "lucide-react";
 
 const Furniture = () => {
   const furnitureItems = [
     {
       title: "Столы из массива дерева",
       description: "Прочные и элегантные столы различных размеров из натурального дерева",
-      icon: tool,
+      icon: Table,
       imageUrl: "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png"
     },
     {
       title: "Стулья и кресла",
       description: "Комфортные стулья и кресла, идеально дополняющие интерьер деревянного дома",
-      icon: sofa,
+      icon: Sofa,
       imageUrl: "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png"
     },
     {
       title: "Кровати и тумбы",
       description: "Спальная мебель из экологически чистых материалов",
-      icon: sofa,
+      icon: Bed,
       imageUrl: "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png"
     },
     {
       title: "Лавки и скамьи",
       description: "Функциональные и стильные лавки для сада и дома",
-      icon: tool,
+      icon: Lamp,
       imageUrl: "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png"
     }
   ];
