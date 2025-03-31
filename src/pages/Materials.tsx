@@ -1,8 +1,7 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Package, ChevronDown } from "lucide-react";
+import { Package, ChevronDown, Plus, Minus, ShoppingCart } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -16,6 +15,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Collapsible,
   CollapsibleContent,
@@ -26,31 +26,79 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import { useCart } from "@/context/CartContext";
+import Cart from "@/components/Cart";
+import { useToast } from "@/hooks/use-toast";
+
+interface SizeOption {
+  label: string;
+  value: string;
+  price: number;
+}
 
 interface MaterialCardProps {
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
-  price: string;
+  priceRange?: string;
   unit?: string;
-  sizes?: { label: string; value: string }[];
+  sizes?: SizeOption[];
   isNew?: boolean;
 }
 
 const MaterialCard = ({ 
+  id,
   title, 
   description, 
   imageUrl, 
-  price, 
+  priceRange,
   unit = "м", 
   sizes = [],
   isNew = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState(sizes.length > 0 ? sizes[0].value : "");
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+  const { toast } = useToast();
 
   const handleSizeChange = (value: string) => {
     setSelectedSize(value);
+  };
+
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity(prev => prev > 1 ? prev - 1 : 1);
+  };
+
+  const getSelectedSizePrice = () => {
+    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
+    return selectedSizeObj ? selectedSizeObj.price : 0;
+  };
+
+  const getSelectedSizeLabel = () => {
+    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
+    return selectedSizeObj ? selectedSizeObj.label : "";
+  };
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      title,
+      size: getSelectedSizeLabel(),
+      price: getSelectedSizePrice(),
+      quantity,
+      imageUrl
+    });
+
+    toast({
+      title: "Добавлено в корзину",
+      description: `${title} (${getSelectedSizeLabel()}) - ${quantity} шт.`,
+    });
   };
 
   return (
@@ -80,23 +128,73 @@ const MaterialCard = ({
               <SelectContent>
                 {sizes.map((size, index) => (
                   <SelectItem key={index} value={size.value}>
-                    {size.label}
+                    {size.label} - €{size.price.toFixed(2)}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
         )}
+
+        {sizes.length > 0 && (
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-sm text-gray-500">Количество:</span>
+            <div className="flex items-center">
+              <Button 
+                type="button" 
+                variant="outline" 
+                size="icon" 
+                className="h-8 w-8 rounded-r-none"
+                onClick={decrementQuantity}
+              >
+                <Minus className="h-3 w-3" />
+              </Button>
+              <Input
+                type="number"
+                min={1}
+                value={quantity}
+                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                className="h-8 w-16 rounded-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              />
+              <Button 
+                type="button" 
+                variant="outline" 
+                size="icon" 
+                className="h-8 w-8 rounded-l-none"
+                onClick={incrementQuantity}
+              >
+                <Plus className="h-3 w-3" />
+              </Button>
+            </div>
+          </div>
+        )}
         
         <div className="flex justify-between items-center">
-          <span className="font-bold text-nature-dark">{price} {unit && `/ ${unit}`}</span>
-          <a 
-            href="/contact"
-            className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
-          >
-            <Package size={16} />
-            <span>Заказать</span>
-          </a>
+          <span className="font-bold text-nature-dark">
+            {sizes.length > 0 
+              ? `€${getSelectedSizePrice().toFixed(2)} / шт`
+              : priceRange 
+                ? priceRange 
+                : `от €8`} 
+            {unit && !sizes.length && `/ ${unit}`}
+          </span>
+          {sizes.length > 0 ? (
+            <Button
+              onClick={handleAddToCart}
+              className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+            >
+              <ShoppingCart size={16} />
+              <span>В корзину</span>
+            </Button>
+          ) : (
+            <a 
+              href="/contact"
+              className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+            >
+              <Package size={16} />
+              <span>Заказать</span>
+            </a>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -104,28 +202,29 @@ const MaterialCard = ({
 };
 
 const Materials = () => {
-  // Updated materials array with new data
   const materials = [
     {
+      id: "brushed-plank",
       title: "Брашированная планка",
       description: "Брашированная планка – универсальное изделие из древесины. Применяется для деревянных конструкций, деревянных решеток, оснований полов. На обрешетку можно монтировать: имитацию бруса, половую доску, строганную доску.\n\nЦена указана за единицу. Выберите толщину рейки (20 или 45 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
       imageUrl: "/lovable-uploads/f79d17e0-4d4c-4c28-b9e9-e29fa9dcca20.png",
-      price: "от €8",
+      priceRange: "от €3,50 до €20",
       unit: "шт",
       sizes: [
-        { label: "3900 мм x 70 мм x 70 мм", value: "70x70" },
-        { label: "3900 мм x 78 мм x 48 мм", value: "78x48" },
-        { label: "3900 мм x 48 мм x 48 мм", value: "48x48" },
-        { label: "3900 мм x 48 мм x 38 мм", value: "48x38" },
-        { label: "3900 мм x 48 мм x 23 мм", value: "48x23" },
+        { label: "3900 мм x 70 мм x 70 мм", value: "70x70", price: 20 },
+        { label: "3900 мм x 78 мм x 48 мм", value: "78x48", price: 11.8 },
+        { label: "3900 мм x 48 мм x 48 мм", value: "48x48", price: 7.25 },
+        { label: "3900 мм x 48 мм x 38 мм", value: "48x38", price: 5.75 },
+        { label: "3900 мм x 48 мм x 23 мм", value: "48x23", price: 3.5 },
       ],
       isNew: true
     },
     {
+      id: "plywood",
       title: "Фанера влагостойкая",
       description: "Влагостойкая фанера различных размеров и толщины",
       imageUrl: "https://images.unsplash.com/photo-1595514535415-dae8970c1406?q=80&w=1932",
-      price: "от €15",
+      priceRange: "от €15",
       unit: "м²"
     },
     {
@@ -181,6 +280,10 @@ const Materials = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      
+      <div className="fixed top-20 right-6 z-30">
+        <Cart />
+      </div>
       
       <div 
         className="relative py-16"

@@ -15,6 +15,7 @@ import Furniture from "./pages/Furniture";
 import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
 import ChatAssistant from "./components/ChatAssistant";
+import { CartProvider } from "./context/CartContext";
 
 // Компонент для прокрутки вверх при изменении маршрута
 const ScrollToTop = () => {
@@ -32,24 +33,26 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/houses" element={<Houses />} />
-          <Route path="/houses/:id" element={<HouseDetail />} />
-          <Route path="/materials" element={<Materials />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/furniture" element={<Furniture />} />
-          <Route path="/calculator" element={<Calculator />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <ChatAssistant />
-      </BrowserRouter>
+      <CartProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/houses" element={<Houses />} />
+            <Route path="/houses/:id" element={<HouseDetail />} />
+            <Route path="/materials" element={<Materials />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/furniture" element={<Furniture />} />
+            <Route path="/calculator" element={<Calculator />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <ChatAssistant />
+        </BrowserRouter>
+      </CartProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
