@@ -1,13 +1,17 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { HouseData } from "@/data/housesData";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface FloorPlanSectionProps {
   house: HouseData;
 }
 
 const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
+  const [activeFloor, setActiveFloor] = useState(1);
+  
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
       <div className="p-6 md:p-8">
@@ -51,22 +55,32 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
           </div>
         </div>
         
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <div className="flex items-center justify-center">
-            <Button 
-              className="bg-wood-dark text-white rounded-full px-6 py-2 hover:bg-wood-darkest transition-colors"
-            >
-              1 этаж
-            </Button>
+        {house.floors > 1 && (
+          <div className="bg-gray-50 p-4 rounded-lg mb-6">
+            <div className="flex items-center justify-center space-x-4">
+              {Array.from({ length: house.floors }, (_, i) => i + 1).map((floor) => (
+                <Button 
+                  key={floor}
+                  className={activeFloor === floor ? "bg-wood-dark text-white" : "bg-gray-200 text-gray-800"}
+                  onClick={() => setActiveFloor(floor)}
+                >
+                  {floor} этаж
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
-      <img 
-        src={house.floorPlanImage} 
-        alt="План этажа" 
-        className="w-full h-auto"
-      />
+      <div className="p-4 bg-gray-50">
+        <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-white border border-gray-200">
+          <img 
+            src={house.floorPlanImage} 
+            alt="План этажа" 
+            className="w-full h-full object-contain"
+          />
+        </AspectRatio>
+      </div>
     </div>
   );
 };

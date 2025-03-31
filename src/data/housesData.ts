@@ -139,6 +139,25 @@ const houses: HouseData[] = [
       "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+  },
+  {
+    id: 7,
+    title: "Ecopino 18",
+    area: "18 м²",
+    dimensions: "7.6 x 2.4 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "от 350 000 ₽",
+    warmContourCost: "Цену уточняйте",
+    turnkeyCost: "от 1 700 000 ₽",
+    images: [
+      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+    ],
+    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
   }
 ];
 
