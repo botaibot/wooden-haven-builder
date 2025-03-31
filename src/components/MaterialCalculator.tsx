@@ -13,6 +13,7 @@ const MaterialCalculator = ({ width, length }: MaterialCalculatorProps) => {
   const [wallHeight, setWallHeight] = useState<number>(0);
   const [totalArea, setTotalArea] = useState<number>(0);
   const [piecesNeeded, setPiecesNeeded] = useState<number>(0);
+  const [piecesWithBuffer, setPiecesWithBuffer] = useState<number>(0);
 
   useEffect(() => {
     if (wallWidth > 0 && wallHeight > 0) {
@@ -24,9 +25,13 @@ const MaterialCalculator = ({ width, length }: MaterialCalculatorProps) => {
       const pieceAreaInSqM = (width * length) / 1000000;
       const pieces = area / pieceAreaInSqM;
       setPiecesNeeded(Math.ceil(pieces)); // Round up to ensure enough pieces
+      
+      // Calculate with 10% buffer
+      setPiecesWithBuffer(Math.ceil(pieces * 1.1));
     } else {
       setTotalArea(0);
       setPiecesNeeded(0);
+      setPiecesWithBuffer(0);
     }
   }, [wallWidth, wallHeight, width, length]);
 
@@ -72,8 +77,11 @@ const MaterialCalculator = ({ width, length }: MaterialCalculatorProps) => {
           <p className="font-medium">
             Необходимое количество: <span className="text-nature-dark">{piecesNeeded} шт.</span>
           </p>
+          <p className="font-medium">
+            С запасом 10%: <span className="text-nature-dark">{piecesWithBuffer} шт.</span>
+          </p>
           <p className="text-xs text-gray-500 mt-1">
-            * Рекомендуем добавить 5-10% запаса на подрезку
+            * Рекомендуем добавить запас на подрезку
           </p>
         </div>
       )}
