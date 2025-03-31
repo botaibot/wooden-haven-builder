@@ -1,32 +1,95 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Package } from "lucide-react";
+import { Package, ChevronDown } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
 interface MaterialCardProps {
   title: string;
   description: string;
   imageUrl: string;
   price: string;
-  unit: string;
+  unit?: string;
+  sizes?: { label: string; value: string }[];
+  isNew?: boolean;
 }
 
-const MaterialCard = ({ title, description, imageUrl, price, unit }: MaterialCardProps) => {
+const MaterialCard = ({ 
+  title, 
+  description, 
+  imageUrl, 
+  price, 
+  unit = "м", 
+  sizes = [],
+  isNew = false
+}: MaterialCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedSize, setSelectedSize] = useState(sizes.length > 0 ? sizes[0].value : "");
+
+  const handleSizeChange = (value: string) => {
+    setSelectedSize(value);
+  };
+
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="aspect-[3/2] overflow-hidden">
+    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+      <div className="aspect-[3/2] overflow-hidden relative">
         <img 
           src={imageUrl} 
           alt={title} 
           className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
         />
+        {isNew && (
+          <div className="absolute top-4 left-4 bg-nature-dark text-white px-3 py-1 rounded-full text-sm">
+            Новинка
+          </div>
+        )}
       </div>
-      <div className="p-6">
+      <CardContent className="p-6">
         <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4 h-12 line-clamp-2">{description}</p>
+        <p className="text-gray-600 mb-4 h-24 overflow-y-auto">{description}</p>
+        
+        {sizes.length > 0 && (
+          <div className="mb-4">
+            <Select value={selectedSize} onValueChange={handleSizeChange}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Выберите размер" />
+              </SelectTrigger>
+              <SelectContent>
+                {sizes.map((size, index) => (
+                  <SelectItem key={index} value={size.value}>
+                    {size.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+        
         <div className="flex justify-between items-center">
-          <span className="font-bold text-nature-dark">{price} / {unit}</span>
+          <span className="font-bold text-nature-dark">{price} {unit && `/ ${unit}`}</span>
           <a 
             href="/contact"
             className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
@@ -35,19 +98,28 @@ const MaterialCard = ({ title, description, imageUrl, price, unit }: MaterialCar
             <span>Заказать</span>
           </a>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
 const Materials = () => {
+  // Updated materials array with new data
   const materials = [
     {
-      title: "Брус строганный",
-      description: "Высококачественный строганный брус для строительства и отделки",
-      imageUrl: "https://images.unsplash.com/photo-1622041179528-0ef118517dc0?q=80&w=1965",
+      title: "Брашированная планка",
+      description: "Брашированная планка – универсальное изделие из древесины. Применяется для деревянных конструкций, деревянных решеток, оснований полов. На обрешетку можно монтировать: имитацию бруса, половую доску, строганную доску.\n\nЦена указана за единицу. Выберите толщину рейки (20 или 45 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      imageUrl: "/lovable-uploads/f79d17e0-4d4c-4c28-b9e9-e29fa9dcca20.png",
       price: "от €8",
-      unit: "м"
+      unit: "шт",
+      sizes: [
+        { label: "3900 мм x 70 мм x 70 мм", value: "70x70" },
+        { label: "3900 мм x 78 мм x 48 мм", value: "78x48" },
+        { label: "3900 мм x 48 мм x 48 мм", value: "48x48" },
+        { label: "3900 мм x 48 мм x 38 мм", value: "48x38" },
+        { label: "3900 мм x 48 мм x 23 мм", value: "48x23" },
+      ],
+      isNew: true
     },
     {
       title: "Фанера влагостойкая",
@@ -103,6 +175,8 @@ const Materials = () => {
   const categories = [
     "Все материалы", "Брус и доска", "Фанера", "Вагонка", "Отделочные материалы"
   ];
+  
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -134,17 +208,18 @@ const Materials = () => {
               <button 
                 key={index}
                 className={`px-4 py-2 rounded-full text-sm ${
-                  index === 0 
+                  category === activeCategory
                     ? "bg-wood text-white" 
                     : "bg-gray-100 text-gray-700 hover:bg-wood-light"
                 }`}
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </button>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {materials.map((material, index) => (
               <MaterialCard key={index} {...material} />
             ))}
