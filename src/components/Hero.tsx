@@ -30,16 +30,16 @@ const Hero = () => {
         </div>
         
         {/* Правая колонка с видео */}
-        <div className="relative h-[400px] md:h-full overflow-hidden rounded-xl shadow-xl">
-          <div className="w-full h-full">
+        <div className="relative h-[400px] md:h-auto overflow-hidden rounded-xl shadow-xl">
+          <div className="w-full h-full absolute inset-0">
             <iframe 
               src="https://streamable.com/e/sdagys" 
               frameBorder="0" 
               width="100%" 
               height="100%" 
               allowFullScreen 
-              className="w-full h-full"
-              style={{ aspectRatio: '16/9', objectFit: 'cover' }}
+              className="w-full h-full absolute inset-0"
+              style={{ objectFit: 'cover' }}
             ></iframe>
           </div>
           
