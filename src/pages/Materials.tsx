@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -239,11 +240,11 @@ const Materials = () => {
   const materials = [
     {
       id: "terrace-deck",
-      title: "Стол на террасе",
+      title: "Терсаная доска",
       description: "Подходит для мощения террас, патио и зон вокруг бассейнов.\n\nПрозрачная пропитка на водной основе на основе льняного масла для защиты от гниения, насекомых и термитов.\n\nЦена указана за м². Выберите характеристики материала из доступных вариантов (цена зависит от качества) и добавьте его в корзину.\n\nДля расчета необходимого количества укажите размеры длины и ширины желаемой стены или потолка.",
       imageUrl: [
-        "/lovable-uploads/9a974ac2-e520-4345-8e66-d3872fbfaf6d.png",
-        "/lovable-uploads/a4bad22a-e873-43ad-aab0-b308d5408225.png"
+        "/lovable-uploads/da0cb834-35f3-4fb7-b7cf-64234451cd14.png",
+        "/lovable-uploads/12661628-7cf5-44fc-a5e3-934f355a0178.png"
       ],
       priceRange: "€24,50",
       unit: "м²",
