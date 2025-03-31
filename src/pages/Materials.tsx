@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -258,6 +259,25 @@ const Materials = () => {
       sizes: [
         { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 65 },
         { label: "6000 мм x 200 мм x 100 мм", value: "200x100", price: 90 },
+      ],
+      isNew: true
+    },
+    {
+      id: "glued-beam",
+      title: "Клееный брус из северной ели",
+      description: "Клееный брус – универсальный строительный материал из экологически чистой древесины. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На клееный брус, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. Выберите ширину и толщину балки (95 x 95, 60 x 140, 80 x 160, 80 x 200, 120 x 120) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      imageUrl: "https://images.unsplash.com/photo-1593195749622-8754ff0b69db?q=80&w=1974",
+      priceRange: "€48.00–€110.00",
+      unit: "шт",
+      sizes: [
+        { label: "6000 мм x 100 мм x 100 мм", value: "100x100", price: 64 },
+        { label: "6000 мм x 120 мм x 60 мм", value: "120x60", price: 48 },
+        { label: "6000 мм x 140 мм x 60 мм", value: "140x60", price: 63 },
+        { label: "6000 мм x 160 мм x 60 мм", value: "160x60", price: 65 },
+        { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 80 },
+        { label: "6000 мм x 160 мм x 80 мм", value: "160x80", price: 98 },
+        { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 110 },
+        { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 96 },
       ],
       isNew: true
     },
