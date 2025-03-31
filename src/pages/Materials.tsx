@@ -108,7 +108,15 @@ const Materials = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/50993a52-ddf8-4b27-a105-f7bdb868a185.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+      <div 
+        className="relative py-16 bg-gray-800" 
+        style={{
+          backgroundImage: "url('/lovable-uploads/50993a52-ddf8-4b27-a105-f7bdb868a185.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Строительные материалы</h1>
