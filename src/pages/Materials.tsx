@@ -30,6 +30,7 @@ import { useCart } from "@/context/CartContext";
 import Cart from "@/components/Cart";
 import { useToast } from "@/hooks/use-toast";
 import MaterialCalculator from "@/components/MaterialCalculator";
+import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 
 interface SizeOption {
   label: string;
@@ -43,7 +44,7 @@ interface MaterialCardProps {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl: string | string[];
   priceRange?: string;
   unit?: string;
   sizes?: SizeOption[];
@@ -118,7 +119,7 @@ const MaterialCard = ({
       size: getSelectedSizeLabel(),
       price: getSelectedSizePrice(),
       quantity,
-      imageUrl
+      imageUrl: Array.isArray(imageUrl) ? imageUrl[0] : imageUrl
     });
 
     toast({
@@ -127,20 +128,18 @@ const MaterialCard = ({
     });
   };
 
+  const images = Array.isArray(imageUrl) ? imageUrl : [imageUrl];
+
   return (
     <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="aspect-[3/2] overflow-hidden relative">
-        <img 
-          src={imageUrl} 
-          alt={title} 
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-        {isNew && (
-          <div className="absolute top-4 left-4 bg-nature-dark text-white px-3 py-1 rounded-full text-sm">
-            Новинка
-          </div>
-        )}
-      </div>
+      <MaterialCardCarousel images={images} alt={title} />
+      
+      {isNew && (
+        <div className="absolute top-4 left-4 bg-nature-dark text-white px-3 py-1 rounded-full text-sm">
+          Новинка
+        </div>
+      )}
+      
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
         <p className="text-gray-600 mb-4 h-24 overflow-y-auto">{description}</p>
@@ -239,21 +238,24 @@ const MaterialCard = ({
 const Materials = () => {
   const materials = [
     {
-      id: "brushed-plank",
-      title: "Брашированная планка",
-      description: "Брашированная планка – универсальное изделие из древесины. Применяется для деревянных конструкций, деревянных решеток, оснований полов. На обрешетку можно монтировать: имитацию бруса, половую доску, строганную доску.\n\nЦена указана за единицу. Выберите толщину рейки (20 или 45 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
-      imageUrl: "/lovable-uploads/f79d17e0-4d4c-4c28-b9e9-e29fa9dcca20.png",
-      priceRange: "от €3,50 до €20",
-      unit: "шт",
+      id: "brushed-board",
+      title: "Брашированная доска",
+      description: "Выберите характеристики материала из доступных вариантов (цена зависит от качества) и добавьте его в корзину. В корзине вы можете указать площадь каждого товара в вашем заказе.",
+      imageUrl: [
+        "/lovable-uploads/20da3d85-e28a-4101-baf0-683c9934ec19.png",
+        "/lovable-uploads/c4e70f89-b63e-4f44-ab64-59cabc4c92d3.png"
+      ],
+      priceRange: "€8,50–€17,00",
+      unit: "м²",
       sizes: [
-        { label: "3900 мм x 70 мм x 70 мм", value: "70x70", price: 20 },
-        { label: "3900 мм x 78 мм x 48 мм", value: "78x48", price: 11.8 },
-        { label: "3900 мм x 48 мм x 48 мм", value: "48x48", price: 7.25 },
-        { label: "3900 мм x 48 мм x 38 мм", value: "48x38", price: 5.75 },
-        { label: "3900 мм x 48 мм x 23 мм", value: "48x23", price: 3.5 },
+        { label: "3900 мм x 96 мм x 19 мм", value: "96mm", price: 8.5, width: 96, length: 3900 },
+        { label: "3900 мм x 116 мм x 19 мм", value: "116mm", price: 10.5, width: 116, length: 3900 },
+        { label: "3900 мм x 146 мм x 19 мм", value: "146mm", price: 12.5, width: 146, length: 3900 },
+        { label: "3900 мм x 196 мм x 19 мм", value: "196mm", price: 17, width: 196, length: 3900 },
       ],
       isNew: true,
-      category: "Брус и доска"
+      category: "Отделочные материалы",
+      showCalculator: true
     },
     {
       id: "planed-beam",
@@ -277,7 +279,7 @@ const Materials = () => {
     {
       id: "beam-with-grooves",
       title: "Брус из северной ели с пазами и гребнями",
-      description: "Строганный брус – универсальный строительный материал из экологически чистой древесины. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На балку, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. Выберите толщи��у балки (60 или 100 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      description: "Строганный брус – универсальный строительный материал из экологически чистой древесины. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На балку, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. ��ыберите толщи��у балки (60 или 100 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
       imageUrl: "/lovable-uploads/ac34849d-7441-404a-b84d-d57fed166458.png",
       priceRange: "€65.00–€90.00",
       unit: "шт",
