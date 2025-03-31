@@ -10,6 +10,7 @@ import HouseDetail from "./pages/HouseDetail";
 import Materials from "./pages/Materials";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Furniture from "./pages/Furniture";
 import NotFound from "./pages/NotFound";
 import ChatAssistant from "./components/ChatAssistant";
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/materials" element={<Materials />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/furniture" element={<Furniture />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
