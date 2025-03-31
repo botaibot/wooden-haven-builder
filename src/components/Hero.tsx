@@ -29,32 +29,28 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Правая колонка для анимации */}
+        {/* Правая колонка с видео */}
         <div className="relative h-[400px] md:h-full overflow-hidden rounded-xl shadow-xl">
-          {/* Для MP4 видео */}
-          <video 
-            className="w-full h-full object-cover" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="/path-to-your-video.mp4" type="video/mp4" />
-            {/* Если видео не загрузится, покажем статичный фон */}
+          <div className="w-full h-full">
+            <iframe 
+              src="https://streamable.com/e/sdagys" 
+              frameBorder="0" 
+              width="100%" 
+              height="100%" 
+              allowFullScreen 
+              className="w-full h-full"
+              style={{ aspectRatio: '16/9', objectFit: 'cover' }}
+            ></iframe>
+          </div>
+          
+          {/* Запасное изображение, если видео не загрузится */}
+          <div className="absolute inset-0 z-[-1]">
             <img 
               src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2069" 
               alt="Деревянные дома фон" 
               className="w-full h-full object-cover"
             />
-          </video>
-          
-          {/* Для GIF - раскомментируйте этот блок и закомментируйте video-блок выше если хотите использовать GIF
-          <img 
-            src="/path-to-your-animation.gif" 
-            alt="Деревянные дома анимация" 
-            className="w-full h-full object-cover"
-          />
-          */}
+          </div>
         </div>
       </div>
     </div>
