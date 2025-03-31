@@ -205,7 +205,7 @@ const MaterialCard = ({
           <span className="font-bold text-nature-dark">
             {sizes.length > 0 
               ? selectedSize 
-                ? `€${getSelectedSizePrice().toFixed(2)} / шт`
+                ? `€${getSelectedSizePrice().toFixed(2)} / ${unit}`
                 : "Выберите размер" 
               : priceRange 
                 ? priceRange 

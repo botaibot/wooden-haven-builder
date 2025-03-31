@@ -17,6 +17,7 @@ const MaterialCalculator = ({ width, length }: MaterialCalculatorProps) => {
 
   useEffect(() => {
     if (wallWidth > 0 && wallHeight > 0) {
+      // Calculate total area in square meters
       const area = wallWidth * wallHeight;
       setTotalArea(area);
 
