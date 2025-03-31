@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -89,7 +88,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 1 900 000 ₽",
     images: [
-      "/lovable-uploads/2b12f2ef-202f-41f7-860e-f90fa03c15d7.png",
+      "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png",
       "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
