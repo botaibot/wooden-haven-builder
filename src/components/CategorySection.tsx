@@ -39,7 +39,7 @@ const CategorySection = () => {
     {
       title: "Дома из клееного бруса",
       description: "Экологичные и комфортные дома из натурального клееного бруса высокого качества",
-      imageUrl: "/lovable-uploads/4502481e-10c5-4b4d-b49a-100502ad1986.png", // Updated to use the new uploaded image
+      imageUrl: "/lovable-uploads/fac2c745-0513-44c6-a1e9-5d0430c85ded.png", // Заменено на новое, более светлое изображение
       link: "/houses"
     },
     {
