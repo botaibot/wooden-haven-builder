@@ -8,9 +8,13 @@ interface CategoryCardProps {
   title: string;
   imageUrl: string;
   link: string;
+  index: number; // Добавляем индекс для определения первых двух карточек
 }
 
-const CategoryCard = ({ title, imageUrl, link }: CategoryCardProps) => {
+const CategoryCard = ({ title, imageUrl, link, index }: CategoryCardProps) => {
+  // Для первых двух карточек используем меньшее затемнение
+  const isFirstTwoCards = index < 2;
+  
   return (
     <div className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
       <div className="aspect-[4/3] w-full">
@@ -20,8 +24,12 @@ const CategoryCard = ({ title, imageUrl, link }: CategoryCardProps) => {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end">
-        <Button asChild className="w-full sm:w-auto bg-wood hover:bg-wood-dark">
+      <div className={`absolute inset-0 p-6 flex flex-col justify-end ${
+        isFirstTwoCards 
+          ? "bg-gradient-to-t from-black/30 via-black/10 to-transparent" 
+          : "bg-gradient-to-t from-black/80 via-black/50 to-transparent"
+      }`}>
+        <Button asChild className={`w-full sm:w-auto ${isFirstTwoCards ? "bg-wood/90" : "bg-wood"} hover:bg-wood-dark`}>
           <Link to={link} className="flex items-center justify-center gap-2">
             {title} <ArrowRight size={16} />
           </Link>
@@ -61,7 +69,7 @@ const CategorySection = () => {
         <h2 className="section-title">Наши направления</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {categories.map((category, index) => (
-            <CategoryCard key={index} {...category} />
+            <CategoryCard key={index} {...category} index={index} />
           ))}
         </div>
       </div>
