@@ -228,45 +228,51 @@ const Materials = () => {
       unit: "м²"
     },
     {
+      id: "obrez-doska",
       title: "Доска обрезная",
       description: "Обрезная доска из различных пород дерева для строительства",
       imageUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=1970",
-      price: "от €6",
+      priceRange: "от €6",
       unit: "м"
     },
     {
+      id: "vagonka",
       title: "Вагонка",
       description: "Высококачественная вагонка для внутренней и внешней отделки",
       imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
-      price: "от €7",
+      priceRange: "от €7",
       unit: "м²"
     },
     {
+      id: "terras-doska",
       title: "Террасная доска",
       description: "Долговечная террасная доска для наружного применения",
       imageUrl: "https://images.unsplash.com/photo-1594124303341-eb05b08258a7?q=80&w=1974",
-      price: "от €12",
+      priceRange: "от €12",
       unit: "м²"
     },
     {
+      id: "block-haus",
       title: "Блок-хаус",
       description: "Декоративная обшивка для фасадов и внутренней отделки",
       imageUrl: "https://images.unsplash.com/photo-1594237258022-a74b1fc8e0b9?q=80&w=1974",
-      price: "от €10",
+      priceRange: "от €10",
       unit: "м²"
     },
     {
+      id: "kleeny-brus",
       title: "Клееный брус",
       description: "Высокопрочный клееный брус для долговечных конструкций",
       imageUrl: "https://images.unsplash.com/photo-1593195749622-8754ff0b69db?q=80&w=1974",
-      price: "от €20",
+      priceRange: "от €20",
       unit: "м"
     },
     {
+      id: "imitation-brus",
       title: "Имитация бруса",
       description: "Доска с имитацией натурального бруса для отделки",
       imageUrl: "https://images.unsplash.com/photo-1533155925277-bb0098f4b78d?q=80&w=1970",
-      price: "от €9",
+      priceRange: "от €9",
       unit: "м²"
     }
   ];
