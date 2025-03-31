@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -30,11 +29,14 @@ import {
 import { useCart } from "@/context/CartContext";
 import Cart from "@/components/Cart";
 import { useToast } from "@/hooks/use-toast";
+import MaterialCalculator from "@/components/MaterialCalculator";
 
 interface SizeOption {
   label: string;
   value: string;
   price: number;
+  width?: number;
+  length?: number;
 }
 
 interface MaterialCardProps {
@@ -47,6 +49,7 @@ interface MaterialCardProps {
   sizes?: SizeOption[];
   isNew?: boolean;
   category: string;
+  showCalculator?: boolean;
 }
 
 const MaterialCard = ({ 
@@ -58,7 +61,8 @@ const MaterialCard = ({
   unit = "м", 
   sizes = [],
   isNew = false,
-  category
+  category,
+  showCalculator = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
@@ -86,6 +90,16 @@ const MaterialCard = ({
   const getSelectedSizeLabel = () => {
     const selectedSizeObj = sizes.find(size => size.value === selectedSize);
     return selectedSizeObj ? selectedSizeObj.label : "";
+  };
+
+  const getSelectedSizeWidth = () => {
+    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
+    return selectedSizeObj?.width || 0;
+  };
+
+  const getSelectedSizeLength = () => {
+    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
+    return selectedSizeObj?.length || 0;
   };
 
   const handleAddToCart = () => {
@@ -146,6 +160,13 @@ const MaterialCard = ({
               </SelectContent>
             </Select>
           </div>
+        )}
+
+        {showCalculator && selectedSize && (
+          <MaterialCalculator 
+            width={getSelectedSizeWidth()} 
+            length={getSelectedSizeLength()}
+          />
         )}
 
         {sizes.length > 0 && (
@@ -324,6 +345,22 @@ const Materials = () => {
       category: "Фанера"
     },
     {
+      id: "vagonka",
+      title: "Вагонка толщина шипа и паза",
+      description: "Используется для облицовки стен и потолков.\n\nЦена указана за м². В корзине вы можете указать площадь каждого товара в вашем заказе.\n\nДля расчета необходимого количества укажите размеры длины и ширины желаемой стены или потолка.",
+      imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
+      priceRange: "€13,50–€20,00",
+      unit: "м²",
+      sizes: [
+        { label: "4000 мм x 96 мм x 12,5 мм", value: "96mm", price: 13.5, width: 96, length: 4000 },
+        { label: "4000 мм x 121 мм x 14 мм", value: "121mm", price: 16.75, width: 121, length: 4000 },
+        { label: "4000 мм x 146 мм x 19 мм", value: "146mm", price: 20, width: 146, length: 4000 },
+      ],
+      isNew: true,
+      category: "Отделочные материалы",
+      showCalculator: true
+    },
+    {
       id: "plywood",
       title: "Фанера влагостойкая",
       description: "Влагостойкая фанера различных размеров и толщины",
@@ -340,24 +377,6 @@ const Materials = () => {
       priceRange: "от €6",
       unit: "м",
       category: "Брус и доска"
-    },
-    {
-      id: "vagonka",
-      title: "Вагонка",
-      description: "Высококачественная вагонка для внутренней и внешней отделки",
-      imageUrl: "https://images.unsplash.com/photo-1605348863000-9b95fc96b149?q=80&w=2060",
-      priceRange: "от €7",
-      unit: "м²",
-      category: "Отделочные материалы"
-    },
-    {
-      id: "terras-doska",
-      title: "Террасная доска",
-      description: "Долговечная террасная доска для наружного применения",
-      imageUrl: "https://images.unsplash.com/photo-1594124303341-eb05b08258a7?q=80&w=1974",
-      priceRange: "от €12",
-      unit: "м²",
-      category: "Отделочные материалы"
     },
     {
       id: "block-haus",
