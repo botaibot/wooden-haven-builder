@@ -1,8 +1,9 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen } from "lucide-react";
+import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 
@@ -97,6 +98,17 @@ const Furniture = () => {
         "/lovable-uploads/8374f16f-8443-481c-9f0a-d6363a8a516b.png"
       ],
       icon: Lamp
+    },
+    {
+      id: "outdoor-chairs",
+      title: "Деревянные кресла из ольхи — для тишины, свежего воздуха и комфорта",
+      description: "Погрузитесь в атмосферу отдыха с нашими удобными креслами из натуральной ольхи, созданными специально для экстерьера. Это мебель, которая отлично чувствует себя на свежем воздухе — будь то веранда, терраса, сад или зона у костра. Мы тщательно продумали эргономику и посадку: удобная спинка, широкие подлокотники и устойчивая конструкция делают это кресло идеальным для долгих тёплых вечеров на природе.",
+      price: 400,
+      images: [
+        "/lovable-uploads/8f722547-79d9-419c-9a42-dc313ffce0f3.png",
+        "/lovable-uploads/4177ab5d-74aa-4366-acb1-3cf7438eee90.png"
+      ],
+      icon: Sofa
     },
     {
       id: "tables",
