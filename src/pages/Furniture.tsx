@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -145,41 +144,17 @@ const Furniture = () => {
       icon: Table
     },
     {
-      id: "tables",
-      title: "Столы из массива дерева",
-      description: "Прочные и элегантные столы различных размеров из натурального дерева. Изготавливаются по индивидуальным заказам с учетом ваших пожеланий.",
+      id: "aspen-oak-furniture",
+      title: "Мебель из осины и дуба — лёгкость, прочность и натуральная эстетика",
+      description: "Мы изготавливаем мебель из натуральной осины и дуба — пород, которые прекрасно сочетаются между собой как по цвету, так и по характеристикам.\n\nОсина — светлая, ровная, лёгкая.\nДуб — прочный, выразительный, с красивой текстурой.\n\nЭто отличный тандем для создания мебели с характером — тёплой, надёжной и стильной.",
       customizable: true,
       price: 350,
+      priceWithMaterial: 450,
+      priceWithMaterialDescription: "из дуба",
       images: [
-        "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png",
-        "/lovable-uploads/a8ce0721-491d-4a0c-9ccf-0fa41a802fe4.png",
-        "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png"
+        "/lovable-uploads/c9eb8364-afe9-4216-9d3d-db95f9b4902d.png"
       ],
       icon: Table
-    },
-    {
-      id: "chairs",
-      title: "Стулья и кресла",
-      description: "Комфортные стулья и кресла, идеально дополняющие интерьер деревянного дома. Каждое изделие имеет эргономичную форму и прочную конструкцию.",
-      price: 150,
-      images: [
-        "/lovable-uploads/85042101-ffb6-40dc-b3be-85bc519188fd.png",
-        "/lovable-uploads/4502481e-10c5-4b4d-b49a-100502ad1986.png", 
-        "/lovable-uploads/853a0e4d-0c9a-4047-a26e-b360ebeb321d.png"
-      ],
-      icon: Sofa
-    },
-    {
-      id: "beds",
-      title: "Кровати и тумбы",
-      description: "Спальная мебель из экологически чистых материалов. Удобные кровати и практичные тумбы для спальни, создающие атмосферу уюта и комфорта.",
-      price: 450,
-      images: [
-        "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
-        "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
-        "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png"
-      ],
-      icon: Bed
     }
   ];
 
