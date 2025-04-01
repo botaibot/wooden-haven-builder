@@ -36,7 +36,7 @@ const MaterialCardCarousel = ({ images, alt }: MaterialCardCarouselProps) => {
 
   return (
     <div className="overflow-hidden">
-      <Carousel className="w-full">
+      <Carousel className="w-full" opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>

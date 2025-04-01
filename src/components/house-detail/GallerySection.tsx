@@ -14,7 +14,7 @@ const GallerySection = ({ house }: GallerySectionProps) => {
       <h3 className="text-xl font-semibold p-6 border-b border-gray-200">Галерея проекта</h3>
       <div className="p-4">
         <MaterialCardCarousel 
-          images={[house.images[0]]} 
+          images={house.images} 
           alt={`${house.title} - изображение`} 
         />
       </div>
