@@ -23,11 +23,11 @@ const MaterialCardCarousel = ({ images, alt }: MaterialCardCarouselProps) => {
   if (images.length === 1) {
     return (
       <div className="overflow-hidden">
-        <AspectRatio ratio={4/3}>
+        <AspectRatio ratio={3/4}>
           <img 
             src={images[0]} 
             alt={alt} 
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
           />
         </AspectRatio>
       </div>
@@ -40,11 +40,11 @@ const MaterialCardCarousel = ({ images, alt }: MaterialCardCarouselProps) => {
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <AspectRatio ratio={4/3}>
+              <AspectRatio ratio={3/4}>
                 <img 
                   src={image} 
                   alt={`${alt} - ${index + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
               </AspectRatio>
             </CarouselItem>
