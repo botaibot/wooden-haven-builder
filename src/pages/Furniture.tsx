@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingCart, Sofa, Table, Bed, Lamp } from "lucide-react";
+import { ShoppingCart, Sofa, Table, Bed, Lamp, Cabinet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 
@@ -12,6 +12,8 @@ interface FurnitureItem {
   title: string;
   description: string;
   price: number;
+  priceWithAddons?: number;
+  priceAddonDescription?: string;
   images: string[];
   icon: React.ElementType;
 }
@@ -30,9 +32,16 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
         <p className="text-gray-600 mb-6">{item.description}</p>
         
         <div className="flex justify-between items-center">
-          <span className="font-bold text-nature-dark">
-            от €{item.price}
-          </span>
+          <div className="flex flex-col">
+            <span className="font-bold text-nature-dark">
+              от €{item.price}
+            </span>
+            {item.priceWithAddons && (
+              <span className="text-sm text-gray-600">
+                {item.priceAddonDescription}: €{item.priceWithAddons}
+              </span>
+            )}
+          </div>
           <a 
             href="/contact"
             className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
@@ -48,6 +57,19 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
 
 const Furniture = () => {
   const furnitureItems: FurnitureItem[] = [
+    {
+      id: "cabinet",
+      title: "Тумба из натуральной ольхи в стиле рустик",
+      description: "Добавьте в интерьер тепло и характер с нашей авторской тумбой ручной работы. Изготовленная из отборной ольхи на собственном производстве, эта модель сочетает в себе естественную красоту древесины и неповторимый стиль рустик. Каждая тумба — это уникальное изделие, в котором видны натуральные текстуры, сучки и живая структура дерева.",
+      price: 300,
+      priceWithAddons: 500,
+      priceAddonDescription: "с раковиной и краном",
+      images: [
+        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png",
+        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png"
+      ],
+      icon: Cabinet
+    },
     {
       id: "tables",
       title: "Столы из массива дерева",
