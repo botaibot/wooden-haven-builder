@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -64,8 +65,8 @@ const Furniture = () => {
       priceWithAddons: 500,
       priceAddonDescription: "с раковиной и краном",
       images: [
-        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png",
-        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png"
+        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png",
+        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png"
       ],
       icon: BookOpen
     },

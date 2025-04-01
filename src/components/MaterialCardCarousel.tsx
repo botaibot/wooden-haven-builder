@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface MaterialCardCarouselProps {
   images: string[];
@@ -21,29 +22,31 @@ const MaterialCardCarousel = ({ images, alt }: MaterialCardCarouselProps) => {
   // If there's only one image, just display it without carousel controls
   if (images.length === 1) {
     return (
-      <div className="aspect-[3/2] overflow-hidden relative">
-        <img 
-          src={images[0]} 
-          alt={alt} 
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        />
+      <div className="overflow-hidden">
+        <AspectRatio ratio={4/3}>
+          <img 
+            src={images[0]} 
+            alt={alt} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </AspectRatio>
       </div>
     );
   }
 
   return (
-    <div className="aspect-[3/2] overflow-hidden relative">
-      <Carousel className="w-full h-full">
-        <CarouselContent className="h-full">
+    <div className="overflow-hidden">
+      <Carousel className="w-full">
+        <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="h-full">
-              <div className="h-full w-full">
+            <CarouselItem key={index}>
+              <AspectRatio ratio={4/3}>
                 <img 
                   src={image} 
                   alt={`${alt} - ${index + 1}`} 
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
-              </div>
+              </AspectRatio>
             </CarouselItem>
           ))}
         </CarouselContent>
