@@ -11,6 +11,8 @@ interface FurnitureItem {
   id: string;
   title: string;
   description: string;
+  dimensions?: string;
+  customizable?: boolean;
   price: number;
   priceWithAddons?: number;
   priceAddonDescription?: string;
@@ -29,7 +31,19 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
           <h3 className="text-xl font-semibold text-wood-darkest">{item.title}</h3>
         </div>
         
-        <p className="text-gray-600 mb-6">{item.description}</p>
+        <p className="text-gray-600 mb-4">{item.description}</p>
+        
+        {item.dimensions && (
+          <p className="text-sm font-medium text-wood-dark mb-2">
+            Размеры: {item.dimensions}
+          </p>
+        )}
+        
+        {item.customizable && (
+          <p className="text-sm text-nature-dark mb-4">
+            Возможно изготовление по индивидуальным размерам
+          </p>
+        )}
         
         <div className="flex justify-between items-center">
           <div className="flex flex-col">
@@ -60,13 +74,15 @@ const Furniture = () => {
     {
       id: "cabinet",
       title: "Тумба из натуральной ольхи в стиле рустик",
-      description: "Добавьте в интерьер тепло и характер с нашей авторской тумбой ручной работы. Изготовленная из отборной ольхи на собственном производстве, эта модель сочетает в себе естественную красоту древесины и неповторимый стиль рустик. Каждая тумба — это уникальное изделие, в котором видны натуральные текстуры, сучки и живая структура дерева.",
+      description: "Добавьте в интерьер тепло и характер с нашей авторской тумбой ручной работы. Изготовленная из отборной ольхи на собственном производстве, эта модель сочетает в себе естественную красоту древесины и неповторимый стиль рустик.",
+      dimensions: "80 см × 50 см × 80 см (длина × глубина × высота)",
+      customizable: true,
       price: 300,
       priceWithAddons: 500,
       priceAddonDescription: "с раковиной и краном",
       images: [
-        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png",
-        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png"
+        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png",
+        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png"
       ],
       icon: BookOpen
     },
@@ -74,6 +90,7 @@ const Furniture = () => {
       id: "tables",
       title: "Столы из массива дерева",
       description: "Прочные и элегантные столы различных размеров из натурального дерева. Изготавливаются по индивидуальным заказам с учетом ваших пожеланий.",
+      customizable: true,
       price: 350,
       images: [
         "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png",
