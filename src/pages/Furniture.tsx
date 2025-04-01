@@ -16,6 +16,8 @@ interface FurnitureItem {
   price: number;
   priceWithAddons?: number;
   priceAddonDescription?: string;
+  priceWithMaterial?: number;
+  priceWithMaterialDescription?: string;
   images: string[];
   icon: React.ElementType;
 }
@@ -53,6 +55,11 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
             {item.priceWithAddons && (
               <span className="text-sm text-gray-600">
                 {item.priceAddonDescription}: €{item.priceWithAddons}
+              </span>
+            )}
+            {item.priceWithMaterial && (
+              <span className="text-sm text-gray-600">
+                {item.priceWithMaterialDescription}: €{item.priceWithMaterial}
               </span>
             )}
           </div>
@@ -119,6 +126,21 @@ const Furniture = () => {
       price: 250,
       images: [
         "/lovable-uploads/209d2102-60c6-4f67-a067-cb9196f00ae6.png"
+      ],
+      icon: Table
+    },
+    {
+      id: "dining-tables",
+      title: "Столы из ольхи и дуба — дерево, которое вдохновляет",
+      description: "Создаём столы, которые становятся центром пространства — будь то обеденная зона, кабинет или переговорная. В основе — натуральная ольха и дуб: прочные, тёплые, с ярко выраженной текстурой и характером. Каждое изделие — это результат ручной работы и уважения к материалу. Мы не маскируем дерево — мы подчёркиваем его. Живые края, сучки, текстура и натуральный цвет — всё это делает каждый стол уникальным.",
+      dimensions: "160 см × 70 см (длина × ширина)",
+      customizable: true,
+      price: 400,
+      priceWithMaterial: 600,
+      priceWithMaterialDescription: "из дуба",
+      images: [
+        "/lovable-uploads/ba2e57fb-1851-4295-8d27-0a8d2810b79a.png",
+        "/lovable-uploads/66c08602-1489-4196-8d1d-7038ddc7c2ed.png"
       ],
       icon: Table
     },
