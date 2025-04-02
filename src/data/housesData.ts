@@ -1,3 +1,4 @@
+
 export interface HouseData {
   id: number;
   title: string;
@@ -173,6 +174,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 2 100 000 ₽",
     images: [
+      "/lovable-uploads/8b8b75f6-4e84-464f-ac3d-f2df410db0b5.png",
       "/lovable-uploads/aea18e32-2f4c-467e-801c-a6f8a3b67628.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"

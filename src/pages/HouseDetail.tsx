@@ -9,6 +9,7 @@ import FloorPlanSection from "@/components/house-detail/FloorPlanSection";
 import GallerySection from "@/components/house-detail/GallerySection";
 import PriceSection from "@/components/house-detail/PriceSection";
 import FloatingContactButton from "@/components/house-detail/FloatingContactButton";
+import PriceBanner from "@/components/house-detail/PriceBanner";
 
 const HouseDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -38,6 +39,7 @@ const HouseDetail = () => {
           </div>
         </div>
 
+        <PriceBanner house={house} />
         <FloatingContactButton />
       </main>
 
