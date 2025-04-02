@@ -213,62 +213,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mx-auto mb-12">Наша команда</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974" 
-                  alt="Александр Петров" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-wood-darkest mb-2">Александр Петров</h3>
-                <p className="text-nature-dark mb-3">Генеральный директор</p>
-                <p className="text-gray-600">
-                  Более 15 лет опыта в строительстве деревянных домов и управлении строительными проектами.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976" 
-                  alt="Елена Смирнова" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-wood-darkest mb-2">Елена Смирнова</h3>
-                <p className="text-nature-dark mb-3">Главный архитектор</p>
-                <p className="text-gray-600">
-                  Опытный архитектор с образованием в области экологичного строительства и дизайна.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="aspect-square overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070" 
-                  alt="Дмитрий Иванов" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-wood-darkest mb-2">Дмитрий Иванов</h3>
-                <p className="text-nature-dark mb-3">Руководитель производства</p>
-                <p className="text-gray-600">
-                  Профессиональный строитель с более чем 10-летним опытом в области деревянного строительства.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

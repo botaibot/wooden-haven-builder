@@ -1,9 +1,17 @@
 
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
+  const location = useLocation();
+  
+  // Only show the footer on the Contact page
+  if (location.pathname !== "/contact") {
+    return null;
+  }
+  
   return (
     <footer className="bg-wood-darkest text-white pt-12 pb-6">
       <div className="container mx-auto px-4">

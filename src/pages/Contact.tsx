@@ -38,8 +38,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Телефон</h3>
-                    <p className="text-gray-700">+34 123 456 789</p>
-                    <p className="text-gray-700">+34 987 654 321</p>
+                    <p className="text-gray-700">+34 675 46 65 10</p>
+                    <p className="text-gray-700">+34 603 70 16 67</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -48,8 +48,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Email</h3>
-                    <p className="text-gray-700">info@woodtenerife.com</p>
-                    <p className="text-gray-700">sales@woodtenerife.com</p>
+                    <p className="text-gray-700">bosquenordico@gmail.com</p>
+                    <p className="text-gray-700">info@bosquenordico.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -58,9 +58,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Адрес</h3>
-                    <p className="text-gray-700">Calle Principal 123</p>
-                    <p className="text-gray-700">Callao Salvaje, Тенерифе</p>
-                    <p className="text-gray-700">Испания</p>
+                    <p className="text-gray-700">Calle Hermano Pedro N58 bis</p>
+                    <p className="text-gray-700">Callao Salvaje, Adeje, Tenerife</p>
+                    <p className="text-gray-700">38678 España</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -69,8 +69,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Часы работы</h3>
-                    <p className="text-gray-700">Пн-Пт: 9:00 - 20:00</p>
-                    <p className="text-gray-700">Сб: 10:00 - 18:00</p>
+                    <p className="text-gray-700">Пн-Пт: 10:00 - 17:00</p>
+                    <p className="text-gray-700">Сб: По предварительной записи</p>
                     <p className="text-gray-700">Вс: Выходной</p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
           <h2 className="section-title text-center mx-auto mb-8">Мы на карте</h2>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3514.438765589011!2d-16.7751245!3d28.2283775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a974d267a15a5%3A0xd30b89e2a62ba79!2sCallao%20Salvaje%2C%20Santa%20Cruz%20de%20Tenerife%2C%20Spain!5e0!3m2!1sen!2sus!4v1708633625383!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14058.35613891991!2d-16.7794554!3d28.2268853!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a971fd9033f01%3A0x2eeb3da78d4c0be1!2sBosque%20N%C3%B3rdico!5e0!3m2!1sen!2sus!4v1682067316221!5m2!1sen!2sus" 
               width="100%" 
               height="450" 
               style={{ border: 0 }} 
