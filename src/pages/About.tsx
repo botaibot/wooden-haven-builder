@@ -2,7 +2,8 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Shield, Award, Clock, Users } from "lucide-react";
+import { Shield, Award, Clock, Users, Factory, Hammer, Ruler } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
       <div className="relative py-16 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">О нашей компании</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Добро пожаловать в Северный лес!</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
             Ваш надежный партнер в строительстве деревянных домов и поставке 
             высококачественных строительных материалов на Тенерифе
@@ -24,20 +25,22 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="section-title">Наша история</h2>
+              <h2 className="section-title">О компании Bosque Nórdico</h2>
               <p className="text-gray-700 mb-6">
-                Компания WoodTenerife была основана в 2015 году группой профессионалов с многолетним опытом в 
-                строительстве деревянных домов и торговле строительными материалами.
+                В компании Bosque Nórdico мы гордимся тем, что являемся лидерами лесной промышленности 
+                Канарских островов, предлагая высококачественную продукцию, сочетающую в себе долговечность, 
+                элегантность и функциональность.
               </p>
               <p className="text-gray-700 mb-6">
-                Мы начинали как небольшая компания, специализирующаяся на продаже пиломатериалов, 
-                но благодаря высокому качеству нашей продукции и отличному сервису быстро заработали 
-                хорошую репутацию на рынке Тенерифе.
+                Наша цель выходит за рамки просто продажи древесины по доступным ценам и высокого качества; 
+                Но мы стремимся превратить дерево в дом, и вместе с вами мы можем создать теплый и уютный 
+                дом, отражающий ваш стиль.
               </p>
               <p className="text-gray-700">
-                Сегодня WoodTenerife - это не только магазин строительных материалов, но и 
-                строительная компания полного цикла, предлагающая проектирование и 
-                строительство деревянных домов под ключ на солнечном острове Тенерифе.
+                В Bosque Nórdico мы понимаем, с какими трудностями сталкиваемся на Канарских островах. 
+                От ограниченности материалов до нехватки квалифицированной рабочей силы — мы сталкиваемся 
+                с препятствиями, которые вдохновляют нас на инновации и поиск креативных решений. 
+                Свяжитесь с нами сегодня, и вместе мы наполним ваш дом теплом и любовью.
               </p>
             </div>
             <div className="relative">
@@ -50,6 +53,77 @@ const About = () => {
                 <p className="text-white text-lg font-bold">С 2015 года на рынке</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-wood-light/10">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title text-center mx-auto mb-12">Наше производство</h2>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12">
+            Мы гордимся нашим собственным производством на Канарских островах, где создаём высококачественные 
+            изделия из дерева с использованием современного оборудования и традиционных технологий обработки древесины.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden">
+              <img 
+                src="/lovable-uploads/7cc0e6fc-4424-4c50-bd13-55d039c1312a.png" 
+                alt="Производство брусьев" 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Качественные материалы</h3>
+                <p className="text-gray-600">Мы используем только отборную древесину высшего качества для наших изделий.</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden">
+              <img 
+                src="/lovable-uploads/e9548a1d-f0f0-49df-ad6e-e8834af99853.png" 
+                alt="Процесс обработки" 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Современное оборудование</h3>
+                <p className="text-gray-600">Наше производство оснащено новейшим оборудованием для точной обработки древесины.</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden">
+              <img 
+                src="/lovable-uploads/ce153320-1521-4614-bb4e-8ac2698add00.png" 
+                alt="Производственный процесс" 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Точность изготовления</h3>
+                <p className="text-gray-600">Каждая деталь проходит тщательный контроль качества на всех этапах производства.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <Card className="overflow-hidden">
+              <img 
+                src="/lovable-uploads/8de16ff8-8ae9-450d-9c71-dd152d2fcc08.png" 
+                alt="Готовая продукция" 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Упаковка и хранение</h3>
+                <p className="text-gray-600">Наша продукция бережно упаковывается для сохранения всех качеств древесины.</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden">
+              <img 
+                src="/lovable-uploads/0a0d77a1-a611-442f-8391-b7bb7a02d398.png" 
+                alt="Деревянные конструкции" 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Готовые конструкции</h3>
+                <p className="text-gray-600">Производим детали для деревянных домов любой сложности и конфигурации.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -92,6 +166,47 @@ const About = () => {
               <h3 className="text-xl font-semibold text-wood-darkest mb-3">Клиентоориентированность</h3>
               <p className="text-gray-600">
                 Мы индивидуально подходим к каждому клиенту, учитывая все пожелания и требования.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title text-center mx-auto mb-12">Наши преимущества</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-wood-light/30">
+              <div className="flex items-center mb-4">
+                <div className="bg-nature-light/20 p-3 rounded-full mr-4">
+                  <Factory size={24} className="text-nature-dark" />
+                </div>
+                <h3 className="text-xl font-semibold text-wood-darkest">Собственное производство</h3>
+              </div>
+              <p className="text-gray-600">
+                Полный контроль качества на всех этапах: от выбора сырья до финальной обработки изделий.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md border border-wood-light/30">
+              <div className="flex items-center mb-4">
+                <div className="bg-nature-light/20 p-3 rounded-full mr-4">
+                  <Hammer size={24} className="text-nature-dark" />
+                </div>
+                <h3 className="text-xl font-semibold text-wood-darkest">Опытные мастера</h3>
+              </div>
+              <p className="text-gray-600">
+                Наши специалисты имеют многолетний опыт работы с деревом и глубокие знания свойств различных пород.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md border border-wood-light/30">
+              <div className="flex items-center mb-4">
+                <div className="bg-nature-light/20 p-3 rounded-full mr-4">
+                  <Ruler size={24} className="text-nature-dark" />
+                </div>
+                <h3 className="text-xl font-semibold text-wood-darkest">Индивидуальный подход</h3>
+              </div>
+              <p className="text-gray-600">
+                Возможность изготовления нестандартных изделий по индивидуальным проектам и размерам.
               </p>
             </div>
           </div>
@@ -144,7 +259,7 @@ const About = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-wood-darkest mb-2">Дмитрий Иванов</h3>
-                <p className="text-nature-dark mb-3">Руководитель строительства</p>
+                <p className="text-nature-dark mb-3">Руководитель производства</p>
                 <p className="text-gray-600">
                   Профессиональный строитель с более чем 10-летним опытом в области деревянного строительства.
                 </p>
