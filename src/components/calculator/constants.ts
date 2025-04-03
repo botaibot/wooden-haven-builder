@@ -15,13 +15,17 @@ export const PRICES = {
   },
   FOUNDATION: {
     adjustable_metal: 0, // базовая комплектация
-    monolithic: 250,     // наценка за монолитный фундамент
+    monolithic: 0,     // по запросу
     screw_piles: 150     // наценка за винтовые сваи
   },
   METAL_SUPPORT: {
     price_per_unit: 60,
     additional_costs: 40, // работа, щебень, блоки и т.д.
     units_per_10sqm: 7
+  },
+  SOLAR_PANELS: {
+    price_per_kw: 1400,
+    min_power: 5
   }
 };
 
@@ -56,6 +60,7 @@ export const formSchema = {
   canopySize: { min: 0, max: 50 },
   roofInsulation: ["polystyrene_40mm", "rockwool_60mm", "custom"] as const,
   foundation: ["adjustable_metal", "monolithic", "screw_piles"] as const,
+  solarPower: { min: 0, max: 20 },
 };
 
 // Детальная информация по типам утепления кровли

@@ -37,6 +37,9 @@ const PriceDetails = ({
           <div>
             <p className="text-sm font-medium text-muted-foreground">Предварительная стоимость:</p>
             <p className="text-2xl font-bold text-wood-dark">{formatCurrency(totalPrice)}</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Каркасный дом с крышей, без окон, дверей, сантехники, электрики, водоснабжения
+            </p>
           </div>
           <CollapsibleTrigger asChild>
             <Button
@@ -104,10 +107,21 @@ const PriceDetails = ({
               </>
             )}
 
+            {formValues.solarPanels && (
+              <>
+                <div className="text-muted-foreground">Солнечные панели:</div>
+                <div>{formValues.solarPower} кВт ({formatCurrency(formValues.solarPower * 1400)})</div>
+              </>
+            )}
+
             <div className="text-muted-foreground">Общая площадь:</div>
             <div>
               {totalArea.toFixed(1)} м²
             </div>
+          </div>
+          
+          <div className="mt-4 pt-3 border-t text-xs text-muted-foreground">
+            <p>В указанную стоимость входит каркасный дом с крышей. Не включены: окна, двери, сантехника, электрика, водоснабжение.</p>
           </div>
         </CollapsibleContent>
       </Collapsible>

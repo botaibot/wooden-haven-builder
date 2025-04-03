@@ -30,6 +30,8 @@ const HouseCalculator = () => {
     canopySize: 0,
     roofInsulation: "polystyrene_40mm",
     foundation: "adjustable_metal",
+    solarPanels: false,
+    solarPower: 5,
   };
 
   const form = useForm<FormValues>({
@@ -69,7 +71,9 @@ const HouseCalculator = () => {
     const roofInsulationPrice = houseArea * PRICES.ROOF_INSULATION[values.roofInsulation];
     
     // Calculate foundation cost
-    const foundationPrice = houseArea * PRICES.FOUNDATION[values.foundation];
+    const foundationPrice = values.foundation !== "monolithic" 
+      ? houseArea * PRICES.FOUNDATION[values.foundation]
+      : 0; // Monolithic foundation is priced by request
     
     // Calculate metal supports count and cost for adjustable metal foundation
     const supports = Math.ceil(houseArea / 10 * PRICES.METAL_SUPPORT.units_per_10sqm);
@@ -78,7 +82,12 @@ const HouseCalculator = () => {
     setMetalSupportsCount(supports);
     setMetalSupportsCost(supportsCost);
     
-    const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + foundationPrice;
+    // Calculate solar panels cost
+    const solarPanelsPrice = values.solarPanels 
+      ? Math.max(values.solarPower, PRICES.SOLAR_PANELS.min_power) * PRICES.SOLAR_PANELS.price_per_kw
+      : 0;
+    
+    const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + foundationPrice + (values.foundation === "monolithic" ? 0 : solarPanelsPrice);
     
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
