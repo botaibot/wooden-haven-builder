@@ -31,14 +31,14 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
             <SelectContent>
               <SelectItem value="polystyrene_40mm" className="py-3">
                 <div className="space-y-1">
-                  <div className="font-medium">Пенополистирол 40 мм</div>
-                  <div className="text-xs text-muted-foreground">Легкий, экономичный материал для сезонного использования</div>
+                  <div className="font-medium">Пенополистирол 80 мм</div>
+                  <div className="text-xs text-muted-foreground">Легкий, экономичный материал (входит в базовую комплектацию)</div>
                 </div>
               </SelectItem>
               <SelectItem value="rockwool_60mm" className="py-3">
                 <div className="space-y-1">
-                  <div className="font-medium">Каменная вата 60 мм</div>
-                  <div className="text-xs text-muted-foreground">Огнестойкий, экологичный материал с высокой звукоизоляцией</div>
+                  <div className="font-medium">Каменная вата 80 мм</div>
+                  <div className="text-xs text-muted-foreground">Огнестойкий, экологичный материал (входит в базовую комплектацию)</div>
                 </div>
               </SelectItem>
               <SelectItem value="custom" className="py-3">

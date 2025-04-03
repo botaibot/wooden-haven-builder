@@ -12,7 +12,7 @@ const FoundationInfoDialog = () => {
           Подробнее о фундаменте
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[85vh]">
+      <DialogContent className="max-w-4xl">
         <DialogHeader>
           <DialogTitle>Типы фундамента</DialogTitle>
           <DialogDescription>
@@ -20,7 +20,7 @@ const FoundationInfoDialog = () => {
           </DialogDescription>
         </DialogHeader>
         
-        <ScrollArea className="h-[calc(85vh-120px)] pr-4">
+        <ScrollArea className="h-[60vh] pr-4">
           <div className="space-y-6 py-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-slate-50 p-4 rounded border">
@@ -29,7 +29,7 @@ const FoundationInfoDialog = () => {
                   <img 
                     src="/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png" 
                     alt="Металлическая регулируемая опора" 
-                    className="rounded-md shadow-sm w-full h-auto"
+                    className="rounded-md shadow-sm w-full h-auto object-contain"
                   />
                 </div>
                 <p className="text-sm text-muted-foreground">
@@ -60,18 +60,6 @@ const FoundationInfoDialog = () => {
                 </p>
                 <p className="text-sm font-medium mt-2">По запросу (зависит от многих факторов)</p>
               </div>
-            </div>
-            
-            <div className="bg-slate-50 p-4 rounded border">
-              <h3 className="text-lg font-medium mb-2">Винтовые сваи</h3>
-              <div className="mb-4 h-40 bg-gray-200 flex items-center justify-center rounded-md">
-                <p className="text-sm text-gray-500">Схема фундамента на винтовых сваях</p>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Винтовые сваи — оптимальное решение для участков со сложным рельефом или слабыми грунтами. Быстрый монтаж, 
-                отсутствие земляных работ и возможность установки в любое время года.
-              </p>
-              <p className="text-sm font-medium mt-2">Дополнительно: +150 €/м²</p>
             </div>
             
             <p className="text-sm bg-amber-50 p-3 rounded">

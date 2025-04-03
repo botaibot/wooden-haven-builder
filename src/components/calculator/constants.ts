@@ -16,7 +16,6 @@ export const PRICES = {
   FOUNDATION: {
     adjustable_metal: 0, // базовая комплектация
     monolithic: 0,     // по запросу
-    screw_piles: 150     // наценка за винтовые сваи
   },
   METAL_SUPPORT: {
     price_per_unit: 60,
@@ -35,8 +34,8 @@ export const formatCurrency = (value: number) => {
 
 export const getRoofInsulationLabel = (value: string): string => {
   switch(value) {
-    case "polystyrene_40mm": return "Пенополистирол 40 мм";
-    case "rockwool_60mm": return "Каменная вата 60 мм";
+    case "polystyrene_40mm": return "Пенополистирол 80 мм";
+    case "rockwool_60mm": return "Каменная вата 80 мм";
     case "custom": return "Индивидуальная толщина (по запросу)";
     default: return value;
   }
@@ -46,7 +45,6 @@ export const getFoundationLabel = (value: string): string => {
   switch(value) {
     case "adjustable_metal": return "Регулируемая металлическая опора";
     case "monolithic": return "Монолитный фундамент (по запросу)";
-    case "screw_piles": return "Винтовые сваи (+150 €/м²)";
     default: return value;
   }
 };
@@ -59,14 +57,14 @@ export const formSchema = {
   terraceSize: { min: 0, max: 100 },
   canopySize: { min: 0, max: 50 },
   roofInsulation: ["polystyrene_40mm", "rockwool_60mm", "custom"] as const,
-  foundation: ["adjustable_metal", "monolithic", "screw_piles"] as const,
+  foundation: ["adjustable_metal", "monolithic"] as const,
   solarPower: { min: 0, max: 20 },
 };
 
 // Детальная информация по типам утепления кровли
 export const ROOF_INSULATION_DETAILS = {
   polystyrene_40mm: {
-    title: "Пенополистирол 40 мм",
+    title: "Пенополистирол 80 мм",
     description: "Пенополистирол - легкий синтетический материал с закрытыми ячейками, обеспечивающий хорошую теплоизоляцию при минимальном весе.",
     advantages: [
       "Легкий вес - не создает дополнительной нагрузки на конструкцию",
@@ -89,7 +87,7 @@ export const ROOF_INSULATION_DETAILS = {
     soundInsulation: "Средняя"
   },
   rockwool_60mm: {
-    title: "Каменная вата 60 мм",
+    title: "Каменная вата 80 мм",
     description: "Каменная вата - натуральный материал на основе базальтовых горных пород, обеспечивающий превосходную теплоизоляцию и звукоизоляцию.",
     advantages: [
       "Огнестойкость - не горит и защищает конструкцию от возгорания",

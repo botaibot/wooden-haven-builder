@@ -34,7 +34,6 @@ const FoundationSection = ({ form, metalSupportsCount, metalSupportsCost }: Foun
             <SelectContent>
               <SelectItem value="adjustable_metal">Регулируемая металлическая опора</SelectItem>
               <SelectItem value="monolithic">Монолитный фундамент (по запросу)</SelectItem>
-              <SelectItem value="screw_piles">Винтовые сваи (+150 €/м²)</SelectItem>
             </SelectContent>
           </Select>
           <FormDescription>
