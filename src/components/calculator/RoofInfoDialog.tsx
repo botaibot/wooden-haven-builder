@@ -134,7 +134,7 @@ const RoofInfoDialog = () => {
                     </div>
                   </div>
                   
-                  {(key === "polystyrene_40mm" || key === "rockwool_60mm") && (
+                  {(key === "polystyrene_40mm" || key === "rockwool_60mm") && 'thermalConductivity' in details && 'soundInsulation' in details && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 bg-slate-50 p-4 rounded-md">
                       <div>
                         <h4 className="text-md font-medium mb-2">Теплопроводность:</h4>
@@ -160,7 +160,7 @@ const RoofInfoDialog = () => {
                     </div>
                   )}
                   
-                  {key === "custom" && details.note && (
+                  {'note' in details && (
                     <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
                       <p className="text-sm text-blue-800">{details.note}</p>
                     </div>
