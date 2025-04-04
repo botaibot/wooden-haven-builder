@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Home, HouseLine } from "lucide-react";
+import { Home, Ruler } from "lucide-react";
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Slider } from "@/components/ui/slider";
 import { UseFormReturn } from "react-hook-form";
@@ -57,7 +57,7 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
           render={({ field: { value, onChange } }) => (
             <FormItem>
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <HouseLine className="h-5 w-5" /> Длина дома (м)
+                <Ruler className="h-5 w-5" /> Длина дома (м)
               </FormLabel>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
