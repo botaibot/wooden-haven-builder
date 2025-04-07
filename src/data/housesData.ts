@@ -19,6 +19,26 @@ export interface HouseData {
 
 const houses: HouseData[] = [
   {
+    id: 9,
+    title: "Ecopino Modern",
+    area: "54 м²",
+    dimensions: "8.5 x 6.4 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: false,
+    balcony: true,
+    porch: true,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png",
+      "/lovable-uploads/8f722547-79d9-419c-9a42-dc313ffce0f3.png"
+    ],
+    floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
+  },
+  {
     id: 1,
     title: "Ecopino 60",
     area: "60 м²",
