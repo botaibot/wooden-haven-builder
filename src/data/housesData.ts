@@ -1,4 +1,3 @@
-
 export interface HouseData {
   id: number;
   title: string;
@@ -38,25 +37,26 @@ const houses: HouseData[] = [
     ],
     floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
-  // Swap position 1 and 7 (Ecopino 18 moves to position 1)
   {
-    id: 7,
-    title: "Ecopino 18",
-    area: "18 м²",
-    dimensions: "7.6 x 2.4 м",
+    id: 6,
+    title: "Ecopino 42",
+    area: "42 м²",
+    dimensions: "7 x 6 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 350 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 700 000 ₽",
+    frameCost: "800 € м²",
+    warmContourCost: "1200 € м²",
+    turnkeyCost: "1600 € м² с мебелью",
     images: [
-      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+      "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
+      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
+      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
     ],
-    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
+    floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   },
   {
     id: 2,
@@ -78,7 +78,6 @@ const houses: HouseData[] = [
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
-  // Update the image for card #3 (index 2 in the array, but 3rd displayed card)
   {
     id: 3,
     title: "Ecopino 25",
@@ -94,7 +93,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 1 900 000 ₽",
     images: [
-      "/lovable-uploads/75ef7468-bc72-4500-a0c0-b549d7116eb8.png", // Updated image
+      "/lovable-uploads/75ef7468-bc72-4500-a0c0-b549d7116eb8.png",
       "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
@@ -140,27 +139,24 @@ const houses: HouseData[] = [
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
   {
-    id: 6,
-    title: "Ecopino 42",
-    area: "42 м²",
-    dimensions: "7 x 6 м",
+    id: 7,
+    title: "Ecopino 18",
+    area: "18 м²",
+    dimensions: "7.6 x 2.4 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "800 € м²",
-    warmContourCost: "1200 € м²",
-    turnkeyCost: "1600 € м² с мебелью",
+    frameCost: "от 350 000 ₽",
+    warmContourCost: "Цену уточняйте",
+    turnkeyCost: "от 1 700 000 ₽",
     images: [
-      "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
-      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
-      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
     ],
-    floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
   },
-  // Ecopino 60 moved to position 7
   {
     id: 1,
     title: "Ecopino 60",
