@@ -38,26 +38,25 @@ const houses: HouseData[] = [
     ],
     floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
+  // Swap position 1 and 7 (Ecopino 18 moves to position 1)
   {
-    id: 1,
-    title: "Ecopino 60",
-    area: "60 м²",
-    dimensions: "9.75 x 6.69 м",
+    id: 7,
+    title: "Ecopino 18",
+    area: "18 м²",
+    dimensions: "7.6 x 2.4 м",
     floors: 1,
-    bedrooms: 2,
+    bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 596 000 ₽",
+    frameCost: "от 350 000 ₽",
     warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 3 576 000 ₽",
+    turnkeyCost: "от 1 700 000 ₽",
     images: [
-      "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
-      "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
-      "/lovable-uploads/876a7692-1ae2-4ec0-861f-762eaf151e79.png"
+      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
     ],
-    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
+    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
   },
   {
     id: 2,
@@ -79,6 +78,7 @@ const houses: HouseData[] = [
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
+  // Update the image for card #3 (index 2 in the array, but 3rd displayed card)
   {
     id: 3,
     title: "Ecopino 25",
@@ -94,7 +94,7 @@ const houses: HouseData[] = [
     warmContourCost: "Цену уточняйте",
     turnkeyCost: "от 1 900 000 ₽",
     images: [
-      "/lovable-uploads/1b2e05da-436d-494f-a509-a3dcfeaea52e.png",
+      "/lovable-uploads/75ef7468-bc72-4500-a0c0-b549d7116eb8.png", // Updated image
       "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
@@ -160,24 +160,27 @@ const houses: HouseData[] = [
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   },
+  // Ecopino 60 moved to position 7
   {
-    id: 7,
-    title: "Ecopino 18",
-    area: "18 м²",
-    dimensions: "7.6 x 2.4 м",
+    id: 1,
+    title: "Ecopino 60",
+    area: "60 м²",
+    dimensions: "9.75 x 6.69 м",
     floors: 1,
-    bedrooms: 1,
+    bedrooms: 2,
     bathrooms: 1,
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 350 000 ₽",
+    frameCost: "от 596 000 ₽",
     warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 700 000 ₽",
+    turnkeyCost: "от 3 576 000 ₽",
     images: [
-      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+      "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
+      "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
+      "/lovable-uploads/876a7692-1ae2-4ec0-861f-762eaf151e79.png"
     ],
-    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
+    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
   {
     id: 8,

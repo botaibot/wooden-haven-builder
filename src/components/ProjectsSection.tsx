@@ -46,7 +46,6 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 
 const ProjectsSection = () => {
   // Take the first 8 houses to display in the gallery
-  // No need for modification as our new house is already at the beginning of the array
   const featuredHouses = houses.slice(0, 8);
   
   return (
