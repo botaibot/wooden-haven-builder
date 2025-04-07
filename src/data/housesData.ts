@@ -1,3 +1,4 @@
+
 export interface HouseData {
   id: number;
   title: string;
@@ -69,9 +70,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 550 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 3 100 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png",
       "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png"
@@ -89,9 +90,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 350 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 900 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/75ef7468-bc72-4500-a0c0-b549d7116eb8.png",
       "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png"
@@ -109,9 +110,9 @@ const houses: HouseData[] = [
     terrace: false,
     balcony: false,
     porch: true,
-    frameCost: "от 350 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 900 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/f6dc5a1e-aede-4698-911e-e45ebca21f9d.png",
       "/lovable-uploads/7395f239-f442-4b96-a7de-aba63a604ea0.png"
@@ -129,9 +130,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 350 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 900 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
       "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png"
@@ -149,9 +150,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 350 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 1 700 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
     ],
@@ -168,9 +169,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 596 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 3 576 000 ₽",
+    frameCost: "850 € м²",
+    warmContourCost: "1000 € м²",
+    turnkeyCost: "1500 € м²",
     images: [
       "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
       "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
@@ -189,9 +190,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "от 450 000 ₽",
-    warmContourCost: "Цену уточняйте",
-    turnkeyCost: "от 2 100 000 ₽",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/8b8b75f6-4e84-464f-ac3d-f2df410db0b5.png",
       "/lovable-uploads/aea18e32-2f4c-467e-801c-a6f8a3b67628.png"

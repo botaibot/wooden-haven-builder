@@ -16,19 +16,28 @@ const PriceSection = ({ house }: PriceSectionProps) => {
       <div className="p-6 space-y-6">
         <div className="p-4 bg-gray-100 rounded-lg">
           <h4 className="font-bold text-xl mb-2">Силовой каркас</h4>
-          <p className="text-xl text-wood-dark font-bold flex items-center">{house.frameCost}</p>
+          <p className="text-xl text-wood-dark font-bold flex items-center gap-1">
+            {house.frameCost}
+            <Euro size={18} />
+          </p>
           <p className="text-sm text-gray-600 mt-1">Базовая комплектация, без отделки</p>
         </div>
         
         <div className="p-4 bg-gray-100 rounded-lg">
           <h4 className="font-bold text-xl mb-2">Тёплый контур</h4>
-          <p className="text-xl text-wood-dark font-bold flex items-center">{house.warmContourCost}</p>
+          <p className="text-xl text-wood-dark font-bold flex items-center gap-1">
+            {house.warmContourCost}
+            <Euro size={18} />
+          </p>
           <p className="text-sm text-gray-600 mt-1">С утеплением и базовыми коммуникациями</p>
         </div>
         
         <div className="p-4 bg-gray-100 rounded-lg">
           <h4 className="font-bold text-xl mb-2">Под ключ</h4>
-          <p className="text-xl text-wood-dark font-bold flex items-center">{house.turnkeyCost}</p>
+          <p className="text-xl text-wood-dark font-bold flex items-center gap-1">
+            {house.turnkeyCost}
+            <Euro size={18} />
+          </p>
           <p className="text-sm text-gray-600 mt-1">Полностью готовый дом с отделкой</p>
         </div>
         
