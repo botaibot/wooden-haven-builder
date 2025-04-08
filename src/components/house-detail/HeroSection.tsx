@@ -28,7 +28,7 @@ const HeroSection = ({ house }: HeroSectionProps) => {
               <div className="flex flex-col items-center">
                 <span className="font-bold">СИЛОВОЙ КАРКАС</span>
                 <span className="flex items-center gap-1">
-                  {house.frameCost}
+                  {house.frameCost} <Euro size={18} />
                 </span>
               </div>
             </Button>
@@ -37,7 +37,7 @@ const HeroSection = ({ house }: HeroSectionProps) => {
               <div className="flex flex-col items-center">
                 <span className="font-bold">ТЁПЛЫЙ КОНТУР</span>
                 <span className="flex items-center gap-1">
-                  {house.warmContourCost}
+                  {house.warmContourCost} <Euro size={18} />
                 </span>
               </div>
             </Button>
@@ -46,7 +46,7 @@ const HeroSection = ({ house }: HeroSectionProps) => {
               <div className="flex flex-col items-center">
                 <span className="font-bold">ПОД КЛЮЧ</span>
                 <span className="flex items-center gap-1">
-                  {house.turnkeyCost}
+                  {house.turnkeyCost} <Euro size={18} />
                 </span>
               </div>
             </Button>

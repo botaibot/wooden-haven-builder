@@ -8,6 +8,7 @@ import {
   CardContent,
   CardFooter
 } from "@/components/ui/card";
+import { Euro } from "lucide-react";
 import houses from "@/data/housesData";
 
 interface HouseCardProps {
@@ -35,7 +36,11 @@ const HouseCard = ({ id, title, imageUrl, area, price }: HouseCardProps) => {
         <CardContent className="p-6 flex-grow">
           <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
           <div className="flex justify-between items-center mb-4">
-            <span className="font-bold text-nature-dark">{price}</span>
+            <span className="font-bold text-nature-dark flex items-center gap-1">
+              {title === "Ecopino 42" ? "от 850 " : "от 550 "}
+              <Euro size={16} />
+              /м²
+            </span>
           </div>
         </CardContent>
         <CardFooter className="p-0 pb-6 px-6">

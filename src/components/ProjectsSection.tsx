@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import houses from "@/data/housesData";
@@ -30,7 +30,11 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
         </div>
         <CardContent className="p-4 flex-grow">
           <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
-          <p className="text-nature-dark font-medium mt-2">{price}</p>
+          <p className="text-nature-dark font-medium mt-2 flex items-center gap-1">
+            {title === "Ecopino 42" ? "от 850 " : "от 550 "}
+            <Euro size={16} />
+            /м²
+          </p>
         </CardContent>
         <CardFooter className="p-4 pt-0">
           <Button variant="link" className="p-0 text-nature-dark hover:text-nature-dark/80">

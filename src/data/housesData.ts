@@ -39,6 +39,25 @@ const houses: HouseData[] = [
     floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
   {
+    id: 7,
+    title: "Ecopino 18",
+    area: "18 м²",
+    dimensions: "7.6 x 2.4 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+    ],
+    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
+  },
+  {
     id: 6,
     title: "Ecopino 42",
     area: "42 м²",
@@ -49,13 +68,26 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "800 € м²",
+    frameCost: "850 € м²",
     warmContourCost: "1200 € м²",
-    turnkeyCost: "1600 € м² с мебелью",
+    turnkeyCost: "1600 € м²",
     images: [
       "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
       "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
-      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png",
+      "/lovable-uploads/ce61eb08-bb96-4fb9-aa02-218c1a144755.png", // New images
+      "/lovable-uploads/05e7f9d0-8fbe-457a-830d-09fc1efbc5d2.png",
+      "/lovable-uploads/1c14b59f-71a9-4b80-9fd7-82f42fbc3afd.png",
+      "/lovable-uploads/f1e93128-2d34-461c-a1c9-e3d227ef998a.png",
+      "/lovable-uploads/76a870d9-d6eb-4ed7-a67c-93760bf4f795.png",
+      "/lovable-uploads/6c439f6a-8b9f-4946-ae41-e97102b0435a.png",
+      "/lovable-uploads/ce6b9128-85fc-40c6-b336-3c89924fab88.png",
+      "/lovable-uploads/0572beef-ee29-4ce6-bb34-6fa6d7021f25.png",
+      "/lovable-uploads/c82a2f06-1230-42b8-841d-0987ed048ec7.png",
+      "/lovable-uploads/56275e07-80d3-40c6-8a5f-0be63eb2a0e6.png",
+      "/lovable-uploads/00c9f9a1-00c4-4ccd-906a-989a0efad538.png",
+      "/lovable-uploads/d8f73c16-41ff-435b-8343-46b3eeaf34b6.png",
+      "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png"
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   },
@@ -140,25 +172,6 @@ const houses: HouseData[] = [
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
   {
-    id: 7,
-    title: "Ecopino 18",
-    area: "18 м²",
-    dimensions: "7.6 x 2.4 м",
-    floors: 1,
-    bedrooms: 1,
-    bathrooms: 1,
-    terrace: true,
-    balcony: false,
-    porch: false,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
-    images: [
-      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
-    ],
-    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
-  },
-  {
     id: 1,
     title: "Ecopino 60",
     area: "60 м²",
@@ -169,9 +182,9 @@ const houses: HouseData[] = [
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "850 € м²",
-    warmContourCost: "1000 € м²",
-    turnkeyCost: "1500 € м²",
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
       "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
       "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
