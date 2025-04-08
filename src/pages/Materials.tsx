@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,7 +18,7 @@ const materials = [
     id: 1,
     name: "Клееный брус",
     description: "Высококачественный клееный брус для строительства домов",
-    image: "/lovable-uploads/c1c9a9a9-5a65-458e-9333-cffcf41c9335.png",
+    image: "/lovable-uploads/9b5562db-5a65-458e-9333-cffcf41c9335.png",
     category: "Конструкционные материалы",
     eco: true,
   },
@@ -64,6 +65,12 @@ const materials = [
 ];
 
 const Materials = () => {
+  // Предзагрузка баннера для более быстрой отрисовки
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = "/lovable-uploads/705016e4-5ccb-4d56-8491-26cbb6ec8d72.png";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -80,7 +87,7 @@ const Materials = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Высококачественные материалы</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-wood-darkest">Высококачественные материалы</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
             {materials.map((material) => (
