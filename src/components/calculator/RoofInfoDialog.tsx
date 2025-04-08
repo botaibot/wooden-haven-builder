@@ -4,7 +4,6 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Info } from "lucide-react";
-import MaterialCalculator from "../MaterialCalculator";
 import { ROOF_INSULATION_DETAILS } from "./constants";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -66,8 +65,12 @@ const RoofInfoDialog = () => {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-gray-200 h-48 flex items-center justify-center rounded-md border border-gray-300">
-                    <p className="text-gray-500">Схема кровельного пирога (в разработке)</p>
+                  <div className="rounded-md border border-gray-300 overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/9b5562db-5a65-458e-9333-cffcf41c9335.png" 
+                      alt="Схема кровельного пирога" 
+                      className="w-full h-auto"
+                    />
                   </div>
                   <h3 className="text-lg font-medium">Кровельный пирог</h3>
                   <p className="text-sm text-muted-foreground">
@@ -78,7 +81,6 @@ const RoofInfoDialog = () => {
                     <span className="font-medium">Важно:</span> При увеличении толщины утеплителя кровли свыше базовых значений 
                     требуется индивидуальный расчет. Пожалуйста, обратитесь к менеджеру для получения точной информации.
                   </p>
-                  <MaterialCalculator width={1000} length={2000} />
                 </div>
               </div>
             </TabsContent>
