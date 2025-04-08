@@ -447,7 +447,7 @@ const Materials = () => {
       <div 
         className="relative py-16"
         style={{
-          backgroundImage: "url('/lovable-uploads/48c9ad1f-99f5-4a25-8872-403ade0c2296.png')",
+          backgroundImage: "url('/lovable-uploads/c3dcdb81-4863-40b7-9197-f1f054d70274.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
