@@ -5,6 +5,12 @@ import Footer from "@/components/Footer";
 import HouseCalculator from "@/components/HouseCalculator";
 
 const Calculator = () => {
+  // Предзагрузка баннера для более быстрой отрисовки
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = "/lovable-uploads/f8112d29-484a-4ca5-b7d2-f6ddf7cc2dda.png";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

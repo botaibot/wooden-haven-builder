@@ -9,6 +9,12 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const RoofInfoDialog = () => {
+  // Предзагрузка изображения для более быстрой отрисовки диалога
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = "/lovable-uploads/9b5562db-5a65-458e-9333-cffcf41c9335.png";
+  }, []);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -70,6 +76,7 @@ const RoofInfoDialog = () => {
                       src="/lovable-uploads/9b5562db-5a65-458e-9333-cffcf41c9335.png" 
                       alt="Схема кровельного пирога" 
                       className="w-full h-auto"
+                      loading="lazy"
                     />
                   </div>
                   <h3 className="text-lg font-medium">Кровельный пирог</h3>
