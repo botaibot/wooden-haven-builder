@@ -1,5 +1,5 @@
 
-import React, { useEffect, lazy, Suspense } from "react";
+import React, { useEffect } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
 import HouseTypeSelector from "./HouseTypeSelector";

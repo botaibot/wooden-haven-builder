@@ -1,130 +1,200 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 
-const furnitureItems = [
-  {
-    id: 1,
-    name: "Обеденный стол из массива дуба",
-    description: "Прочный и элегантный стол ручной работы",
-    image: "/lovable-uploads/9b5562db-5a65-458e-9333-cffcf41c9335.png",
-    category: "Столы",
-    eco: true,
-  },
-  {
-    id: 2,
-    name: "Шкаф-купе из сосны",
-    description: "Вместительный шкаф с раздвижными дверями",
-    image: "/lovable-uploads/c2c9a9a9-5a65-458e-9333-cffcf41c9335.png",
-    category: "Шкафы",
-    eco: true,
-  },
-  {
-    id: 3,
-    name: "Кровать из массива бука",
-    description: "Прочная и экологичная кровать для комфортного сна",
-    image: "/lovable-uploads/c3c9a9a9-5a65-458e-9333-cffcf41c9335.png",
-    category: "Кровати",
-    eco: true,
-  },
-  {
-    id: 4,
-    name: "Стул из натурального дерева",
-    description: "Удобный стул с эргономичной спинкой",
-    image: "/lovable-uploads/c4c9a9a9-5a65-458e-9333-cffcf41c9335.png",
-    category: "Стулья",
-    eco: true,
-  },
-  {
-    id: 5,
-    name: "Комод из карельской березы",
-    description: "Стильный комод с уникальным рисунком древесины",
-    image: "/lovable-uploads/c5c9a9a9-5a65-458e-9333-cffcf41c9335.png",
-    category: "Комоды",
-    eco: true,
-  },
-  {
-    id: 6,
-    name: "Кухонный гарнитур",
-    description: "Модульная кухня из экологичных материалов",
-    image: "/lovable-uploads/c6c9a9a9-5a65-458e-9333-cffcf41c9335.png",
-    category: "Кухни",
-    eco: true,
-  },
-];
+interface FurnitureItem {
+  id: string;
+  title: string;
+  description: string;
+  dimensions?: string;
+  customizable?: boolean;
+  price: number;
+  priceWithAddons?: number;
+  priceAddonDescription?: string;
+  priceWithMaterial?: number;
+  priceWithMaterialDescription?: string;
+  images: string[];
+  icon: React.ElementType;
+}
+
+const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
+  return (
+    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+      <MaterialCardCarousel images={item.images} alt={item.title} />
+      
+      <CardContent className="p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <item.icon className="text-wood-dark" size={24} />
+          <h3 className="text-xl font-semibold text-wood-darkest">{item.title}</h3>
+        </div>
+        
+        <p className="text-gray-600 mb-4">{item.description}</p>
+        
+        {item.dimensions && (
+          <p className="text-sm font-medium text-wood-dark mb-2">
+            Размеры: {item.dimensions}
+          </p>
+        )}
+        
+        {item.customizable && (
+          <p className="text-sm text-nature-dark mb-4">
+            Возможно изготовление по индивидуальным размерам
+          </p>
+        )}
+        
+        <div className="flex justify-between items-center">
+          <div className="flex flex-col">
+            <span className="font-bold text-nature-dark">
+              от €{item.price}
+            </span>
+            {item.priceWithAddons && (
+              <span className="text-sm text-gray-600">
+                {item.priceAddonDescription}: €{item.priceWithAddons}
+              </span>
+            )}
+            {item.priceWithMaterial && (
+              <span className="text-sm text-gray-600">
+                {item.priceWithMaterialDescription}: €{item.priceWithMaterial}
+              </span>
+            )}
+          </div>
+          <a 
+            href="/contact"
+            className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+          >
+            <ShoppingCart size={16} />
+            <span>Заказать</span>
+          </a>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 const Furniture = () => {
-  // Предзагрузка баннера для более быстрой отрисовки
-  React.useEffect(() => {
-    const img = new Image();
-    img.src = "/lovable-uploads/705016e4-5ccb-4d56-8491-26cbb6ec8d72.png";
-  }, []);
+  const furnitureItems: FurnitureItem[] = [
+    {
+      id: "cabinet",
+      title: "Тумба из натуральной ольхи в стиле рустик",
+      description: "Добавьте в интерьер тепло и характер с нашей авторской тумбой ручной работы. Изготовленная из отборной ольхи на собственном производстве, эта модель сочетает в себе естественную красоту древесины и неповторимый стиль рустик.",
+      dimensions: "80 см × 50 см × 80 см (длина × глубина × высота)",
+      customizable: true,
+      price: 300,
+      priceWithAddons: 500,
+      priceAddonDescription: "с раковиной и краном",
+      images: [
+        "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png",
+        "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png"
+      ],
+      icon: BookOpen
+    },
+    {
+      id: "benches",
+      title: "Лавки и скамейки из ольхи — тепло природы в каждой детали",
+      description: "Уют начинается с простых вещей. Наши лавки и скамейки, выполненные из натуральной ольхи, станут не только практичным элементом интерьера, но и настоящим акцентом вашего пространства. Мы производим их на собственной мастерской, вручную отбирая каждую доску. Живые текстуры, массив, тепло древесины и характерная небрежность стиля рустик — всё это делает каждое изделие уникальным.",
+      dimensions: "100 см × 45 см × 45 см (длина × ширина × высота)",
+      customizable: true,
+      price: 250,
+      images: [
+        "/lovable-uploads/1a1c1bea-9995-4063-9cf1-01d0020e4080.png",
+        "/lovable-uploads/8374f16f-8443-481c-9f0a-d6363a8a516b.png"
+      ],
+      icon: Lamp
+    },
+    {
+      id: "outdoor-chairs",
+      title: "Деревянные кресла из ольхи — для тишины, свежего воздуха и комфорта",
+      description: "Погрузитесь в атмосферу отдыха с нашими удобными креслами из натуральной ольхи, созданными специально для экстерьера. Это мебель, которая отлично чувствует себя на свежем воздухе — будь то веранда, терраса, сад или зона у костра. Мы тщательно продумали эргономику и посадку: удобная спинка, широкие подлокотники и устойчивая конструкция делают это кресло идеальным для долгих тёплых вечеров на природе.",
+      price: 400,
+      images: [
+        "/lovable-uploads/8f722547-79d9-419c-9a42-dc313ffce0f3.png",
+        "/lovable-uploads/4177ab5d-74aa-4366-acb1-3cf7438eee90.png"
+      ],
+      icon: Sofa
+    },
+    {
+      id: "coffee-table",
+      title: "Журнальный стол из соснового бруса 140×140 — массивный акцент в интерьере",
+      description: "Брутальность и природная эстетика — в одном предмете. Этот журнальный стол изготовлен из массивного соснового бруса сечением 140×140 мм и станет настоящим центром притяжения в вашей гостиной. Толстые брусья с естественной фактурой, трещинами, сучками и живыми линиями подчеркивают натуральность и характер материала. Устойчивое основание из металла добавляет современности и делает конструкцию надёжной.",
+      dimensions: "100 см × 100 см (длина × ширина)",
+      customizable: true,
+      price: 250,
+      images: [
+        "/lovable-uploads/209d2102-60c6-4f67-a067-cb9196f00ae6.png"
+      ],
+      icon: Table
+    },
+    {
+      id: "dining-tables",
+      title: "Столы из ольхи и дуба — дерево, которое вдохновляет",
+      description: "Создаём столы, которые становятся центром пространства — будь то обеденная зона, кабинет или переговорная. В основе — натуральная ольха и дуб: прочные, тёплые, с ярко выраженной текстурой и характером. Каждое изделие — это результат ручной работы и уважения к материалу. Мы не маскируем дерево — мы подчёркиваем его. Живые края, сучки, текстура и натуральный цвет — всё это делает каждый стол уникальным.",
+      dimensions: "160 см × 70 см (длина × ширина)",
+      customizable: true,
+      price: 400,
+      priceWithMaterial: 600,
+      priceWithMaterialDescription: "из дуба",
+      images: [
+        "/lovable-uploads/ba2e57fb-1851-4295-8d27-0a8d2810b79a.png",
+        "/lovable-uploads/66c08602-1489-4196-8d1d-7038ddc7c2ed.png"
+      ],
+      icon: Table
+    },
+    {
+      id: "aspen-oak-furniture",
+      title: "Мебель из осины и дуба — лёгкость, прочность и натуральная эстетика",
+      description: "Мы изготавливаем мебель из натуральной осины и дуба — пород, которые прекрасно сочетаются между собой как по цвету, так и по характеристикам.\n\nОсина — светлая, ровная, лёгкая.\nДуб — прочный, выразительный, с красивой текстурой.\n\nЭто отличный тандем для создания мебели с характером — тёплой, надёжной и стильной.",
+      customizable: true,
+      price: 350,
+      priceWithMaterial: 450,
+      priceWithMaterialDescription: "из дуба",
+      images: [
+        "/lovable-uploads/c9eb8364-afe9-4216-9d3d-db95f9b4902d.png"
+      ],
+      icon: Table
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/705016e4-5ccb-4d56-8491-26cbb6ec8d72.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Мебель</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
-            Деревянная мебель ручной работы для вашего дома
-          </p>
-        </div>
-      </div>
-
-      <section className="py-16">
+      <section className="py-12 md:py-16 bg-nature-light/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-wood-darkest">Наши мебельные коллекции</h2>
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Мебель из натурального дерева
+          </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {furnitureItems.map((item) => (
-              <Card key={item.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.name} 
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl font-semibold text-wood-darkest">{item.name}</CardTitle>
-                    {item.eco && (
-                      <Badge className="bg-nature-dark hover:bg-nature">Эко</Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                  <Badge variant="outline" className="mt-4">{item.category}</Badge>
-                </CardContent>
-                <CardFooter>
-                  <Link 
-                    to={`/furniture/${item.id}`}
-                    className="text-wood-dark hover:text-wood-darkest transition-colors flex items-center gap-1"
-                  >
-                    Подробнее <ArrowRight size={16} />
-                  </Link>
-                </CardFooter>
-              </Card>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-lg text-gray-700">
+              Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома. 
+              Каждое изделие создано вручную нашими мастерами с вниманием к деталям и качеству.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {furnitureItems.map((item, index) => (
+              <FurnitureCard key={index} item={item} />
             ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <p className="text-lg font-medium text-gray-700 mb-6">
+              Вся наша мебель изготавливается по индивидуальным заказам с учетом ваших пожеланий и требований
+            </p>
+            <div className="bg-wood p-6 rounded-lg inline-block">
+              <p className="text-white">
+                Для заказа мебели или получения дополнительной информации<br />
+                свяжитесь с нами по телефону: <strong>+34 123 456 789</strong>
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   );
