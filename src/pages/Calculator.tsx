@@ -9,7 +9,7 @@ const Calculator = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/c3dcdb81-4863-40b7-9197-f1f054d70274.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/cd78c27c-bcc9-4380-a619-4d6793338b35.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Калькулятор стоимости дома</h1>
