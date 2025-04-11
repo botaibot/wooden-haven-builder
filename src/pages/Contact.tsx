@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { Phone, Mail, MapPin, Clock, Telegram, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -70,7 +70,7 @@ const Contact = () => {
                         <MessageCircle size={18} />
                       </a>
                       <a href="https://t.me/+34675466510" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
-                        <Telegram size={18} />
+                        <MessageSquare size={18} />
                       </a>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
@@ -79,7 +79,7 @@ const Contact = () => {
                         <MessageCircle size={18} />
                       </a>
                       <a href="https://t.me/+34603701667" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
-                        <Telegram size={18} />
+                        <MessageSquare size={18} />
                       </a>
                     </div>
                   </div>
