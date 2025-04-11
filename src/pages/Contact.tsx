@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Telegram, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -50,9 +50,9 @@ const Contact = () => {
                         <MapPin size={24} className="text-nature-dark" />
                       </div>
                       <div>
-                        <p className="text-gray-700">Calle Arcilla 2, Pta.2,</p>
-                        <p className="text-gray-700">38632 Arona, Guargacho,</p>
-                        <p className="text-gray-700">Tenerife</p>
+                        <p className="text-gray-700">C. Arcilla, 2, pta 2</p>
+                        <p className="text-gray-700">38632 Guargacho,</p>
+                        <p className="text-gray-700">Santa Cruz de Tenerife</p>
                       </div>
                     </div>
                   </div>
@@ -64,8 +64,24 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Телефон</h3>
-                    <p className="text-gray-700">+34 675 46 65 10</p>
-                    <p className="text-gray-700">+34 603 70 16 67</p>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <p>+34 675 46 65 10</p>
+                      <a href="https://wa.me/34675466510" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
+                        <MessageCircle size={18} />
+                      </a>
+                      <a href="https://t.me/+34675466510" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+                        <Telegram size={18} />
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <p>+34 603 70 16 67</p>
+                      <a href="https://wa.me/34603701667" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
+                        <MessageCircle size={18} />
+                      </a>
+                      <a href="https://t.me/+34603701667" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+                        <Telegram size={18} />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -106,7 +122,7 @@ const Contact = () => {
           <h2 className="section-title text-center mb-8">Мы на карте</h2>
           <div className="rounded-lg overflow-hidden shadow-lg mb-8">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14058.35613891991!2d-16.7794554!3d28.2268853!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a971fd9033f01%3A0x2eeb3da78d4c0be1!2sBosque%20N%C3%B3rdico!5e0!3m2!1sen!2sus!4v1682067316221!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.6034252686183!2d-16.64238322467732!3d28.029519975959598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a9b212e5abc45%3A0x78affe51d3bcb75d!2sC.%20Arcilla%2C%202%2C%2038632%20Guargacho%2C%20Santa%20Cruz%20de%20Tenerife%2C%20Spain!5e0!3m2!1sen!2sus!4v1713034839641!5m2!1sen!2sus" 
               width="100%" 
               height="450" 
               style={{ border: 0 }} 
