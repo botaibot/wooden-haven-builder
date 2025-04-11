@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,8 +13,8 @@ const About = () => {
 
       <PageBanner 
         title="Добро пожаловать в Северный лес!" 
-        description="Ваш ��адежный партнер в строительстве деревянных домов и поставке высококачественных строительных материалов на Тенерифе"
-        backgroundImage="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070"
+        description="Ваш надежный партнер в строительстве деревянных домов и поставке высококачественных строительных материалов на Тенерифе"
+        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
       />
 
       <section className="py-16">

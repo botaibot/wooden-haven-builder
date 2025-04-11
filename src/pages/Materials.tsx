@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -445,7 +446,7 @@ const Materials = () => {
       <PageBanner 
         title="Строительные материалы" 
         description="Широкий ассортимент высококачественных пиломатериалов для строительства и отделки: брус, фанера, доска, вагонка и многое другое"
-        backgroundImage="/lovable-uploads/c3dcdb81-4863-40b7-9197-f1f054d70274.png"
+        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
       />
 
       <section className="py-16">
