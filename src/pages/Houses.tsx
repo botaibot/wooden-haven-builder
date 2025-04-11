@@ -1,7 +1,7 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -68,16 +68,11 @@ const Houses = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="relative py-16" style={{ backgroundImage: "url('/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Наши проекты домов</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
-            Выберите готовый проект или мы разработаем для вас индивидуальный проект 
-            деревянного дома вашей мечты
-          </p>
-        </div>
-      </div>
+      <PageBanner 
+        title="Наши проекты домов" 
+        description="Выберите готовый проект или мы разработаем для вас индивидуальный проект деревянного дома вашей мечты"
+        backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

@@ -1,8 +1,8 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import PageBanner from "@/components/PageBanner";
 import { Phone, Mail, MapPin, Clock, MessageSquare, MessageCircle } from "lucide-react";
 
 const Contact = () => {
@@ -10,15 +10,11 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="relative py-16 bg-[url('https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Контакты</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
-            Свяжитесь с нами любым удобным способом, и мы ответим на все ваши вопросы
-          </p>
-        </div>
-      </div>
+      <PageBanner 
+        title="Контакты" 
+        description="Свяжитесь с нами любым удобным способом, и мы ответим на все ваши вопросы"
+        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">
