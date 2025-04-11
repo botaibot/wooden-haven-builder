@@ -1,7 +1,7 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Shield, Award, Clock, Users, Factory, Hammer, Ruler } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,16 +10,11 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="relative py-16 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Добро пожаловать в Северный лес!</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
-            Ваш надежный партнер в строительстве деревянных домов и поставке 
-            высококачественных строительных материалов на Тенерифе
-          </p>
-        </div>
-      </div>
+      <PageBanner 
+        title="Добро пожаловать в Северный лес!" 
+        description="Ваш ��адежный партнер в строительстве деревянных домов и поставке высококачественных строительных материалов на Тенерифе"
+        backgroundImage="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

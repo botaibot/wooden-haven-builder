@@ -1,7 +1,7 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Package, ChevronDown, Plus, Minus, ShoppingCart } from "lucide-react";
 import {
   Select,
@@ -104,7 +104,6 @@ const MaterialCard = ({
     return selectedSizeObj?.length || 0;
   };
 
-  // Calculate total cost
   const calculateTotalCost = () => {
     return getSelectedSizePrice() * quantity;
   };
@@ -207,7 +206,6 @@ const MaterialCard = ({
           </div>
         )}
         
-        {/* Display total cost when size is selected */}
         {selectedSize && sizes.length > 0 && (
           <div className="bg-nature-light/20 p-3 rounded-md mb-4">
             <p className="font-medium text-nature-dark">
@@ -444,24 +442,11 @@ const Materials = () => {
         <Cart />
       </div>
       
-      <div 
-        className="relative py-16"
-        style={{
-          backgroundImage: "url('/lovable-uploads/c3dcdb81-4863-40b7-9197-f1f054d70274.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">Строительные материалы</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
-            Широкий ассортимент высококачественных пиломатериалов для строительства 
-            и отделки: брус, фанера, доска, вагонка и многое другое
-          </p>
-        </div>
-      </div>
+      <PageBanner 
+        title="Строительные материалы" 
+        description="Широкий ассортимент высококачественных пиломатериалов для строительства и отделки: брус, фанера, доска, вагонка и многое другое"
+        backgroundImage="/lovable-uploads/c3dcdb81-4863-40b7-9197-f1f054d70274.png"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

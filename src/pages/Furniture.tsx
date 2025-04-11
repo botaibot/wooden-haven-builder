@@ -1,6 +1,8 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -162,12 +164,14 @@ const Furniture = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
+      <PageBanner 
+        title="Мебель из натурального дерева" 
+        description="Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома"
+        backgroundImage="/lovable-uploads/1a1c1bea-9995-4063-9cf1-01d0020e4080.png"
+      />
+      
       <section className="py-12 md:py-16 bg-nature-light/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Мебель из натурального дерева
-          </h1>
-          
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-lg text-gray-700">
               Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома. 
