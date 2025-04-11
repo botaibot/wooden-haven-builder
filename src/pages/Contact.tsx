@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,7 +14,7 @@ const Contact = () => {
       <PageBanner 
         title="Контакты" 
         description="Свяжитесь с нами любым удобным способом, и мы ответим на все ваши вопросы"
-        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
+        backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
       <section className="py-16">

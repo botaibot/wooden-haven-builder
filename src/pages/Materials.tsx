@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -439,14 +438,10 @@ const Materials = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="fixed top-20 right-6 z-30">
-        <Cart />
-      </div>
-      
       <PageBanner 
         title="Строительные материалы" 
         description="Широкий ассортимент высококачественных пиломатериалов для строительства и отделки: брус, фанера, доска, вагонка и многое другое"
-        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
+        backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
       <section className="py-16">

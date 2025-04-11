@@ -167,7 +167,7 @@ const Furniture = () => {
       <PageBanner 
         title="Мебель из натурального дерева" 
         description="Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома"
-        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1992"
+        backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
       <section className="py-12 md:py-16 bg-nature-light/30">
