@@ -52,9 +52,7 @@ const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
                         <h4 className="text-md font-medium mb-2">Структура:</h4>
                         <div className="space-y-2">
                           {FRAME_THICKNESS_DETAILS[key].structure.map((layer, index) => (
-                            <div key={index} className={`bg-${["slate", "amber", "blue", "yellow", "green"][index % 5]}-100 p-3 rounded`}>
-                              <p className="text-sm">{layer}</p>
-                            </div>
+                            <p key={index} className="text-sm">{index + 1}. {layer}</p>
                           ))}
                         </div>
                       </div>

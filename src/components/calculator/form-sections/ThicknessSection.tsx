@@ -46,13 +46,11 @@ const ThicknessSection = ({ form }: ThicknessSectionProps) => {
             {form.watch("houseType") === "frame" && (
               <div className="text-sm mt-2">
                 <p>Базовая комплектация каркасного дома включает:</p>
-                <ul className="list-disc pl-5 mt-1 space-y-1">
-                  <li>Внутренняя обшивка: фанера 12 мм</li>
-                  <li>Утеплитель: полистирол (стены, потолок — 80 мм, пол — 50 мм)</li>
-                  <li>Влаговетрозащита Würth</li>
-                  <li>Обрешётка 48 мм</li>
-                  <li>Имитация бруса 19 мм (machihembrado) или OSB 18 мм</li>
-                </ul>
+                <p>1. Внутренняя обшивка: фанера 12 мм</p>
+                <p>2. Утеплитель: полистирол (стены, потолок — 80 мм, пол — 50 мм)</p>
+                <p>3. Влаговетрозащита Würth</p>
+                <p>4. Обрешётка 48 мм</p>
+                <p>5. Имитация бруса 19 мм (machihembrado) или OSB 18 мм</p>
               </div>
             )}
             {form.watch("houseType") === "glued_beam" && (
