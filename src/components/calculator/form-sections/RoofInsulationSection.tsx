@@ -21,8 +21,8 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
             <Layers className="h-5 w-5" /> Утепление крыши
             <RoofInfoDialog />
           </FormLabel>
-          <FormDescription className="mt-2 text-sm space-y-1 bg-slate-50 p-3 rounded-md">
-            <div className="space-y-1">
+          <FormDescription>
+            <div className="text-sm mt-2">
               <p>1. Балка крыши 140 мм x 60 мм или 160 мм x 60 мм</p>
               <p>2. Шпунтованная доска 19 мм</p>
               <p>3. Пароизоляция WURTH</p>
