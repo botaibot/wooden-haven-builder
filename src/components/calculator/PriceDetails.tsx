@@ -114,6 +114,13 @@ const PriceDetails = ({
               </>
             )}
 
+            {formValues.fireProtection && (
+              <>
+                <div className="text-muted-foreground">Противопожарная защита:</div>
+                <div>20 точек ({formatCurrency(800)})</div>
+              </>
+            )}
+
             <div className="text-muted-foreground">Общая площадь:</div>
             <div>
               {totalArea.toFixed(1)} м²

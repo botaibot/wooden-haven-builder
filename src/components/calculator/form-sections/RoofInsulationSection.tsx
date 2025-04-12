@@ -35,12 +35,6 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
                   <div className="text-xs text-muted-foreground">Легкий, экономичный материал (входит в базовую комплектацию)</div>
                 </div>
               </SelectItem>
-              <SelectItem value="rockwool_60mm" className="py-3">
-                <div className="space-y-1">
-                  <div className="font-medium">Каменная вата 80 мм</div>
-                  <div className="text-xs text-muted-foreground">Огнестойкий, экологичный материал (входит в базовую комплектацию)</div>
-                </div>
-              </SelectItem>
               <SelectItem value="custom" className="py-3">
                 <div className="space-y-1">
                   <div className="font-medium">Индивидуальная толщина (по запросу)</div>
@@ -57,16 +51,6 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
                   <li>Низкая стоимость материала</li>
                   <li>Легкий вес, не создает нагрузку на конструкцию</li>
                   <li>Простота монтажа и обработки</li>
-                </ul>
-              </div>
-            )}
-            {field.value === "rockwool_60mm" && (
-              <div className="mt-2 text-sm space-y-1 bg-slate-50 p-3 rounded-md">
-                <p className="font-medium">Преимущества каменной ваты:</p>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Отличная шумоизоляция (особенно от звуков дождя)</li>
-                  <li>Пожаробезопасность - не поддерживает горение</li>
-                  <li>Экологически чистый материал</li>
                 </ul>
               </div>
             )}

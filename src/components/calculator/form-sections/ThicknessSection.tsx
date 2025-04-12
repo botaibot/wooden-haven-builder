@@ -5,6 +5,7 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "../types";
+import FrameThicknessDialog from "../FrameThicknessDialog";
 
 interface ThicknessSectionProps {
   form: UseFormReturn<FormValues>;
@@ -19,6 +20,7 @@ const ThicknessSection = ({ form }: ThicknessSectionProps) => {
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
             <Ruler className="h-5 w-5" /> Толщина {form.watch("houseType") === "frame" ? "каркаса" : "бруса"}
+            <FrameThicknessDialog houseType={form.watch("houseType")} />
           </FormLabel>
           <Select onValueChange={field.onChange} value={field.value}>
             <FormControl>

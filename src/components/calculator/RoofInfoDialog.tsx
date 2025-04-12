@@ -27,10 +27,9 @@ const RoofInfoDialog = () => {
         
         <ScrollArea className="h-[60vh]">
           <Tabs defaultValue="structure" className="mt-4">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-4">
+            <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-4">
               <TabsTrigger value="structure">Структура кровли</TabsTrigger>
               <TabsTrigger value="polystyrene">Пенополистирол</TabsTrigger>
-              <TabsTrigger value="rockwool">Каменная вата</TabsTrigger>
               <TabsTrigger value="custom">Индивидуальный расчет</TabsTrigger>
             </TabsList>
             
@@ -49,7 +48,7 @@ const RoofInfoDialog = () => {
                     </div>
                     <div className="bg-blue-100 p-3 rounded">
                       <p className="font-medium">Слой 3: Утеплитель</p>
-                      <p className="text-sm text-muted-foreground">Теплоизоляция (80мм пенополистирол или 80мм каменная вата)</p>
+                      <p className="text-sm text-muted-foreground">Теплоизоляция (80мм пенополистирол)</p>
                     </div>
                     <div className="bg-yellow-100 p-3 rounded">
                       <p className="font-medium">Слой 4: Пароизоляция</p>
@@ -84,7 +83,7 @@ const RoofInfoDialog = () => {
             </TabsContent>
             
             {Object.entries(ROOF_INSULATION_DETAILS).map(([key, details]) => (
-              <TabsContent key={key} value={key === "polystyrene_40mm" ? "polystyrene" : key === "rockwool_60mm" ? "rockwool" : "custom"} className="space-y-6">
+              <TabsContent key={key} value={key === "polystyrene_40mm" ? "polystyrene" : "custom"} className="space-y-6">
                 <div className="bg-muted/40 rounded-lg p-6 border">
                   <h3 className="text-xl font-semibold mb-2">{details.title}</h3>
                   <p className="text-muted-foreground mb-4">{details.description}</p>
@@ -134,7 +133,7 @@ const RoofInfoDialog = () => {
                     </div>
                   </div>
                   
-                  {(key === "polystyrene_40mm" || key === "rockwool_60mm") && 'thermalConductivity' in details && 'soundInsulation' in details && (
+                  {key === "polystyrene_40mm" && 'thermalConductivity' in details && 'soundInsulation' in details && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 bg-slate-50 p-4 rounded-md">
                       <div>
                         <h4 className="text-md font-medium mb-2">Теплопроводность:</h4>

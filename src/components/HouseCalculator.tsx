@@ -32,6 +32,7 @@ const HouseCalculator = () => {
     foundation: "adjustable_metal",
     solarPanels: false,
     solarPower: 5,
+    fireProtection: false,
   };
 
   const form = useForm<FormValues>({
@@ -87,7 +88,13 @@ const HouseCalculator = () => {
       ? Math.max(values.solarPower, PRICES.SOLAR_PANELS.min_power) * PRICES.SOLAR_PANELS.price_per_kw
       : 0;
     
-    const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + foundationPrice + (values.foundation === "monolithic" ? 0 : solarPanelsPrice);
+    // Calculate fire protection cost
+    const fireProtectionPrice = values.fireProtection 
+      ? PRICES.FIRE_PROTECTION.base_price
+      : 0;
+    
+    const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + 
+      foundationPrice + (values.foundation === "monolithic" ? 0 : solarPanelsPrice) + fireProtectionPrice;
     
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);

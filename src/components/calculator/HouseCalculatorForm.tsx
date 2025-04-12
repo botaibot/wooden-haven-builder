@@ -9,6 +9,7 @@ import RoofInsulationSection from "./form-sections/RoofInsulationSection";
 import FoundationSection from "./form-sections/FoundationSection";
 import SolarPanelsSection from "./form-sections/SolarPanelsSection";
 import OutdoorSpacesSection from "./form-sections/OutdoorSpacesSection";
+import FireProtectionSection from "./form-sections/FireProtectionSection";
 
 interface HouseCalculatorFormProps {
   form: UseFormReturn<FormValues>;
@@ -41,6 +42,7 @@ const HouseCalculatorForm = ({ form, metalSupportsCount, metalSupportsCost }: Ho
       />
       <SolarPanelsSection form={form} />
       <OutdoorSpacesSection form={form} />
+      <FireProtectionSection form={form} />
     </>
   );
 };

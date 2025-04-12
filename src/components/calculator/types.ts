@@ -11,10 +11,11 @@ export const calculatorFormSchema = z.object({
   terraceSize: z.number().min(0).max(100).optional(),
   canopy: z.boolean(),
   canopySize: z.number().min(0).max(50).optional(),
-  roofInsulation: z.enum(["polystyrene_40mm", "rockwool_60mm", "custom"]),
+  roofInsulation: z.enum(["polystyrene_40mm", "custom"]),
   foundation: z.enum(["adjustable_metal", "monolithic"]),
   solarPanels: z.boolean().default(false),
   solarPower: z.number().min(0).max(20).default(5),
+  fireProtection: z.boolean().default(false),
 });
 
 export type FormValues = z.infer<typeof calculatorFormSchema>;
