@@ -3,9 +3,7 @@ import React from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check, Info } from "lucide-react";
-import { ROOF_INSULATION_DETAILS } from "./constants";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Info } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const RoofInfoDialog = () => {
@@ -20,140 +18,83 @@ const RoofInfoDialog = () => {
         <DialogHeader>
           <DialogTitle>Информация о кровельном пироге</DialogTitle>
           <DialogDescription>
-            Структура и состав кровельного пирога, виды утепления и их характеристики
+            Структура и состав кровельного пирога
           </DialogDescription>
         </DialogHeader>
         
         <ScrollArea className="h-[60vh]">
           <Tabs defaultValue="structure" className="mt-4">
-            <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-4">
+            <TabsList className="grid grid-cols-1 mb-4">
               <TabsTrigger value="structure">Структура кровли</TabsTrigger>
-              <TabsTrigger value="polystyrene">Пенополистирол</TabsTrigger>
-              <TabsTrigger value="custom">Индивидуальный расчет</TabsTrigger>
             </TabsList>
             
             <TabsContent value="structure" className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-medium mb-4">Схема кровельного пирога</h3>
-                  <img 
-                    src="/lovable-uploads/61ef6b90-6c4d-49e0-8c8a-177d89dd3abc.png" 
-                    alt="Схема кровельного пирога 1" 
-                    className="rounded-md border border-gray-200 w-full mb-4"
-                  />
-                  <p className="text-sm mt-4 bg-amber-50 p-3 rounded">
-                    <span className="font-medium">Важно:</span> При увеличении толщины утеплителя кровли свыше базовых значений 
-                    требуется индивидуальный расчет. Пожалуйста, обратитесь к менеджеру для получения точной информации.
-                  </p>
+                  <h3 className="text-lg font-medium mb-4">Кровельный пирог</h3>
+                  <div 
+                    className="transition-transform duration-300 hover:scale-130 cursor-zoom-in"
+                    style={{ transformOrigin: 'center' }}
+                  >
+                    <img 
+                      src="/lovable-uploads/675ff4d5-ce2d-4aba-ae5f-fa43015f51a1.png" 
+                      alt="Схема кровельного пирога 1" 
+                      className="rounded-md border border-gray-200 w-full mb-4"
+                    />
+                  </div>
+                  <div className="space-y-1 mt-4">
+                    <p>1. Балка крыши 140 мм x 60 мм или 160 мм x 60 мм</p>
+                    <p>2. Шпунтованная доска 19 мм</p>
+                    <p>3. Пароизоляция WURTH</p>
+                    <p>4. Обрешётка 95 мм x 45 мм</p>
+                    <p>5. Каменная вата</p>
+                    <p>6. Пароизоляция WURTH</p>
+                    <p>7. Обрешётка 48 мм x 48 мм</p>
+                    <p>8. OSB 18 мм</p>
+                    <p>9. Ветрозащита/влагозащита WURTH</p>
+                    <p>10. Черепица (Tegola)</p>
+                  </div>
                 </div>
                 <div className="space-y-4">
-                  <img 
-                    src="/lovable-uploads/f3c6717b-8e54-4e38-9bcf-b8630ac7b079.png" 
-                    alt="Схема кровельного пирога 2" 
-                    className="rounded-md border border-gray-200 w-full"
-                  />
-                  <h3 className="text-lg font-medium">Кровельный пирог</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <div 
+                    className="transition-transform duration-300 hover:scale-130 cursor-zoom-in"
+                    style={{ transformOrigin: 'center' }}
+                  >
+                    <img 
+                      src="/lovable-uploads/987076e2-de0c-4064-bd33-cb6674da2578.png" 
+                      alt="Схема кровельного пирога 2" 
+                      className="rounded-md border border-gray-200 w-full"
+                    />
+                  </div>
+                  <div className="space-y-1 mt-4">
+                    <p>1. Revestimiento del techo interior</p>
+                    <p>2. Viga del Techo 195 mm x 45 mm</p>
+                    <p>3. Barrera de vapor WURTH</p>
+                    <p>4. Lana de Roca</p>
+                    <p>5. Barrera de vapor WURTH</p>
+                    <p>6. Rastreles 48 mm x 48 mm</p>
+                    <p>7. OSB 18 mm</p>
+                    <p>8. Barrera de humedad/viento WURTH</p>
+                    <p>9. Tegola</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-4">
                     Кровельный пирог — это многослойная конструкция, обеспечивающая защиту дома от внешних воздействий,
                     сохранение тепла внутри помещения и долговечность всей конструкции крыши.
                   </p>
+                  <p className="text-sm text-gray-500 italic mt-2">
+                    En las capas se puede utilizar otros tipos de materiales de aislamiento y acabados (revestimiento)
+                  </p>
                 </div>
               </div>
+              
+              <div className="bg-slate-50 p-4 rounded-md border border-slate-100 text-center mt-6">
+                <h4 className="font-medium">Нужна помощь с выбором?</h4>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Наши специалисты помогут подобрать оптимальное решение для вашего проекта
+                </p>
+                <Button variant="outline" className="mt-3">Связаться с нами</Button>
+              </div>
             </TabsContent>
-            
-            {Object.entries(ROOF_INSULATION_DETAILS).map(([key, details]) => (
-              <TabsContent key={key} value={key === "polystyrene_40mm" ? "polystyrene" : "custom"} className="space-y-6">
-                <div className="bg-muted/40 rounded-lg p-6 border">
-                  <h3 className="text-xl font-semibold mb-2">{details.title}</h3>
-                  <p className="text-muted-foreground mb-4">{details.description}</p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                      <h4 className="text-lg font-medium mb-3 flex items-center gap-2">
-                        <div className="bg-green-100 p-1 rounded-full">
-                          <Check className="h-5 w-5 text-green-600" />
-                        </div>
-                        Преимущества
-                      </h4>
-                      <ul className="space-y-2">
-                        {details.advantages.map((advantage, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm">{advantage}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-medium mb-3">Лучший выбор для:</h4>
-                      <ul className="space-y-2">
-                        {details.bestFor.map((use, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <div className="h-4 w-4 rounded-full bg-blue-100 mt-0.5 flex-shrink-0"></div>
-                            <span className="text-sm">{use}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      {details.limitations && (
-                        <div className="mt-6">
-                          <h4 className="text-lg font-medium mb-3">Ограничения:</h4>
-                          <ul className="space-y-2">
-                            {details.limitations.map((limitation, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <Info className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-sm">{limitation}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {key === "polystyrene_40mm" && 'thermalConductivity' in details && 'soundInsulation' in details && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 bg-slate-50 p-4 rounded-md">
-                      <div>
-                        <h4 className="text-md font-medium mb-2">Теплопроводность:</h4>
-                        <p className="text-sm">
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger className="underline decoration-dotted">
-                                {details.thermalConductivity}
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p className="max-w-xs text-xs">
-                                  Чем ниже значение теплопроводности, тем лучше материал сохраняет тепло
-                                </p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-md font-medium mb-2">Звукоизоляция:</h4>
-                        <p className="text-sm">{details.soundInsulation}</p>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {'note' in details && (
-                    <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
-                      <p className="text-sm text-blue-800">{details.note}</p>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="bg-slate-50 p-4 rounded-md border border-slate-100 text-center">
-                  <h4 className="font-medium">Нужна помощь с выбором?</h4>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Наши специалисты помогут подобрать оптимальное решение для вашего проекта
-                  </p>
-                  <Button variant="outline" className="mt-3">Связаться с нами</Button>
-                </div>
-              </TabsContent>
-            ))}
           </Tabs>
         </ScrollArea>
       </DialogContent>

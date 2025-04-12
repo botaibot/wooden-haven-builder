@@ -23,16 +23,16 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
           </FormLabel>
           <FormDescription className="mt-2 text-sm space-y-1 bg-slate-50 p-3 rounded-md">
             <div className="space-y-1">
-              <p>1. Viga del Techo 140 mm x 60 mm o 160 mm x 60 mm</p>
-              <p>2. Machihembrado 19 mm</p>
-              <p>3. Barrera de Vapor WURTH</p>
-              <p>4. Rastrelos 95 mm x 45 mm</p>
-              <p>5. Lana de Roca</p>
-              <p>6. Barrera de Vapor WURTH</p>
-              <p>7. Rastrelos 48 mm x 48 mm</p>
-              <p>8. OSB 18 mm</p>
-              <p>9. Barrera de humedad/viento WURTH</p>
-              <p>10. Tegola</p>
+              <p>1. Балка крыши 140 мм x 60 мм или 160 мм x 60 мм</p>
+              <p>2. Шпунтованная доска 19 мм</p>
+              <p>3. Пароизоляция WURTH</p>
+              <p>4. Обрешётка 95 мм x 45 мм</p>
+              <p>5. Каменная вата</p>
+              <p>6. Пароизоляция WURTH</p>
+              <p>7. Обрешётка 48 мм x 48 мм</p>
+              <p>8. OSB 18 мм</p>
+              <p>9. Ветрозащита/влагозащита WURTH</p>
+              <p>10. Черепица (Tegola)</p>
             </div>
           </FormDescription>
           <FormMessage />
