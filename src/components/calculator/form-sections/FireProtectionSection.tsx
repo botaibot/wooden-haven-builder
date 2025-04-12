@@ -50,16 +50,7 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
           )}
           
           <FormDescription className="mt-2">
-            <div className="text-sm">
-              <p className="font-medium text-red-800 mb-1">Защитите свой дом от пожара!</p>
-              <p>Новейшая технология предотвращения возгораний включает:</p>
-              <ul className="list-disc pl-5 mt-1 space-y-1 text-sm">
-                <li>Автоматические выключатели с защитой от перегрузок</li>
-                <li>Термостойкая проводка с двойной изоляцией</li>
-                <li>Датчики температуры в местах потенциальных перегревов</li>
-                <li>Защита электрической сети от скачков напряжения</li>
-              </ul>
-            </div>
+            <p className="font-medium text-red-800">Защитите свой дом от пожара!</p>
           </FormDescription>
           <FormMessage />
         </FormItem>

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check } from "lucide-react";
 import { FRAME_THICKNESS_DETAILS } from "./constants";
-import MaterialCalculator from "../MaterialCalculator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
@@ -68,9 +67,11 @@ const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
                     )}
                   </div>
                   <div className="space-y-4">
-                    <div className="bg-gray-200 h-48 flex items-center justify-center rounded-md border border-gray-300">
-                      <p className="text-gray-500">Схема {houseType === "frame" ? "каркаса" : "соединения бруса"} (в разработке)</p>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/b4a28c2b-ae59-48c5-a199-7e16a42b13db.png" 
+                      alt="Структура каркаса" 
+                      className="rounded-md border border-gray-200 w-full"
+                    />
                     
                     <h4 className="text-lg font-medium mb-3">Преимущества:</h4>
                     <ul className="space-y-2">
@@ -81,10 +82,6 @@ const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
                         </li>
                       ))}
                     </ul>
-                    
-                    <div className="mt-6">
-                      <MaterialCalculator width={1000} length={2000} />
-                    </div>
                   </div>
                 </div>
               </TabsContent>

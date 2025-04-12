@@ -4,7 +4,6 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Info } from "lucide-react";
-import MaterialCalculator from "../MaterialCalculator";
 import { ROOF_INSULATION_DETAILS } from "./constants";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -36,48 +35,28 @@ const RoofInfoDialog = () => {
             <TabsContent value="structure" className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Стандартный кровельный пирог</h3>
-                  <div className="space-y-2">
-                    <div className="bg-slate-200 p-3 rounded">
-                      <p className="font-medium">Слой 1: Кровельное покрытие</p>
-                      <p className="text-sm text-muted-foreground">Защита от осадков и внешних воздействий</p>
-                    </div>
-                    <div className="bg-amber-100 p-3 rounded">
-                      <p className="font-medium">Слой 2: Гидроизоляция</p>
-                      <p className="text-sm text-muted-foreground">Дополнительная защита от влаги</p>
-                    </div>
-                    <div className="bg-blue-100 p-3 rounded">
-                      <p className="font-medium">Слой 3: Утеплитель</p>
-                      <p className="text-sm text-muted-foreground">Теплоизоляция (80мм пенополистирол)</p>
-                    </div>
-                    <div className="bg-yellow-100 p-3 rounded">
-                      <p className="font-medium">Слой 4: Пароизоляция</p>
-                      <p className="text-sm text-muted-foreground">Защита от конденсата</p>
-                    </div>
-                    <div className="bg-green-100 p-3 rounded">
-                      <p className="font-medium">Слой 5: Обрешетка</p>
-                      <p className="text-sm text-muted-foreground">Основа для кровельного покрытия</p>
-                    </div>
-                    <div className="bg-gray-100 p-3 rounded">
-                      <p className="font-medium">Слой 6: Стропильная система</p>
-                      <p className="text-sm text-muted-foreground">Несущая конструкция крыши</p>
-                    </div>
-                  </div>
+                  <h3 className="text-lg font-medium mb-4">Схема кровельного пирога</h3>
+                  <img 
+                    src="/lovable-uploads/61ef6b90-6c4d-49e0-8c8a-177d89dd3abc.png" 
+                    alt="Схема кровельного пирога 1" 
+                    className="rounded-md border border-gray-200 w-full mb-4"
+                  />
+                  <p className="text-sm mt-4 bg-amber-50 p-3 rounded">
+                    <span className="font-medium">Важно:</span> При увеличении толщины утеплителя кровли свыше базовых значений 
+                    требуется индивидуальный расчет. Пожалуйста, обратитесь к менеджеру для получения точной информации.
+                  </p>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-gray-200 h-48 flex items-center justify-center rounded-md border border-gray-300">
-                    <p className="text-gray-500">Схема кровельного пирога (в разработке)</p>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/f3c6717b-8e54-4e38-9bcf-b8630ac7b079.png" 
+                    alt="Схема кровельного пирога 2" 
+                    className="rounded-md border border-gray-200 w-full"
+                  />
                   <h3 className="text-lg font-medium">Кровельный пирог</h3>
                   <p className="text-sm text-muted-foreground">
                     Кровельный пирог — это многослойная конструкция, обеспечивающая защиту дома от внешних воздействий,
                     сохранение тепла внутри помещения и долговечность всей конструкции крыши.
                   </p>
-                  <p className="text-sm mt-4 bg-amber-50 p-3 rounded">
-                    <span className="font-medium">Важно:</span> При увеличении толщины утеплителя кровли свыше базовых значений 
-                    требуется индивидуальный расчет. Пожалуйста, обратитесь к менеджеру для получения точной информации.
-                  </p>
-                  <MaterialCalculator width={1000} length={2000} />
                 </div>
               </div>
             </TabsContent>
