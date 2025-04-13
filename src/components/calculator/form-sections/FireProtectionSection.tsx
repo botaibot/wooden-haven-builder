@@ -39,7 +39,7 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
                     {PRICES.FIRE_PROTECTION.points} точек (розетки и выключатели)
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Защита от короткого замыкания и перегрузок
+                    Защита от возгорания
                   </p>
                 </div>
                 <p className="font-semibold text-lg">
@@ -50,7 +50,7 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
           )}
           
           <FormDescription className="mt-2">
-            <p className="font-medium text-red-800">Защитите свой дом от пожара!</p>
+            <p className="font-medium text-red-800">Противопожарная система добавляется уже в завершенный дом на чистовой отделке.</p>
           </FormDescription>
           <FormMessage />
         </FormItem>

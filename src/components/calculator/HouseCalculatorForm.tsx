@@ -11,6 +11,7 @@ import SolarPanelsSection from "./form-sections/SolarPanelsSection";
 import OutdoorSpacesSection from "./form-sections/OutdoorSpacesSection";
 import FireProtectionSection from "./form-sections/FireProtectionSection";
 import FloorInfoDialog from "./FloorInfoDialog";
+import FloorThicknessDialog from "./FloorThicknessDialog";
 
 interface HouseCalculatorFormProps {
   form: UseFormReturn<FormValues>;
@@ -39,7 +40,10 @@ const HouseCalculatorForm = ({ form, metalSupportsCount, metalSupportsCost }: Ho
       
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium">Дополнительная информация</h3>
-        <FloorInfoDialog />
+        <div className="flex space-x-2">
+          <FloorThicknessDialog />
+          <FloorInfoDialog />
+        </div>
       </div>
       
       <FoundationSection 

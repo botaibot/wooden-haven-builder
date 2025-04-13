@@ -14,9 +14,9 @@ const FoundationInfoDialog = () => {
       </DialogTrigger>
       <DialogContent className="max-w-4xl">
         <DialogHeader>
-          <DialogTitle>Типы фундамента</DialogTitle>
+          <DialogTitle>Регулируемая металлическая опора</DialogTitle>
           <DialogDescription>
-            Характеристики и особенности различных типов фундамента
+            Характеристики и особенности металлической опоры
           </DialogDescription>
         </DialogHeader>
         
@@ -25,13 +25,6 @@ const FoundationInfoDialog = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-slate-50 p-4 rounded border">
                 <h3 className="text-lg font-medium mb-2">Регулируемая металлическая опора</h3>
-                <div className="mb-4">
-                  <img 
-                    src="/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png" 
-                    alt="Металлическая регулируемая опора" 
-                    className="rounded-md shadow-sm w-full h-auto object-contain"
-                  />
-                </div>
                 <p className="text-sm text-muted-foreground">
                   Толщина металла 6 мм. Регулируемые металлические опоры — базовый и самый экономичный вариант. 
                   Позволяет быстро установить дом на подготовленной площадке и при необходимости регулировать высоту.
@@ -45,20 +38,12 @@ const FoundationInfoDialog = () => {
                 <p className="text-sm mt-1">Примерный расход: 7 опор на каждые 10 м² площади пола</p>
               </div>
               
-              <div className="bg-slate-50 p-4 rounded border">
-                <h3 className="text-lg font-medium mb-2">Монолитный фундамент</h3>
-                <div className="mb-4 h-40 bg-gray-200 flex items-center justify-center rounded-md">
-                  <p className="text-sm text-gray-500">Схема монолитного фундамента</p>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Монолитный железобетонный фундамент обеспечивает максимальную надежность и долговечность. Идеален для домов 
-                  с большой площадью или при сложных грунтах.
-                </p>
-                <p className="text-sm mt-3">
-                  Стоимость зависит от многих факторов и рассчитывается индивидуально. Для более крупных домов 
-                  заливаем бетонные столбы примерно таких же размеров, как и для легкого фундамента.
-                </p>
-                <p className="text-sm font-medium mt-2">По запросу (зависит от многих факторов)</p>
+              <div>
+                <img 
+                  src="/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png" 
+                  alt="Металлическая регулируемая опора" 
+                  className="rounded-md shadow-sm w-full h-auto object-contain transition-transform duration-300 hover:scale-110"
+                />
               </div>
             </div>
             
