@@ -1,11 +1,9 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ShoppingCart, Sofa, Table, Bed, Lamp, BookOpen } from "lucide-react";
 import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 
 interface FurnitureItem {
@@ -186,22 +184,6 @@ const Furniture = () => {
             {furnitureItems.map((item, index) => (
               <FurnitureCard key={index} item={item} />
             ))}
-          </div>
-          
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-wood/80 to-wood-dark/90 p-6 rounded-lg shadow-md inline-block max-w-2xl">
-              <p className="text-white mb-4">
-                Для заказа мебели или получения дополнительной информации<br />
-                свяжитесь с нами по телефону: <strong>+34 123 456 789</strong>
-              </p>
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 py-2 px-4 bg-white text-wood-dark rounded-md hover:bg-gray-100 transition-colors font-medium"
-              >
-                <span>Связаться с нами</span>
-                <ArrowRight size={16} />
-              </a>
-            </div>
           </div>
         </div>
       </section>

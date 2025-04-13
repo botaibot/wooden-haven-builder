@@ -49,8 +49,8 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  // Take the first 8 houses to display in the gallery
-  const featuredHouses = houses.slice(0, 8);
+  // Take only the first 3 houses to display in the gallery
+  const featuredHouses = houses.slice(0, 3);
   
   return (
     <section className="py-16 bg-wood-light/30">
