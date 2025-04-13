@@ -25,16 +25,18 @@ interface FurnitureItem {
 
 const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
   return (
-    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow bg-white/80 backdrop-blur-sm border border-gray-200">
       <MaterialCardCarousel images={item.images} alt={item.title} />
       
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <item.icon className="text-wood-dark" size={24} />
+          <div className="bg-wood/20 p-2 rounded-full">
+            <item.icon className="text-wood-dark" size={22} />
+          </div>
           <h3 className="text-xl font-semibold text-wood-darkest">{item.title}</h3>
         </div>
         
-        <p className="text-gray-600 mb-4">{item.description}</p>
+        <p className="text-gray-600 mb-4 line-clamp-3">{item.description}</p>
         
         {item.dimensions && (
           <p className="text-sm font-medium text-wood-dark mb-2">
@@ -48,7 +50,7 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
           </p>
         )}
         
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
           <div className="flex flex-col">
             <span className="font-bold text-nature-dark">
               от €{item.price}
@@ -170,30 +172,35 @@ const Furniture = () => {
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
-      <section className="py-12 md:py-16 bg-nature-light/30">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">Наши изделия</h2>
             <p className="text-lg text-gray-700">
               Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома. 
               Каждое изделие создано вручную нашими мастерами с вниманием к деталям и качеству.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {furnitureItems.map((item, index) => (
               <FurnitureCard key={index} item={item} />
             ))}
           </div>
           
           <div className="mt-16 text-center">
-            <p className="text-lg font-medium text-gray-700 mb-6">
-              Вся наша мебель изготавливается по индивидуальным заказам с учетом ваших пожеланий и требований
-            </p>
-            <div className="bg-wood p-6 rounded-lg inline-block">
-              <p className="text-white">
+            <div className="bg-gradient-to-r from-wood/80 to-wood-dark/90 p-6 rounded-lg shadow-md inline-block max-w-2xl">
+              <p className="text-white mb-4">
                 Для заказа мебели или получения дополнительной информации<br />
                 свяжитесь с нами по телефону: <strong>+34 123 456 789</strong>
               </p>
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-2 py-2 px-4 bg-white text-wood-dark rounded-md hover:bg-gray-100 transition-colors font-medium"
+              >
+                <span>Связаться с нами</span>
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
         </div>
