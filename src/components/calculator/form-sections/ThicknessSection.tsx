@@ -45,7 +45,6 @@ const ThicknessSection = ({ form }: ThicknessSectionProps) => {
           <FormDescription>
             {form.watch("houseType") === "frame" && (
               <div className="text-sm mt-2">
-                <p>Базовая комплектация каркасного дома включает:</p>
                 <p>1 Внутренняя обшивка: фанера 12 мм</p>
                 <p>2 Утеплитель: полистирол (стены, потолок — 80 мм, пол — 50 мм)</p>
                 <p>3 Влаговетрозащита Würth</p>

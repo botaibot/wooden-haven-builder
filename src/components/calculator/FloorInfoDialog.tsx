@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const FloorInfoDialog = () => {
@@ -14,14 +14,11 @@ const FloorInfoDialog = () => {
       <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle>Структура полов</DialogTitle>
-          <DialogDescription>
-            Устройство полов в деревянных домах
-          </DialogDescription>
         </DialogHeader>
         
         <div className="flex justify-center p-4">
           <div 
-            className="transition-transform duration-300 hover:scale-130 cursor-zoom-in"
+            className="transition-transform duration-300 hover:scale-125 cursor-zoom-in"
             style={{ transformOrigin: 'center' }}
           >
             <img 
