@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,7 +14,7 @@ import Contact from "./pages/Contact";
 import Furniture from "./pages/Furniture";
 import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
-import ChatAssistant from "@/components/ChatAssistant";
+import ChatAssistant from "@/components/ChatAssistant";  // Уже импортирован
 import { CartProvider } from "./context/CartContext";
 
 // Компонент для прокрутки вверх при изменении маршрута
@@ -49,6 +50,8 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          {/* Добавляем ChatAssistant глобально */}
+          <ChatAssistant />
         </BrowserRouter>
       </CartProvider>
     </TooltipProvider>
