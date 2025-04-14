@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -129,6 +130,42 @@ const ChatAssistant = () => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
+    }
+  };
+
+  // Добавляем функцию handleMakeResponse для обработки ответов из Make
+  const handleMakeResponse = (event) => {
+    try {
+      // Проверяем, что событие содержит данные и они от Make
+      if (event.data && typeof event.data === 'object' && event.data.source === 'make') {
+        console.log("Получен ответ от Make:", event.data);
+        
+        // Извлекаем сообщение из данных
+        const responseText = event.data.message;
+        
+        if (responseText) {
+          // Добавляем сообщение в чат
+          const assistantMessage = {
+            id: messages.length + 1,
+            text: responseText,
+            isUser: false,
+            timestamp: new Date().toISOString(),
+          };
+          
+          setMessages(prevMessages => [...prevMessages, assistantMessage]);
+          
+          // Если чат не открыт, показываем уведомление
+          if (!isOpen) {
+            toast({
+              title: "Новое сообщение от Карла",
+              description: responseText,
+              duration: 5000,
+            });
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Ошибка при обработке ответа от Make:", error);
     }
   };
 
