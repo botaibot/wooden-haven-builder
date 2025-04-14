@@ -1,14 +1,11 @@
-
 import React, { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { useMakeIntegration } from "@/hooks/useMakeIntegration";
+import { useWebSocket } from "@/hooks/useWebSocket";
 import { useUserIdentification, getCalculatorChoice } from "@/hooks/useUserIdentification";
 import ChatMessage from "./chat/ChatMessage";
 import ChatInput from "./chat/ChatInput";
-
-const WEBHOOK_URL = "https://hook.eu2.make.com/b8rvmk3jo41mbxpuf88jkn1vtt4zw1fe";
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,30 +30,7 @@ const ChatAssistant = () => {
     setMessages(prevMessages => [...prevMessages, newAssistantMessage]);
   };
 
-  useMakeIntegration(isOpen, handleAddMessage);
-
-  const sendToWebhook = async (messageData: any) => {
-    try {
-      const calculatorChoice = getCalculatorChoice();
-      
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors", 
-        body: JSON.stringify({
-          ...messageData,
-          userId,
-          calculatorChoice,
-          assistantName: "Карл"
-        }),
-      });
-      console.log("Сообщение отправлено в webhook:", messageData);
-    } catch (error) {
-      console.error("Ошибка при отправке в webhook:", error);
-    }
-  };
+  const { sendMessage } = useWebSocket(handleAddMessage);
 
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
@@ -71,12 +45,15 @@ const ChatAssistant = () => {
     setMessages([...messages, userMessage]);
     setNewMessage("");
 
-    sendToWebhook({
+    sendMessage(JSON.stringify({
       type: "user_message",
       message: userMessage.text,
       timestamp: userMessage.timestamp,
       page: window.location.pathname,
-    });
+      userId,
+      calculatorChoice: getCalculatorChoice(),
+      assistantName: "Карл"
+    }));
   };
 
   return (
