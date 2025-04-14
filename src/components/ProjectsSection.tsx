@@ -49,8 +49,12 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  // Take only the first 3 houses to display in the gallery
-  const featuredHouses = houses.slice(0, 3);
+  // Modify the featured houses to include Ecopino 60 instead of Ecopino 18
+  const featuredHouses = [
+    houses.find(house => house.title === "Ecopino Modern"),
+    houses.find(house => house.title === "Ecopino 60"),
+    houses.find(house => house.title === "Ecopino 42")
+  ].filter(Boolean); // Remove any undefined entries
   
   return (
     <section className="py-16 bg-wood-light/30">

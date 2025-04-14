@@ -7,6 +7,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
+import { useUserIdentification } from "@/hooks/useUserIdentification";
 
 // Make.com webhook URL
 const WEBHOOK_URL = "https://hook.eu2.make.com/b8rvmk3jo41mbxpuf88jkn1vtt4zw1fe";
@@ -24,6 +25,7 @@ const ChatAssistant = () => {
   const [lastActivity, setLastActivity] = useState(Date.now());
   const [reminderCount, setReminderCount] = useState(0);
   const { toast } = useToast();
+  const userId = useUserIdentification();
 
   // Проактивные сообщения, которые будут отображаться случайным образом
   const proactiveMessages = [
@@ -42,8 +44,11 @@ const ChatAssistant = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors", // Используем no-cors для обхода CORS-ограничений
-        body: JSON.stringify(messageData),
+        mode: "no-cors", 
+        body: JSON.stringify({
+          ...messageData,
+          userId, // Add user ID to the webhook payload
+        }),
       });
       console.log("Сообщение отправлено в webhook:", messageData);
     } catch (error) {
