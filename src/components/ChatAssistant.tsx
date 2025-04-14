@@ -7,7 +7,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
-import { useUserIdentification } from "@/hooks/useUserIdentification";
+import { useUserIdentification, getCalculatorChoice } from "@/hooks/useUserIdentification";
 
 // Make.com webhook URL
 const WEBHOOK_URL = "https://hook.eu2.make.com/b8rvmk3jo41mbxpuf88jkn1vtt4zw1fe";
@@ -39,6 +39,9 @@ const ChatAssistant = () => {
   // Отправка данных в webhook
   const sendToWebhook = async (messageData) => {
     try {
+      // Получаем выбор пользователя в калькуляторе
+      const calculatorChoice = getCalculatorChoice();
+      
       await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
@@ -48,6 +51,7 @@ const ChatAssistant = () => {
         body: JSON.stringify({
           ...messageData,
           userId, // Add user ID to the webhook payload
+          calculatorChoice, // Add calculator choice to the webhook payload
         }),
       });
       console.log("Сообщение отправлено в webhook:", messageData);

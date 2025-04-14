@@ -21,3 +21,14 @@ export const useUserIdentification = () => {
 
   return userId;
 };
+
+// Функция для сохранения выбора калькулятора в localStorage
+export const saveCalculatorChoice = (calculatorData: any) => {
+  localStorage.setItem('calculatorChoice', JSON.stringify(calculatorData));
+};
+
+// Функция для получения выбора калькулятора из localStorage
+export const getCalculatorChoice = () => {
+  const choice = localStorage.getItem('calculatorChoice');
+  return choice ? JSON.parse(choice) : null;
+};

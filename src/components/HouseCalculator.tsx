@@ -10,6 +10,7 @@ import { PRICES, formatCurrency } from "./calculator/constants";
 import { FormValues, calculatorFormSchema } from "./calculator/types";
 import HouseCalculatorForm from "./calculator/HouseCalculatorForm";
 import PriceDetails from "./calculator/PriceDetails";
+import { saveCalculatorChoice } from "@/hooks/useUserIdentification";
 
 const HouseCalculator = () => {
   const { toast } = useToast();
@@ -98,6 +99,17 @@ const HouseCalculator = () => {
     
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
+    
+    // Сохраняем выбор пользователя при каждом изменении
+    saveCalculatorChoice({
+      formValues: values,
+      totalPrice: calculatedPrice,
+      totalArea: houseArea + (values.terraceSize || 0) + (values.canopySize || 0),
+      metalSupportsCount: supports,
+      metalSupportsCost: supportsCost,
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname
+    });
   };
 
   const onSubmit = () => {
