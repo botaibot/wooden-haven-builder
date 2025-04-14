@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useToast } from "@/hooks/use-toast";
 import { useUserIdentification, getCalculatorChoice } from "@/hooks/useUserIdentification";
 
-// Make.com webhook URL
 const WEBHOOK_URL = "https://hook.eu2.make.com/b8rvmk3jo41mbxpuf88jkn1vtt4zw1fe";
 
 const ChatAssistant = () => {
@@ -27,7 +25,6 @@ const ChatAssistant = () => {
   const { toast } = useToast();
   const userId = useUserIdentification();
 
-  // Проактивные сообщения, которые будут отображаться случайным образом
   const proactiveMessages = [
     "Здравствуйте! Я Карл, могу помочь с выбором деревянного дома?",
     "У нас есть специальное предложение для вас! Расскажу подробнее. Напишите мне!",
@@ -36,10 +33,8 @@ const ChatAssistant = () => {
     "Хотите узнать о текущих акциях и скидках? Спросите меня!"
   ];
 
-  // Отправка данных в webhook
   const sendToWebhook = async (messageData) => {
     try {
-      // Получаем выбор пользователя в калькуляторе
       const calculatorChoice = getCalculatorChoice();
       
       await fetch(WEBHOOK_URL, {
@@ -50,9 +45,9 @@ const ChatAssistant = () => {
         mode: "no-cors", 
         body: JSON.stringify({
           ...messageData,
-          userId, // Add user ID to the webhook payload
-          calculatorChoice, // Add calculator choice to the webhook payload
-          assistantName: "Карл" // Добавляем имя ассистента в данные
+          userId,
+          calculatorChoice,
+          assistantName: "Карл"
         }),
       });
       console.log("Сообщение отправлено в webhook:", messageData);
@@ -61,12 +56,10 @@ const ChatAssistant = () => {
     }
   };
 
-  // Функция для ответа на сообщения пользователя
   const getAssistantResponse = (userMessage) => {
     const lowerCaseMessage = userMessage.toLowerCase();
     const calculatorChoice = getCalculatorChoice();
     
-    // Базовые ответы в зависимости от сообщения пользователя
     if (lowerCaseMessage.includes("привет") || lowerCaseMessage.includes("здравствуй")) {
       return `Здравствуйте! Меня зовут Карл, я помогу вам с выбором деревянного дома. Вы уже выбрали ${calculatorChoice ? `дом с площадью ${calculatorChoice.totalArea}м² за ${calculatorChoice.totalPrice}€` : "параметры дома в калькуляторе"}?`;
     } 
@@ -87,10 +80,8 @@ const ChatAssistant = () => {
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
 
-    // Обновляем время последней активности
     setLastActivity(Date.now());
 
-    // Формируем сообщение пользователя
     const userMessage = {
       id: messages.length + 1,
       text: newMessage,
@@ -98,22 +89,23 @@ const ChatAssistant = () => {
       timestamp: new Date().toISOString(),
     };
 
-    // Добавляем сообщение пользователя в чат
     setMessages([...messages, userMessage]);
     setNewMessage("");
 
-    // Отправляем сообщение пользователя в webhook
+    const calculatorChoice = getCalculatorChoice();
+
     sendToWebhook({
       type: "user_message",
       message: userMessage.text,
       timestamp: userMessage.timestamp,
       page: window.location.pathname,
+      userId,
+      calculatorChoice,
+      assistantName: "Карл"
     });
 
-    // Получаем ответ на основе сообщения пользователя
     const responseText = getAssistantResponse(userMessage.text);
 
-    // Имитация ответа помощника через 1 секунду
     setTimeout(() => {
       const assistantMessage = {
         id: messages.length + 2,
@@ -122,10 +114,8 @@ const ChatAssistant = () => {
         timestamp: new Date().toISOString(),
       };
 
-      // Добавляем ответ помощника в чат
       setMessages(prevMessages => [...prevMessages, assistantMessage]);
 
-      // Отправляем ответ помощника в webhook
       sendToWebhook({
         type: "assistant_message",
         message: assistantMessage.text,
@@ -142,7 +132,6 @@ const ChatAssistant = () => {
     }
   };
 
-  // Обновляем время последней активности пользователя при движении мыши, клике или нажатии клавиш
   useEffect(() => {
     const updateLastActivity = () => setLastActivity(Date.now());
     
@@ -157,18 +146,15 @@ const ChatAssistant = () => {
     };
   }, []);
 
-  // Проверяем, прошло ли 2 минуты с момента последней активности
   useEffect(() => {
     const checkInactivity = setInterval(() => {
       const currentTime = Date.now();
       const inactiveTime = currentTime - lastActivity;
       
-      // Если прошло 2 минуты (120000 мс) и чат не открыт, показываем напоминание
       if (inactiveTime > 120000 && !isOpen && reminderCount < 3) {
         const randomMessage = proactiveMessages[Math.floor(Math.random() * proactiveMessages.length)];
         const timestamp = new Date().toISOString();
         
-        // Добавляем проактивное сообщение в чат
         setMessages(prev => [
           ...prev,
           {
@@ -179,14 +165,12 @@ const ChatAssistant = () => {
           }
         ]);
         
-        // Показываем уведомление
         toast({
           title: "Новое сообщение от Карла",
           description: randomMessage,
           duration: 5000,
         });
         
-        // Отправляем проактивное сообщение в webhook
         sendToWebhook({
           type: "proactive_message",
           message: randomMessage,
@@ -194,18 +178,22 @@ const ChatAssistant = () => {
           page: window.location.pathname,
         });
         
-        // Увеличиваем счетчик напоминаний
         setReminderCount(prev => prev + 1);
         
-        // Обновляем время последней активности
         setLastActivity(currentTime);
       }
-    }, 30000); // Проверяем каждые 30 секунд
+    }, 30000);
 
     return () => clearInterval(checkInactivity);
   }, [isOpen, lastActivity, reminderCount, toast]);
 
-  // Отправляем информацию о первом посещении страницы
+  useEffect(() => {
+    window.addEventListener('message', handleMakeResponse);
+    return () => {
+      window.removeEventListener('message', handleMakeResponse);
+    };
+  }, [messages]);
+
   useEffect(() => {
     sendToWebhook({
       type: "page_visit",
@@ -230,7 +218,6 @@ const ChatAssistant = () => {
           sideOffset={16}
           align="end"
         >
-          {/* Заголовок чата */}
           <div className="p-3 border-b bg-white flex items-center justify-between rounded-t-xl">
             <div className="flex items-center gap-2">
               <Avatar className="h-8 w-8 border border-nature-light">
@@ -249,7 +236,6 @@ const ChatAssistant = () => {
             </Button>
           </div>
 
-          {/* Область сообщений */}
           <div className="h-64 overflow-y-auto p-3 bg-muted/30 flex flex-col gap-3">
             {messages.map((message) => (
               <div
@@ -271,7 +257,6 @@ const ChatAssistant = () => {
             ))}
           </div>
 
-          {/* Область ввода */}
           <div className="p-3 border-t flex gap-2 bg-white rounded-b-xl">
             <Textarea
               value={newMessage}
