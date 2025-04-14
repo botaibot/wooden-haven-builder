@@ -1,11 +1,13 @@
+
 import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useWebSocket } from "@/hooks/useWebSocket";
 import { useUserIdentification, getCalculatorChoice } from "@/hooks/useUserIdentification";
 import ChatMessage from "./chat/ChatMessage";
 import ChatInput from "./chat/ChatInput";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +32,7 @@ const ChatAssistant = () => {
     setMessages(prevMessages => [...prevMessages, newAssistantMessage]);
   };
 
-  const { sendMessage } = useWebSocket(handleAddMessage);
+  const { sendMessage, isConnected } = useWebSocket(handleAddMessage);
 
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
@@ -45,7 +47,8 @@ const ChatAssistant = () => {
     setMessages([...messages, userMessage]);
     setNewMessage("");
 
-    sendMessage(JSON.stringify({
+    // Always add the message to the UI, even if sending fails
+    const messageData = JSON.stringify({
       type: "user_message",
       message: userMessage.text,
       timestamp: userMessage.timestamp,
@@ -53,7 +56,16 @@ const ChatAssistant = () => {
       userId,
       calculatorChoice: getCalculatorChoice(),
       assistantName: "Карл"
-    }));
+    });
+    
+    const success = sendMessage(messageData);
+    
+    // If send fails, optionally add a system message explaining the offline state
+    if (!success && !messages.some(m => m.text.includes("в автономном режиме"))) {
+      setTimeout(() => {
+        handleAddMessage("Извините, я сейчас работаю в автономном режиме. Ваше сообщение будет обработано, когда соединение восстановится.");
+      }, 500);
+    }
   };
 
   return (
@@ -75,6 +87,11 @@ const ChatAssistant = () => {
           <div className="p-3 border-b bg-white flex items-center justify-between rounded-t-xl">
             <div className="flex items-center gap-2">
               <span className="font-medium">Карл</span>
+              {!isConnected && (
+                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                  Офлайн
+                </span>
+              )}
             </div>
             <Button 
               variant="ghost" 
@@ -95,6 +112,16 @@ const ChatAssistant = () => {
               />
             ))}
           </div>
+
+          {!isConnected && (
+            <Alert variant="destructive" className="mx-3 mt-2 mb-0 py-2">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle className="text-xs">Нет соединения</AlertTitle>
+              <AlertDescription className="text-xs">
+                Соединение с сервером отсутствует. Некоторые функции чата могут быть недоступны.
+              </AlertDescription>
+            </Alert>
+          )}
 
           <ChatInput
             value={newMessage}
