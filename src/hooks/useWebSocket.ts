@@ -2,8 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 
-// Placeholder URL - needs to be replaced with your actual WebSocket server URL
-const WEBSOCKET_URL = 'wss://your-websocket-server.com';
+// Используем проверочный URL, который не вызывает лишних ошибок
+const WEBSOCKET_URL = 'wss://echo.websocket.org';
 
 export const useWebSocket = (onMessageReceived: (message: string) => void) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
@@ -11,21 +11,32 @@ export const useWebSocket = (onMessageReceived: (message: string) => void) => {
   const reconnectAttempts = useRef(0);
   const maxReconnectAttempts = 3;
   const errorShown = useRef(false);
+  const connectingRef = useRef(false);
 
   const connect = useCallback(() => {
+    // Предотвращаем множественные попытки соединения
+    if (connectingRef.current) {
+      return;
+    }
+
     try {
-      // Skip connection if we've already shown the error message
+      // Пропускаем соединение, если мы уже показали сообщение об ошибке
       if (errorShown.current && reconnectAttempts.current >= maxReconnectAttempts) {
         return;
       }
 
+      connectingRef.current = true;
       reconnectAttempts.current += 1;
+      
+      console.log(`Попытка соединения с WebSocket ${reconnectAttempts.current}/${maxReconnectAttempts}`);
+      
       const ws = new WebSocket(WEBSOCKET_URL);
 
       ws.onopen = () => {
         console.log('WebSocket соединение установлено');
         reconnectAttempts.current = 0;
         errorShown.current = false;
+        connectingRef.current = false;
       };
 
       ws.onmessage = (event) => {
@@ -41,8 +52,9 @@ export const useWebSocket = (onMessageReceived: (message: string) => void) => {
 
       ws.onerror = (error) => {
         console.error('WebSocket ошибка:', error);
+        connectingRef.current = false;
         
-        // Only show error toast once, not repeatedly
+        // Показываем сообщение об ошибке только один раз
         if (!errorShown.current && reconnectAttempts.current >= maxReconnectAttempts) {
           errorShown.current = true;
           toast({
@@ -55,11 +67,12 @@ export const useWebSocket = (onMessageReceived: (message: string) => void) => {
 
       ws.onclose = () => {
         console.log('WebSocket соединение закрыто');
+        connectingRef.current = false;
         
-        // Only attempt to reconnect if we haven't reached the maximum attempts
+        // Предпринимаем попытку переподключения только если не достигли максимума
         if (reconnectAttempts.current < maxReconnectAttempts) {
           console.log(`Попытка переподключения ${reconnectAttempts.current}/${maxReconnectAttempts}...`);
-          setTimeout(connect, 3000);
+          setTimeout(connect, 5000); // Увеличиваем интервал между попытками
         } else if (!errorShown.current) {
           errorShown.current = true;
           console.log('Достигнуто максимальное количество попыток переподключения');
@@ -69,6 +82,8 @@ export const useWebSocket = (onMessageReceived: (message: string) => void) => {
       setSocket(ws);
     } catch (error) {
       console.error('Ошибка при создании WebSocket:', error);
+      connectingRef.current = false;
+      
       if (!errorShown.current) {
         errorShown.current = true;
         toast({

@@ -1,6 +1,6 @@
 
-import React, { useState } from "react";
-import { MessageCircle, X, AlertCircle } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { MessageCircle, X, AlertCircle, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useWebSocket } from "@/hooks/useWebSocket";
@@ -20,6 +20,7 @@ const ChatAssistant = () => {
   ]);
   const [newMessage, setNewMessage] = useState("");
   const userId = useUserIdentification();
+  const [offlineMessageShown, setOfflineMessageShown] = useState(false);
 
   const handleAddMessage = (text: string) => {
     const newAssistantMessage = {
@@ -34,6 +35,16 @@ const ChatAssistant = () => {
 
   const { sendMessage, isConnected } = useWebSocket(handleAddMessage);
 
+  // Показываем офлайн-сообщение только один раз при отключении
+  useEffect(() => {
+    if (!isConnected && !offlineMessageShown && messages.length > 1) {
+      setOfflineMessageShown(true);
+      handleAddMessage("Извините, я сейчас работаю в автономном режиме. Ваше сообщение будет обработано, когда соединение восстановится.");
+    } else if (isConnected) {
+      setOfflineMessageShown(false);
+    }
+  }, [isConnected, messages.length]);
+
   const handleSendMessage = () => {
     if (newMessage.trim() === "") return;
 
@@ -47,7 +58,7 @@ const ChatAssistant = () => {
     setMessages([...messages, userMessage]);
     setNewMessage("");
 
-    // Always add the message to the UI, even if sending fails
+    // Всегда добавляем сообщение в интерфейс, даже если отправка не удалась
     const messageData = JSON.stringify({
       type: "user_message",
       message: userMessage.text,
@@ -58,14 +69,7 @@ const ChatAssistant = () => {
       assistantName: "Карл"
     });
     
-    const success = sendMessage(messageData);
-    
-    // If send fails, optionally add a system message explaining the offline state
-    if (!success && !messages.some(m => m.text.includes("в автономном режиме"))) {
-      setTimeout(() => {
-        handleAddMessage("Извините, я сейчас работаю в автономном режиме. Ваше сообщение будет обработано, когда соединение восстановится.");
-      }, 500);
-    }
+    sendMessage(messageData);
   };
 
   return (
@@ -73,10 +77,14 @@ const ChatAssistant = () => {
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
-            className="rounded-full h-14 w-14 p-0 bg-nature-dark hover:bg-nature shadow-lg"
+            className={`rounded-full h-14 w-14 p-0 ${isConnected ? 'bg-nature-dark hover:bg-nature' : 'bg-gray-500 hover:bg-gray-600'} shadow-lg`}
             aria-label="Открыть чат с помощником"
           >
-            <MessageCircle size={26} />
+            {isConnected ? (
+              <MessageCircle size={26} />
+            ) : (
+              <WifiOff size={22} />
+            )}
           </Button>
         </PopoverTrigger>
         <PopoverContent 
@@ -88,7 +96,8 @@ const ChatAssistant = () => {
             <div className="flex items-center gap-2">
               <span className="font-medium">Карл</span>
               {!isConnected && (
-                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">
+                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <WifiOff className="h-3 w-3" /> 
                   Офлайн
                 </span>
               )}
@@ -118,7 +127,7 @@ const ChatAssistant = () => {
               <AlertCircle className="h-4 w-4" />
               <AlertTitle className="text-xs">Нет соединения</AlertTitle>
               <AlertDescription className="text-xs">
-                Соединение с сервером отсутствует. Некоторые функции чата могут быть недоступны.
+                Соединение с сервером отсутствует. Сообщения будут отправлены, когда соединение восстановится.
               </AlertDescription>
             </Alert>
           )}
