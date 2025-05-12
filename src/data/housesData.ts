@@ -60,7 +60,7 @@ const houses: HouseData[] = [
       "/lovable-uploads/a8165cb6-a086-450b-8b39-e5fe4991038e.png",
       "/lovable-uploads/8c7d1a37-e043-4e10-b474-88b2a317b09b.png"
     ],
-    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
+    floorPlanImage: "/lovable-uploads/9324f8cd-508f-43a2-85da-14a2b930230d.png"
   },
   {
     id: 6,
