@@ -1,3 +1,4 @@
+
 export interface HouseData {
   id: number;
   title: string;
@@ -17,6 +18,25 @@ export interface HouseData {
 }
 
 const houses: HouseData[] = [
+  {
+    id: 9,
+    title: "Ecopino Modern",
+    area: "54 м²",
+    dimensions: "8.5 x 6.4 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: false,
+    balcony: true,
+    porch: true,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png"
+    ],
+    floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
+  },
   {
     id: 8,
     title: "Black Eco Box",
@@ -43,25 +63,6 @@ const houses: HouseData[] = [
       "/lovable-uploads/9cce6fb1-2025-4543-a6ae-1154748da486.png"
     ],
     floorPlanImage: "/lovable-uploads/a978f057-676e-4915-a206-cffe41d7c02b.png"
-  },
-  {
-    id: 9,
-    title: "Ecopino Modern",
-    area: "54 м²",
-    dimensions: "8.5 x 6.4 м",
-    floors: 1,
-    bedrooms: 1,
-    bathrooms: 1,
-    terrace: false,
-    balcony: true,
-    porch: true,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
-    images: [
-      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png"
-    ],
-    floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
   {
     id: 10,
