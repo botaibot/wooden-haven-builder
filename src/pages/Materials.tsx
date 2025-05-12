@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -192,34 +193,36 @@ const MaterialCard = ({
         )}
 
         {sizes.length > 0 && (
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm text-gray-500">Количество:</span>
+          <div className="flex items-center justify-between gap-2 mb-4">
             <div className="flex items-center">
-              <Button 
-                type="button" 
-                variant="outline" 
-                size="icon" 
-                className="h-8 w-8 rounded-r-none"
-                onClick={decrementQuantity}
-              >
-                <Minus className="h-3 w-3" />
-              </Button>
-              <Input
-                type="number"
-                min={1}
-                value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                className="h-8 w-16 rounded-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              />
-              <Button 
-                type="button" 
-                variant="outline" 
-                size="icon" 
-                className="h-8 w-8 rounded-l-none"
-                onClick={incrementQuantity}
-              >
-                <Plus className="h-3 w-3" />
-              </Button>
+              <span className="text-sm text-gray-500 mr-2">Количество:</span>
+              <div className="flex items-center">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  size="icon" 
+                  className="h-8 w-8 rounded-r-none"
+                  onClick={decrementQuantity}
+                >
+                  <Minus className="h-3 w-3" />
+                </Button>
+                <Input
+                  type="number"
+                  min={1}
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="h-8 w-16 rounded-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                />
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  size="icon" 
+                  className="h-8 w-8 rounded-l-none"
+                  onClick={incrementQuantity}
+                >
+                  <Plus className="h-3 w-3" />
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -381,15 +384,15 @@ const Materials = () => {
     {
       id: "osb-3-panels",
       title: "Плиты OSB-3 сертифицированы PEFC",
-      description: "Применяется для стен, полов, кровельных конструкций снаружи и внутр�� помещений. Цена OSB зависит от толщины листа (9, 12, 15, 18 или 22 мм).",
+      description: "Откройте для себя влагостойкие плиты OSB -3 PEFC в Bosque Nordico по СУПЕР ЦЕНЕ!\nЭти плиты идеально подходят для строительства и проживания в здоровом и экологичном стиле.\n\nКроме того, она позволяет использовать клеи, краски и лаки, с глянцевой поверхностью отличного качества.\n\nОна используется для стен, полов, кровельных конструкций снаружи и внутри помещений. Цена OSB зависит от толщины шпона (9, 12, 15, 18 или 22 мм).\n\nНепревзойденное соотношение цены и качества! Доступна на Канарских островах, размеры 2500 мм x 1250 мм, толщина 9 мм, 12 мм, 15 мм, 18 мм или 22 мм.\n\nВоспользуйтесь этим предложением и улучшите свои строительные проекты и внутреннюю/внешнюю облицовку.",
       imageUrl: "/lovable-uploads/3598cb51-5ce6-45ce-876c-836cdde70585.png",
       priceRange: "€19,50–€47,00",
       unit: "шт",
       sizes: [
-        { label: "2500 мм x 1250 мм x 9 мм", value: "9mm", price: 20 },
-        { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 25 },
+        { label: "2500 мм x 1250 мм x 9 мм", value: "9mm", price: 19.5 },
+        { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 24.5 },
         { label: "2500 мм x 1250 мм x 15 мм", value: "15mm", price: 33 },
-        { label: "2500 мм x 1250 мм x 18 мм", value: "18mm", price: 37 },
+        { label: "2500 мм x 1250 мм x 18 мм", value: "18mm", price: 41 },
         { label: "2500 мм x 1250 мм x 22 мм", value: "22mm", price: 47 },
       ],
       isNew: true,
