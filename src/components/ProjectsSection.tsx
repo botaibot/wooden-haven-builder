@@ -49,11 +49,11 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  // Restored original order - Ecopino Modern, Black Eco Box, Ecopino 42
+  // Обновлено согласно новому порядку: Ecopino 42, Black Eco Box, Ecopino Lux Studio
   const featuredHouses = [
-    houses.find(house => house.title === "Ecopino Modern"),
+    houses.find(house => house.title === "Ecopino 42"),
     houses.find(house => house.title === "Black Eco Box"),
-    houses.find(house => house.title === "Ecopino 42")
+    houses.find(house => house.title === "Ecopino Lux Studio")
   ].filter(Boolean); // Remove any undefined entries
   
   return (

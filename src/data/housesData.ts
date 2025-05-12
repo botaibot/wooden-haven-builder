@@ -19,23 +19,44 @@ export interface HouseData {
 
 const houses: HouseData[] = [
   {
-    id: 9,
-    title: "Ecopino Modern",
-    area: "54 м²",
-    dimensions: "8.5 x 6.4 м",
+    id: 6,
+    title: "Ecopino 42",
+    area: "42 м²",
+    dimensions: "7 x 6 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
-    terrace: false,
-    balcony: true,
-    porch: true,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "850 € м²",
+    warmContourCost: "1200 € м²",
+    turnkeyCost: "1600 € м²",
     images: [
-      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png"
+      "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
+      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
+      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png",
+      "/lovable-uploads/ce61eb08-bb96-4fb9-aa02-218c1a144755.png",
+      "/lovable-uploads/05e7f9d0-8fbe-457a-830d-09fc1efbc5d2.png",
+      "/lovable-uploads/1c14b59f-71a9-4b80-9fd7-82f42fbc3afd.png",
+      "/lovable-uploads/f1e93128-2d34-461c-a1c9-e3d227ef998a.png",
+      "/lovable-uploads/76a870d9-d6eb-4ed7-a67c-93760bf4f795.png",
+      "/lovable-uploads/6c439f6a-8b9f-4946-ae41-e97102b0435a.png",
+      "/lovable-uploads/ce6b9128-85fc-40c6-b336-3c89924fab88.png",
+      "/lovable-uploads/0572beef-ee29-4ce6-bb34-6fa6d7021f25.png",
+      "/lovable-uploads/c82a2f06-1230-42b8-841d-0987ed048ec7.png",
+      "/lovable-uploads/56275e07-80d3-40c6-8a5f-0be63eb2a0e6.png",
+      "/lovable-uploads/00c9f9a1-00c4-4ccd-906a-989a0efad538.png",
+      "/lovable-uploads/d8f73c16-41ff-435b-8343-46b3eeaf34b6.png",
+      "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png",
+      "/lovable-uploads/6785cca5-755c-4b4b-aa32-c17dc0580e5f.png",
+      "/lovable-uploads/ce9ebb39-e322-4731-b8ff-5059c5c3906e.png",
+      "/lovable-uploads/068b49f4-b09a-4b6d-b876-f748ededa156.png",
+      "/lovable-uploads/8e7a9847-aa39-43e8-bbba-209e56dcd534.png",
+      "/lovable-uploads/cbfee098-4d29-4792-826d-3f54c1b374ac.png",
+      "/lovable-uploads/8007b988-25ef-4fed-aa85-18c756b99abc.png"
     ],
-    floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
+    floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   },
   {
     id: 8,
@@ -91,44 +112,23 @@ const houses: HouseData[] = [
     floorPlanImage: "/lovable-uploads/3ccf82da-2fc5-4402-b633-a5621347891d.png"
   },
   {
-    id: 6,
-    title: "Ecopino 42",
-    area: "42 м²",
-    dimensions: "7 x 6 м",
+    id: 9,
+    title: "Ecopino Modern",
+    area: "54 м²",
+    dimensions: "8.5 x 6.4 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
-    terrace: true,
-    balcony: false,
-    porch: false,
-    frameCost: "850 € м²",
-    warmContourCost: "1200 € м²",
-    turnkeyCost: "1600 € м²",
+    terrace: false,
+    balcony: true,
+    porch: true,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
     images: [
-      "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
-      "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
-      "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png",
-      "/lovable-uploads/ce61eb08-bb96-4fb9-aa02-218c1a144755.png",
-      "/lovable-uploads/05e7f9d0-8fbe-457a-830d-09fc1efbc5d2.png",
-      "/lovable-uploads/1c14b59f-71a9-4b80-9fd7-82f42fbc3afd.png",
-      "/lovable-uploads/f1e93128-2d34-461c-a1c9-e3d227ef998a.png",
-      "/lovable-uploads/76a870d9-d6eb-4ed7-a67c-93760bf4f795.png",
-      "/lovable-uploads/6c439f6a-8b9f-4946-ae41-e97102b0435a.png",
-      "/lovable-uploads/ce6b9128-85fc-40c6-b336-3c89924fab88.png",
-      "/lovable-uploads/0572beef-ee29-4ce6-bb34-6fa6d7021f25.png",
-      "/lovable-uploads/c82a2f06-1230-42b8-841d-0987ed048ec7.png",
-      "/lovable-uploads/56275e07-80d3-40c6-8a5f-0be63eb2a0e6.png",
-      "/lovable-uploads/00c9f9a1-00c4-4ccd-906a-989a0efad538.png",
-      "/lovable-uploads/d8f73c16-41ff-435b-8343-46b3eeaf34b6.png",
-      "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png",
-      "/lovable-uploads/6785cca5-755c-4b4b-aa32-c17dc0580e5f.png",
-      "/lovable-uploads/ce9ebb39-e322-4731-b8ff-5059c5c3906e.png",
-      "/lovable-uploads/068b49f4-b09a-4b6d-b876-f748ededa156.png",
-      "/lovable-uploads/8e7a9847-aa39-43e8-bbba-209e56dcd534.png",
-      "/lovable-uploads/cbfee098-4d29-4792-826d-3f54c1b374ac.png",
-      "/lovable-uploads/8007b988-25ef-4fed-aa85-18c756b99abc.png"
+      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png"
     ],
-    floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+    floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
   {
     id: 2,
@@ -147,6 +147,27 @@ const houses: HouseData[] = [
     images: [
       "/lovable-uploads/5ae30882-9c91-4365-b5ba-c711c94235d3.png",
       "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png"
+    ],
+    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
+  },
+  {
+    id: 1,
+    title: "Ecopino 60",
+    area: "60 м²",
+    dimensions: "9.75 x 6.69 м",
+    floors: 1,
+    bedrooms: 2,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
+      "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
+      "/lovable-uploads/876a7692-1ae2-4ec0-861f-762eaf151e79.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
@@ -207,27 +228,6 @@ const houses: HouseData[] = [
     images: [
       "/lovable-uploads/44faeda4-fa57-438b-a071-25b592003a2e.png",
       "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png"
-    ],
-    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
-  },
-  {
-    id: 1,
-    title: "Ecopino 60",
-    area: "60 м²",
-    dimensions: "9.75 x 6.69 м",
-    floors: 1,
-    bedrooms: 2,
-    bathrooms: 1,
-    terrace: true,
-    balcony: false,
-    porch: false,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
-    images: [
-      "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
-      "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
-      "/lovable-uploads/876a7692-1ae2-4ec0-861f-762eaf151e79.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
