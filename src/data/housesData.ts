@@ -39,23 +39,30 @@ const houses: HouseData[] = [
     floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
   {
-    id: 7,
-    title: "Ecopino 18",
-    area: "18 м²",
-    dimensions: "7.6 x 2.4 м",
+    id: 10,
+    title: "Ecopino Lux Studio",
+    area: "31.5 м²",
+    dimensions: "7 x 4.5 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,
     porch: false,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
+    frameCost: "600 € м²",
+    warmContourCost: "750 € м²",
+    turnkeyCost: "1200 € м²",
     images: [
-      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+      "/lovable-uploads/ccd9bf16-bd15-484a-8e0a-bd91c85288e3.png",
+      "/lovable-uploads/efd46ec3-1c51-4d1d-bf8b-f523d2aabb12.png",
+      "/lovable-uploads/9b10fb6c-f1b7-4a04-b863-03b2e62e1985.png",
+      "/lovable-uploads/7474051c-cc7d-464a-9bc7-5b304febc919.png",
+      "/lovable-uploads/f6d80fab-0234-4c19-a2b6-ebd32134b7dc.png",
+      "/lovable-uploads/88335b5d-cfd7-4774-9877-056ea1b73425.png",
+      "/lovable-uploads/a8165cb6-a086-450b-8b39-e5fe4991038e.png",
+      "/lovable-uploads/8c7d1a37-e043-4e10-b474-88b2a317b09b.png"
     ],
-    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
+    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
   {
     id: 6,
@@ -211,6 +218,25 @@ const houses: HouseData[] = [
       "/lovable-uploads/aea18e32-2f4c-467e-801c-a6f8a3b67628.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
+  },
+  {
+    id: 7,
+    title: "Ecopino 18",
+    area: "18 м²",
+    dimensions: "7.6 x 2.4 м",
+    floors: 1,
+    bedrooms: 1,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/f0d9acad-0fff-41af-9285-47a4c32b8896.png"
+    ],
+    floorPlanImage: "/lovable-uploads/c3b38557-fc33-40de-92a8-9c31177c7976.png"
   }
 ];
 

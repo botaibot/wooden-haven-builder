@@ -31,7 +31,7 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
         <CardContent className="p-4 flex-grow">
           <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
           <p className="text-nature-dark font-medium mt-2 flex items-center gap-1">
-            {title === "Ecopino 42" ? "от 850 " : "от 550 "}
+            {title === "Ecopino 42" ? "от 850 " : (title === "Ecopino Lux Studio" ? "от 600 " : "от 550 ")}
             <Euro size={16} />
             /м²
           </p>
@@ -49,10 +49,10 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  // Modify the featured houses to include Ecopino 60 instead of Ecopino 18
+  // Обновляем список популярных проектов, добавив Ecopino Lux Studio вместо Ecopino 18
   const featuredHouses = [
     houses.find(house => house.title === "Ecopino Modern"),
-    houses.find(house => house.title === "Ecopino 60"),
+    houses.find(house => house.title === "Ecopino Lux Studio"),
     houses.find(house => house.title === "Ecopino 42")
   ].filter(Boolean); // Remove any undefined entries
   
