@@ -1,4 +1,3 @@
-
 export interface HouseData {
   id: number;
   title: string;
@@ -18,6 +17,33 @@ export interface HouseData {
 }
 
 const houses: HouseData[] = [
+  {
+    id: 8,
+    title: "Black Eco Box",
+    area: "60 м² плюс терраса 22 м²",
+    dimensions: "10.6 x 5.7 м",
+    floors: 1,
+    bedrooms: 2,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/1eef88b2-05cb-40e6-97af-76cac27cb226.png",
+      "/lovable-uploads/c91210e3-7e57-4c99-ab7f-27781fd2a6e2.png",
+      "/lovable-uploads/d540d538-a4e8-4099-a43a-59b3cb3c21a1.png", 
+      "/lovable-uploads/0a31d33c-f3f2-4781-9beb-a62465a57315.png",
+      "/lovable-uploads/549095ac-c56f-4c84-badc-4ad68bab331e.png",
+      "/lovable-uploads/4e0bc79b-f069-4bed-aba5-034816928b65.png",
+      "/lovable-uploads/38788190-a61c-459a-8797-4df2fa00dc81.png",
+      "/lovable-uploads/349b05a3-6beb-47ce-baec-61ab775f4a22.png",
+      "/lovable-uploads/9cce6fb1-2025-4543-a6ae-1154748da486.png"
+    ],
+    floorPlanImage: "/lovable-uploads/a978f057-676e-4915-a206-cffe41d7c02b.png"
+  },
   {
     id: 9,
     title: "Ecopino Modern",
@@ -102,33 +128,6 @@ const houses: HouseData[] = [
       "/lovable-uploads/8007b988-25ef-4fed-aa85-18c756b99abc.png"
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
-  },
-  {
-    id: 8,
-    title: "Black Eco Box",
-    area: "60 м² плюс терраса 22 м²",
-    dimensions: "10.6 x 5.7 м",
-    floors: 1,
-    bedrooms: 2,
-    bathrooms: 1,
-    terrace: true,
-    balcony: false,
-    porch: false,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
-    images: [
-      "/lovable-uploads/1eef88b2-05cb-40e6-97af-76cac27cb226.png",
-      "/lovable-uploads/c91210e3-7e57-4c99-ab7f-27781fd2a6e2.png",
-      "/lovable-uploads/d540d538-a4e8-4099-a43a-59b3cb3c21a1.png", 
-      "/lovable-uploads/0a31d33c-f3f2-4781-9beb-a62465a57315.png",
-      "/lovable-uploads/549095ac-c56f-4c84-badc-4ad68bab331e.png",
-      "/lovable-uploads/4e0bc79b-f069-4bed-aba5-034816928b65.png",
-      "/lovable-uploads/38788190-a61c-459a-8797-4df2fa00dc81.png",
-      "/lovable-uploads/349b05a3-6beb-47ce-baec-61ab775f4a22.png",
-      "/lovable-uploads/9cce6fb1-2025-4543-a6ae-1154748da486.png"
-    ],
-    floorPlanImage: "/lovable-uploads/a978f057-676e-4915-a206-cffe41d7c02b.png"
   },
   {
     id: 2,

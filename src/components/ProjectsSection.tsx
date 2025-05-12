@@ -49,9 +49,9 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
 };
 
 const ProjectsSection = () => {
-  // Обновляем список популярных проектов, добавив Ecopino Lux Studio вместо Ecopino 18
+  // Updated list with Black Eco Box instead of Ecopino Modern
   const featuredHouses = [
-    houses.find(house => house.title === "Ecopino Modern"),
+    houses.find(house => house.title === "Black Eco Box"),
     houses.find(house => house.title === "Ecopino Lux Studio"),
     houses.find(house => house.title === "Ecopino 42")
   ].filter(Boolean); // Remove any undefined entries
