@@ -1,75 +1,62 @@
 
-import React, { useState, useEffect } from "react";
-import { MessageCircle, X, AlertCircle, WifiOff } from "lucide-react";
+import React, { useState } from "react";
+import { MessageCircle, X, Mail, Telegram, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { useWebSocket } from "@/hooks/useWebSocket";
-import { useUserIdentification, getCalculatorChoice } from "@/hooks/useUserIdentification";
-import ChatMessage from "./chat/ChatMessage";
-import ChatInput from "./chat/ChatInput";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useToast } from "@/components/ui/use-toast";
+
+const ContactButton = ({ 
+  icon: Icon, 
+  label, 
+  onClick, 
+  className = "" 
+}: { 
+  icon: React.ElementType; 
+  label: string; 
+  onClick: () => void;
+  className?: string;
+}) => (
+  <Button 
+    variant="outline" 
+    className={`flex items-center gap-2 w-full mb-2 hover:bg-muted ${className}`}
+    onClick={onClick}
+  >
+    <Icon size={18} />
+    <span>{label}</span>
+  </Button>
+);
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      text: "Привет! Меня зовут Карл. Спроси меня, что тебя интересует по деревянным домам 😊",
-      isUser: false,
-    },
-  ]);
-  const [newMessage, setNewMessage] = useState("");
-  const userId = useUserIdentification();
-  const [offlineMessageShown, setOfflineMessageShown] = useState(false);
-
-  const handleAddMessage = (text: string) => {
-    const newAssistantMessage = {
-      id: messages.length + 1,
-      text,
-      isUser: false,
-      timestamp: new Date().toISOString(),
-    };
+  const { toast } = useToast();
+  
+  const handleContactClick = (method: string) => {
+    let action = "";
     
-    setMessages(prevMessages => [...prevMessages, newAssistantMessage]);
-  };
-
-  const { sendMessage, isConnected } = useWebSocket(handleAddMessage);
-
-  // Показываем офлайн-сообщение только один раз при отключении
-  useEffect(() => {
-    if (!isConnected && !offlineMessageShown && messages.length > 1) {
-      setOfflineMessageShown(true);
-      handleAddMessage("Извините, я сейчас работаю в автономном режиме. Ваше сообщение будет обработано, когда соединение восстановится.");
-    } else if (isConnected) {
-      setOfflineMessageShown(false);
+    switch(method) {
+      case "email":
+        window.location.href = "mailto:info@ecohouse.com";
+        action = "отправку email";
+        break;
+      case "whatsapp":
+        window.open("https://wa.me/37125625333", "_blank");
+        action = "переход в WhatsApp";
+        break;
+      case "telegram":
+        window.open("https://t.me/ecohouse_bot", "_blank");
+        action = "переход в Telegram";
+        break;
+      default:
+        break;
     }
-  }, [isConnected, messages.length]);
-
-  const handleSendMessage = () => {
-    if (newMessage.trim() === "") return;
-
-    const userMessage = {
-      id: messages.length + 1,
-      text: newMessage,
-      isUser: true,
-      timestamp: new Date().toISOString(),
-    };
-
-    setMessages([...messages, userMessage]);
-    setNewMessage("");
-
-    // Всегда добавляем сообщение в интерфейс, даже если отправка не удалась
-    const messageData = JSON.stringify({
-      type: "user_message",
-      message: userMessage.text,
-      timestamp: userMessage.timestamp,
-      page: window.location.pathname,
-      userId,
-      calculatorChoice: getCalculatorChoice(),
-      assistantName: "Карл"
+    
+    toast({
+      title: "Переход к контакту",
+      description: `Выполняется ${action}`,
     });
     
-    sendMessage(messageData);
+    setIsOpen(false);
   };
 
   return (
@@ -77,14 +64,10 @@ const ChatAssistant = () => {
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
-            className={`rounded-full h-14 w-14 p-0 ${isConnected ? 'bg-nature-dark hover:bg-nature' : 'bg-gray-500 hover:bg-gray-600'} shadow-lg`}
+            className="rounded-full h-14 w-14 p-0 bg-nature-dark hover:bg-nature shadow-lg"
             aria-label="Открыть чат с помощником"
           >
-            {isConnected ? (
-              <MessageCircle size={26} />
-            ) : (
-              <WifiOff size={22} />
-            )}
+            <MessageCircle size={26} />
           </Button>
         </PopoverTrigger>
         <PopoverContent 
@@ -95,12 +78,6 @@ const ChatAssistant = () => {
           <div className="p-3 border-b bg-white flex items-center justify-between rounded-t-xl">
             <div className="flex items-center gap-2">
               <span className="font-medium">Карл</span>
-              {!isConnected && (
-                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <WifiOff className="h-3 w-3" /> 
-                  Офлайн
-                </span>
-              )}
             </div>
             <Button 
               variant="ghost" 
@@ -112,31 +89,40 @@ const ChatAssistant = () => {
             </Button>
           </div>
 
-          <div className="h-64 overflow-y-auto p-3 bg-muted/30 flex flex-col gap-3">
-            {messages.map((message) => (
-              <ChatMessage 
-                key={message.id}
-                text={message.text}
-                isUser={message.isUser}
+          <div className="p-4 bg-muted/30">
+            <div className="flex items-start gap-3 mb-6">
+              <Avatar className="h-10 w-10 border border-nature-light">
+                <AvatarImage src="/lovable-uploads/b1de1130-1bc6-43ca-bdc5-31d236f8d8e9.png" alt="Аватар помощника" />
+                <AvatarFallback className="bg-nature text-white">К</AvatarFallback>
+              </Avatar>
+              <div className="bg-white p-3 rounded-lg rounded-tl-none">
+                <p className="text-gray-800">Привет! Чем я могу вам помочь? Выберите удобный способ связи:</p>
+              </div>
+            </div>
+            
+            <div className="pl-12">
+              <ContactButton 
+                icon={Mail} 
+                label="Написать на Email" 
+                onClick={() => handleContactClick("email")} 
+                className="bg-blue-50 hover:bg-blue-100 border-blue-200"
               />
-            ))}
+              
+              <ContactButton 
+                icon={Phone} 
+                label="Написать в WhatsApp" 
+                onClick={() => handleContactClick("whatsapp")} 
+                className="bg-green-50 hover:bg-green-100 border-green-200"
+              />
+              
+              <ContactButton 
+                icon={Telegram} 
+                label="Написать в Telegram" 
+                onClick={() => handleContactClick("telegram")} 
+                className="bg-sky-50 hover:bg-sky-100 border-sky-200"
+              />
+            </div>
           </div>
-
-          {!isConnected && (
-            <Alert variant="destructive" className="mx-3 mt-2 mb-0 py-2">
-              <AlertCircle className="h-4 w-4" />
-              <AlertTitle className="text-xs">Нет соединения</AlertTitle>
-              <AlertDescription className="text-xs">
-                Соединение с сервером отсутствует. Сообщения будут отправлены, когда соединение восстановится.
-              </AlertDescription>
-            </Alert>
-          )}
-
-          <ChatInput
-            value={newMessage}
-            onChange={setNewMessage}
-            onSend={handleSendMessage}
-          />
         </PopoverContent>
       </Popover>
     </div>

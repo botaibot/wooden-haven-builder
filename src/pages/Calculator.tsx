@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HouseCalculator from "@/components/HouseCalculator";
 import PageBanner from "@/components/PageBanner";
-import ChatAssistant from "@/components/ChatAssistant";
 
 const Calculator = () => {
   return (
@@ -24,7 +23,6 @@ const Calculator = () => {
       </section>
 
       <Footer />
-      <ChatAssistant />
     </div>
   );
 };
