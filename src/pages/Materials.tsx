@@ -146,7 +146,7 @@ const MaterialCard = ({
   const DetailsButton = () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="sm" className="text-xs px-3 py-1 flex items-center gap-1 h-auto">
+        <Button variant="outline" size="sm" className="w-full mx-auto text-xs px-3 py-1 flex items-center justify-center gap-1 h-auto">
           <Info className="h-3 w-3" />
           <span>Подробнее</span>
         </Button>
@@ -158,7 +158,7 @@ const MaterialCard = ({
   );
 
   return (
-    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+    <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
       <MaterialCardCarousel images={images} alt={title} />
       
       {isNew && (
@@ -167,17 +167,16 @@ const MaterialCard = ({
         </div>
       )}
       
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex-grow">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
-          {!detailsButtonBottom && <DetailsButton />}
         </div>
         
         {sizes.length > 0 && (
           <div className="mb-4">
             <Select value={selectedSize} onValueChange={handleSizeChange}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Выберите размер" />
+                <SelectValue placeholder="Выбери��е размер" />
               </SelectTrigger>
               <SelectContent>
                 {sizes.map((size, index) => (
@@ -266,17 +265,15 @@ const MaterialCard = ({
               className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
             >
               <Package size={16} />
-              <span>Заказать</span>
+              <span>За��азать</span>
             </a>
           )}
         </div>
-        
-        {detailsButtonBottom && (
-          <div className="mt-4 flex justify-center">
-            <DetailsButton />
-          </div>
-        )}
       </CardContent>
+      
+      <CardFooter className="px-6 pb-6 pt-0">
+        <DetailsButton />
+      </CardFooter>
     </Card>
   );
 };
@@ -428,7 +425,7 @@ const Materials = () => {
     {
       id: "imitation-brus",
       title: "Имитация бревна с соединением шип-паз (блок-хаус)",
-      description: "Имитация бревна с соединением шип-паз (блок-хаус) - материал для отделки в виде полубревна. Используется для отделки с��ен внутри помещений и для придания внешне��о вида деревянному дому снаружи. Может монтироваться на обрешетку или непосредственно на доски.",
+      description: "Имитация бревна с соединением шип-паз (блок-хаус) - материал для отделки в виде полубревна. Используется для отделки с��ен внутри помещений и для придания внешн����о вида деревянному дому снаружи. Может монтироваться на обрешетку или непосредственно на доски.",
       imageUrl: "/lovable-uploads/7dbef968-1865-4d4c-87f9-e8329a8d5fb5.png",
       priceRange: "€20,00–€27,00",
       unit: "м²",
