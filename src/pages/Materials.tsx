@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import { Package, ChevronDown, Plus, Minus, ShoppingCart } from "lucide-react";
+import { Package, ChevronDown, Plus, Minus, ShoppingCart, Info } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -15,6 +15,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -32,6 +37,7 @@ import Cart from "@/components/Cart";
 import { useToast } from "@/hooks/use-toast";
 import MaterialCalculator from "@/components/MaterialCalculator";
 import MaterialCardCarousel from "@/components/MaterialCardCarousel";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface SizeOption {
   label: string;
@@ -146,8 +152,21 @@ const MaterialCard = ({
       )}
       
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4 h-24 overflow-y-auto">{description}</p>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                <Info className="h-4 w-4" />
+                <span className="sr-only">Подробнее о материале</span>
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="text-sm">{description}</div>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+        <p className="text-gray-600 mb-4 h-16 overflow-y-auto">{description.split('\n')[0]}</p>
         
         {sizes.length > 0 && (
           <div className="mb-4">
@@ -324,20 +343,19 @@ const Materials = () => {
     },
     {
       id: "glued-beam",
-      title: "Клееный брус из северной ели",
-      description: "Клееный брус – универсальный строительный материал из экологически чистой древесины. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На клееный брус, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. Выберите ширину и толщину балки (95 x 95, 60 x 140, 80 x 160, 80 x 200, 120 x 120) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      title: "Клееный брус из северной ели. Сертифицирован по классу прочности GL24.",
+      description: "Клееный брус – универсальный и долговечный строительный материал, с повышенными характеристиками прочности. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На клееный брус, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. Выберите ширину и толщину балки (100 x 100, 60 x 120, 60 х 160, 80 x 160, 80 x 200, 120 x 120, 140 х 140) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
       imageUrl: "/lovable-uploads/2a0ac045-0ead-4028-ac0a-323154624adc.png",
-      priceRange: "€48.00–€110.00",
+      priceRange: "€49,50–€112.00",
       unit: "шт",
       sizes: [
-        { label: "6000 мм x 100 мм x 100 мм", value: "100x100", price: 64 },
-        { label: "6000 мм x 120 мм x 60 мм", value: "120x60", price: 48 },
-        { label: "6000 мм x 140 мм x 60 мм", value: "140x60", price: 63 },
-        { label: "6000 мм x 160 мм x 60 мм", value: "160x60", price: 65 },
-        { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 80 },
-        { label: "6000 м�� x 160 мм x 80 мм", value: "160x80", price: 98 },
-        { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 110 },
-        { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 96 },
+        { label: "6000 мм x 100 мм x 100 мм", value: "100x100", price: 67 },
+        { label: "6000 мм x 120 мм x 60 мм", value: "120x60", price: 49.5 },
+        { label: "6000 мм x 160 мм x 60 мм", value: "160x60", price: 67 },
+        { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 84 },
+        { label: "6000 мм x 160 мм x 80 мм", value: "160x80", price: 96.3 },
+        { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 112 },
+        { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 99.5 },
       ],
       isNew: true,
       category: "Брус и доска"
@@ -445,31 +463,33 @@ const Materials = () => {
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-3 mb-8 justify-center">
-            {categories.map((category, index) => (
-              <button 
-                key={index}
-                className={`px-4 py-2 rounded-full text-sm ${
-                  category === activeCategory
-                    ? "bg-wood text-white" 
-                    : "bg-gray-100 text-gray-700 hover:bg-wood-light"
-                }`}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+      <TooltipProvider>
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap gap-3 mb-8 justify-center">
+              {categories.map((category, index) => (
+                <button 
+                  key={index}
+                  className={`px-4 py-2 rounded-full text-sm ${
+                    category === activeCategory
+                      ? "bg-wood text-white" 
+                      : "bg-gray-100 text-gray-700 hover:bg-wood-light"
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredMaterials.map((material, index) => (
-              <MaterialCard key={index} {...material} />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredMaterials.map((material, index) => (
+                <MaterialCard key={index} {...material} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </TooltipProvider>
 
       <section className="py-10 bg-nature-light/30">
         <div className="container mx-auto px-4">
