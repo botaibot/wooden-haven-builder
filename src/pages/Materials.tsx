@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -154,19 +155,18 @@ const MaterialCard = ({
       <CardContent className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                <Info className="h-4 w-4" />
-                <span className="sr-only">Подробнее о материале</span>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="sm" className="text-xs px-3 py-1 flex items-center gap-1 h-auto">
+                <Info className="h-3 w-3" />
+                <span>Подробнее</span>
               </Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="text-sm">{description}</div>
-            </HoverCardContent>
-          </HoverCard>
+            </PopoverTrigger>
+            <PopoverContent className="w-80 max-h-60 overflow-y-auto">
+              <div className="text-sm whitespace-pre-line">{description}</div>
+            </PopoverContent>
+          </Popover>
         </div>
-        <p className="text-gray-600 mb-4 h-16 overflow-y-auto">{description.split('\n')[0]}</p>
         
         {sizes.length > 0 && (
           <div className="mb-4">
