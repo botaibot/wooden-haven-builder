@@ -94,7 +94,6 @@ const houses: HouseData[] = [
       "/lovable-uploads/00c9f9a1-00c4-4ccd-906a-989a0efad538.png",
       "/lovable-uploads/d8f73c16-41ff-435b-8343-46b3eeaf34b6.png",
       "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png",
-      // Adding new uploaded images
       "/lovable-uploads/6785cca5-755c-4b4b-aa32-c17dc0580e5f.png",
       "/lovable-uploads/ce9ebb39-e322-4731-b8ff-5059c5c3906e.png",
       "/lovable-uploads/068b49f4-b09a-4b6d-b876-f748ededa156.png",
@@ -103,6 +102,33 @@ const houses: HouseData[] = [
       "/lovable-uploads/8007b988-25ef-4fed-aa85-18c756b99abc.png"
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
+  },
+  {
+    id: 8,
+    title: "Black Eco Box",
+    area: "60 м² плюс терраса 22 м²",
+    dimensions: "10.6 x 5.7 м",
+    floors: 1,
+    bedrooms: 2,
+    bathrooms: 1,
+    terrace: true,
+    balcony: false,
+    porch: false,
+    frameCost: "550 € м²",
+    warmContourCost: "650 € м²",
+    turnkeyCost: "1000 € м²",
+    images: [
+      "/lovable-uploads/1eef88b2-05cb-40e6-97af-76cac27cb226.png",
+      "/lovable-uploads/c91210e3-7e57-4c99-ab7f-27781fd2a6e2.png",
+      "/lovable-uploads/d540d538-a4e8-4099-a43a-59b3cb3c21a1.png", 
+      "/lovable-uploads/0a31d33c-f3f2-4781-9beb-a62465a57315.png",
+      "/lovable-uploads/549095ac-c56f-4c84-badc-4ad68bab331e.png",
+      "/lovable-uploads/4e0bc79b-f069-4bed-aba5-034816928b65.png",
+      "/lovable-uploads/38788190-a61c-459a-8797-4df2fa00dc81.png",
+      "/lovable-uploads/349b05a3-6beb-47ce-baec-61ab775f4a22.png",
+      "/lovable-uploads/9cce6fb1-2025-4543-a6ae-1154748da486.png"
+    ],
+    floorPlanImage: "/lovable-uploads/a978f057-676e-4915-a206-cffe41d7c02b.png"
   },
   {
     id: 2,
@@ -202,26 +228,6 @@ const houses: HouseData[] = [
       "/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png",
       "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png",
       "/lovable-uploads/876a7692-1ae2-4ec0-861f-762eaf151e79.png"
-    ],
-    floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
-  },
-  {
-    id: 8,
-    title: "Black Eco Box",
-    area: "35 м²",
-    dimensions: "7 x 5 м",
-    floors: 1,
-    bedrooms: 1,
-    bathrooms: 1,
-    terrace: true,
-    balcony: false,
-    porch: false,
-    frameCost: "550 € м²",
-    warmContourCost: "650 € м²",
-    turnkeyCost: "1000 € м²",
-    images: [
-      "/lovable-uploads/8b8b75f6-4e84-464f-ac3d-f2df410db0b5.png",
-      "/lovable-uploads/aea18e32-2f4c-467e-801c-a6f8a3b67628.png"
     ],
     floorPlanImage: "/lovable-uploads/47682191-0f0e-4ac6-8daa-f5aff33c9b9c.png"
   },
