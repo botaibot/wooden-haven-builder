@@ -66,28 +66,28 @@ const houses: HouseData[] = [
   {
     id: 10,
     title: "Ecopino Lux Studio",
-    area: "31.5 м²",
+    area: "29 м² плюс терраса 5 м²",
     dimensions: "7 x 4.5 м",
     floors: 1,
     bedrooms: 1,
     bathrooms: 1,
     terrace: true,
     balcony: false,
-    porch: false,
+    porch: true,
     frameCost: "600 € м²",
     warmContourCost: "750 € м²",
     turnkeyCost: "1200 € м²",
     images: [
-      "/lovable-uploads/ccd9bf16-bd15-484a-8e0a-bd91c85288e3.png",
+      "/lovable-uploads/23a86296-570d-4235-a936-e350f93eff71.png",
+      "/lovable-uploads/c55de466-a770-498a-a6ad-19de1ba94d97.png",
       "/lovable-uploads/efd46ec3-1c51-4d1d-bf8b-f523d2aabb12.png",
       "/lovable-uploads/9b10fb6c-f1b7-4a04-b863-03b2e62e1985.png",
       "/lovable-uploads/7474051c-cc7d-464a-9bc7-5b304febc919.png",
       "/lovable-uploads/f6d80fab-0234-4c19-a2b6-ebd32134b7dc.png",
       "/lovable-uploads/88335b5d-cfd7-4774-9877-056ea1b73425.png",
-      "/lovable-uploads/a8165cb6-a086-450b-8b39-e5fe4991038e.png",
-      "/lovable-uploads/8c7d1a37-e043-4e10-b474-88b2a317b09b.png"
+      "/lovable-uploads/a8165cb6-a086-450b-8b39-e5fe4991038e.png"
     ],
-    floorPlanImage: "/lovable-uploads/9324f8cd-508f-43a2-85da-14a2b930230d.png"
+    floorPlanImage: "/lovable-uploads/3ccf82da-2fc5-4402-b633-a5621347891d.png"
   },
   {
     id: 6,
