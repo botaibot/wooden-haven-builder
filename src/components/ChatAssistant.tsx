@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { MessageCircle, X, Mail, Telegram, Phone } from "lucide-react";
+import { MessageCircle, X, Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -116,7 +116,7 @@ const ChatAssistant = () => {
               />
               
               <ContactButton 
-                icon={Telegram} 
+                icon={Send} 
                 label="Написать в Telegram" 
                 onClick={() => handleContactClick("telegram")} 
                 className="bg-sky-50 hover:bg-sky-100 border-sky-200"
