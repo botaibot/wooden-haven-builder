@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -58,6 +59,7 @@ interface MaterialCardProps {
   isNew?: boolean;
   category: string;
   showCalculator?: boolean;
+  detailsButtonBottom?: boolean;
 }
 
 const MaterialCard = ({ 
@@ -70,7 +72,8 @@ const MaterialCard = ({
   sizes = [],
   isNew = false,
   category,
-  showCalculator = false
+  showCalculator = false,
+  detailsButtonBottom = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
@@ -140,6 +143,20 @@ const MaterialCard = ({
   };
 
   const images = Array.isArray(imageUrl) ? imageUrl : [imageUrl];
+  
+  const DetailsButton = () => (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline" size="sm" className="text-xs px-3 py-1 flex items-center gap-1 h-auto">
+          <Info className="h-3 w-3" />
+          <span>Подробнее</span>
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-80 max-h-60 overflow-y-auto">
+        <div className="text-sm whitespace-pre-line">{description}</div>
+      </PopoverContent>
+    </Popover>
+  );
 
   return (
     <Card className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
@@ -154,17 +171,7 @@ const MaterialCard = ({
       <CardContent className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="text-xs px-3 py-1 flex items-center gap-1 h-auto">
-                <Info className="h-3 w-3" />
-                <span>Подробнее</span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-80 max-h-60 overflow-y-auto">
-              <div className="text-sm whitespace-pre-line">{description}</div>
-            </PopoverContent>
-          </Popover>
+          {!detailsButtonBottom && <DetailsButton />}
         </div>
         
         {sizes.length > 0 && (
@@ -264,6 +271,12 @@ const MaterialCard = ({
             </a>
           )}
         </div>
+        
+        {detailsButtonBottom && (
+          <div className="mt-4 flex justify-center">
+            <DetailsButton />
+          </div>
+        )}
       </CardContent>
     </Card>
   );
@@ -363,7 +376,7 @@ const Materials = () => {
     },
     {
       id: "plywood-eucalyptus",
-      title: "Фанера из эвкалипта/топола",
+      title: "Фанера из эвкалипта/тополя",
       description: "Легкая плита с сердцевиной из европейского тополя и декоративными фасадами из плантационного эвкалипта, отличительной особенностью которой является ее эстетические качества и хорошая лрочность. Устойчивая сердцевина из тополя, высаженного с соблюдением принципов устойчивого развития, помимо исключительной легкости и простоты обработки, придает этим доскам отличную устойчивость и качество поверхности.\n\nЦена указана за один лист. В корзине вы можете указать количество листов для каждого товара в вашем заказе",
       imageUrl: "/lovable-uploads/103ea832-15f8-4db1-a9a3-e179a0796d34.png",
       priceRange: "€20.00–€80.00",
@@ -415,8 +428,8 @@ const Materials = () => {
     },
     {
       id: "imitation-brus",
-      title: "Эммитация бруса с соединением шип-паз",
-      description: "Выберите характеристики материала из доступных вариантов (цена зависит от качества) и добавьте его в корзину. В корзине вы можете указать площадь каждого товара в вашем заказе.",
+      title: "Имитация бревна с соединением шип-паз (блок-хаус)",
+      description: "Имитация бревна с соединением шип-паз (блок-хаус) - материал для отделки в виде полубревна. Используется для отделки стен внутри помещений и для придания внешнего вида деревянному дому снаружи. Может монтироваться на обрешетку или непосредственно на доски.",
       imageUrl: "/lovable-uploads/7dbef968-1865-4d4c-87f9-e8329a8d5fb5.png",
       priceRange: "€20,00–€27,00",
       unit: "м²",
@@ -426,7 +439,8 @@ const Materials = () => {
       ],
       isNew: true,
       category: "Отделочные материалы",
-      showCalculator: true
+      showCalculator: true,
+      detailsButtonBottom: true
     },
     {
       id: "floor-board",
