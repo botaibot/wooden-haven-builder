@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -456,7 +457,7 @@ const Materials = () => {
       id: "dry-planed-lumber",
       title: "Брусок сухой строганый с 3-х сторон",
       description: "Брусок сухой строганый с 3-х сторон - универсальный ��родукт из древесины (сосны). Используется как обрешетка для деревянных конструкций, деревянных трельяжей, основания пола. На обрешетку можно монтировать: имитацию бревна, половую доску, строганную доску.",
-      imageUrl: "/lovable-uploads/e5959dca-e829-429c-9017-886e11397975.png",
+      imageUrl: "/lovable-uploads/48a131b5-ba2e-42fd-964d-61aaaf74803c.png",
       priceRange: "€3,50–€21,00",
       unit: "шт",
       sizes: [
@@ -544,3 +545,4 @@ const Materials = () => {
 };
 
 export default Materials;
+
