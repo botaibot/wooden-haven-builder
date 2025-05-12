@@ -1,3 +1,4 @@
+
 export interface HouseData {
   id: number;
   title: string;
@@ -80,7 +81,7 @@ const houses: HouseData[] = [
       "/lovable-uploads/6f2fd81a-e154-42e4-aa78-5a772a37edeb.png",
       "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
       "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png",
-      "/lovable-uploads/ce61eb08-bb96-4fb9-aa02-218c1a144755.png", // New images
+      "/lovable-uploads/ce61eb08-bb96-4fb9-aa02-218c1a144755.png",
       "/lovable-uploads/05e7f9d0-8fbe-457a-830d-09fc1efbc5d2.png",
       "/lovable-uploads/1c14b59f-71a9-4b80-9fd7-82f42fbc3afd.png",
       "/lovable-uploads/f1e93128-2d34-461c-a1c9-e3d227ef998a.png",
@@ -92,7 +93,14 @@ const houses: HouseData[] = [
       "/lovable-uploads/56275e07-80d3-40c6-8a5f-0be63eb2a0e6.png",
       "/lovable-uploads/00c9f9a1-00c4-4ccd-906a-989a0efad538.png",
       "/lovable-uploads/d8f73c16-41ff-435b-8343-46b3eeaf34b6.png",
-      "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png"
+      "/lovable-uploads/3c586d9b-6f30-4404-a370-5b6e68224828.png",
+      // Adding new uploaded images
+      "/lovable-uploads/6785cca5-755c-4b4b-aa32-c17dc0580e5f.png",
+      "/lovable-uploads/ce9ebb39-e322-4731-b8ff-5059c5c3906e.png",
+      "/lovable-uploads/068b49f4-b09a-4b6d-b876-f748ededa156.png",
+      "/lovable-uploads/8e7a9847-aa39-43e8-bbba-209e56dcd534.png",
+      "/lovable-uploads/cbfee098-4d29-4792-826d-3f54c1b374ac.png",
+      "/lovable-uploads/8007b988-25ef-4fed-aa85-18c756b99abc.png"
     ],
     floorPlanImage: "/lovable-uploads/4d449e75-0e99-4477-9ca9-60de754701c3.png"
   },
