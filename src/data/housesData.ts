@@ -1,4 +1,3 @@
-
 export interface HouseData {
   id: number;
   title: string;
@@ -33,8 +32,7 @@ const houses: HouseData[] = [
     warmContourCost: "650 € м²",
     turnkeyCost: "1000 € м²",
     images: [
-      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png",
-      "/lovable-uploads/8f722547-79d9-419c-9a42-dc313ffce0f3.png"
+      "/lovable-uploads/f4354d1a-0c79-4025-88cd-88913cd73e26.png"
     ],
     floorPlanImage: "/lovable-uploads/caf15d38-3d5b-43a7-a1f9-bcb3a8b2f2e2.png"
   },
