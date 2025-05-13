@@ -1,9 +1,10 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { formatCurrency, getFoundationLabel, getRoofInsulationLabel } from "./constants";
 import { FormValues } from "./types";
+import OrderDetailsForm from "./OrderDetailsForm";
 
 interface PriceDetailsProps {
   isDetailsOpen: boolean;
@@ -26,6 +27,8 @@ const PriceDetails = ({
   formValues,
   onSubmit,
 }: PriceDetailsProps) => {
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
+  
   return (
     <div className="pt-6 border-t">
       <Collapsible
@@ -133,13 +136,31 @@ const PriceDetails = ({
         </CollapsibleContent>
       </Collapsible>
 
-      <Button 
-        type="submit" 
-        onClick={onSubmit}
-        className="bg-wood text-white hover:bg-wood-dark w-full md:w-auto"
-      >
-        Получить детальный расчет
-      </Button>
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Button 
+          type="submit" 
+          onClick={onSubmit}
+          className="bg-wood text-white hover:bg-wood-dark w-full sm:w-auto"
+        >
+          Получить детальный расчет
+        </Button>
+        
+        <Button 
+          variant="outline" 
+          onClick={() => setIsOrderFormOpen(true)}
+          className="border-wood text-wood hover:bg-wood/10 w-full sm:w-auto"
+        >
+          Отправить расчет менеджеру
+        </Button>
+      </div>
+      
+      <OrderDetailsForm 
+        open={isOrderFormOpen} 
+        onOpenChange={setIsOrderFormOpen} 
+        formValues={formValues} 
+        totalPrice={totalPrice} 
+        totalArea={totalArea} 
+      />
     </div>
   );
 };
