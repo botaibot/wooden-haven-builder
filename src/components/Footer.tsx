@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { PrivacySettingsButton } from "./cookie-consent/PrivacySettingsButton";
 
 const Footer = () => {
   const location = useLocation();
@@ -54,6 +55,9 @@ const Footer = () => {
                 <Link to="/furniture" className="text-gray-300 hover:text-nature-light transition-colors">
                   Мебель
                 </Link>
+              </li>
+              <li>
+                <PrivacySettingsButton />
               </li>
             </ul>
           </div>

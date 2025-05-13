@@ -14,8 +14,10 @@ import Contact from "./pages/Contact";
 import Furniture from "./pages/Furniture";
 import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
-import ChatAssistant from "@/components/ChatAssistant";  // Уже импортирован
+import ChatAssistant from "@/components/ChatAssistant";
 import { CartProvider } from "./context/CartContext";
+import { CookieConsentProvider } from "./components/cookie-consent/CookieConsentContext";
+import { CookieBanner } from "./components/cookie-consent/CookieBanner";
 
 // Компонент для прокрутки вверх при изменении маршрута
 const ScrollToTop = () => {
@@ -34,25 +36,29 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <CartProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/houses" element={<Houses />} />
-            <Route path="/houses/:id" element={<HouseDetail />} />
-            <Route path="/materials" element={<Materials />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/furniture" element={<Furniture />} />
-            <Route path="/calculator" element={<Calculator />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          {/* Добавляем ChatAssistant глобально */}
-          <ChatAssistant />
-        </BrowserRouter>
+        <CookieConsentProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/houses" element={<Houses />} />
+              <Route path="/houses/:id" element={<HouseDetail />} />
+              <Route path="/materials" element={<Materials />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/furniture" element={<Furniture />} />
+              <Route path="/calculator" element={<Calculator />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            {/* Добавляем ChatAssistant глобально */}
+            <ChatAssistant />
+            {/* Добавляем CookieBanner глобально */}
+            <CookieBanner />
+          </BrowserRouter>
+        </CookieConsentProvider>
       </CartProvider>
     </TooltipProvider>
   </QueryClientProvider>
