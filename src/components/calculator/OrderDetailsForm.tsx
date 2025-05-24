@@ -44,6 +44,17 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       return;
     }
     
+    // Проверяем, настроен ли webhook URL
+    const webhookUrl = window.localStorage.getItem('managerWebhookUrl');
+    if (!webhookUrl || webhookUrl === 'https://hooks.zapier.com/hooks/catch/your-webhook-id') {
+      toast({
+        title: "Webhook не настроен",
+        description: "Пожалуйста, настройте URL webhook в настройках калькулятора (кнопка с шестеренкой) для отправки данных менеджеру.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
     // Создаем объект с данными заказа и контактной информацией
@@ -66,9 +77,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
     };
     
     try {
-      // Здесь будет webhook для отправки данных менеджеру
-      // В реальном случае, здесь будет URL вашего webhook
-      const webhookUrl = window.localStorage.getItem('managerWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/your-webhook-id';
+      console.log("Отправка данных на webhook:", webhookUrl, orderData);
       
       const response = await fetch(webhookUrl, {
         method: "POST",
@@ -83,7 +92,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       // мы просто предполагаем, что запрос был отправлен успешно
       toast({
         title: "Заявка отправлена",
-        description: "Менеджер свяжется с вами в ближайшее время!",
+        description: "Данные отправлены на настроенный webhook. Проверьте историю вашего Zap в Zapier для подтверждения получения данных.",
       });
       
       // Закрываем диалог
@@ -100,7 +109,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       console.error("Ошибка при отправке:", error);
       toast({
         title: "Ошибка",
-        description: "Не удалось отправить данные. Пожалуйста, попробуйте позже.",
+        description: "Не удалось отправить данные. Проверьте URL webhook и попробуйте позже.",
         variant: "destructive",
       });
     } finally {
@@ -112,9 +121,9 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle>Получить детальный расчет</DialogTitle>
+          <DialogTitle>Отправить расчет менеджеру</DialogTitle>
           <DialogDescription>
-            Оставьте свои контактные данные, и наш менеджер свяжется с вами для уточнения деталей и предоставления точного расчета.
+            Оставьте свои контактные данные, и данные расчета будут отправлены на настроенный webhook.
           </DialogDescription>
         </DialogHeader>
         
