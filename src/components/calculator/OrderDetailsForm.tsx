@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -44,21 +43,14 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       return;
     }
     
-    // Проверяем, настроен ли webhook URL
-    const webhookUrl = window.localStorage.getItem('managerWebhookUrl');
-    if (!webhookUrl || webhookUrl === 'https://hooks.zapier.com/hooks/catch/your-webhook-id') {
-      toast({
-        title: "Webhook не настроен",
-        description: "Пожалуйста, настройте URL webhook в настройках калькулятора (кнопка с шестеренкой) для отправки данных менеджеру.",
-        variant: "destructive",
-      });
-      return;
-    }
-    
     setIsSubmitting(true);
+    
+    // Webhook URL для отправки данных менеджеру
+    const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
     // Создаем объект с данными заказа и контактной информацией
     const orderData = {
+      type: "manager_request",
       contactInfo: contactForm,
       orderDetails: {
         houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
@@ -73,6 +65,8 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
         totalArea: `${totalArea.toFixed(1)} м²`,
         totalPrice: formatCurrency(totalPrice),
         timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        pageUrl: window.location.href
       }
     };
     
@@ -84,15 +78,13 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors", // Для обхода CORS при работе с внешними API
+        mode: "no-cors",
         body: JSON.stringify(orderData),
       });
       
-      // Поскольку mode: "no-cors" не позволяет получить статус ответа,
-      // мы просто предполагаем, что запрос был отправлен успешно
       toast({
         title: "Заявка отправлена",
-        description: "Данные отправлены на настроенный webhook. Проверьте историю вашего Zap в Zapier для подтверждения получения данных.",
+        description: "Данные переданы менеджеру. Мы свяжемся с вами в ближайшее время!",
       });
       
       // Закрываем диалог
@@ -109,7 +101,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       console.error("Ошибка при отправке:", error);
       toast({
         title: "Ошибка",
-        description: "Не удалось отправить данные. Проверьте URL webhook и попробуйте позже.",
+        description: "Не удалось отправить данные. Пожалуйста, попробуйте позже.",
         variant: "destructive",
       });
     } finally {
@@ -123,7 +115,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
         <DialogHeader>
           <DialogTitle>Отправить расчет менеджеру</DialogTitle>
           <DialogDescription>
-            Оставьте свои контактные данные, и данные расчета будут отправлены на настроенный webhook.
+            Оставьте свои контактные данные, и наш менеджер свяжется с вами для уточнения деталей.
           </DialogDescription>
         </DialogHeader>
         
