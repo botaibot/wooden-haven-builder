@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { FormValues } from "./types";
-import { formatCurrency } from "./constants";
+import { formatCurrency, getFoundationLabel, getRoofInsulationLabel } from "./constants";
 
 interface OrderDetailsFormProps {
   open: boolean;
@@ -49,7 +48,7 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
     // Webhook URL для отправки данных менеджеру
     const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Создаем плоский объект с данными в указанном порядке
+    // Создаем плоский объект с данными в указанном порядке с читаемыми значениями
     const orderData = {
       name: contactForm.name,
       email: contactForm.email,
@@ -58,8 +57,8 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
       houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
       dimensions: `${formValues.width} × ${formValues.length} м`,
       thickness: formValues.thickness,
-      roofInsulation: formValues.roofInsulation,
-      foundation: formValues.foundation,
+      roofInsulation: getRoofInsulationLabel(formValues.roofInsulation),
+      foundation: getFoundationLabel(formValues.foundation),
       terrace: formValues.terrace ? `${formValues.terraceSize} м²` : "Нет",
       canopy: formValues.canopy ? `${formValues.canopySize} м²` : "Нет",
       solarPanels: formValues.solarPanels ? `${formValues.solarPower} кВт` : "Нет",
