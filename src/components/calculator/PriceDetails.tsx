@@ -35,7 +35,7 @@ const PriceDetails = ({
   const handleDetailedCalculation = async () => {
     setIsSubmitting(true);
     
-    const webhookUrl = localStorage.getItem('managerWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/your-webhook-id';
+    const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
     // Формируем детальные данные расчета
     const calculationData = {
@@ -79,7 +79,7 @@ const PriceDetails = ({
     };
     
     try {
-      console.log("Отправка детального расчета на webhook:", calculationData);
+      console.log("Отправка детального расчета на Make.com webhook:", calculationData);
       
       const response = await fetch(webhookUrl, {
         method: "POST",
