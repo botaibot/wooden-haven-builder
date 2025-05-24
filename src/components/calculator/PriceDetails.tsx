@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useToast } from "@/hooks/use-toast";
 import { formatCurrency, getFoundationLabel, getRoofInsulationLabel } from "./constants";
 import { FormValues } from "./types";
 import OrderDetailsForm from "./OrderDetailsForm";
@@ -28,6 +29,86 @@ const PriceDetails = ({
   onSubmit,
 }: PriceDetailsProps) => {
   const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleDetailedCalculation = async () => {
+    setIsSubmitting(true);
+    
+    const webhookUrl = localStorage.getItem('managerWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/your-webhook-id';
+    
+    // Формируем детальные данные расчета
+    const calculationData = {
+      type: "detailed_calculation_request",
+      calculationDetails: {
+        houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
+        dimensions: `${formValues.width} × ${formValues.length} м`,
+        houseArea: `${(formValues.width * formValues.length).toFixed(1)} м²`,
+        thickness: formValues.thickness,
+        roofInsulation: getRoofInsulationLabel(formValues.roofInsulation),
+        foundation: getFoundationLabel(formValues.foundation),
+        metalSupports: formValues.foundation === "adjustable_metal" ? {
+          count: metalSupportsCount,
+          cost: formatCurrency(metalSupportsCost)
+        } : null,
+        terrace: formValues.terrace ? {
+          enabled: true,
+          size: `${formValues.terraceSize} м²`
+        } : { enabled: false },
+        canopy: formValues.canopy ? {
+          enabled: true,
+          size: `${formValues.canopySize} м²`
+        } : { enabled: false },
+        solarPanels: formValues.solarPanels ? {
+          enabled: true,
+          power: `${formValues.solarPower} кВт`,
+          cost: formatCurrency(formValues.solarPower * 1400)
+        } : { enabled: false },
+        fireProtection: formValues.fireProtection ? {
+          enabled: true,
+          points: 20,
+          cost: formatCurrency(800)
+        } : { enabled: false },
+        totalArea: `${totalArea.toFixed(1)} м²`,
+        totalPrice: formatCurrency(totalPrice),
+        basePrice: formValues.houseType === "frame" ? "550 €" : "800 €",
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        pageUrl: window.location.href
+      }
+    };
+    
+    try {
+      console.log("Отправка детального расчета на webhook:", calculationData);
+      
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(calculationData),
+      });
+      
+      toast({
+        title: "Запрос отправлен",
+        description: "Данные предварительного расчета переданы менеджеру. Мы свяжемся с вами для предоставления детального расчета.",
+      });
+      
+      // Вызываем оригинальный onSubmit для совместимости
+      onSubmit();
+      
+    } catch (error) {
+      console.error("Ошибка при отправке детального расчета:", error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить данные. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   return (
     <div className="pt-6 border-t">
@@ -139,10 +220,11 @@ const PriceDetails = ({
       <div className="flex flex-col sm:flex-row gap-3">
         <Button 
           type="submit" 
-          onClick={onSubmit}
+          onClick={handleDetailedCalculation}
+          disabled={isSubmitting}
           className="bg-wood text-white hover:bg-wood-dark w-full sm:w-auto"
         >
-          Получить детальный расчет
+          {isSubmitting ? "Отправка..." : "Получить детальный расчет"}
         </Button>
         
         <Button 
