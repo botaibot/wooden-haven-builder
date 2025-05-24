@@ -1,11 +1,21 @@
 
 import React, { useEffect } from "react";
 
+declare global {
+  interface Window {
+    voiceflow?: {
+      chat: {
+        load: (config: any) => void;
+      };
+    };
+  }
+}
+
 const ChatAssistant = () => {
   useEffect(() => {
     // Проверяем, что скрипт Voiceflow еще не загружен
     if (!window.voiceflow) {
-      // Используем функцию самовызова для загрузки скрипта
+      // Используем обновленный скрипт для загрузки Voiceflow
       (function(d, t) {
         var v = d.createElement(t) as HTMLScriptElement, s = d.getElementsByTagName(t)[0];
         v.onload = function() {
