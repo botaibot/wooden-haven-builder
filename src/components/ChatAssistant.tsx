@@ -7,7 +7,7 @@ const ChatAssistant = () => {
     if (!window.voiceflow) {
       // Используем функцию самовызова для загрузки скрипта
       (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        var v = d.createElement(t) as HTMLScriptElement, s = d.getElementsByTagName(t)[0];
         v.onload = function() {
           if (window.voiceflow) {
             window.voiceflow.chat.load({
@@ -22,7 +22,7 @@ const ChatAssistant = () => {
         };
         v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
         v.type = "text/javascript";
-        s.parentNode.insertBefore(v, s);
+        s.parentNode!.insertBefore(v, s);
       })(document, 'script');
     }
   }, []);
