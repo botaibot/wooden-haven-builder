@@ -12,14 +12,11 @@ const ChatAssistant = () => {
           window.voiceflow.chat.load({
             verify: { projectID: '682f6b5853e18e5eb719bb91' },
             url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production',
-            voice: {
-              url: "https://runtime-api.voiceflow.com"
-            }
+            versionID: 'production'
           });
         }
       };
-      script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
       document.head.appendChild(script);
     }
   }, []);

@@ -9,9 +9,6 @@ declare global {
           verify: { projectID: string };
           url: string;
           versionID: string;
-          voice: {
-            url: string;
-          };
         }) => void;
       };
     };
