@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -48,26 +49,23 @@ const OrderDetailsForm = ({ open, onOpenChange, formValues, totalPrice, totalAre
     // Webhook URL для отправки данных менеджеру
     const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Создаем объект с данными заказа и контактной информацией
+    // Создаем плоский объект с данными в указанном порядке
     const orderData = {
-      type: "manager_request",
-      contactInfo: contactForm,
-      orderDetails: {
-        houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
-        dimensions: `${formValues.width} × ${formValues.length} м`,
-        thickness: formValues.thickness,
-        roofInsulation: formValues.roofInsulation,
-        foundation: formValues.foundation,
-        terrace: formValues.terrace ? `${formValues.terraceSize} м²` : "Нет",
-        canopy: formValues.canopy ? `${formValues.canopySize} м²` : "Нет",
-        solarPanels: formValues.solarPanels ? `${formValues.solarPower} кВт` : "Нет",
-        fireProtection: formValues.fireProtection ? "Да" : "Нет",
-        totalArea: `${totalArea.toFixed(1)} м²`,
-        totalPrice: formatCurrency(totalPrice),
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        pageUrl: window.location.href
-      }
+      name: contactForm.name,
+      email: contactForm.email,
+      phone: contactForm.phone,
+      message: contactForm.message,
+      houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
+      dimensions: `${formValues.width} × ${formValues.length} м`,
+      thickness: formValues.thickness,
+      roofInsulation: formValues.roofInsulation,
+      foundation: formValues.foundation,
+      terrace: formValues.terrace ? `${formValues.terraceSize} м²` : "Нет",
+      canopy: formValues.canopy ? `${formValues.canopySize} м²` : "Нет",
+      solarPanels: formValues.solarPanels ? `${formValues.solarPower} кВт` : "Нет",
+      fireProtection: formValues.fireProtection ? "Да" : "Нет",
+      totalArea: `${totalArea.toFixed(1)} м²`,
+      totalPrice: formatCurrency(totalPrice)
     };
     
     try {
