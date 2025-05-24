@@ -15,9 +15,11 @@ const Navbar = () => {
     <nav className="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-wood-light">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="text-2xl font-bold text-wood-dark">
-            <span className="text-nature-dark">Wood</span>Tenerife
-          </h1>
+          <img 
+            src="/lovable-uploads/ca89cdb6-b7f4-44dc-9705-929eddef2f0e.png" 
+            alt="BosqueNordico - Wooden Homes Tenerife" 
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Menu */}
