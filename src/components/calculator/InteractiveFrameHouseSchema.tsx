@@ -40,6 +40,11 @@ const wallDetails: { [key: string]: WallDetail } = {
     title: "Фасадная отделка",
     description: "Вентилируемый фасад с воздушным зазором 30-48мм обеспечивает долговечность отделки и дополнительную защиту стены.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
+  },
+  roof: {
+    title: "Кровельный пирог",
+    description: "Структура кровли включает в себя несколько слоев для обеспечения надежной защиты и теплоизоляции. Кровельный пирог состоит из стропильной системы, утеплителя, пароизоляции, ветрозащитной мембраны и финишного покрытия.",
+    image: "/lovable-uploads/675ff4d5-ce2d-4aba-ae5f-fa43015f51a1.png"
   }
 };
 
@@ -128,6 +133,17 @@ const InteractiveFrameHouseSchema = () => {
       >
         <Info className="h-4 w-4 mr-1" />
         Фасад
+      </Button>
+
+      {/* Крыша */}
+      <Button
+        size="sm"
+        variant="secondary"
+        className="absolute top-[15%] left-[45%] bg-red-500 hover:bg-red-600 text-white"
+        onClick={() => handleDetailClick('roof')}
+      >
+        <Info className="h-4 w-4 mr-1" />
+        Крыша
       </Button>
 
       {/* Диалог с подробной информацией */}
