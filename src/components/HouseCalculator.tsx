@@ -10,6 +10,7 @@ import { PRICES, formatCurrency } from "./calculator/constants";
 import { FormValues, calculatorFormSchema } from "./calculator/types";
 import HouseCalculatorForm from "./calculator/HouseCalculatorForm";
 import PriceDetails from "./calculator/PriceDetails";
+import InteractiveFrameHouseSchema from "./calculator/InteractiveFrameHouseSchema";
 import { saveCalculatorChoice } from "@/hooks/useUserIdentification";
 
 const HouseCalculator = () => {
@@ -126,7 +127,7 @@ const HouseCalculator = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto space-y-8">
       <Card>
         <CardContent className="p-6">
           <div className="mb-8">
@@ -160,6 +161,21 @@ const HouseCalculator = () => {
               />
             </form>
           </Form>
+        </CardContent>
+      </Card>
+
+      {/* Интерактивная схема каркасного дома */}
+      <Card>
+        <CardContent className="p-6">
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-wood-dark mb-2">
+              Конструкция каркасного дома
+            </h3>
+            <p className="text-muted-foreground">
+              Нажмите на элементы схемы, чтобы узнать подробности о конструкции
+            </p>
+          </div>
+          <InteractiveFrameHouseSchema />
         </CardContent>
       </Card>
     </div>
