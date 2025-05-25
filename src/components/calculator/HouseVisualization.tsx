@@ -21,9 +21,9 @@ const HouseVisualization = ({ houseType }: HouseVisualizationProps) => {
       </div>
       
       <div className="relative w-full max-w-md mx-auto">
-        {/* Фоновое изображение дома */}
+        {/* Новая фоновая схема дома */}
         <img 
-          src="/lovable-uploads/91ae336b-7848-48df-b3c7-bdaf65b1669d.png" 
+          src="/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png" 
           alt="Схема дома" 
           className="w-full h-auto rounded-lg shadow-sm"
         />
