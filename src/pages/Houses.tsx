@@ -27,7 +27,8 @@ const HouseCard = ({ id, title, imageUrl, area, price }: HouseCardProps) => {
         <div className="relative aspect-video overflow-hidden">
           <img 
             src={imageUrl} 
-            alt={title} 
+            alt={`Casa de madera ${title} - proyecto de construcción de Bosque Nórdico en las Islas Canarias`}
+            title={`Proyecto de casa de madera ${title} - ${area} m²`}
             className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">

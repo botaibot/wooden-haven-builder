@@ -21,8 +21,8 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
         <div className="relative aspect-[4/3] overflow-hidden">
           <img 
             src={imageUrl} 
-            alt={`Проект деревянного дома ${title} - ${area} кв.м от Bosque Nórdico на Канарских островах`}
-            title={`Деревянный дом ${title} - детали проекта`}
+            alt={`Proyecto de casa de madera ${title} - ${area} m² de Bosque Nórdico en las Islas Canarias`}
+            title={`Casa de madera ${title} - detalles del proyecto`}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">

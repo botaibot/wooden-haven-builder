@@ -33,8 +33,8 @@ const Hero = () => {
         <div className="relative h-[400px] md:h-auto overflow-hidden rounded-xl shadow-xl">
           <img 
             src="/lovable-uploads/18ed6fd7-42fa-44a8-83a0-f5c39131b3aa.png" 
-            alt="Деревянные дома Bosque Nórdico в горах Канарских островов - экологичное строительство из клееного бруса"
-            title="Деревянные дома в горах Тенерифе"
+            alt="Casas de madera Bosque Nórdico en las montañas de las Islas Canarias - construcción ecológica con madera laminada encolada"
+            title="Casas de madera en las montañas de Tenerife - Bosque Nórdico"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

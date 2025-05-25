@@ -25,6 +25,12 @@ const PageBanner = ({ title, description, backgroundImage }: PageBannerProps) =>
           {description}
         </p>
       </div>
+      <img 
+        src={backgroundImage}
+        alt="Fondo de banner - casas de madera Bosque Nórdico en las Islas Canarias"
+        title="Banner de página - proyectos de construcción de madera"
+        className="hidden"
+      />
     </div>
   );
 };

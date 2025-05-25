@@ -125,8 +125,8 @@ const ProjectGalleryCarousel = () => {
                       )}
                       <img 
                         src={image} 
-                        alt={`Строительство деревянного дома Bosque Nórdico на Канарских островах - проект ${index + 1}`}
-                        title={`Галерея работ - этап строительства ${index + 1}`}
+                        alt={`Construcción de casa de madera Bosque Nórdico en las Islas Canarias - proyecto ${index + 1}`}
+                        title={`Galería de trabajos - etapa de construcción ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         onLoad={() => setLoading(false)}
                         onError={() => setLoading(false)}
@@ -139,10 +139,12 @@ const ProjectGalleryCarousel = () => {
             <CarouselPrevious 
               data-carousel-button-prev
               className="hidden md:flex md:-left-6 lg:-left-10 bg-white/90 border-none hover:bg-white shadow-md"
+              aria-label="Imagen anterior"
             />
             <CarouselNext 
               data-carousel-button-next
               className="hidden md:flex md:-right-6 lg:-right-10 bg-white/90 border-none hover:bg-white shadow-md"
+              aria-label="Imagen siguiente"
             />
           </Carousel>
           
@@ -150,14 +152,14 @@ const ProjectGalleryCarousel = () => {
             <button 
               className="p-2 bg-white rounded-full shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
               onClick={handlePrevClick}
-              aria-label="Предыдущий слайд"
+              aria-label="Imagen anterior"
             >
               <ArrowLeft size={20} />
             </button>
             <button 
               className="p-2 bg-white rounded-full shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
               onClick={handleNextClick}
-              aria-label="Следующий слайд"
+              aria-label="Imagen siguiente"
             >
               <ArrowRight size={20} />
             </button>
@@ -171,13 +173,13 @@ const ProjectGalleryCarousel = () => {
                   index === activeIndex ? "bg-wood w-4" : "bg-gray-300"
                 }`}
                 onClick={() => scrollTo(index)}
-                aria-label={`Перейти к слайду ${index + 1}`}
+                aria-label={`Ir a la imagen ${index + 1}`}
               />
             ))}
           </div>
           
           <p className="text-center text-gray-500 mt-8">
-            Фотографии наших реальных проектов в разных стадиях строительства: от фундамента до готового дома.
+            Fotografías de nuestros proyectos reales en diferentes etapas de construcción: desde la cimentación hasta la casa terminada.
           </p>
         </div>
       </div>
