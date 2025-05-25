@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +18,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const HouseSelection = () => {
   return (
@@ -352,27 +357,117 @@ const HouseSelection = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FAQ Section */}
       <section className="py-16 bg-wood-light/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-wood-darkest mb-6">¿Ya sabes qué tipo de casa prefieres?</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Explora nuestros proyectos disponibles o solicita una consulta personalizada para tu casa ideal
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/houses"
-              className="inline-flex items-center px-8 py-3 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
-            >
-              Ver proyectos disponibles
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 border-2 border-wood text-wood rounded-md hover:bg-wood hover:text-white transition-colors"
-            >
-              Consulta personalizada
-            </Link>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-wood-darkest mb-6">Preguntas frecuentes</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Resolvemos las dudas más comunes sobre las casas de madera
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿La madera se pudre?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  No. Usamos madera seca y tratada con protección contra la humedad.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Y los insectos?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  No. Toda la madera es secada en cámara y tratada contra plagas.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Hace calor o frío?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  No. Las casas de entramado están bien aisladas. Las de madera maciza retienen el calor.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Y si hay incendio?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  La madera se quema de forma predecible — se carboniza sin colapsar. Aplicamos tratamientos ignífugos.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Se puede hacer interior estilo madera?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  Sí. Usamos revestimientos de friso o imitación de vigas.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Y estilo moderno?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  Sí. Especialmente en casas de entramado: se puede usar cartón yeso, pintura, paneles. En madera, combinaciones modernas con toques naturales.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Aislamiento acústico?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  El entramado a través de capas. La madera maciza por su masa.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Se puede hacer de dos plantas?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  Sí. Ambas tecnologías lo permiten con el diseño adecuado.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-9" className="bg-white rounded-lg shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-wood-darkest hover:no-underline">
+                  ¿Cuál es mejor?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  Ambas son fiables. La diferencia está en el presupuesto, el gusto y el estilo deseado. Te ayudamos a elegir lo ideal para ti.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <div className="text-center mt-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/houses"
+                  className="inline-flex items-center px-8 py-3 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+                >
+                  Ver proyectos disponibles
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-3 border-2 border-wood text-wood rounded-md hover:bg-wood hover:text-white transition-colors"
+                >
+                  Consulta personalizada
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
