@@ -3,14 +3,13 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import HouseComparisonSection from "@/components/HouseComparisonSection";
 import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
   CardFooter
 } from "@/components/ui/card";
-import { Euro } from "lucide-react";
+import { Euro, ArrowRight } from "lucide-react";
 import houses from "@/data/housesData";
 
 interface HouseCardProps {
@@ -78,7 +77,24 @@ const Houses = () => {
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
-      <HouseComparisonSection />
+      {/* CTA para página de selección */}
+      <section className="py-12 bg-blue-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-wood-darkest mb-4">
+            ¿No sabes qué tipo de construcción elegir?
+          </h2>
+          <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            Te ayudamos a entender las diferencias entre casa de entramado ligero y viga multilaminada
+          </p>
+          <Link
+            to="/house-selection"
+            className="inline-flex items-center px-8 py-3 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+          >
+            Cómo elegir tu casa perfecta
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </div>
+      </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4">
