@@ -1,16 +1,19 @@
 
 import React from "react";
-import { House } from "lucide-react";
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Home } from "lucide-react";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
+import InteractiveFrameHouseSchema from "./InteractiveFrameHouseSchema";
 
 interface HouseTypeSelectorProps {
   form: UseFormReturn<FormValues>;
 }
 
 const HouseTypeSelector = ({ form }: HouseTypeSelectorProps) => {
+  const watchHouseType = form.watch("houseType");
+
   return (
     <FormField
       control={form.control}
@@ -18,37 +21,46 @@ const HouseTypeSelector = ({ form }: HouseTypeSelectorProps) => {
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <House className="h-5 w-5" /> Тип дома
+            <Home className="h-5 w-5" /> Тип дома
           </FormLabel>
           <FormControl>
             <RadioGroup
               onValueChange={field.onChange}
-              defaultValue={field.value}
-              className="flex flex-col space-y-1"
+              value={field.value}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormItem className="flex items-center space-x-3 space-y-0 border rounded-md p-4">
-                  <FormControl>
-                    <RadioGroupItem value="frame" />
-                  </FormControl>
-                  <FormLabel className="font-normal">
-                    Каркасный дом (от 550 €/м²)
-                  </FormLabel>
-                </FormItem>
-                <FormItem className="flex items-center space-x-3 space-y-0 border rounded-md p-4">
-                  <FormControl>
-                    <RadioGroupItem value="glued_beam" />
-                  </FormControl>
-                  <FormLabel className="font-normal">
-                    Дом из клееного бруса (от 800 €/м²)
-                  </FormLabel>
-                </FormItem>
+              <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-gray-50">
+                <RadioGroupItem value="frame" id="frame" />
+                <label htmlFor="frame" className="flex-1 cursor-pointer">
+                  <div className="font-medium">Каркасные дома</div>
+                  <div className="text-sm text-muted-foreground">
+                    Быстрое строительство, отличная теплоизоляция
+                  </div>
+                </label>
+              </div>
+              <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-gray-50">
+                <RadioGroupItem value="glued_beam" id="glued_beam" />
+                <label htmlFor="glued_beam" className="flex-1 cursor-pointer">
+                  <div className="font-medium">Дома из клееного бруса</div>
+                  <div className="text-sm text-muted-foreground">
+                    Экологичность, прочность, красивый внешний вид
+                  </div>
+                </label>
               </div>
             </RadioGroup>
           </FormControl>
-          <FormDescription>
-            Выберите тип конструкции вашего будущего дома.
-          </FormDescription>
+
+          {/* Показываем интерактивную схему только для каркасных домов */}
+          {watchHouseType === "frame" && (
+            <div className="mt-6">
+              <h3 className="text-lg font-medium mb-4">Конструкция каркасного дома</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Нажмите на элементы схемы, чтобы узнать подробности о конструкции
+              </p>
+              <InteractiveFrameHouseSchema />
+            </div>
+          )}
+
           <FormMessage />
         </FormItem>
       )}
