@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import { Shield, Award, Clock, Users, Factory, Hammer, Ruler } from "lucide-react";
+import { Shield, Award, Clock, Users, Factory, Hammer, Ruler, Truck, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
@@ -12,8 +12,8 @@ const About = () => {
       <Navbar />
 
       <PageBanner 
-        title="Добро пожаловать в Северный лес!" 
-        description="Ваш надежный партнер в строительстве деревянных домов и поставке высококачественных строительных материалов на Тенерифе"
+        title="Bosque Nórdico — Дерево, которое работает на вас" 
+        description="Команда, которая уже более 6 лет помогает воплощать проекты из дерева на Канарских островах"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
@@ -23,20 +23,19 @@ const About = () => {
             <div>
               <h2 className="section-title">О компании Bosque Nórdico</h2>
               <p className="text-gray-700 mb-6">
-                В компании Bosque Nórdico мы гордимся тем, что являемся лидерами лесной промышленности 
-                Канарских островов, предлагая высококачественную продукцию, сочетающую в себе долговечность, 
-                элегантность и функциональность.
+                Bosque Nórdico — это команда, которая уже более 6 лет помогает воплощать проекты 
+                из дерева на Канарских островах. Мы не просто продаём материалы — мы предлагаем решения. 
+                От выбора доски до строительства дома — вы получаете поддержку, основанную на практике, 
+                опыте и любви к качеству.
               </p>
               <p className="text-gray-700 mb-6">
-                Наша цель выходит за рамки просто продажи древесины по доступным ценам и высокого качества; 
-                Но мы стремимся превратить дерево в дом, и вместе с вами мы можем создать теплый и уютный 
-                дом, отражающий ваш стиль.
+                Мы предлагаем не просто товар, а систему. И делаем всё, чтобы она работала для вас. 
+                Наши склады и логистика позволяют быстро доставлять материалы по всему архипелагу.
               </p>
               <p className="text-gray-700">
-                В Bosque Nórdico мы понимаем, с какими трудностями сталкиваемся на Канарских островах. 
-                От ограниченности материалов до нехватки квалифицированной рабочей силы — мы сталкиваемся 
-                с препятствиями, которые вдохновляют нас на инновации и поиск креативных решений. 
-                Свяжитесь с нами сегодня, и вместе мы наполним ваш дом теплом и любовью.
+                Мы работаем не только на Тенерифе, но и на других островах: Ла-Пальма, Гран-Канария, 
+                Лансароте, Эль-Йерро и др. Также мы сопровождаем строительство, выезжаем на объекты 
+                и поддерживаем клиентов на всех этапах проекта.
               </p>
             </div>
             <div className="relative">
@@ -46,7 +45,7 @@ const About = () => {
                 className="rounded-lg shadow-xl w-full h-auto"
               />
               <div className="absolute -bottom-8 -left-8 bg-wood p-4 rounded-lg shadow-lg">
-                <p className="text-white text-lg font-bold">С 2015 года на рынке</p>
+                <p className="text-white text-lg font-bold">Более 6 лет на рынке</p>
               </div>
             </div>
           </div>
@@ -55,69 +54,97 @@ const About = () => {
 
       <section className="py-16 bg-wood-light/10">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mx-auto mb-12">Наше производство</h2>
+          <h2 className="section-title text-center mx-auto mb-12">Натуральные строительные материалы</h2>
           <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-            Мы гордимся нашим собственным производством на Канарских островах, где создаём высококачественные 
-            изделия из дерева с использованием современного оборудования и традиционных технологий обработки древесины.
+            Мы поставляем дерево напрямую из Австрии, Германии и Бельгии — доска, брус, фанера и многое другое. 
+            Это качественные и проверенные материалы, которые подходят для климата Канарских островов, 
+            от прибрежных районов до горных зон. Мы знаем, какие материалы «работают» в реальных условиях, 
+            и поможем выбрать то, что прослужит долго.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden">
               <img 
                 src="/lovable-uploads/7cc0e6fc-4424-4c50-bd13-55d039c1312a.png" 
-                alt="Производство брусьев" 
+                alt="Качественные материалы из Европы" 
                 className="w-full h-64 object-cover"
               />
               <CardContent className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Качественные материалы</h3>
-                <p className="text-gray-600">Мы используем только отборную древесину высшего качества для наших изделий.</p>
+                <h3 className="text-lg font-semibold mb-2">Материалы из Европы</h3>
+                <p className="text-gray-600">Прямые поставки из Австрии, Германии и Бельгии высшего качества.</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden">
               <img 
                 src="/lovable-uploads/e9548a1d-f0f0-49df-ad6e-e8834af99853.png" 
-                alt="Процесс обработки" 
+                alt="Адаптация под климат Канар" 
                 className="w-full h-64 object-cover"
               />
               <CardContent className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Современное оборудование</h3>
-                <p className="text-gray-600">Наше производство оснащено новейшим оборудованием для точной обработки древесины.</p>
+                <h3 className="text-lg font-semibold mb-2">Адаптация под климат</h3>
+                <p className="text-gray-600">Материалы, проверенные в условиях Канарских островов от побережья до гор.</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden">
               <img 
                 src="/lovable-uploads/ce153320-1521-4614-bb4e-8ac2698add00.png" 
-                alt="Производственный процесс" 
+                alt="Контроль качества" 
                 className="w-full h-64 object-cover"
               />
               <CardContent className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Точность изготовления</h3>
-                <p className="text-gray-600">Каждая деталь проходит тщательный контроль качества на всех этапах производства.</p>
+                <h3 className="text-lg font-semibold mb-2">Контроль качества</h3>
+                <p className="text-gray-600">Каждая партия материалов проходит тщательную проверку качества.</p>
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title text-center mx-auto mb-12">Дома и конструкции под ключ</h2>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12">
+            Мы проектируем и строим дома по двум технологиям. Обе технологии адаптированы под местный климат. 
+            Вы можете выбрать ту, что ближе вам — по стилю, бюджету и ощущениям.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="overflow-hidden">
               <img 
                 src="/lovable-uploads/8de16ff8-8ae9-450d-9c71-dd152d2fcc08.png" 
-                alt="Готовая продукция" 
+                alt="Каркасные дома" 
                 className="w-full h-64 object-cover"
               />
-              <CardContent className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Упаковка и хранение</h3>
-                <p className="text-gray-600">Наша продукция бережно упаковывается для сохранения всех качеств древесины.</p>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Каркасные дома (entramado ligero)</h3>
+                <p className="text-gray-600 mb-4">
+                  Лёгкие, гибкие в планировке, энергоэффективные. Современная технология строительства 
+                  с отличными теплоизоляционными свойствами.
+                </p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Быстрое строительство</li>
+                  <li>• Гибкость планировки</li>
+                  <li>• Энергоэффективность</li>
+                </ul>
               </CardContent>
             </Card>
             <Card className="overflow-hidden">
               <img 
                 src="/lovable-uploads/0a0d77a1-a611-442f-8391-b7bb7a02d398.png" 
-                alt="Деревянные конструкции" 
+                alt="Дома из клеёного бруса" 
                 className="w-full h-64 object-cover"
               />
-              <CardContent className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Готовые конструкции</h3>
-                <p className="text-gray-600">Производим детали для деревянных домов любой сложности и конфигурации.</p>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Дома из клеёного бруса</h3>
+                <p className="text-gray-600 mb-4">
+                  Прочные, монолитные, с естественной красотой дерева. Традиционная технология 
+                  с современными улучшениями.
+                </p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Прочность и долговечность</li>
+                  <li>• Естественная красота</li>
+                  <li>• Экологичность</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -126,42 +153,46 @@ const About = () => {
 
       <section className="py-16 bg-wood-light/20">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mx-auto mb-12">Наши ценности</h2>
+          <h2 className="section-title text-center mx-auto mb-12">Мы рядом на каждом этапе</h2>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12">
+            Мы не ограничиваемся продажей. Если вы не уверены в выборе — поможем подобрать оптимальное решение. 
+            Объясним, как работает утепление, как защитить конструкцию от влаги, и что стоит за словами «качественный дом».
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <div className="bg-nature-light/20 p-4 rounded-full mb-4">
                 <Shield size={32} className="text-nature-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Качество</h3>
+              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Консультации</h3>
               <p className="text-gray-600">
-                Мы используем только высококачественные материалы и применяем современные технологии строительства.
+                Помогаем выбрать оптимальные материалы и решения для вашего проекта.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <div className="bg-nature-light/20 p-4 rounded-full mb-4">
                 <Award size={32} className="text-nature-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Ответственность</h3>
+              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Качество</h3>
               <p className="text-gray-600">
-                Мы несем полную ответственность за качество нашей работы и соблюдение всех договоренностей.
+                Объясняем, что стоит за словами «качественный дом» и как его достичь.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <div className="bg-nature-light/20 p-4 rounded-full mb-4">
-                <Clock size={32} className="text-nature-dark" />
+                <Hammer size={32} className="text-nature-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Пунктуальность</h3>
+              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Сопровождение</h3>
               <p className="text-gray-600">
-                Мы всегда соблюдаем сроки строительства и поставки материалов, ценя время наших клиентов.
+                Сопровождаем строительство, выезжаем на объекты на всех этапах проекта.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <div className="bg-nature-light/20 p-4 rounded-full mb-4">
                 <Users size={32} className="text-nature-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Клиентоориентированность</h3>
+              <h3 className="text-xl font-semibold text-wood-darkest mb-3">Поддержка</h3>
               <p className="text-gray-600">
-                Мы индивидуально подходим к каждому клиенту, учитывая все пожелания и требования.
+                Поддерживаем клиентов на всех этапах — от идеи до готового дома.
               </p>
             </div>
           </div>
@@ -177,32 +208,32 @@ const About = () => {
                 <div className="bg-nature-light/20 p-3 rounded-full mr-4">
                   <Factory size={24} className="text-nature-dark" />
                 </div>
-                <h3 className="text-xl font-semibold text-wood-darkest">Собственное производство</h3>
+                <h3 className="text-xl font-semibold text-wood-darkest">Прямые поставки</h3>
               </div>
               <p className="text-gray-600">
-                Полный контроль качества на всех этапах: от выбора сырья до финальной обработки изделий.
+                Материалы напрямую из Европы без посредников, что гарантирует качество и цену.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-wood-light/30">
               <div className="flex items-center mb-4">
                 <div className="bg-nature-light/20 p-3 rounded-full mr-4">
-                  <Hammer size={24} className="text-nature-dark" />
+                  <Truck size={24} className="text-nature-dark" />
                 </div>
-                <h3 className="text-xl font-semibold text-wood-darkest">Опытные мастера</h3>
+                <h3 className="text-xl font-semibold text-wood-darkest">Быстрая логистика</h3>
               </div>
               <p className="text-gray-600">
-                Наши специалисты имеют многолетний опыт работы с деревом и глубокие знания свойств различных пород.
+                Наши склады и логистика позволяют быстро доставлять материалы по всему архипелагу.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-wood-light/30">
               <div className="flex items-center mb-4">
                 <div className="bg-nature-light/20 p-3 rounded-full mr-4">
-                  <Ruler size={24} className="text-nature-dark" />
+                  <MapPin size={24} className="text-nature-dark" />
                 </div>
-                <h3 className="text-xl font-semibold text-wood-darkest">Индивидуальный подход</h3>
+                <h3 className="text-xl font-semibold text-wood-darkest">Весь архипелаг</h3>
               </div>
               <p className="text-gray-600">
-                Возможность изготовления нестандартных изделий по индивидуальным проектам и размерам.
+                Работаем на всех островах: Тенерифе, Ла-Пальма, Гран-Канария, Лансароте, Эль-Йерро и др.
               </p>
             </div>
           </div>
