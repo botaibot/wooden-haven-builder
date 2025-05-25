@@ -4,6 +4,7 @@ import { Ruler } from "lucide-react";
 import { FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "../types";
+import FrameThicknessDialog from "../FrameThicknessDialog";
 
 interface ThicknessSectionProps {
   form: UseFormReturn<FormValues>;
@@ -18,10 +19,8 @@ const ThicknessSection = ({ form }: ThicknessSectionProps) => {
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
             <Ruler className="h-5 w-5" /> Толщина каркаса 200 мм
+            <FrameThicknessDialog houseType="frame" />
           </FormLabel>
-          <div className="text-sm text-muted-foreground">
-            Усиленная конструкция обеспечивает максимальную прочность и теплоизоляцию
-          </div>
         </FormItem>
       )}
     />
