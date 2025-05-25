@@ -99,7 +99,10 @@ const ProjectGalleryCarousel = () => {
   return (
     <section className="py-16 bg-wood-light/20">
       <div className="container mx-auto px-4">
-        <h2 className="section-title text-center mx-auto mb-10">Наши работы</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest text-center mb-4">Наши работы - Галерея проектов</h2>
+        <p className="text-lg text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+          Фотографии наших реальных проектов деревянных домов на Канарских островах в разных стадиях строительства: от фундамента до готового дома.
+        </p>
         <div className="relative mx-auto max-w-5xl">
           <Carousel 
             opts={{ loop: true }} 
@@ -122,7 +125,8 @@ const ProjectGalleryCarousel = () => {
                       )}
                       <img 
                         src={image} 
-                        alt={`Проект ${index + 1}`}
+                        alt={`Строительство деревянного дома Bosque Nórdico на Канарских островах - проект ${index + 1}`}
+                        title={`Галерея работ - этап строительства ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         onLoad={() => setLoading(false)}
                         onError={() => setLoading(false)}

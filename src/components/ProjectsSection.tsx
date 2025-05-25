@@ -21,7 +21,8 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
         <div className="relative aspect-[4/3] overflow-hidden">
           <img 
             src={imageUrl} 
-            alt={title} 
+            alt={`Проект деревянного дома ${title} - ${area} кв.м от Bosque Nórdico на Канарских островах`}
+            title={`Деревянный дом ${title} - детали проекта`}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-4 right-4 bg-wood-dark text-white px-3 py-1 rounded-full text-sm">
@@ -39,7 +40,7 @@ const ProjectCard = ({ title, area, imageUrl, price, id }: ProjectCardProps) => 
         <CardFooter className="p-4 pt-0">
           <Button variant="link" className="p-0 text-nature-dark hover:text-nature-dark/80">
             <span className="flex items-center gap-1">
-              Подробнее <ArrowRight size={16} />
+              Подробнее о проекте <ArrowRight size={16} />
             </span>
           </Button>
         </CardFooter>
@@ -60,10 +61,10 @@ const ProjectsSection = () => {
     <section className="py-16 bg-wood-light/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <h2 className="section-title">Популярные проекты</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest mb-4">Популярные проекты деревянных домов</h2>
           <Button asChild variant="outline" className="mt-4 md:mt-0 border-wood">
             <Link to="/houses" className="flex items-center gap-2">
-              Все проекты <ArrowRight size={16} />
+              Все проекты домов <ArrowRight size={16} />
             </Link>
           </Button>
         </div>
