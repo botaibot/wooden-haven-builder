@@ -4,7 +4,6 @@ import { LayoutGrid } from "lucide-react";
 import { FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "../types";
-import FloorInfoDialog from "../FloorInfoDialog";
 
 interface FloorSectionProps {
   form: UseFormReturn<FormValues>;
@@ -19,7 +18,6 @@ const FloorSection = ({ form }: FloorSectionProps) => {
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
             <LayoutGrid className="h-5 w-5" /> Толщина полов
-            <FloorInfoDialog />
           </FormLabel>
         </FormItem>
       )}
