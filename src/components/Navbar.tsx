@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
@@ -20,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <nav className={cn("bg-white shadow", className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex">
+          <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
                 className="h-8 w-auto"
@@ -28,37 +29,41 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 alt="Bosque Nórdico"
               />
             </Link>
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors">
+          </div>
+          
+          {/* Desktop Navigation - распределяем по всей ширине */}
+          <div className="hidden md:flex items-center justify-center flex-1 mx-8">
+            <div className="flex items-center justify-evenly w-full max-w-4xl">
+              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Главная
               </Link>
-              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Casas
               </Link>
-              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Elegir tu casa
               </Link>
-              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Materiales
               </Link>
-              <Link to="/furniture" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/furniture" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Muebles
               </Link>
-              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Calculadora
               </Link>
-              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Historias
               </Link>
-              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Nosotros
               </Link>
-              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Contacto
               </Link>
             </div>
           </div>
+
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link to="/cart" className="p-2 text-wood-dark hover:text-nature-dark transition-colors relative">
