@@ -49,8 +49,8 @@ const HouseSelection = () => {
             {/* Casa de entramado ligero */}
             <Card className="overflow-hidden">
               <CardHeader className="bg-blue-50">
-                <CardTitle className="flex items-center text-2xl">
-                  <Settings className="h-8 w-8 text-blue-600 mr-3" />
+                <CardTitle className="flex items-center text-xl">
+                  <Settings className="h-6 w-6 text-blue-600 mr-3" />
                   Casa de entramado ligero BOSQUE PLATFORM
                 </CardTitle>
               </CardHeader>
@@ -87,8 +87,8 @@ const HouseSelection = () => {
             {/* Casa de viga multilaminada */}
             <Card className="overflow-hidden">
               <CardHeader className="bg-amber-50">
-                <CardTitle className="flex items-center text-2xl">
-                  <Home className="h-8 w-8 text-amber-600 mr-3" />
+                <CardTitle className="flex items-center text-xl">
+                  <Home className="h-6 w-6 text-amber-600 mr-3" />
                   Casa de viga multilaminada
                 </CardTitle>
               </CardHeader>
@@ -195,18 +195,18 @@ const HouseSelection = () => {
             <div>
               <Card className="mb-8">
                 <CardHeader className="bg-blue-50">
-                  <CardTitle className="flex items-center text-2xl">
-                    <Layers className="h-8 w-8 text-blue-600 mr-3" />
+                  <CardTitle className="flex items-center text-xl">
+                    <Layers className="h-6 w-6 text-blue-600 mr-3" />
                     Paredes de entramado ligero (BOSQUE PLATFORM)
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <div className="aspect-square bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/7df56228-f8ac-4e5a-b188-b593109f2495.png" 
                       alt="Construcción de pared de entramado ligero BOSQUE PLATFORM - capas de aislamiento"
                       title="Estructura de pared de entramado ligero con aislamiento térmico"
-                      className="max-h-full max-w-full object-contain"
+                      className="h-full w-full object-contain"
                     />
                   </div>
                 </CardContent>
@@ -279,18 +279,18 @@ const HouseSelection = () => {
             <div>
               <Card className="mb-8">
                 <CardHeader className="bg-amber-50">
-                  <CardTitle className="flex items-center text-2xl">
-                    <Home className="h-8 w-8 text-amber-600 mr-3" />
+                  <CardTitle className="flex items-center text-xl">
+                    <Home className="h-6 w-6 text-amber-600 mr-3" />
                     Paredes de viga multilaminada
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <div className="aspect-square bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/d1431980-2174-41af-8b14-8b445792f1a6.png" 
                       alt="Construcción de pared de viga multilaminada - madera maciza encolada"
                       title="Estructura de pared de viga multilaminada con láminas encoladas"
-                      className="max-h-full max-w-full object-contain"
+                      className="h-full w-full object-contain"
                     />
                   </div>
                 </CardContent>
