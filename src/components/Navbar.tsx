@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
@@ -10,7 +11,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cartItems } = useCart();
+  const { items } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -57,9 +58,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             <div className="flex-shrink-0">
               <Link to="/cart" className="p-2 text-wood-dark hover:text-nature-dark transition-colors relative">
                 <ShoppingCart className="h-6 w-6" />
-                {cartItems.length > 0 && (
+                {items.length > 0 && (
                   <span className="absolute top-[-5px] right-[-5px] bg-nature-dark text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-                    {cartItems.length}
+                    {items.length}
                   </span>
                 )}
               </Link>
