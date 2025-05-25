@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -224,7 +225,7 @@ const HouseSelection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Estructura</h4>
-                    <p className="text-gray-700">Base de madera C24, cepillada y seca. Realiza la función portante.</p>
+                    <p className="text-gray-700">Base de madera con tablas C24, cepilladas y secas. Cumple función portante.</p>
                   </div>
                 </div>
 
@@ -233,8 +234,8 @@ const HouseSelection = () => {
                     <Thermometer className="h-5 w-5 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Aislante</h4>
-                    <p className="text-gray-700">Lana mineral entre montantes. Segura, ignífuga, no se asienta.</p>
+                    <h4 className="font-semibold text-lg mb-2">Aislamiento</h4>
+                    <p className="text-gray-700">Lana mineral entre los montantes. Segura, no inflamable, no se hunde.</p>
                   </div>
                 </div>
 
@@ -244,7 +245,7 @@ const HouseSelection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Barrera de vapor inteligente</h4>
-                    <p className="text-gray-700">Membrana con permeabilidad al vapor variable. Permite salida de vapor, protege de humedad interior.</p>
+                    <p className="text-gray-700">Membrana con permeabilidad variable. Permite salida de vapor, bloquea humedad desde el interior.</p>
                   </div>
                 </div>
 
@@ -253,8 +254,8 @@ const HouseSelection = () => {
                     <Shield className="h-5 w-5 text-cyan-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Protección contra humedad y viento</h4>
-                    <p className="text-gray-700">Membrana exterior transpirable que repele la lluvia. Esencial para el clima canario.</p>
+                    <h4 className="font-semibold text-lg mb-2">Protección contra viento y lluvia</h4>
+                    <p className="text-gray-700">Membrana exterior que 'respira' pero bloquea el agua. Esencial para el clima canario.</p>
                   </div>
                 </div>
 
@@ -263,8 +264,8 @@ const HouseSelection = () => {
                     <Layers className="h-5 w-5 text-orange-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">OSB y entramado</h4>
-                    <p className="text-gray-700">Placa OSB para resistencia + entramado ventilado 48×48 mm para acabado.</p>
+                    <h4 className="font-semibold text-lg mb-2">OSB y rastreles</h4>
+                    <p className="text-gray-700">Placa OSB para rigidez + subestructura ventilada 48×48 mm para el revestimiento.</p>
                   </div>
                 </div>
 
@@ -273,20 +274,20 @@ const HouseSelection = () => {
                     <Paintbrush className="h-5 w-5 text-yellow-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Acabado</h4>
-                    <p className="text-gray-700">Cualquiera: estuco, paneles, madera, placas de fachada, material compuesto — flexibilidad 100%.</p>
+                    <h4 className="font-semibold text-lg mb-2">Acabado exterior</h4>
+                    <p className="text-gray-700">Revoque, madera, paneles, placas — 100% personalizable.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Paredes de viga multilaminada */}
+            {/* Paredes de madera laminada */}
             <div>
               <Card className="mb-8">
                 <CardHeader className="bg-amber-50">
                   <CardTitle className="flex items-center text-xl">
                     <Home className="h-6 w-6 text-amber-600 mr-3" />
-                    Paredes de viga multilaminada
+                    Paredes de madera laminada
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -308,7 +309,7 @@ const HouseSelection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Construcción</h4>
-                    <p className="text-gray-700">Pared de madera maciza de láminas encoladas en bloque. 100–240 mm. Madera maciza pura.</p>
+                    <p className="text-gray-700">Muro macizo de madera laminada. De 100 a 240 mm. Madera sólida sin rellenos.</p>
                   </div>
                 </div>
 
@@ -317,8 +318,8 @@ const HouseSelection = () => {
                     <Layers className="h-5 w-5 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Clavijas</h4>
-                    <p className="text-gray-700">Varillas cilíndricas que conectan las hileras. Protección contra desplazamientos y deformaciones.</p>
+                    <h4 className="font-semibold text-lg mb-2">Espigas (nagels)</h4>
+                    <p className="text-gray-700">Pernos cilíndricos de madera que unen las capas. Refuerzo contra desplazamiento.</p>
                   </div>
                 </div>
 
@@ -328,7 +329,7 @@ const HouseSelection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Extremos</h4>
-                    <p className="text-gray-700">Se lijan, barnizan y protegen con revestimientos. La humedad no penetra.</p>
+                    <p className="text-gray-700">Se lijan, barnizan y protegen con tapas. Previenen entrada de humedad.</p>
                   </div>
                 </div>
 
@@ -337,8 +338,8 @@ const HouseSelection = () => {
                     <Zap className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Instalación eléctrica</h4>
-                    <p className="text-gray-700">Oculta (rozas interiores) o vista (estilo loft/retro). Ambas opciones disponibles.</p>
+                    <h4 className="font-semibold text-lg mb-2">Electricidad</h4>
+                    <p className="text-gray-700">Instalación empotrada (canal interna) o externa en estilo loft/retro.</p>
                   </div>
                 </div>
 
@@ -347,8 +348,8 @@ const HouseSelection = () => {
                     <Paintbrush className="h-5 w-5 text-yellow-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-2">Sin acabado</h4>
-                    <p className="text-gray-700">Basta con pintar. Sin procesos "húmedos". Las paredes ya tienen acabado.</p>
+                    <h4 className="font-semibold text-lg mb-2">Sin revestimiento interior</h4>
+                    <p className="text-gray-700">Solo pintar. No se requiere yeso ni paneles. El muro ya está listo.</p>
                   </div>
                 </div>
               </div>
