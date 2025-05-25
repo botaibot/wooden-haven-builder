@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Calculator } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -127,7 +126,7 @@ const HouseCalculator = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto">
       <Card>
         <CardContent className="p-6">
           <div className="mb-8">
@@ -161,21 +160,6 @@ const HouseCalculator = () => {
               />
             </form>
           </Form>
-        </CardContent>
-      </Card>
-
-      {/* Интерактивная схема каркасного дома */}
-      <Card>
-        <CardContent className="p-6">
-          <div className="mb-6">
-            <h3 className="text-xl font-bold text-wood-dark mb-2">
-              Конструкция каркасного дома
-            </h3>
-            <p className="text-muted-foreground">
-              Нажмите на элементы схемы, чтобы узнать подробности о конструкции
-            </p>
-          </div>
-          <InteractiveFrameHouseSchema />
         </CardContent>
       </Card>
     </div>
