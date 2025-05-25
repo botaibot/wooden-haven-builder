@@ -31,8 +31,12 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
             </FormControl>
           </div>
           
+          <FormDescription className="mt-2">
+            <p className="font-medium text-red-800">Противопожарная система добавляется уже в завершенный дом на чистовой отделке.</p>
+          </FormDescription>
+          
           {field.value && (
-            <div className="mt-3 bg-white p-3 rounded-md border border-red-100">
+            <div className="mt-6 bg-white p-3 rounded-md border border-red-100">
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-medium">
@@ -49,9 +53,6 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
             </div>
           )}
           
-          <FormDescription className="mt-2">
-            <p className="font-medium text-red-800">Противопожарная система добавляется уже в завершенный дом на чистовой отделке.</p>
-          </FormDescription>
           <FormMessage />
         </FormItem>
       )}
