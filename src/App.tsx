@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Furniture from "./pages/Furniture";
 import Calculator from "./pages/Calculator";
+import Stories from "./pages/Stories";
 import NotFound from "./pages/NotFound";
 import ChatAssistant from "@/components/ChatAssistant";
 import { CartProvider } from "./context/CartContext";
@@ -52,6 +53,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/furniture" element={<Furniture />} />
               <Route path="/calculator" element={<Calculator />} />
+              <Route path="/stories" element={<Stories />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
