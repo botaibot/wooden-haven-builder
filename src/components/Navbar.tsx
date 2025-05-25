@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
@@ -30,12 +29,15 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               />
             </Link>
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors">
                 Главная
               </Link>
-              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors">
+              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors">
                 Casas
+              </Link>
+              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors">
+                Elegir tu casa
               </Link>
               <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors">
                 Materiales
@@ -114,11 +116,18 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             Главная
           </Link>
           <Link
-            to="/house-selection"
+            to="/houses"
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
             onClick={() => setIsMenuOpen(false)}
           >
             Casas
+          </Link>
+          <Link
+            to="/house-selection"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Elegir tu casa
           </Link>
           <Link
             to="/materials"
