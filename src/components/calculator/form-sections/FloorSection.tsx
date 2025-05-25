@@ -21,16 +21,6 @@ const FloorSection = ({ form }: FloorSectionProps) => {
             <LayoutGrid className="h-5 w-5" /> Толщина полов
             <FloorInfoDialog />
           </FormLabel>
-          <FormDescription>
-            <div className="text-sm mt-2">
-              <p>1 Клеёный брус 120 мм x 120 мм</p>
-              <p>2 Балка класса C24 195 мм x 45 мм</p>
-              <p>3 Опорная рейка 48 мм x 48 мм</p>
-              <p>4 OSB 9 мм или 12 мм</p>
-              <p>5 Пенополистирольная панель</p>
-              <p>6 OSB 22 мм</p>
-            </div>
-          </FormDescription>
         </FormItem>
       )}
     />

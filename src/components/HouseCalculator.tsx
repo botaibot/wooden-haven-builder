@@ -1,11 +1,8 @@
+
 import React, { useState, useEffect } from "react";
-import { Calculator, Settings } from "lucide-react";
+import { Calculator } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
@@ -22,10 +19,6 @@ const HouseCalculator = () => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [metalSupportsCount, setMetalSupportsCount] = useState(0);
   const [metalSupportsCost, setMetalSupportsCost] = useState(0);
-  const [isWebhookDialogOpen, setIsWebhookDialogOpen] = useState(false);
-  const [webhookUrl, setWebhookUrl] = useState(() => {
-    return localStorage.getItem('managerWebhookUrl') || '';
-  });
 
   const defaultValues: FormValues = {
     houseType: "frame",
@@ -131,40 +124,20 @@ const HouseCalculator = () => {
     console.log("Metal supports:", metalSupportsCount);
     console.log("Metal supports cost:", metalSupportsCost);
   };
-  
-  const saveWebhookUrl = () => {
-    localStorage.setItem('managerWebhookUrl', webhookUrl);
-    setIsWebhookDialogOpen(false);
-    toast({
-      title: "URL сохранен",
-      description: "URL для отправки данных менеджеру успешно сохранен",
-    });
-  };
 
   return (
     <div className="max-w-4xl mx-auto">
       <Card>
         <CardContent className="p-6">
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <h2 className="text-2xl font-bold text-wood-dark flex items-center gap-2 mb-4">
-                <Calculator className="h-6 w-6" /> 
-                Калькулятор стоимости дома
-              </h2>
-              <p className="text-muted-foreground">
-                Укажите параметры вашего будущего дома, чтобы получить предварительную оценку стоимости.
-                Окончательная цена может отличаться и будет рассчитана после консультации со специалистом.
-              </p>
-            </div>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="flex items-center gap-2"
-              onClick={() => setIsWebhookDialogOpen(true)}
-            >
-              <Settings className="h-4 w-4" />
-              <span className="sr-only sm:not-sr-only">Настройки вебхука</span>
-            </Button>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-wood-dark flex items-center gap-2 mb-4">
+              <Calculator className="h-6 w-6" /> 
+              Калькулятор стоимости дома
+            </h2>
+            <p className="text-muted-foreground">
+              Укажите параметры вашего будущего дома, чтобы получить предварительную оценку стоимости.
+              Окончательная цена может отличаться и будет рассчитана после консультации со специалистом.
+            </p>
           </div>
 
           <Form {...form}>
@@ -189,37 +162,6 @@ const HouseCalculator = () => {
           </Form>
         </CardContent>
       </Card>
-      
-      {/* Диалог для настройки вебхука */}
-      <Dialog open={isWebhookDialogOpen} onOpenChange={setIsWebhookDialogOpen}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Настройка вебхука для менеджера</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label htmlFor="webhook-url">URL вебхука</Label>
-              <Input
-                id="webhook-url"
-                placeholder="https://hooks.zapier.com/hooks/catch/your-webhook-id"
-                value={webhookUrl}
-                onChange={(e) => setWebhookUrl(e.target.value)}
-              />
-              <p className="text-xs text-muted-foreground">
-                Укажите URL вебхука Zapier, куда будут отправляться данные о заказах.
-              </p>
-            </div>
-          </div>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setIsWebhookDialogOpen(false)}>
-              Отмена
-            </Button>
-            <Button type="button" onClick={saveWebhookUrl}>
-              Сохранить
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
