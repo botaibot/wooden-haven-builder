@@ -31,6 +31,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors">
+                Главная
+              </Link>
               <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors">
                 Casas
               </Link>
@@ -103,6 +106,13 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       {/* Mobile menu, show/hide based on menu state. */}
       <div className={`${isMenuOpen ? 'block' : 'none'} md:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+          <Link
+            to="/"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Главная
+          </Link>
           <Link
             to="/house-selection"
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
