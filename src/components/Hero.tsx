@@ -32,7 +32,7 @@ const Hero = () => {
         {/* Правая колонка с изображением */}
         <div className="relative h-[400px] md:h-auto overflow-hidden rounded-xl shadow-xl">
           <img 
-            src="/lovable-uploads/18ed6fd7-42fa-44a8-83a0-f5c39131b3aa.png" 
+            src="/lovable-uploads/76e34461-c620-4269-9ba2-ebb24d7b2090.png" 
             alt="Casas de madera Bosque Nórdico en las montañas de las Islas Canarias - construcción ecológica con madera laminada encolada"
             title="Casas de madera en las montañas de Tenerife - Bosque Nórdico"
             className="absolute inset-0 w-full h-full object-cover"
