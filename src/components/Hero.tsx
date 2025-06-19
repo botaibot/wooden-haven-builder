@@ -6,14 +6,12 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[80vh] flex items-center" style={{
-      background: 'linear-gradient(135deg, #F6F2EC 0%, #D5DCD2 50%, #C9B9A2 100%)'
-    }}>
+    <div className="relative min-h-[80vh] flex items-center">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-20">
         {/* Левая колонка с текстом */}
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-wood-dark mb-4 animate-fade-in">
-            🏡 Деревянные дома и строительные материалы <br />
+            Деревянные дома и строительные материалы <br />
             <span className="text-nature">для климата Канарских островов</span>
           </h1>
           <p className="text-xl text-gray-700 mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
