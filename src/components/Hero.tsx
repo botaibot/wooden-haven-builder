@@ -19,11 +19,11 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
             <Button asChild className="bg-wood hover:bg-wood-dark text-white px-8 py-6 text-lg">
-              <Link to="/houses">Наши проекты домов</Link>
+              <Link to="/houses">Посмотреть проекты домов</Link>
             </Button>
             <Button asChild variant="outline" className="border-wood text-wood hover:bg-wood/10 px-8 py-6 text-lg">
-              <Link to="/contact" className="flex items-center gap-2">
-                Связаться с нами <ArrowRight size={16} />
+              <Link to="/materials" className="flex items-center gap-2">
+                Открыть каталог материалов <ArrowRight size={16} />
               </Link>
             </Button>
           </div>
