@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[80vh] flex items-center">
+    <div className="relative min-h-[80vh] flex items-center" style={{
+      background: 'linear-gradient(135deg, #F6F2EC 0%, #D5DCD2 50%, #C9B9A2 100%)'
+    }}>
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-20">
         {/* Левая колонка с текстом */}
         <div className="flex flex-col justify-center">
