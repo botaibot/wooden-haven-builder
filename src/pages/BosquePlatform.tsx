@@ -3,62 +3,115 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const BosquePlatform = () => {
+  const architecturalLines = [
+    {
+      name: "Mono Roof",
+      description: "Минимализм, чёткая геометрия, односкатная крыша.",
+      sizes: "от 27 до 80 м²",
+      quote: "Минимализм, который можно масштабировать.",
+      emoji: "🔹"
+    },
+    {
+      name: "Flying Roof", 
+      description: "Асимметрия, вынос, архитектурный акцент.",
+      sizes: "29, 40, 60, 80 м²",
+      quote: "Стиль, который бросается в глаза.",
+      emoji: "🔹"
+    },
+    {
+      name: "Modern Flat",
+      description: "Плоская кровля, строгие формы, премиальность.",
+      sizes: "от 40 до 90 м²", 
+      quote: "Модуль для города с премиум-отделкой.",
+      emoji: "🔹"
+    },
+    {
+      name: "Barndominium",
+      description: "Высокие двускатные крыши, простор, эмоция.",
+      sizes: "от 36 до 90+ м²",
+      quote: "Пространство как стиль жизни.",
+      emoji: "🔹"
+    },
+    {
+      name: "Bosque Básico",
+      description: "Бюджетная база. Всё необходимое внутри.",
+      sizes: "18–36 м²",
+      quote: "Básico — всё необходимое. Остальное — вы решаете.",
+      emoji: "🔹"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <PageBanner 
-        title="BOSQUE PLATFORM — каркасная система" 
-        description="Комплексная каркасная система для строительства надежных и энергоэффективных домов"
+        title="BOSQUE PLATFORM" 
+        description="Архитектурные линейки на одной инженерной базе"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-wood-dark text-center">
-              BOSQUE PLATFORM — каркасная система
-            </h2>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h3 className="text-2xl font-semibold mb-6 text-wood-dark">Особенности системы</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-lg mb-3 text-nature-dark">Несущая конструкция</h4>
-                  <p className="text-gray-600 mb-4">
-                    Полная несущая конструкция включает утеплитель, OSB панели и защитные мембраны
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-3 text-nature-dark">Модульная система</h4>
-                  <p className="text-gray-600 mb-4">
-                    Радиумный модуль с шагом 600 мм обеспечивает точность и совместимость всех узлов
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-3 text-nature-dark">Комплектация BASE</h4>
-                  <p className="text-gray-600 mb-4">
-                    Базовая комплектация для стандартных проектов
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-3 text-nature-dark">Комплектация STRUCTURA</h4>
-                  <p className="text-gray-600 mb-4">
-                    Расширенная комплектация для сложных архитектурных решений
-                  </p>
-                </div>
-              </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">
+                Архитектура по системе.<br />
+                Выберите форму, которая близка вам.
+              </h2>
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                Архитектура BOSQUE PLATFORM — это разные формы на одной инженерной базе.
+                <br />
+                Мы используем одну конструктивную систему: шаг 600 мм, проверенные узлы, комплектация BASE или STRUCTURA.
+                <br />
+                От Mono до Barndominium — всё работает по одной логике: адаптировано к климату Канарских островов, рассчитано под сборку.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {architecturalLines.map((line, index) => (
+                <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="flex items-center gap-2 text-xl text-wood-dark">
+                      <span className="text-nature-dark">{line.emoji}</span>
+                      {line.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col">
+                    <p className="text-gray-700 mb-3">
+                      {line.description}
+                    </p>
+                    <p className="text-sm font-semibold text-wood-dark mb-3">
+                      Размеры: {line.sizes}
+                    </p>
+                    <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
+                      <p className="text-sm text-gray-600 italic flex items-start gap-2">
+                        <span>💬</span>
+                        {line.quote}
+                      </p>
+                    </div>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-wood text-wood hover:bg-wood hover:text-white"
+                    >
+                      📎 Смотреть модели
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
             
             <div className="text-center">
-              <a 
-                href="/contact"
-                className="inline-block bg-wood hover:bg-wood-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+              <Button 
+                size="lg"
+                className="bg-wood hover:bg-wood-dark text-white px-8 py-4"
               >
                 Получить консультацию по системе
-              </a>
+              </Button>
             </div>
           </div>
         </div>

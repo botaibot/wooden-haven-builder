@@ -33,9 +33,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           
           {/* Desktop Navigation - распределяем по всей ширине */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
-            <div className="flex items-center justify-evenly w-full max-w-4xl">
+            <div className="flex items-center justify-evenly w-full max-w-5xl">
               <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Главная
+              </Link>
+              <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+                BOSQUE PLATFORM
               </Link>
               <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Casas
@@ -116,6 +119,13 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             onClick={() => setIsMenuOpen(false)}
           >
             Главная
+          </Link>
+          <Link
+            to="/bosque-platform"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            BOSQUE PLATFORM
           </Link>
           <Link
             to="/houses"
