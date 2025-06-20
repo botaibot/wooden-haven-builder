@@ -34,31 +34,31 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           {/* Desktop Navigation - распределяем по всей ширине */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center justify-evenly w-full max-w-5xl">
-              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Главная
               </Link>
-              <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 BOSQUE PLATFORM
               </Link>
-              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Casas
               </Link>
-              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Elegir tu casa
               </Link>
-              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Materiales
               </Link>
-              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Calculadora
               </Link>
-              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Historias
               </Link>
-              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Nosotros
               </Link>
-              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
+              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Contacto
               </Link>
             </div>
@@ -115,63 +115,63 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
           <Link
             to="/"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Главная
           </Link>
           <Link
             to="/bosque-platform"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             BOSQUE PLATFORM
           </Link>
           <Link
             to="/houses"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Casas
           </Link>
           <Link
             to="/house-selection"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Elegir tu casa
           </Link>
           <Link
             to="/materials"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Materiales
           </Link>
           <Link
             to="/calculator"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Calculadora
           </Link>
           <Link
             to="/stories"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Historias
           </Link>
           <Link
             to="/about"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Nosotros
           </Link>
           <Link
             to="/contact"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
             Contacto
