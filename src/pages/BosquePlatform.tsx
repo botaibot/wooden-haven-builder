@@ -6,6 +6,46 @@ import PageBanner from "@/components/PageBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
+// Простые SVG иконки для каждого типа дома
+const MonoRoofIcon = () => (
+  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
+    <path d="M10 50 L10 30 L70 20 L70 50 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
+  </svg>
+);
+
+const FlyingRoofIcon = () => (
+  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
+    <path d="M5 50 L5 35 L40 25 L40 30 L75 20 L75 50 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <line x1="5" y1="50" x2="75" y2="50" stroke="currentColor" strokeWidth="3"/>
+  </svg>
+);
+
+const ModernFlatIcon = () => (
+  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
+    <rect x="10" y="25" width="60" height="25" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
+    <rect x="20" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
+    <rect x="35" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
+    <rect x="50" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
+  </svg>
+);
+
+const BarndomiumIcon = () => (
+  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
+    <path d="M40 15 L10 35 L10 50 L70 50 L70 35 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
+  </svg>
+);
+
+const BasicoIcon = () => (
+  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
+    <path d="M40 20 L15 35 L15 50 L65 50 L65 35 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+    <line x1="15" y1="50" x2="65" y2="50" stroke="currentColor" strokeWidth="3"/>
+    <rect x="30" y="35" width="8" height="10" fill="none" stroke="currentColor" strokeWidth="1"/>
+  </svg>
+);
+
 const BosquePlatform = () => {
   const architecturalLines = [
     {
@@ -13,35 +53,35 @@ const BosquePlatform = () => {
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
       sizes: "от 27 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
-      emoji: "🔹"
+      icon: <MonoRoofIcon />
     },
     {
       name: "Flying Roof", 
       description: "Асимметрия, вынос, архитектурный акцент.",
       sizes: "29, 40, 60, 80 м²",
       quote: "Стиль, который бросается в глаза.",
-      emoji: "🔹"
+      icon: <FlyingRoofIcon />
     },
     {
       name: "Modern Flat",
       description: "Плоская кровля, строгие формы, премиальность.",
       sizes: "от 40 до 90 м²", 
       quote: "Модуль для города с премиум-отделкой.",
-      emoji: "🔹"
+      icon: <ModernFlatIcon />
     },
     {
       name: "Barndominium",
       description: "Высокие двускатные крыши, простор, эмоция.",
       sizes: "от 36 до 90+ м²",
       quote: "Пространство как стиль жизни.",
-      emoji: "🔹"
+      icon: <BarndomiumIcon />
     },
     {
       name: "Bosque Básico",
       description: "Бюджетная база. Всё необходимое внутри.",
       sizes: "18–36 м²",
       quote: "Básico — всё необходимое. Остальное — вы решаете.",
-      emoji: "🔹"
+      icon: <BasicoIcon />
     }
   ];
 
@@ -55,37 +95,39 @@ const BosquePlatform = () => {
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-8 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-wood-dark">
                 Архитектура по системе.<br />
                 Выберите форму, которая близка вам.
               </h2>
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
                 Архитектура BOSQUE PLATFORM — это разные формы на одной инженерной базе.
-                <br />
+                <br className="hidden md:block" />
                 Мы используем одну конструктивную систему: шаг 600 мм, проверенные узлы, комплектация BASE или STRUCTURA.
-                <br />
+                <br className="hidden md:block" />
                 От Mono до Barndominium — всё работает по одной логике: адаптировано к климату Канарских островов, рассчитано под сборку.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
               {architecturalLines.map((line, index) => (
                 <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center gap-2 text-xl text-wood-dark">
-                      <span className="text-nature-dark">{line.emoji}</span>
+                  <CardHeader className="pb-4 text-center">
+                    <div className="text-wood-dark mb-2">
+                      {line.icon}
+                    </div>
+                    <CardTitle className="text-lg md:text-xl text-wood-dark">
                       {line.name}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col">
-                    <p className="text-gray-700 mb-3">
+                  <CardContent className="flex-1 flex flex-col px-4 md:px-6">
+                    <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                       {line.description}
                     </p>
-                    <p className="text-sm font-semibold text-wood-dark mb-3">
+                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
                       Размеры: {line.sizes}
                     </p>
                     <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
@@ -96,7 +138,7 @@ const BosquePlatform = () => {
                     </div>
                     <Button 
                       variant="outline" 
-                      className="w-full border-wood text-wood hover:bg-wood hover:text-white"
+                      className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
                     >
                       📎 Смотреть модели
                     </Button>
@@ -108,7 +150,7 @@ const BosquePlatform = () => {
             <div className="text-center">
               <Button 
                 size="lg"
-                className="bg-wood hover:bg-wood-dark text-white px-8 py-4"
+                className="bg-wood hover:bg-wood-dark text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base"
               >
                 Получить консультацию по системе
               </Button>
