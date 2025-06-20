@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight, Hammer, Home, Users, Package } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -66,7 +67,7 @@ const CategorySection = () => {
     },
     {
       icon: <Hammer />,
-      title: "BOSQUE PLATFORM — каркасная система",
+      title: "BOSQUE PLATFORM",
       description: [
         "Несущая конструкция + утеплитель + OSB + мембраны",
         "Радиумный модуль, шаг 600 мм",
