@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CategorySection from "@/components/CategorySection";
-import FeatureSection from "@/components/FeatureSection";
 import ProjectGalleryCarousel from "@/components/ProjectGalleryCarousel";
 import Footer from "@/components/Footer";
 
@@ -15,7 +14,6 @@ const Index = () => {
       <Navbar />
       <Hero />
       <CategorySection />
-      <FeatureSection />
       <ProjectGalleryCarousel />
       <Footer />
     </div>
