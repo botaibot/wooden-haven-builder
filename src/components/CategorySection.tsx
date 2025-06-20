@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight, Hammer, Home, Users, Package } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -62,7 +61,7 @@ const CategorySection = () => {
         "В наличии на Тенерифе",
         "Доставка по всем островам"
       ],
-      buttonText: "Каталог Материалов",
+      buttonText: "Каталог материалов",
       buttonLink: "/materials"
     },
     {
