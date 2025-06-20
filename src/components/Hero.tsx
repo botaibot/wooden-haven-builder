@@ -31,9 +31,9 @@ const Hero = () => {
             <span className="text-nature">для климата Канарских островов</span>
           </h1>
           <p className="text-xl text-gray-700 mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
-            <strong>BOSQUE — это команда, которая уже более 6 лет помогает воплощать деревянные проекты на Канарских островах.</strong><br />
-            Мы не просто продаём материалы — мы предлагаем решения.<br />
-            От выбора доски до строительства дома — вы получаете поддержку, основанную на практике, опыте и любви к качеству.
+            <strong>Каркасные и клеёные конструкции.</strong><br />
+            Материалы напрямую от европейских производителей.<br />
+            Проекты, доставка и поддержка — по всем островам.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
             <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
