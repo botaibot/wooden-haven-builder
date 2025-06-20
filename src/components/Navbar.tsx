@@ -46,9 +46,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Materiales
               </Link>
-              <Link to="/furniture" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
-                Muebles
-              </Link>
               <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap">
                 Calculadora
               </Link>
@@ -140,13 +137,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             onClick={() => setIsMenuOpen(false)}
           >
             Materiales
-          </Link>
-          <Link
-            to="/furniture"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Muebles
           </Link>
           <Link
             to="/calculator"
