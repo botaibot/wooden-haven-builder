@@ -1,12 +1,14 @@
-
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
+import ConsultationModal from "@/components/ConsultationModal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const BosquePlatform = () => {
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+
   const architecturalLines = [
     {
       name: "Mono Roof",
@@ -114,6 +116,7 @@ const BosquePlatform = () => {
             <div className="text-center">
               <Button 
                 size="lg"
+                onClick={() => setIsConsultationModalOpen(true)}
                 className="bg-wood hover:bg-wood-dark text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base"
               >
                 Получить консультацию по системе
@@ -122,6 +125,11 @@ const BosquePlatform = () => {
           </div>
         </div>
       </section>
+      
+      <ConsultationModal 
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
+      />
       
       <Footer />
     </div>
