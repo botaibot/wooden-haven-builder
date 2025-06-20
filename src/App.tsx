@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +17,7 @@ import Calculator from "./pages/Calculator";
 import Stories from "./pages/Stories";
 import NotFound from "./pages/NotFound";
 import ChatAssistant from "@/components/ChatAssistant";
+import ConsultationChat from "@/components/ConsultationChat";
 import { CartProvider } from "./context/CartContext";
 import { CookieConsentProvider } from "./components/cookie-consent/CookieConsentContext";
 import { CookieBanner } from "./components/cookie-consent/CookieBanner";
@@ -58,6 +60,8 @@ const App = () => (
             </Routes>
             {/* Добавляем ChatAssistant глобально */}
             <ChatAssistant />
+            {/* Добавляем ConsultationChat глобально */}
+            <ConsultationChat />
             {/* Добавляем CookieBanner глобально */}
             <CookieBanner />
           </BrowserRouter>
