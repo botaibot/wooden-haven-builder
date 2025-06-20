@@ -6,46 +6,6 @@ import PageBanner from "@/components/PageBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-// Простые SVG иконки для каждого типа дома
-const MonoRoofIcon = () => (
-  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
-    <path d="M10 50 L10 30 L70 20 L70 50 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
-  </svg>
-);
-
-const FlyingRoofIcon = () => (
-  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
-    <path d="M5 50 L5 35 L40 25 L40 30 L75 20 L75 50 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <line x1="5" y1="50" x2="75" y2="50" stroke="currentColor" strokeWidth="3"/>
-  </svg>
-);
-
-const ModernFlatIcon = () => (
-  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
-    <rect x="10" y="25" width="60" height="25" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
-    <rect x="20" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <rect x="35" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
-    <rect x="50" y="30" width="8" height="8" fill="none" stroke="currentColor" strokeWidth="1"/>
-  </svg>
-);
-
-const BarndomiumIcon = () => (
-  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
-    <path d="M40 15 L10 35 L10 50 L70 50 L70 35 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <line x1="10" y1="50" x2="70" y2="50" stroke="currentColor" strokeWidth="3"/>
-  </svg>
-);
-
-const BasicoIcon = () => (
-  <svg width="80" height="60" viewBox="0 0 80 60" className="mx-auto mb-4">
-    <path d="M40 20 L15 35 L15 50 L65 50 L65 35 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <line x1="15" y1="50" x2="65" y2="50" stroke="currentColor" strokeWidth="3"/>
-    <rect x="30" y="35" width="8" height="10" fill="none" stroke="currentColor" strokeWidth="1"/>
-  </svg>
-);
-
 const BosquePlatform = () => {
   const architecturalLines = [
     {
@@ -53,35 +13,35 @@ const BosquePlatform = () => {
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
       sizes: "от 27 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
-      icon: <MonoRoofIcon />
+      image: "/lovable-uploads/e96b8710-ace9-4bc5-914b-e7384c73ee98.png"
     },
     {
       name: "Flying Roof", 
       description: "Асимметрия, вынос, архитектурный акцент.",
       sizes: "29, 40, 60, 80 м²",
       quote: "Стиль, который бросается в глаза.",
-      icon: <FlyingRoofIcon />
+      image: "/lovable-uploads/419a3b14-ca56-44b1-ae12-02ff5dbe7e26.png"
     },
     {
       name: "Modern Flat",
       description: "Плоская кровля, строгие формы, премиальность.",
       sizes: "от 40 до 90 м²", 
       quote: "Модуль для города с премиум-отделкой.",
-      icon: <ModernFlatIcon />
+      image: "/lovable-uploads/425c4b1d-fd99-4318-93bd-869c954c4949.png"
     },
     {
       name: "Barndominium",
       description: "Высокие двускатные крыши, простор, эмоция.",
       sizes: "от 36 до 90+ м²",
       quote: "Пространство как стиль жизни.",
-      icon: <BarndomiumIcon />
+      image: "/lovable-uploads/c7cf1c75-9aef-457e-8c6f-15f8307ec9aa.png"
     },
     {
       name: "Bosque Básico",
       description: "Бюджетная база. Всё необходимое внутри.",
       sizes: "18–36 м²",
       quote: "Básico — всё необходимое. Остальное — вы решаете.",
-      icon: <BasicoIcon />
+      image: "/lovable-uploads/82b79dc0-81d2-4116-8216-bddd3d2a43dd.png"
     }
   ];
 
@@ -117,7 +77,11 @@ const BosquePlatform = () => {
                 <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
                   <CardHeader className="pb-4 text-center">
                     <div className="text-wood-dark mb-2">
-                      {line.icon}
+                      <img 
+                        src={line.image} 
+                        alt={line.name}
+                        className="w-20 h-20 mx-auto mb-4 object-contain"
+                      />
                     </div>
                     <CardTitle className="text-lg md:text-xl text-wood-dark">
                       {line.name}
