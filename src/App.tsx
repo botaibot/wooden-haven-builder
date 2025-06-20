@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,9 +9,9 @@ import Houses from "./pages/Houses";
 import HouseDetail from "./pages/HouseDetail";
 import HouseSelection from "./pages/HouseSelection";
 import Materials from "./pages/Materials";
+import BosquePlatform from "./pages/BosquePlatform";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Furniture from "./pages/Furniture";
 import Calculator from "./pages/Calculator";
 import Stories from "./pages/Stories";
 import NotFound from "./pages/NotFound";
@@ -49,9 +48,9 @@ const App = () => (
               <Route path="/houses/:id" element={<HouseDetail />} />
               <Route path="/house-selection" element={<HouseSelection />} />
               <Route path="/materials" element={<Materials />} />
+              <Route path="/bosque-platform" element={<BosquePlatform />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/furniture" element={<Furniture />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/stories" element={<Stories />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
