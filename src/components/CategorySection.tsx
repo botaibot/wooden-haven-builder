@@ -18,22 +18,22 @@ const CategoryCard = ({
 }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col">
-      {/* Иконка вместо схематического изображения */}
-      <div className="h-32 mb-4 flex items-center justify-center bg-wood/10 rounded-lg">
-        <div className="bg-wood/20 p-4 rounded-full">
-          {React.cloneElement(icon as React.ReactElement, { size: 48, className: "text-wood-dark" })}
+      {/* Иконка */}
+      <div className="h-24 mb-6 flex items-center justify-center bg-wood/10 rounded-lg">
+        <div className="bg-wood/20 p-3 rounded-full">
+          {React.cloneElement(icon as React.ReactElement, { size: 40, className: "text-wood-dark" })}
         </div>
       </div>
       
       <div className="mb-4">
-        <h3 className="text-xl font-semibold text-wood-darkest">{title}</h3>
+        <h3 className="text-xl font-semibold text-wood-darkest min-h-[3rem] flex items-center">{title}</h3>
       </div>
       
       <div className="flex-1">
         <ul className="space-y-2 mb-6">
           {description.map((item, index) => (
-            <li key={index} className="text-gray-600 flex items-start gap-2">
-              <span className="text-nature-dark mt-1">•</span>
+            <li key={index} className="text-gray-600 flex items-start gap-2 text-sm">
+              <span className="text-nature-dark mt-1 text-xs">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -42,7 +42,7 @@ const CategoryCard = ({
       
       <Link 
         to={buttonLink}
-        className="flex items-center justify-center gap-2 bg-wood text-white py-3 px-4 rounded-lg hover:bg-wood-dark transition-colors font-medium"
+        className="flex items-center justify-center gap-2 bg-wood text-white py-3 px-4 rounded-lg hover:bg-wood-dark transition-colors font-medium text-center"
       >
         {buttonText} <ArrowRight size={16} />
       </Link>
@@ -62,7 +62,7 @@ const CategorySection = () => {
         "В наличии на Тенерифе",
         "Доставка по всем островам"
       ],
-      buttonText: "Открыть каталог материалов",
+      buttonText: "Каталог Материалов",
       buttonLink: "/materials"
     },
     {
@@ -116,7 +116,7 @@ const CategorySection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <CategoryCard
               key={index}
