@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -8,20 +8,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 interface MaterialCalculatorProps {
-  width: number; // Width of one piece in mm
-  length: number; // Length of one piece in mm
-  isTerraceBoard?: boolean; // New prop to identify terrace board
+  width: number;
+  length: number;
+  isTerraceBoard?: boolean;
 }
 
 const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialCalculatorProps) => {
   const { toast } = useToast();
-  const [wallWidth, setWallWidth] = useState<number>(0);
-  const [wallHeight, setWallHeight] = useState<number>(0);
   const [squareMeters, setSquareMeters] = useState<number>(0);
-  const [calculationMode, setCalculationMode] = useState<'dimensions' | 'area'>('dimensions');
-  const [totalArea, setTotalArea] = useState<number>(0);
-  const [piecesNeeded, setPiecesNeeded] = useState<number>(0);
-  const [piecesWithBuffer, setPiecesWithBuffer] = useState<number>(0);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [contactForm, setContactForm] = useState({
@@ -30,32 +24,6 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
     phone: "",
     message: "",
   });
-
-  useEffect(() => {
-    let area = 0;
-    
-    if (calculationMode === 'dimensions' && wallWidth > 0 && wallHeight > 0) {
-      area = wallWidth * wallHeight;
-    } else if (calculationMode === 'area' && squareMeters > 0) {
-      area = squareMeters;
-    }
-    
-    setTotalArea(area);
-
-    if (area > 0) {
-      // Calculate number of pieces needed
-      // Formula: Area (m²) / (Width_mm × Length_mm / 1,000,000)
-      const pieceAreaInSqM = (width * length) / 1000000;
-      const pieces = area / pieceAreaInSqM;
-      setPiecesNeeded(Math.ceil(pieces)); // Round up to ensure enough pieces
-      
-      // Calculate with 10% buffer
-      setPiecesWithBuffer(Math.ceil(pieces * 1.1));
-    } else {
-      setPiecesNeeded(0);
-      setPiecesWithBuffer(0);
-    }
-  }, [wallWidth, wallHeight, squareMeters, calculationMode, width, length]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -76,21 +44,16 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
     
     setIsSubmitting(true);
     
-    // Создаем объект с данными расчета материалов и контактной информацией
     const calculationData = {
       contactInfo: contactForm,
       materialCalculation: {
         materialType: `${width}×${length} мм`,
-        wallDimensions: calculationMode === 'dimensions' ? `${wallWidth}×${wallHeight} м` : `${squareMeters} м²`,
-        totalArea: `${totalArea.toFixed(2)} м²`,
-        piecesNeeded: piecesNeeded,
-        piecesWithBuffer: piecesWithBuffer,
+        squareMeters: `${squareMeters} м²`,
         timestamp: new Date().toISOString(),
       }
     };
     
     try {
-      // Здесь будет webhook для отправки данных менеджеру
       const webhookUrl = window.localStorage.getItem('managerWebhookUrl') || 'https://hooks.zapier.com/hooks/catch/your-webhook-id';
       
       const response = await fetch(webhookUrl, {
@@ -98,7 +61,7 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "no-cors", // Для обхода CORS при работе с внешними API
+        mode: "no-cors",
         body: JSON.stringify(calculationData),
       });
       
@@ -107,10 +70,7 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
         description: "Менеджер свяжется с вами для уточнения деталей заказа!",
       });
       
-      // Закрываем диалог
       setIsContactFormOpen(false);
-      
-      // Сбрасываем форму
       setContactForm({
         name: "",
         email: "",
@@ -129,118 +89,45 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
     }
   };
 
-  const widthLabel = isTerraceBoard ? "Ширина пола (м)" : "Ширина стены (м)";
-  const heightLabel = isTerraceBoard ? "Длина пола (м)" : "Высота стены (м)";
-
   return (
     <div className="bg-nature-light/20 p-4 rounded-md mt-4">
       <h4 className="text-sm font-semibold mb-3">Калькулятор материалов</h4>
       
-      {/* Mode selection */}
       <div className="mb-4">
-        <div className="flex gap-2 mb-3">
-          <button
-            type="button"
-            onClick={() => setCalculationMode('dimensions')}
-            className={`px-3 py-1 text-xs rounded ${
-              calculationMode === 'dimensions'
-                ? 'bg-nature text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
-          >
-            По размерам
-          </button>
-          <button
-            type="button"
-            onClick={() => setCalculationMode('area')}
-            className={`px-3 py-1 text-xs rounded ${
-              calculationMode === 'area'
-                ? 'bg-nature text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
-          >
-            По площади
-          </button>
-        </div>
-        
-        {calculationMode === 'dimensions' ? (
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <Label htmlFor="wall-width" className="text-sm mb-1 block">
-                {widthLabel}
-              </Label>
-              <Input
-                id="wall-width"
-                type="number"
-                min="0"
-                step="0.1"
-                value={wallWidth || ""}
-                onChange={(e) => setWallWidth(parseFloat(e.target.value) || 0)}
-                className="h-9"
-              />
-            </div>
-            <div>
-              <Label htmlFor="wall-height" className="text-sm mb-1 block">
-                {heightLabel}
-              </Label>
-              <Input
-                id="wall-height"
-                type="number"
-                min="0"
-                step="0.1"
-                value={wallHeight || ""}
-                onChange={(e) => setWallHeight(parseFloat(e.target.value) || 0)}
-                className="h-9"
-              />
-            </div>
-          </div>
-        ) : (
-          <div>
-            <Label htmlFor="square-meters" className="text-sm mb-1 block">
-              Площадь (м²)
-            </Label>
-            <Input
-              id="square-meters"
-              type="number"
-              min="0"
-              step="0.1"
-              value={squareMeters || ""}
-              onChange={(e) => setSquareMeters(parseFloat(e.target.value) || 0)}
-              className="h-9"
-              placeholder="Введите площадь в квадратных метрах"
-            />
-          </div>
-        )}
+        <Label htmlFor="square-meters" className="text-sm mb-1 block">
+          Количество (м²)
+        </Label>
+        <Input
+          id="square-meters"
+          type="number"
+          min="0"
+          step="0.1"
+          value={squareMeters || ""}
+          onChange={(e) => setSquareMeters(parseFloat(e.target.value) || 0)}
+          className="h-9"
+          placeholder="Введите количество в квадратных метрах"
+        />
       </div>
       
-      {totalArea > 0 && (
+      {squareMeters > 0 && (
         <div className="space-y-1 text-sm">
           <p className="font-medium">
-            Общая площадь: <span className="text-nature-dark">{totalArea.toFixed(2)} м²</span>
-          </p>
-          <p className="font-medium">
-            Необходимое количество: <span className="text-nature-dark">{piecesNeeded} шт.</span>
-          </p>
-          <p className="font-medium">
-            С запасом 10%: <span className="text-nature-dark">{piecesWithBuffer} шт.</span>
+            Количество: <span className="text-nature-dark">{squareMeters} м²</span>
           </p>
           <p className="text-xs text-gray-500 mt-1">
-            * Рекомендуем добавить запас на подрезку
+            * Менеджер поможет рассчитать точное количество досок
           </p>
           
-          {piecesNeeded > 0 && (
-            <Button 
-              size="sm" 
-              className="mt-3 w-full sm:w-auto bg-nature text-white hover:bg-nature-dark"
-              onClick={() => setIsContactFormOpen(true)}
-            >
-              Заказать материалы
-            </Button>
-          )}
+          <Button 
+            size="sm" 
+            className="mt-3 w-full sm:w-auto bg-nature text-white hover:bg-nature-dark"
+            onClick={() => setIsContactFormOpen(true)}
+          >
+            Заказать материалы
+          </Button>
         </div>
       )}
       
-      {/* Форма заказа материалов */}
       <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
         <DialogContent className="sm:max-w-[500px]">
           <DialogHeader>
@@ -303,14 +190,7 @@ const MaterialCalculator = ({ width, length, isTerraceBoard = false }: MaterialC
               <div className="p-3 bg-gray-50 rounded-md">
                 <h5 className="text-sm font-medium mb-2">Расчет материалов:</h5>
                 <p className="text-sm">Размер материала: {width}×{length} мм</p>
-                <p className="text-sm">
-                  {calculationMode === 'dimensions' 
-                    ? `Размеры: ${wallWidth}×${wallHeight} м`
-                    : `Площадь: ${squareMeters} м²`
-                  }
-                </p>
-                <p className="text-sm">Общая площадь: {totalArea.toFixed(2)} м²</p>
-                <p className="text-sm">Количество материала: {piecesWithBuffer} шт. (с запасом 10%)</p>
+                <p className="text-sm">Количество: {squareMeters} м²</p>
               </div>
             </div>
             

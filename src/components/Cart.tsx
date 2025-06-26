@@ -29,6 +29,12 @@ const Cart = () => {
     clearCart();
   };
 
+  const handleCartClick = () => {
+    console.log("Cart clicked, current items:", items);
+    console.log("Total items:", getTotalItems());
+    setIsOpen(true);
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
@@ -37,6 +43,7 @@ const Cart = () => {
           size="icon" 
           className="relative bg-white"
           aria-label="Корзина"
+          onClick={handleCartClick}
         >
           <ShoppingCart className="h-5 w-5" />
           {getTotalItems() > 0 && (
