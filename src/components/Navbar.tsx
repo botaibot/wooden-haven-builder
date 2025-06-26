@@ -33,32 +33,32 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           
           {/* Desktop Navigation - распределяем по всей ширине */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
-            <div className="flex items-center justify-evenly w-full max-w-5xl">
-              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+            <div className="flex items-center justify-evenly w-full max-w-6xl gap-4">
+              <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Главная
               </Link>
-              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Materiales
               </Link>
-              <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Casa de entramado ligero
               </Link>
-              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
-                Casas
+              <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
+                Casas vigas laminadas
               </Link>
-              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Elegir tu casa
               </Link>
-              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Calculadora
               </Link>
-              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/stories" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Historias
               </Link>
-              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/about" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Nosotros
               </Link>
-              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+              <Link to="/contact" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-sm">
                 Contacto
               </Link>
             </div>
@@ -139,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
-            Casas
+            Casas vigas laminadas
           </Link>
           <Link
             to="/house-selection"
