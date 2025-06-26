@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CategorySection from "@/components/CategorySection";
 import ProjectGalleryCarousel from "@/components/ProjectGalleryCarousel";
+import SupportSection from "@/components/SupportSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <Hero />
       <CategorySection />
       <ProjectGalleryCarousel />
+      <SupportSection />
       <Footer />
     </div>
   );
