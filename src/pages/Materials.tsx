@@ -35,7 +35,6 @@ import {
 import { useCart } from "@/context/CartContext";
 import Cart from "@/components/Cart";
 import { useToast } from "@/hooks/use-toast";
-import MaterialCalculator from "@/components/MaterialCalculator";
 import MaterialCardCarousel from "@/components/MaterialCardCarousel";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -57,9 +56,7 @@ interface MaterialCardProps {
   sizes?: SizeOption[];
   isNew?: boolean;
   category: string;
-  showCalculator?: boolean;
   detailsButtonBottom?: boolean;
-  isTerraceBoard?: boolean;
 }
 
 const MaterialCard = ({ 
@@ -72,9 +69,7 @@ const MaterialCard = ({
   sizes = [],
   isNew = false,
   category,
-  showCalculator = false,
-  detailsButtonBottom = false,
-  isTerraceBoard = false
+  detailsButtonBottom = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
@@ -102,16 +97,6 @@ const MaterialCard = ({
   const getSelectedSizeLabel = () => {
     const selectedSizeObj = sizes.find(size => size.value === selectedSize);
     return selectedSizeObj ? selectedSizeObj.label : "";
-  };
-
-  const getSelectedSizeWidth = () => {
-    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
-    return selectedSizeObj?.width || 0;
-  };
-
-  const getSelectedSizeLength = () => {
-    const selectedSizeObj = sizes.find(size => size.value === selectedSize);
-    return selectedSizeObj?.length || 0;
   };
 
   const calculateTotalCost = () => {
@@ -189,14 +174,6 @@ const MaterialCard = ({
               </SelectContent>
             </Select>
           </div>
-        )}
-
-        {showCalculator && selectedSize && (
-          <MaterialCalculator 
-            width={getSelectedSizeWidth()} 
-            length={getSelectedSizeLength()}
-            isTerraceBoard={isTerraceBoard}
-          />
         )}
 
         {sizes.length > 0 && (
@@ -297,9 +274,7 @@ const Materials = () => {
         { label: "4000 мм x 144 мм x 25 мм", value: "144mm", price: 24.5, width: 144, length: 4000 },
       ],
       isNew: true,
-      category: "Отделочные материалы",
-      showCalculator: true,
-      isTerraceBoard: true
+      category: "Отделочные материалы"
     },
     {
       id: "brushed-board",
@@ -318,8 +293,7 @@ const Materials = () => {
         { label: "3900 мм x 196 мм x 19 мм", value: "196mm", price: 17, width: 196, length: 3900 },
       ],
       isNew: true,
-      category: "Отделочные материалы",
-      showCalculator: false
+      category: "Отделочные материалы"
     },
     {
       id: "planed-beam",
@@ -423,8 +397,7 @@ const Materials = () => {
         { label: "4000 мм x 146 мм x 19 мм", value: "146mm", price: 20, width: 146, length: 4000 },
       ],
       isNew: true,
-      category: "Отделочные материалы",
-      showCalculator: true
+      category: "Отделочные материалы"
     },
     {
       id: "imitation-brus",
@@ -439,7 +412,6 @@ const Materials = () => {
       ],
       isNew: true,
       category: "Отделочные материалы",
-      showCalculator: true,
       detailsButtonBottom: true
     },
     {
@@ -453,8 +425,7 @@ const Materials = () => {
         { label: "4000 мм x 146 мм x 27 мм", value: "146mm", price: 28.5, width: 146, length: 4000 },
       ],
       isNew: true,
-      category: "Отделочные материалы",
-      showCalculator: true
+      category: "Отделочные материалы"
     },
     {
       id: "dry-planed-lumber",
