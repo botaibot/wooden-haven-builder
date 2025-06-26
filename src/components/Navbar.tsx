@@ -37,17 +37,17 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Главная
               </Link>
+              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
+                Materiales
+              </Link>
               <Link to="/bosque-platform" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
-                BOSQUE PLATFORM
+                Casa de entramado ligero
               </Link>
               <Link to="/houses" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Casas
               </Link>
               <Link to="/house-selection" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Elegir tu casa
-              </Link>
-              <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
-                Materiales
               </Link>
               <Link to="/calculator" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase">
                 Calculadora
@@ -121,11 +121,18 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             Главная
           </Link>
           <Link
+            to="/materials"
+            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Materiales
+          </Link>
+          <Link
             to="/bosque-platform"
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
-            BOSQUE PLATFORM
+            Casa de entramado ligero
           </Link>
           <Link
             to="/houses"
@@ -140,13 +147,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             onClick={() => setIsMenuOpen(false)}
           >
             Elegir tu casa
-          </Link>
-          <Link
-            to="/materials"
-            className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Materiales
           </Link>
           <Link
             to="/calculator"
