@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -60,6 +59,7 @@ interface MaterialCardProps {
   category: string;
   showCalculator?: boolean;
   detailsButtonBottom?: boolean;
+  isTerraceBoard?: boolean;
 }
 
 const MaterialCard = ({ 
@@ -73,7 +73,8 @@ const MaterialCard = ({
   isNew = false,
   category,
   showCalculator = false,
-  detailsButtonBottom = false
+  detailsButtonBottom = false,
+  isTerraceBoard = false
 }: MaterialCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("");
@@ -194,6 +195,7 @@ const MaterialCard = ({
           <MaterialCalculator 
             width={getSelectedSizeWidth()} 
             length={getSelectedSizeLength()}
+            isTerraceBoard={isTerraceBoard}
           />
         )}
 
@@ -236,7 +238,7 @@ const MaterialCard = ({
           <div className="bg-nature-light/20 p-3 rounded-md mb-4">
             <p className="font-medium text-nature-dark">
               Общая стоимость: €{calculateTotalCost().toFixed(2)}
-              <span className="text-sm text-gray-600 ml-1">за {quantity} шт.</span>
+              <span className="text-sm text-gray-600 ml-1">за {quantity} {unit === "м²" ? "м²" : "шт."}</span>
             </p>
           </div>
         )}
@@ -296,7 +298,8 @@ const Materials = () => {
       ],
       isNew: true,
       category: "Отделочные материалы",
-      showCalculator: true
+      showCalculator: true,
+      isTerraceBoard: true
     },
     {
       id: "brushed-board",
