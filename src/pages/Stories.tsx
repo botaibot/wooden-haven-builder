@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -132,7 +131,7 @@ const Stories = () => {
       <Navbar />
       
       <PageBanner 
-        title="Истории и опыт строительства" 
+        title="Diario de construcción" 
         description="Узнайте больше о наших подходах к строительству и почему мы выбираем именно каркасные технологии"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
