@@ -13,35 +13,35 @@ const BosquePlatform = () => {
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
       sizes: "от 27 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
-      image: "/lovable-uploads/c7cf1c75-9aef-457e-8c6f-15f8307ec9aa.png"
+      image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
     },
     {
       name: "Flying Roof", 
       description: "Асимметрия, вынос, архитектурный акцент.",
       sizes: "29, 40, 60, 80 м²",
       quote: "Стиль, который бросается в глаза.",
-      image: "/lovable-uploads/419a3b14-ca56-44b1-ae12-02ff5dbe7e26.png"
+      image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png"
     },
     {
       name: "Modern Flat",
       description: "Плоская кровля, строгие формы, премиальность.",
       sizes: "от 40 до 90 м²", 
       quote: "Модуль для города с премиум-отделкой.",
-      image: "/lovable-uploads/425c4b1d-fd99-4318-93bd-869c954c4949.png"
+      image: "/lovable-uploads/04e241c4-f827-4fc2-b77f-4ea27ce7093d.png"
     },
     {
       name: "Barndominium",
       description: "Высокие двускатные крыши, простор, эмоция.",
       sizes: "от 36 до 90+ м²",
       quote: "Пространство как стиль жизни.",
-      image: "/lovable-uploads/e96b8710-ace9-4bc5-914b-e7384c73ee98.png"
+      image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
     },
     {
       name: "Bosque Básico",
       description: "Бюджетная база. Всё необходимое внутри.",
       sizes: "18–36 м²",
       quote: "Básico — всё необходимое. Остальное — вы решаете.",
-      image: "/lovable-uploads/82b79dc0-81d2-4116-8216-bddd3d2a43dd.png"
+      image: "/lovable-uploads/ef6c249e-c0e4-4067-aded-4a577418842c.png"
     }
   ];
 
