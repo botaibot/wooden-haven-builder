@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,7 +13,7 @@ const BosquePlatform = () => {
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
       sizes: "от 27 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
-      image: "/lovable-uploads/5c32fd81-cd8e-43ad-9e74-37ced486c468.png"
+      image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
     },
     {
       name: "Flying Roof", 
