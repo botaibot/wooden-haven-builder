@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "@/components/Cart";
@@ -156,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <Link
             to="/about"
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
-            onClick={() => setIsMenuOne(false)}
+            onClick={() => setIsMenuOpen(false)}
           >
             Nosotros
           </Link>
