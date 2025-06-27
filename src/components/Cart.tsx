@@ -41,13 +41,13 @@ const Cart = () => {
         <Button 
           variant="outline" 
           size="icon" 
-          className="relative bg-white"
+          className="relative bg-white hover:bg-gray-50"
           aria-label="Корзина"
           onClick={handleCartClick}
         >
           <ShoppingCart className="h-5 w-5" />
           {getTotalItems() > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
               {getTotalItems()}
             </span>
           )}
@@ -67,54 +67,62 @@ const Cart = () => {
           </div>
         ) : (
           <div className="mt-6 space-y-4">
-            {items.map((item) => (
-              <div key={`${item.id}-${item.size}`} className="flex gap-4 border-b pb-4">
-                <div className="w-20 h-20 rounded overflow-hidden">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-medium">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.size}</p>
-                  <p className="text-nature-dark font-semibold">€{item.price.toFixed(2)} / шт</p>
-                  
-                  <div className="flex justify-between items-center mt-2">
-                    <div className="flex items-center gap-2">
+            {items.map((item) => {
+              console.log("Rendering cart item:", item);
+              return (
+                <div key={`${item.id}-${item.size}`} className="flex gap-4 border-b pb-4">
+                  <div className="w-20 h-20 rounded overflow-hidden flex-shrink-0">
+                    <img 
+                      src={item.imageUrl} 
+                      alt={item.title} 
+                      className="h-full w-full object-cover"
+                      onError={(e) => {
+                        console.error("Image load error:", item.imageUrl);
+                        e.currentTarget.src = "/placeholder.svg";
+                      }}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-medium text-sm truncate">{item.title}</h3>
+                    <p className="text-sm text-gray-500">{item.size}</p>
+                    <p className="text-nature-dark font-semibold">€{item.price.toFixed(2)} / шт</p>
+                    
+                    <div className="flex justify-between items-center mt-2">
+                      <div className="flex items-center gap-2">
+                        <Button 
+                          variant="outline" 
+                          size="icon" 
+                          className="h-7 w-7"
+                          onClick={() => updateQuantity(item.id, item.size, Math.max(1, item.quantity - 1))}
+                        >
+                          <Minus className="h-3 w-3" />
+                        </Button>
+                        <span className="w-8 text-center">{item.quantity}</span>
+                        <Button 
+                          variant="outline" 
+                          size="icon" 
+                          className="h-7 w-7"
+                          onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}
+                        >
+                          <Plus className="h-3 w-3" />
+                        </Button>
+                      </div>
                       <Button 
-                        variant="outline" 
+                        variant="ghost" 
                         size="icon" 
                         className="h-7 w-7"
-                        onClick={() => updateQuantity(item.id, item.size, Math.max(1, item.quantity - 1))}
+                        onClick={() => removeFromCart(item.id, item.size)}
                       >
-                        <Minus className="h-3 w-3" />
-                      </Button>
-                      <span>{item.quantity}</span>
-                      <Button 
-                        variant="outline" 
-                        size="icon" 
-                        className="h-7 w-7"
-                        onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}
-                      >
-                        <Plus className="h-3 w-3" />
+                        <X className="h-4 w-4" />
                       </Button>
                     </div>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      onClick={() => removeFromCart(item.id, item.size)}
-                    >
-                      <X className="h-4 w-4" />
-                    </Button>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             
             <div className="border-t pt-4">
-              <div className="flex justify-between font-semibold">
+              <div className="flex justify-between font-semibold text-lg">
                 <span>Итого:</span>
                 <span>€{getTotalPrice().toFixed(2)}</span>
               </div>

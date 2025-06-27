@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCart } from "lucide-react";
-import { useCart } from "@/context/CartContext";
+import Cart from "@/components/Cart";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -11,7 +10,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { items } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -66,17 +64,10 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/cart" className="p-2 text-wood-dark hover:text-nature-dark transition-colors relative">
-                <ShoppingCart className="h-6 w-6" />
-                {items.length > 0 && (
-                  <span className="absolute top-[-5px] right-[-5px] bg-nature-dark text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-                    {items.length}
-                  </span>
-                )}
-              </Link>
+              <Cart />
             </div>
             {/* Mobile menu button */}
-            <div className="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex md:hidden ml-2">
               <button
                 onClick={toggleMenu}
                 type="button"
@@ -165,7 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <Link
             to="/about"
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => setIsMenuOne(false)}
           >
             Nosotros
           </Link>
