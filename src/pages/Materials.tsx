@@ -113,13 +113,23 @@ const MaterialCard = ({
       return;
     }
 
+    const firstImage = Array.isArray(imageUrl) ? imageUrl[0] : imageUrl;
+    console.log("Adding to cart:", {
+      id,
+      title,
+      size: getSelectedSizeLabel(),
+      price: getSelectedSizePrice(),
+      quantity,
+      imageUrl: firstImage
+    });
+
     addToCart({
       id,
       title,
       size: getSelectedSizeLabel(),
       price: getSelectedSizePrice(),
       quantity,
-      imageUrl: Array.isArray(imageUrl) ? imageUrl[0] : imageUrl
+      imageUrl: firstImage
     });
 
     toast({
