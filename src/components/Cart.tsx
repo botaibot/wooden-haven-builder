@@ -151,7 +151,7 @@ const Cart = () => {
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-full sm:max-w-md overflow-y-auto z-[9999]">
+      <SheetContent className="w-full sm:max-w-md overflow-y-auto z-[99999]">
         <SheetHeader>
           <SheetTitle className="text-center text-xl">Корзина</SheetTitle>
         </SheetHeader>
@@ -228,7 +228,7 @@ const Cart = () => {
                   </div>
                   
                   <Button 
-                    className="w-full mt-4 bg-wood hover:bg-wood-dark relative z-10"
+                    className="w-full mt-4 bg-wood hover:bg-wood-dark relative z-[100000]"
                     onClick={handleCheckout}
                   >
                     Оформить заказ
@@ -344,7 +344,7 @@ const Cart = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-wood text-white hover:bg-wood-dark relative z-10"
+                  className="w-full bg-wood text-white hover:bg-wood-dark relative z-[100000]"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Отправка заказа..." : "Подтвердить заказ"}
