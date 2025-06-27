@@ -1,19 +1,31 @@
-
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const BosquePlatform = () => {
+  const [isModelModalOpen, setIsModelModalOpen] = useState(false);
+
   const architecturalLines = [
     {
       name: "Mono Roof",
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
       sizes: "от 27 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
-      image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
+      image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
+      models: [
+        {
+          size: "27 м²",
+          image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
+        },
+        {
+          size: "80 м²", 
+          image: "/lovable-uploads/bea65b98-6f70-401c-8ffe-79fe3322528e.png"
+        }
+      ]
     },
     {
       name: "Flying Roof", 
@@ -51,6 +63,60 @@ const BosquePlatform = () => {
       type: 'OPEN_CONSULTATION_CHAT',
       message: 'Хочу получить консультацию по системе BOSQUE PLATFORM. Выберите удобный способ связи:'
     }, '*');
+  };
+
+  const renderModelButton = (line, index) => {
+    if (line.name === "Mono Roof") {
+      return (
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button 
+              variant="outline" 
+              className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
+            >
+              📎 Смотреть модели
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-4xl">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-wood-dark">
+                Модели Mono Roof
+              </DialogTitle>
+            </DialogHeader>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              {line.models.map((model, modelIndex) => (
+                <Card key={modelIndex} className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <img 
+                      src={model.image} 
+                      alt={`Mono Roof ${model.size}`}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold text-wood-dark mb-2">
+                        Mono Roof {model.size}
+                      </h3>
+                      <p className="text-gray-600">
+                        Минимализм и функциональность в компактном формате
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+      );
+    } else {
+      return (
+        <Button 
+          variant="outline" 
+          className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
+        >
+          📎 Смотреть модели
+        </Button>
+      );
+    }
   };
 
   return (
@@ -109,12 +175,7 @@ const BosquePlatform = () => {
                         {line.quote}
                       </p>
                     </div>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
-                    >
-                      📎 Смотреть модели
-                    </Button>
+                    {renderModelButton(line, index)}
                   </CardContent>
                 </Card>
               ))}
@@ -149,12 +210,7 @@ const BosquePlatform = () => {
                         {line.quote}
                       </p>
                     </div>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
-                    >
-                      📎 Смотреть модели
-                    </Button>
+                    {renderModelButton(line, index + 3)}
                   </CardContent>
                 </Card>
               ))}
