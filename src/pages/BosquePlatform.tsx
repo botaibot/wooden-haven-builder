@@ -129,11 +129,11 @@ vivir con lo justo, pero bien hecho
                           <CarouselContent>
                             {model.images.map((image, imageIndex) => (
                               <CarouselItem key={imageIndex}>
-                                <div className="relative overflow-hidden group cursor-pointer">
+                                <div className="relative overflow-hidden group cursor-pointer h-48">
                                   <img 
                                     src={image} 
                                     alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
-                                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-200 origin-center"
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-150 origin-center"
                                   />
                                 </div>
                               </CarouselItem>
@@ -153,11 +153,11 @@ vivir con lo justo, pero bien hecho
                       </div>
                     ) : (
                       <div>
-                        <div className="relative overflow-hidden group cursor-pointer">
+                        <div className="relative overflow-hidden group cursor-pointer h-48">
                           <img 
                             src={model.image} 
                             alt={`Mono Roof ${model.size}`}
-                            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-200 origin-center"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-150 origin-center"
                           />
                         </div>
                         <div className="p-4">
