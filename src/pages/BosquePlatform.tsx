@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -141,7 +140,53 @@ quienes valoran luz, orden y estructura
       description: "Асимметрия, вынос, архитектурный акцент.",
       sizes: "29, 40, 60, 80 м²",
       quote: "Стиль, который бросается в глаза.",
-      image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png"
+      image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
+      models: [
+        {
+          size: "29 м²",
+          images: [
+            "/lovable-uploads/bc53684c-1eae-477f-a924-037a54f88395.png",
+            "/lovable-uploads/38c147b7-81ab-4b19-8554-6b81d4b77073.png"
+          ],
+          description: `🏠 Techo Volado 29 m²– Modelo Flying Roof
+💶 Precio cerrado:
+🔧 BÁSICO: 820 €/m² → 23.700 €
+🏗 STRUCTURA: 906 €/m² → 26.270 €
+
+🌄 Arquitectura con carácter. Minimalismo con vuelo.
+Flying Roof no es solo una casa pequeña. Es una declaración arquitectónica en 29 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
+
+🧭 Distribución eficiente y expresiva
+Zona SALÓN-COCINA (~17,7 m²): ✔️ Ventanal panorámico de 1800×2100 mm ✔️ Ventana vertical hasta el suelo de 600×2100 mm ✔️ Cocina en forma de "L" + espacio de estar ✔️ Ventana 1200×1000 mm con luz lateral
+Dormitorio (~7,8 m²): ✔️ Ventana 600×1200 mm a 1000 mm del suelo ✔️ Luz natural y privacidad
+Baño (~3,6 m²): ✔️ Ventana 530×1000 mm ✔️ Preparado para ducha amplia
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con OSB + placas de yeso, pintadas en blanco ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+📌 Otros acabados exteriores o interiores disponibles bajo pedido.
+
+🌞 Arquitectura exterior distintiva
+• Cubierta inclinada, asimétrica, con voladizo en esquina de hasta 1700 mm • Terraza de 2,5 m + prolongación lateral de 700 mm a cada lado • Fachada en machihembrado vertical 19 mm (tono miel claro) • Marcos de ventanas empotrados (aluminio negro) • Lamas verticales decorativas 45×60 mm para ritmo visual • Zócalo oscuro: contraste, sombra y base visual
+
+⚠️ Notas:
+Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
+La cimentación se calcula según condiciones del terreno.
+La conexión final de luz y agua debe ser realizada por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+
+✅ Ideal para:
+Primera vivienda / Tiny house
+Alojamiento turístico o glamping premium
+Showroom / oficina jardín
+Casa de fin de semana con estilo
+✏️ Detalles con personalidad
+Contraste entre luz y sombra
+Geometría expresiva
+Mínimos elementos, máximo sentido
+Pensado para sol intenso y horizontes abiertos
+🟢 Flying Roof 29 m² no es solo una casa — es una idea. La idea de que incluso 29 m² pueden parecer arquitectura.`
+        }
+      ]
     },
     {
       name: "Modern Flat",
@@ -201,7 +246,7 @@ quienes valoran luz, orden y estructura
   };
 
   const renderModelButton = (line, index) => {
-    if (line.name === "Mono Roof") {
+    if (line.name === "Mono Roof" || line.name === "Flying Roof") {
       return (
         <Dialog>
           <DialogTrigger asChild>
@@ -215,7 +260,7 @@ quienes valoran luz, orden y estructura
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-wood-dark">
-                Модели Mono Roof
+                Модели {line.name}
               </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
@@ -230,11 +275,11 @@ quienes valoran luz, orden y estructura
                               <CarouselItem key={imageIndex}>
                                 <div 
                                   className="relative overflow-hidden group cursor-pointer h-48"
-                                  onClick={() => openImageViewer(model.images, imageIndex, `Mono Roof ${model.size}`)}
+                                  onClick={() => openImageViewer(model.images, imageIndex, `${line.name} ${model.size}`)}
                                 >
                                   <img 
                                     src={image} 
-                                    alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
+                                    alt={`${line.name} ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 origin-center"
                                   />
                                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
@@ -251,7 +296,7 @@ quienes valoran luz, orden y estructura
                         </Carousel>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-wood-dark mb-4">
-                            Mono Roof {model.size}
+                            {line.name} {model.size}
                           </h3>
                           <div className="text-sm text-gray-600 whitespace-pre-line">
                             {model.description}
@@ -262,11 +307,11 @@ quienes valoran luz, orden y estructura
                       <div>
                         <div 
                           className="relative overflow-hidden group cursor-pointer h-48"
-                          onClick={() => openImageViewer([model.image], 0, `Mono Roof ${model.size}`)}
+                          onClick={() => openImageViewer([model.image], 0, `${line.name} ${model.size}`)}
                         >
                           <img 
                             src={model.image} 
-                            alt={`Mono Roof ${model.size}`}
+                            alt={`${line.name} ${model.size}`}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 origin-center"
                           />
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
@@ -277,7 +322,7 @@ quienes valoran luz, orden y estructura
                         </div>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-wood-dark mb-2">
-                            Mono Roof {model.size}
+                            {line.name} {model.size}
                           </h3>
                           <p className="text-gray-600">
                             Минимализм и функциональность в компактном формате
