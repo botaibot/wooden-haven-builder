@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,7 +22,7 @@ const BosquePlatform = () => {
     {
       name: "Mono Roof",
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
-      sizes: "от 29 до 80 м²",
+      sizes: "от 29 до 60 м²",
       quote: "Минимализм, который можно масштабировать.",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
@@ -97,8 +98,41 @@ vivir con lo justo, pero bien hecho
 🧭 Una casa pequeña, honesta y clara. Empieza mucho con muy poco.`
         },
         {
-          size: "80 м²", 
-          image: "/lovable-uploads/bea65b98-6f70-401c-8ffe-79fe3322528e.png"
+          size: "60 м²",
+          images: [
+            "/lovable-uploads/6ab7167c-38b8-4d8b-9395-4edf250c2263.png",
+            "/lovable-uploads/8aa147a4-e926-493e-be37-964b2d697930.png"
+          ],
+          description: `🏠 Techo Simple 60 m² – Modelo MonoRoof
+💶 Precio cerrado:
+🔧 BÁSICO: 685 €/m² → 41.100 €
+🏗 STRUCTURA: 758 €/m² → 45.500 €
+
+🌿 El equilibrio perfecto entre espacio, claridad y estructura
+Este modelo de 60 m² actúa como modelo de referencia de la serie MonoRoof. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
+La pérgola integrada da sombra sin recargar el diseño. Cada elemento tiene una función precisa.
+
+🏡 Distribución abierta y flexible
+El interior ofrece salón, cocina y comedor en un mismo espacio fluido. Dos habitaciones —o una suite y un despacho— adaptables a las necesidades del cliente. Cada metro está pensado para ser útil, sin desperdicio.
+La entrada principal es frontal, con posibilidad de ventilación cruzada. El baño tiene ventana y espacio para una ducha cómoda.
+📐 Claridad, funcionalidad y libertad de uso.
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con placas de yeso + pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+📌 Otros acabados disponibles bajo pedido (revoco, paneles compuestos, acabados interiores de diseño...)
+
+⚠️ Notas:
+Puertas y ventanas no están incluidas en el precio base.
+La cimentación se calcula según las condiciones del terreno.
+La conexión final de luz y agua debe ser realizada por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+
+✅ Ideal para:
+vivienda principal o segunda residencia
+familias pequeñas con visión de futuro
+turismo rural o alquiler con confort
+quienes valoran luz, orden y estructura
+🧭 Una casa pensada. Luminosa, funcional, sin excesos. El siguiente paso lo decide el cliente.`
         }
       ]
     },
