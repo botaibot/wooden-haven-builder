@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Phone, Mail, MessageSquare } from "lucide-react";
+import { Phone, Mail, MessageSquare, Ruler, Truck, Wrench, Lightbulb, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -25,35 +25,35 @@ const SupportSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-wood rounded-full"></div>
+                <Ruler className="w-6 h-6 text-wood" />
               </div>
               <p className="text-gray-700">Помогаем выбрать оптимальное конструктивное решение</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-wood rounded-full"></div>
+                <Truck className="w-6 h-6 text-wood" />
               </div>
               <p className="text-gray-700">Выезжаем на объект для консультации</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-wood rounded-full"></div>
+                <Wrench className="w-6 h-6 text-wood" />
               </div>
               <p className="text-gray-700">При необходимости подсказываем по узлам, шагам и сборке</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-wood rounded-full"></div>
+                <Lightbulb className="w-6 h-6 text-wood" />
               </div>
               <p className="text-gray-700">Решаем нестандартные задачи</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-md md:col-span-2 lg:col-span-2">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-wood rounded-full"></div>
+                <Globe className="w-6 h-6 text-wood" />
               </div>
               <p className="text-gray-700">Работаем на всех Канарских островах и на материковой части Испании</p>
             </div>
