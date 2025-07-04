@@ -22,6 +22,39 @@ const BosquePlatform = () => {
           image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
         },
         {
+          size: "29 м²",
+          facade: "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
+          plan: "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png",
+          description: `🏠 Techo Simple 29 m² – Modelo MonoRoof
+💶 Precio cerrado:
+🔧 BÁSICO: 760 €/m² → 22.050 €
+🏗 STRUCTURA: 850 €/m² → 24.569 €
+
+🌿 Compacta, luminosa, sin excesos
+Este modelo de 29 m² es perfecto para empezar. Una casa pequeña, pero con lo esencial: espacio para vivir, para descansar, para respirar. La cubierta a un agua y la fachada en machihembrado vertical le dan una estética limpia, sobria y natural.
+Todo está donde debe estar — sin complicaciones, sin adornos.
+
+🏡 Distribución abierta, interior flexible
+El corazón del proyecto es un espacio abierto con cocina, comedor y sala integrados. La habitación está separada visualmente, pero sin puerta: la privacidad se sugiere, no se impone. El baño es completo, con ventana y luz natural.
+📐 Ideal para vivir simple, sin renunciar al confort.
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados posteriores personalizados.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con yeso y pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
+
+⚠️ Notas:
+Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
+La cimentación se cotiza por separado según terreno.
+La conexión final de luz y agua debe realizarse por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+
+✅ Ideal para:
+vivienda de inicio o retiro
+escapadas rurales o turismo slow
+vivir con lo justo, pero bien hecho
+🧭 Una casa pequeña, honesta y clara. Empieza mucho con muy poco.`
+        },
+        {
           size: "80 м²", 
           image: "/lovable-uploads/bea65b98-6f70-401c-8ffe-79fe3322528e.png"
         }
@@ -77,29 +110,54 @@ const BosquePlatform = () => {
               📎 Смотреть модели
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-4xl">
+          <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-wood-dark">
                 Модели Mono Roof
               </DialogTitle>
             </DialogHeader>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
               {line.models.map((model, modelIndex) => (
                 <Card key={modelIndex} className="overflow-hidden">
                   <CardContent className="p-0">
-                    <img 
-                      src={model.image} 
-                      alt={`Mono Roof ${model.size}`}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold text-wood-dark mb-2">
-                        Mono Roof {model.size}
-                      </h3>
-                      <p className="text-gray-600">
-                        Минимализм и функциональность в компактном формате
-                      </p>
-                    </div>
+                    {model.facade && model.plan ? (
+                      <div>
+                        <img 
+                          src={model.facade} 
+                          alt={`Mono Roof ${model.size} - фасад`}
+                          className="w-full h-48 object-cover"
+                        />
+                        <img 
+                          src={model.plan} 
+                          alt={`Mono Roof ${model.size} - планировка`}
+                          className="w-full h-48 object-cover border-t"
+                        />
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold text-wood-dark mb-4">
+                            Mono Roof {model.size}
+                          </h3>
+                          <div className="text-sm text-gray-600 whitespace-pre-line">
+                            {model.description}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <img 
+                          src={model.image} 
+                          alt={`Mono Roof ${model.size}`}
+                          className="w-full h-48 object-cover"
+                        />
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold text-wood-dark mb-2">
+                            Mono Roof {model.size}
+                          </h3>
+                          <p className="text-gray-600">
+                            Минимализм и функциональность в компактном формате
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
