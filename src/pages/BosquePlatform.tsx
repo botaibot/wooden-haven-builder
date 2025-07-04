@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
+import ImageViewer from "@/components/ImageViewer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -9,6 +10,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
+  const [imageViewer, setImageViewer] = useState({
+    isOpen: false,
+    images: [] as string[],
+    currentIndex: 0,
+    alt: ""
+  });
 
   const architecturalLines = [
     {
@@ -94,11 +101,37 @@ vivir con lo justo, pero bien hecho
   ];
 
   const handleConsultationClick = () => {
-    // Отправляем сообщение помощнику с выбором консультации
     window.postMessage({
       type: 'OPEN_CONSULTATION_CHAT',
       message: 'Хочу получить консультацию по системе BOSQUE PLATFORM. Выберите удобный способ связи:'
     }, '*');
+  };
+
+  const openImageViewer = (images: string[], startIndex: number, alt: string) => {
+    setImageViewer({
+      isOpen: true,
+      images,
+      currentIndex: startIndex,
+      alt
+    });
+  };
+
+  const closeImageViewer = () => {
+    setImageViewer(prev => ({ ...prev, isOpen: false }));
+  };
+
+  const handlePreviousImage = () => {
+    setImageViewer(prev => ({
+      ...prev,
+      currentIndex: prev.currentIndex > 0 ? prev.currentIndex - 1 : prev.images.length - 1
+    }));
+  };
+
+  const handleNextImage = () => {
+    setImageViewer(prev => ({
+      ...prev,
+      currentIndex: prev.currentIndex < prev.images.length - 1 ? prev.currentIndex + 1 : 0
+    }));
   };
 
   const renderModelButton = (line, index) => {
@@ -129,12 +162,20 @@ vivir con lo justo, pero bien hecho
                           <CarouselContent>
                             {model.images.map((image, imageIndex) => (
                               <CarouselItem key={imageIndex}>
-                                <div className="relative overflow-hidden group cursor-pointer h-48">
+                                <div 
+                                  className="relative overflow-hidden group cursor-pointer h-48"
+                                  onClick={() => openImageViewer(model.images, imageIndex, `Mono Roof ${model.size}`)}
+                                >
                                   <img 
                                     src={image} 
                                     alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
-                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-150 origin-center"
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 origin-center"
                                   />
+                                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium bg-black/50 px-3 py-1 rounded">
+                                      Нажмите для увеличения
+                                    </div>
+                                  </div>
                                 </div>
                               </CarouselItem>
                             ))}
@@ -153,12 +194,20 @@ vivir con lo justo, pero bien hecho
                       </div>
                     ) : (
                       <div>
-                        <div className="relative overflow-hidden group cursor-pointer h-48">
+                        <div 
+                          className="relative overflow-hidden group cursor-pointer h-48"
+                          onClick={() => openImageViewer([model.image], 0, `Mono Roof ${model.size}`)}
+                        >
                           <img 
                             src={model.image} 
                             alt={`Mono Roof ${model.size}`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-150 origin-center"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 origin-center"
                           />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                            <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium bg-black/50 px-3 py-1 rounded">
+                              Нажмите для увеличения
+                            </div>
+                          </div>
                         </div>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-wood-dark mb-2">
@@ -298,6 +347,16 @@ vivir con lo justo, pero bien hecho
           </div>
         </div>
       </section>
+
+      <ImageViewer
+        isOpen={imageViewer.isOpen}
+        onClose={closeImageViewer}
+        images={imageViewer.images}
+        currentIndex={imageViewer.currentIndex}
+        onPrevious={handlePreviousImage}
+        onNext={handleNextImage}
+        alt={imageViewer.alt}
+      />
       
       <Footer />
     </div>
