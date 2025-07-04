@@ -5,6 +5,7 @@ import PageBanner from "@/components/PageBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -23,8 +24,10 @@ const BosquePlatform = () => {
         },
         {
           size: "29 м²",
-          facade: "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
-          plan: "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png",
+          images: [
+            "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
+            "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png"
+          ],
           description: `🏠 Techo Simple 29 m² – Modelo MonoRoof
 💶 Precio cerrado:
 🔧 BÁSICO: 760 €/m² → 22.050 €
@@ -120,18 +123,23 @@ vivir con lo justo, pero bien hecho
               {line.models.map((model, modelIndex) => (
                 <Card key={modelIndex} className="overflow-hidden">
                   <CardContent className="p-0">
-                    {model.facade && model.plan ? (
+                    {model.images ? (
                       <div>
-                        <img 
-                          src={model.facade} 
-                          alt={`Mono Roof ${model.size} - фасад`}
-                          className="w-full h-48 object-cover"
-                        />
-                        <img 
-                          src={model.plan} 
-                          alt={`Mono Roof ${model.size} - планировка`}
-                          className="w-full h-48 object-cover border-t"
-                        />
+                        <Carousel className="w-full">
+                          <CarouselContent>
+                            {model.images.map((image, imageIndex) => (
+                              <CarouselItem key={imageIndex}>
+                                <img 
+                                  src={image} 
+                                  alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
+                                  className="w-full h-48 object-cover"
+                                />
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          <CarouselPrevious className="left-2" />
+                          <CarouselNext className="right-2" />
+                        </Carousel>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-wood-dark mb-4">
                             Mono Roof {model.size}
