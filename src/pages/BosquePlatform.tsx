@@ -185,6 +185,42 @@ Geometría expresiva
 Mínimos elementos, máximo sentido
 Pensado para sol intenso y horizontes abiertos
 🟢 Flying Roof 29 m² no es solo una casa — es una idea. La idea de que incluso 29 m² pueden parecer arquitectura.`
+        },
+        {
+          size: "40 м²",
+          images: [
+            "/lovable-uploads/3b23cd21-4831-4c6b-ae2e-bbcc1a7c96b7.png",
+            "/lovable-uploads/8c4e46cd-d758-42b0-a22b-42ac548d876d.png"
+          ],
+          description: `🏠 Techo Volado 40 m²– Modelo Flying Roof
+💶 Precio cerrado:
+🔧 BÁSICO: 825 €/m² → 33.000 €
+🏗 STRUCTURA: 937 €/m² → 37.500 €
+
+🌄 Geometría con carácter, interior luminoso, vida funcional
+Este modelo de 40 m² destaca por su equilibrio entre forma, proporción y sensación habitable. La cubierta inclinada en doble plano le da un perfil distintivo — moderno, sin estridencias. El revestimiento en machihembrado vertical aporta textura natural, calidez y ritmo. Una casa que transmite orden, claridad y sensación de hogar.
+
+🏡 Espacio pensado, distribución sencilla
+Zona de estar abierta con cocina, comedor y sala integrados. Dos habitaciones permiten diferentes configuraciones: dormitorio principal + estudio, invitados, despacho o uso mixto. El baño es funcional, con ducha, ventana y ventilación cruzada.
+Desde el salón se accede directamente a la terraza frontal cubierta. El espacio fluye, la casa respira.
+📐 Distribución clara, adaptable al uso diario o turístico.
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado vertical 19 mm, y preinstalación de electricidad y fontanería (sin conexión). 🛠 Para personalizar acabados o desarrollar el interior a medida.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de puertas y ventanas (si las suministra el cliente) con sellado profesional ✔️ tabiquería interior con yeso + pintura blanca final ✔️ fachada exterior machihembrado vertical 19 mm ✔️ preinstalaciones listas dentro del muro
+📌 Otros acabados disponibles bajo pedido.
+
+⚠️ Notas:
+El precio no incluye ventanas ni puertas. Si el cliente las suministra o encarga con BOSQUE, se instalan sin coste adicional y con sellado correcto.
+La cimentación se calcula por separado según condiciones del terreno.
+La conexión final de luz y agua debe ser realizada por técnicos autorizados.
+
+✅ Ideal para:
+quien busca vivienda compacta sin renunciar a diseño
+parejas con teletrabajo o invitados
+alquiler turístico o segunda residencia
+comenzar con lo esencial, con margen para personalizar
+🧭 Diseño con carácter. Espacio útil. Y una estructura que funciona. Sin adornos innecesarios: solo arquitectura bien resuelta.`
         }
       ]
     },
