@@ -21,13 +21,45 @@ const BosquePlatform = () => {
     {
       name: "Mono Roof",
       description: "Минимализм, чёткая геометрия, односкатная крыша.",
-      sizes: "от 27 до 80 м²",
+      sizes: "от 29 до 80 м²",
       quote: "Минимализм, который можно масштабировать.",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
         {
-          size: "27 м²",
-          image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png"
+          size: "41 м²",
+          images: [
+            "/lovable-uploads/24f984b3-7c67-4428-936e-9c1c396aa1c0.png",
+            "/lovable-uploads/3efda910-a931-40a4-b2be-59cf7da82c95.png"
+          ],
+          description: `🏠 Techo Simple 41 m² – Modelo MonoRoof
+💶 Precio cerrado:
+🔧 BÁSICO: 675 €/m² → 27.685 €
+🏗 STRUCTURA: 780 €/m² → 32.000 €
+
+🌿 Geometría limpia, claridad natural, estructura honesta
+Este modelo de 40 m² ofrece una síntesis equilibrada de forma y función: volumen compacto, líneas puras, terraza protegida bajo el voladizo. Pensada para quien busca lo esencial con una presencia arquitectónica clara.
+Una vivienda sencilla, bien diseñada y adaptada al clima de las Islas Canarias.
+
+🏡 Distribución abierta, con carácter
+El interior propone un espacio principal con cocina lineal, comedor y sala integrados. Dos dormitorios simétricos ofrecen descanso y orden. El baño cuenta con ventana y luz natural. La entrada conecta directamente con la terraza cubierta de 2,5 m de profundidad: protegida pero abierta al entorno.
+📐 Ideal para vivir con claridad, sin renunciar al diseño.
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con placas de yeso + pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+📌 Otros acabados disponibles bajo pedido: revoco exterior, paneles compuestos, madera interior, etc.
+
+⚠️ Notas:
+Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
+La cimentación se cotiza por separado según terreno.
+La conexión final de electricidad y agua debe realizarse por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+
+✅ Ideal para:
+vivienda compacta de uso diario
+alquiler turístico en montaña o costa
+parejas o teletrabajo con estilo
+quien valora sencillez, orden y presencia
+🧭 40 m² bien resueltos. Pura intención. Puro equilibrio.`
         },
         {
           size: "29 м²",
