@@ -129,11 +129,13 @@ vivir con lo justo, pero bien hecho
                           <CarouselContent>
                             {model.images.map((image, imageIndex) => (
                               <CarouselItem key={imageIndex}>
-                                <img 
-                                  src={image} 
-                                  alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
-                                  className="w-full h-48 object-cover"
-                                />
+                                <div className="relative overflow-hidden group cursor-pointer">
+                                  <img 
+                                    src={image} 
+                                    alt={`Mono Roof ${model.size} - ${imageIndex === 0 ? 'фасад' : 'планировка'}`}
+                                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-200 origin-center"
+                                  />
+                                </div>
                               </CarouselItem>
                             ))}
                           </CarouselContent>
@@ -151,11 +153,13 @@ vivir con lo justo, pero bien hecho
                       </div>
                     ) : (
                       <div>
-                        <img 
-                          src={model.image} 
-                          alt={`Mono Roof ${model.size}`}
-                          className="w-full h-48 object-cover"
-                        />
+                        <div className="relative overflow-hidden group cursor-pointer">
+                          <img 
+                            src={model.image} 
+                            alt={`Mono Roof ${model.size}`}
+                            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-200 origin-center"
+                          />
+                        </div>
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-wood-dark mb-2">
                             Mono Roof {model.size}
