@@ -10,6 +10,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
+  const [expandedModels, setExpandedModels] = useState<{[key: string]: boolean}>({});
   const [imageViewer, setImageViewer] = useState({
     isOpen: false,
     images: [] as string[],
@@ -25,6 +26,41 @@ const BosquePlatform = () => {
       quote: "Минимализм, который можно масштабировать.",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
+        {
+          size: "29 м²",
+          images: [
+            "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
+            "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png"
+          ],
+          description: `🏠 Techo Simple 29 m² – Modelo MonoRoof
+💶 Precio cerrado:
+🔧 BÁSICO: 760 €/m² → 22.050 €
+🏗 STRUCTURA: 850 €/m² → 24.569 €
+
+🌿 Compacta, luminosa, sin excesos
+Este modelo de 29 m² es perfecto para empezar. Una casa pequeña, pero con lo esencial: espacio para vivir, para descansar, para respirar. La cubierta a un agua y la fachada en machihembrado vertical le dan una estética limpia, sobria y natural.
+Todo está donde debe estar — sin complicaciones, sin adornos.
+
+🏡 Distribución abierta, interior flexible
+El corazón del proyecto es un espacio abierto con cocina, comedor y sala integrados. La habitación está separada visualmente, pero sin puerta: la privacidad se sugiere, no se impone. El baño es completo, con ventana y luz natural.
+📐 Ideal para vivir simple, sin renunciar al confort.
+
+📦 Versiones disponibles
+🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados posteriores personalizados.
+🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con yeso y pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
+
+⚠️ Notas:
+Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
+La cimentación se cotiza por separado según terreno.
+La conexión final de luz y agua debe realizarse por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+
+✅ Ideal para:
+vivienda de inicio o retiro
+escapadas rurales o turismo slow
+vivir con lo justo, pero bien hecho
+🧭 Una casa pequeña, honesta y clara. Empieza mucho con muy poco.`
+        },
         {
           size: "41 м²",
           images: [
@@ -60,41 +96,6 @@ alquiler turístico en montaña o costa
 parejas o teletrabajo con estilo
 quien valora sencillez, orden y presencia
 🧭 40 m² bien resueltos. Pura intención. Puro equilibrio.`
-        },
-        {
-          size: "29 м²",
-          images: [
-            "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
-            "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png"
-          ],
-          description: `🏠 Techo Simple 29 m² – Modelo MonoRoof
-💶 Precio cerrado:
-🔧 BÁSICO: 760 €/m² → 22.050 €
-🏗 STRUCTURA: 850 €/m² → 24.569 €
-
-🌿 Compacta, luminosa, sin excesos
-Este modelo de 29 m² es perfecto para empezar. Una casa pequeña, pero con lo esencial: espacio para vivir, para descansar, para respirar. La cubierta a un agua y la fachada en machihembrado vertical le dan una estética limpia, sobria y natural.
-Todo está donde debe estar — sin complicaciones, sin adornos.
-
-🏡 Distribución abierta, interior flexible
-El corazón del proyecto es un espacio abierto con cocina, comedor y sala integrados. La habitación está separada visualmente, pero sin puerta: la privacidad se sugiere, no se impone. El baño es completo, con ventana y luz natural.
-📐 Ideal para vivir simple, sin renunciar al confort.
-
-📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados posteriores personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con yeso y pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones preinstaladas (sin conexión)
-📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
-
-⚠️ Notas:
-Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
-La cimentación se cotiza por separado según terreno.
-La conexión final de luz y agua debe realizarse por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
-
-✅ Ideal para:
-vivienda de inicio o retiro
-escapadas rurales o turismo slow
-vivir con lo justo, pero bien hecho
-🧭 Una casa pequeña, honesta y clara. Empieza mucho con muy poco.`
         },
         {
           size: "60 м²",
@@ -281,6 +282,23 @@ comenzar con lo esencial, con margen para personalizar
     }));
   };
 
+  const toggleModelDescription = (modelKey: string) => {
+    setExpandedModels(prev => ({
+      ...prev,
+      [modelKey]: !prev[modelKey]
+    }));
+  };
+
+  const getShortDescription = (description: string) => {
+    const lines = description.split('\n');
+    return lines.slice(0, 4).join('\n');
+  };
+
+  const getFullDescription = (description: string) => {
+    const lines = description.split('\n');
+    return lines.slice(4).join('\n');
+  };
+
   const renderModelButton = (line, index) => {
     if (line.name === "Mono Roof" || line.name === "Flying Roof") {
       return (
@@ -335,7 +353,26 @@ comenzar con lo esencial, con margen para personalizar
                             {line.name} {model.size}
                           </h3>
                           <div className="text-sm text-gray-600 whitespace-pre-line">
-                            {model.description}
+                            {line.name === "Mono Roof" ? (
+                              <div>
+                                <div>{getShortDescription(model.description)}</div>
+                                {expandedModels[`${line.name}-${model.size}`] && (
+                                  <div className="mt-4">
+                                    {getFullDescription(model.description)}
+                                  </div>
+                                )}
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
+                                  className="mt-2 text-wood hover:text-wood-dark"
+                                >
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                </Button>
+                              </div>
+                            ) : (
+                              model.description
+                            )}
                           </div>
                         </div>
                       </div>
