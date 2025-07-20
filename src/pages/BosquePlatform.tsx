@@ -11,6 +11,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
   const [expandedModels, setExpandedModels] = useState<{[key: string]: boolean}>({});
+  const [expandedCards, setExpandedCards] = useState<{[key: string]: boolean}>({});
   const [imageViewer, setImageViewer] = useState({
     isOpen: false,
     images: [] as string[],
@@ -154,6 +155,20 @@ quienes valoran luz, orden y estructura
       sizes: "29, 40, 60, 80 м²",
       quote: "Стиль, который бросается в глаза.",
       image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
+      detailedDescription: `🌄 Архитектура с характером, но без излишеств
+Flying Roof — это дом с ярким архитектурным акцентом: асимметричная крыша создает динамику, а выносы добавляют глубину композиции. Минималистичная форма с выразительным силуэтом.
+
+🏗️ Техническая база и эстетика
+Односкатная крыша с выносом до 1,7 м создает защищенную террасу и интересную игру света и тени. Фасад из вертикального планкена 19 мм придает натуральную текстуру, а контрастный цоколь подчеркивает горизонтальную линию основания.
+
+🎯 Для кого подходит
+✔️ Тем, кто хочет выделиться архитектурой, но ценит функциональность
+✔️ Для участков с красивыми видами — большие окна и террасы максимально используют пейзаж
+✔️ Идеален для туристического бизнеса — запоминающийся внешний вид привлекает гостей
+✔️ Подходит для климата Канарских островов — навесы защищают от солнца
+
+💡 Особенности планировки
+Открытая планировка с зонированием без перегородок. Большие окна в пол создают связь с террасой. Спальни изолированы для комфорта. Все коммуникации скрыты в стенах.`,
       models: [
         {
           size: "29 м²",
@@ -170,9 +185,17 @@ quienes valoran luz, orden y estructura
 Flying Roof no es solo una casa pequeña. Es una declaración arquitectónica en 29 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
 
 🧭 Distribución eficiente y expresiva
-Zona SALÓN-COCINA (~17,7 m²): ✔️ Ventanal panorámico de 1800×2100 mm ✔️ Ventana vertical hasta el suelo de 600×2100 mm ✔️ Cocina en forma de "L" + espacio de estar ✔️ Ventana 1200×1000 mm con luz lateral
-Dormitorio (~7,8 m²): ✔️ Ventana 600×1200 mm a 1000 mm del suelo ✔️ Luz natural y privacidad
-Baño (~3,6 m²): ✔️ Ventana 530×1000 mm ✔️ Preparado para ducha amplia
+Zona SALÓN-COCINA (~17,7 m²): 
+✔️ Ventanal panorámico de 1800×2100 mm 
+✔️ Ventana vertical hasta el suelo de 600×2100 mm 
+✔️ Cocina en forma de "L" + espacio de estar 
+✔️ Ventana 1200×1000 mm con luz lateral
+Dormitorio (~7,8 m²): 
+✔️ Ventana 600×1200 mm a 1000 mm del suelo 
+✔️ Luz natural y privacidad
+Baño (~3,6 m²): 
+✔️ Ventana 530×1000 mm 
+✔️ Preparado para ducha amplia
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
@@ -308,6 +331,13 @@ comenzar con lo esencial, con margen para personalizar
     }));
   };
 
+  const toggleCardDescription = (cardName: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [cardName]: !prev[cardName]
+    }));
+  };
+
   const getShortDescription = (description: string) => {
     const lines = description.split('\n');
     return lines.slice(0, 4).join('\n');
@@ -373,6 +403,23 @@ comenzar con lo esencial, con margen para personalizar
                           </h3>
                           <div className="text-sm text-gray-600 whitespace-pre-line">
                             {line.name === "Mono Roof" ? (
+                              <div>
+                                <div>{getShortDescription(model.description)}</div>
+                                {expandedModels[`${line.name}-${model.size}`] && (
+                                  <div className="mt-4">
+                                    {getFullDescription(model.description)}
+                                  </div>
+                                )}
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
+                                  className="mt-2 text-wood hover:text-wood-dark"
+                                >
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                </Button>
+                              </div>
+                            ) : line.name === "Flying Roof" ? (
                               <div>
                                 <div>{getShortDescription(model.description)}</div>
                                 {expandedModels[`${line.name}-${model.size}`] && (
@@ -484,20 +531,37 @@ comenzar con lo esencial, con margen para personalizar
                       {line.name}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col px-4 md:px-6">
-                    <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
-                      {line.description}
-                    </p>
-                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                      Размеры: {line.sizes}
-                    </p>
-                    <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                      <p className="text-sm text-gray-600 italic flex items-start gap-2">
-                        <span>💬</span>
-                        {line.quote}
-                      </p>
-                    </div>
-                    {renderModelButton(line, index)}
+                   <CardContent className="flex-1 flex flex-col px-4 md:px-6">
+                     <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
+                       {line.description}
+                     </p>
+                     <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
+                       Размеры: {line.sizes}
+                     </p>
+                     <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
+                       <p className="text-sm text-gray-600 italic flex items-start gap-2">
+                         <span>💬</span>
+                         {line.quote}
+                       </p>
+                     </div>
+                     {line.detailedDescription && (
+                       <div className="mb-4">
+                         {expandedCards[line.name] && (
+                           <div className="text-sm text-gray-600 whitespace-pre-line bg-gray-50 p-3 rounded mb-3">
+                             {line.detailedDescription}
+                           </div>
+                         )}
+                         <Button
+                           variant="ghost"
+                           size="sm"
+                           onClick={() => toggleCardDescription(line.name)}
+                           className="text-wood hover:text-wood-dark mb-2"
+                         >
+                           {expandedCards[line.name] ? "Скрыть детали" : "Подробнее"}
+                         </Button>
+                       </div>
+                     )}
+                     {renderModelButton(line, index)}
                   </CardContent>
                 </Card>
               ))}
