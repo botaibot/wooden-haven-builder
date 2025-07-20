@@ -47,7 +47,11 @@ El corazón del proyecto es un espacio abierto con cocina, comedor y sala integr
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados posteriores personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con yeso y pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones preinstaladas (sin conexión)
+🏗 STRUCTURA Incluye todo lo anterior, más: 
+✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ tabiquería interior con yeso y pintura blanca final 
+✔️ fachada exterior en machihembrado vertical 19 mm 
+✔️ instalaciones preinstaladas (sin conexión)
 📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
@@ -82,7 +86,11 @@ El interior propone un espacio principal con cocina lineal, comedor y sala integ
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con placas de yeso + pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+🏗 STRUCTURA Incluye todo lo anterior, más: 
+✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ tabiquería interior con placas de yeso + pintura blanca final 
+✔️ fachada exterior en machihembrado vertical 19 mm 
+✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
 📌 Otros acabados disponibles bajo pedido: revoco exterior, paneles compuestos, madera interior, etc.
 
 ⚠️ Notas:
@@ -119,7 +127,11 @@ La entrada principal es frontal, con posibilidad de ventilación cruzada. El ba�
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con placas de yeso + pintura blanca final ✔️ fachada exterior en machihembrado vertical 19 mm ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+🏗 STRUCTURA Incluye todo lo anterior, más: 
+✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ tabiquería interior con placas de yeso + pintura blanca final 
+✔️ fachada exterior en machihembrado vertical 19 mm 
+✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
 📌 Otros acabados disponibles bajo pedido (revoco, paneles compuestos, acabados interiores de diseño...)
 
 ⚠️ Notas:
@@ -164,7 +176,10 @@ Baño (~3,6 m²): ✔️ Ventana 530×1000 mm ✔️ Preparado para ducha amplia
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ tabiquería interior con OSB + placas de yeso, pintadas en blanco ✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
+🏗 STRUCTURA Incluye todo lo anterior, más: 
+✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ tabiquería interior con OSB + placas de yeso, pintadas en blanco 
+✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
 📌 Otros acabados exteriores o interiores disponibles bajo pedido.
 
 🌞 Arquitectura exterior distintiva
@@ -208,7 +223,11 @@ Desde el salón se accede directamente a la terraza frontal cubierta. El espacio
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado vertical 19 mm, y preinstalación de electricidad y fontanería (sin conexión). 🛠 Para personalizar acabados o desarrollar el interior a medida.
-🏗 STRUCTURA Incluye todo lo anterior, más: ✔️ instalación de puertas y ventanas (si las suministra el cliente) con sellado profesional ✔️ tabiquería interior con yeso + pintura blanca final ✔️ fachada exterior machihembrado vertical 19 mm ✔️ preinstalaciones listas dentro del muro
+🏗 STRUCTURA Incluye todo lo anterior, más: 
+✔️ instalación de puertas y ventanas (si las suministra el cliente) con sellado profesional 
+✔️ tabiquería interior con yeso + pintura blanca final 
+✔️ fachada exterior machihembrado vertical 19 mm 
+✔️ preinstalaciones listas dentro del muro
 📌 Otros acabados disponibles bajo pedido.
 
 ⚠️ Notas:
