@@ -287,11 +287,10 @@ const Materials = () => {
     },
     {
       id: "brushed-board",
-      title: "Планкен (Строганная дощечка) Толщина 19 мм",
+      title: "Tabla cepillada. Grosor 19 mm",
       description: "Выберите характеристики материала из доступных вариантов и добавьте его в корзину. В корзине вы можете указать количество штук для каждого товара в вашем заказе.",
       imageUrl: [
-        "/lovable-uploads/20da3d85-e28a-4101-baf0-683c9934ec19.png",
-        "/lovable-uploads/c4e70f89-b63e-4f44-ab64-59cabc4c92d3.png"
+        "/lovable-uploads/f43efb08-1cc6-45bf-b1c3-874197d6fd34.png"
       ],
       priceRange: "€8,50–€17,00",
       unit: "шт",
