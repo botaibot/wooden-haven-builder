@@ -114,12 +114,12 @@ quien valora sencillez, orden y presencia
           size: "60 м²",
           images: [
             "/lovable-uploads/6ab7167c-38b8-4d8b-9395-4edf250c2263.png",
-            "/lovable-uploads/8aa147a4-e926-493e-be37-964b2d697930.png"
+            "/lovable-uploads/9af6cd26-eb12-4502-82fe-af4a52f17dca.png"
           ],
-          description: `🏠 Techo Simple 60 m² – Modelo MonoRoof
+          description: `🏠 Techo Simple 67 m² – Modelo MonoRoof (útil 60 m2)
 💶 Precio cerrado:
-🔧 BÁSICO: 685 €/m² → 41.100 €
-🏗 STRUCTURA: 758 €/m² → 45.500 €
+🏗 ESTANDART: 751 €/m² → 50.333 €
+🌅 Terraza cubierta de 31 m² bajo voladizo — incluida en el precio
 
 🌿 El equilibrio perfecto entre espacio, claridad y estructura
 Este modelo de 60 m² actúa como modelo de referencia de la serie MonoRoof. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
@@ -132,7 +132,7 @@ La entrada principal es frontal, con posibilidad de ventilación cruzada. El ba�
 
 📦 Versiones disponibles
 🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: 
+🏗 ESTANDART Incluye todo lo anterior, más: 
 ✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
 ✔️ tabiquería interior con placas de yeso + pintura blanca final 
 ✔️ fachada exterior en machihembrado vertical 19 mm 
