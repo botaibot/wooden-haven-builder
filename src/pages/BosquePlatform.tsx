@@ -31,7 +31,7 @@ const BosquePlatform = () => {
           size: "29 м²",
           images: [
             "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
-            "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png"
+            "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png"
           ],
           description: `🏠 Techo Simple 35,58 m² – Modelo MonoRoof (útil 29 m2)
 💶 Precio cerrado:
