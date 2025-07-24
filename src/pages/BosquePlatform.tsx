@@ -233,18 +233,18 @@ Pensado para sol intenso y horizontes abiertos
 🟢 Flying Roof 35 m² no es solo una casa — es una idea. La idea de que incluso 35 m² pueden parecer arquitectura.`
         },
         {
-          size: "40 м²",
+          size: "46 м²",
           images: [
             "/lovable-uploads/3b23cd21-4831-4c6b-ae2e-bbcc1a7c96b7.png",
-            "/lovable-uploads/8c4e46cd-d758-42b0-a22b-42ac548d876d.png"
+            "/lovable-uploads/9c622b89-a3f1-45c4-8a7e-67a684e33a6c.png"
           ],
-          description: `🏠 Techo Volado 40 m²– Modelo Flying Roof
+          description: `🏠 Techo Volado 46 m²– Modelo Flying Roof (útil 40 m2)
 💶 Precio cerrado:
-🔧 BÁSICO: 825 €/m² → 33.000 €
-🏗 STRUCTURA: 937 €/m² → 37.500 €
+🏗 ESTANDART: 868 €/m² → 39.943 €
+🌅 Terraza abierta de 10 m² incluida en el precio – integrada en la estructura, sin coste adicional.
 
 🌄 Geometría con carácter, interior luminoso, vida funcional
-Este modelo de 40 m² destaca por su equilibrio entre forma, proporción y sensación habitable. La cubierta inclinada en doble plano le da un perfil distintivo — moderno, sin estridencias. El revestimiento en machihembrado vertical aporta textura natural, calidez y ritmo. Una casa que transmite orden, claridad y sensación de hogar.
+Este modelo de 46 m² destaca por su equilibrio entre forma, proporción y sensación habitable. La cubierta inclinada en doble plano le da un perfil distintivo — moderno, sin estridencias. El revestimiento en machihembrado vertical aporta textura natural, calidez y ritmo. Una casa que transmite orden, claridad y sensación de hogar.
 
 🏡 Espacio pensado, distribución sencilla
 Zona de estar abierta con cocina, comedor y sala integrados. Dos habitaciones permiten diferentes configuraciones: dormitorio principal + estudio, invitados, despacho o uso mixto. El baño es funcional, con ducha, ventana y ventilación cruzada.
@@ -252,13 +252,15 @@ Desde el salón se accede directamente a la terraza frontal cubierta. El espacio
 📐 Distribución clara, adaptable al uso diario o turístico.
 
 📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado vertical 19 mm, y preinstalación de electricidad y fontanería (sin conexión). 🛠 Para personalizar acabados o desarrollar el interior a medida.
-🏗 STRUCTURA Incluye todo lo anterior, más: 
-✔️ instalación de puertas y ventanas (si las suministra el cliente) con sellado profesional 
-✔️ tabiquería interior con yeso + pintura blanca final 
-✔️ fachada exterior machihembrado vertical 19 mm 
-✔️ preinstalaciones listas dentro del muro
-📌 Otros acabados disponibles bajo pedido.
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior 
+✔️ Aislamiento completo 
+✔️ Suelo técnico OSB 22 mm 
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ Tabiquería interior con yeso y pintura blanca final 
+✔️ Fachada exterior en machihembrado 19 mm 
+✔️ Instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
 El precio no incluye ventanas ni puertas. Si el cliente las suministra o encarga con BOSQUE, se instalan sin coste adicional y con sellado correcto.
