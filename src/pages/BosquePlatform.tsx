@@ -175,18 +175,18 @@ Flying Roof — это дом с ярким архитектурным акце�
 Открытая планировка с зонированием без перегородок. Большие окна в пол создают связь с террасой. Спальни изолированы для комфорта. Все коммуникации скрыты в стенах.`,
       models: [
         {
-          size: "29 м²",
+          size: "35,58 м²",
           images: [
             "/lovable-uploads/bc53684c-1eae-477f-a924-037a54f88395.png",
-            "/lovable-uploads/38c147b7-81ab-4b19-8554-6b81d4b77073.png"
+            "/lovable-uploads/aebac7a2-b4f2-4df9-b813-6756932fab63.png"
           ],
-          description: `🏠 Techo Volado 29 m²– Modelo Flying Roof
+          description: `🏠 Techo Volado 35,58 m²– Modelo Flying Roof (útil 29 m2)
 💶 Precio cerrado:
-🔧 BÁSICO: 820 €/m² → 23.700 €
-🏗 STRUCTURA: 906 €/m² → 26.270 €
+🏗   ESTANTADT: 830 €/m² → 29.536 €
+🌅 Terraza abierta de 21 m² incluida en el precio – integrada en la estructura, sin coste adicional.
 
 🌄 Arquitectura con carácter. Minimalismo con vuelo.
-Flying Roof no es solo una casa pequeña. Es una declaración arquitectónica en 29 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
+Flying Roof no es solo una casa pequeña. Es una declaración arquitectónica en 35 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
 
 🧭 Distribución eficiente y expresiva
 Zona SALÓN-COCINA (~17,7 m²): 
@@ -194,7 +194,7 @@ Zona SALÓN-COCINA (~17,7 m²):
 ✔️ Ventana vertical hasta el suelo de 600×2100 mm 
 ✔️ Cocina en forma de "L" + espacio de estar 
 ✔️ Ventana 1200×1000 mm con luz lateral
-Dormitorio (~7,8 m²): 
+Dormitorio (~7,8 m²):
 ✔️ Ventana 600×1200 mm a 1000 mm del suelo 
 ✔️ Luz natural y privacidad
 Baño (~3,6 m²): 
@@ -202,12 +202,15 @@ Baño (~3,6 m²):
 ✔️ Preparado para ducha amplia
 
 📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm interior y exterior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: 
-✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
-✔️ tabiquería interior con OSB + placas de yeso, pintadas en blanco 
-✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
-📌 Otros acabados exteriores o interiores disponibles bajo pedido.
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior 
+✔️ Aislamiento completo 
+✔️ Suelo técnico OSB 22 mm 
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ Tabiquería interior con yeso y pintura blanca final 
+✔️ Fachada exterior en machihembrado 19 mm 
+✔️ Instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 🌞 Arquitectura exterior distintiva
 • Cubierta inclinada, asimétrica, con voladizo en esquina de hasta 1700 mm • Terraza de 2,5 m + prolongación lateral de 700 mm a cada lado • Fachada en machihembrado vertical 19 mm (tono miel claro) • Marcos de ventanas empotrados (aluminio negro) • Lamas verticales decorativas 45×60 mm para ritmo visual • Zócalo oscuro: contraste, sombra y base visual
@@ -227,7 +230,7 @@ Contraste entre luz y sombra
 Geometría expresiva
 Mínimos elementos, máximo sentido
 Pensado para sol intenso y horizontes abiertos
-🟢 Flying Roof 29 m² no es solo una casa — es una idea. La idea de que incluso 29 m² pueden parecer arquitectura.`
+🟢 Flying Roof 35 m² no es solo una casa — es una idea. La idea de que incluso 35 m² pueden parecer arquitectura.`
         },
         {
           size: "40 м²",
