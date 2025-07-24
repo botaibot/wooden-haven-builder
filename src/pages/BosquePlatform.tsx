@@ -72,15 +72,15 @@ vivir con lo justo, pero bien hecho
           size: "41 м²",
           images: [
             "/lovable-uploads/24f984b3-7c67-4428-936e-9c1c396aa1c0.png",
-            "/lovable-uploads/3efda910-a931-40a4-b2be-59cf7da82c95.png"
+            "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
           ],
-          description: `🏠 Techo Simple 41 m² – Modelo MonoRoof
+          description: `🏠 Techo Simple 51,89 m² – Modelo MonoRoof (útil 41 m2)
 💶 Precio cerrado:
-🔧 BÁSICO: 675 €/m² → 27.685 €
-🏗 STRUCTURA: 780 €/m² → 32.000 €
+🏗 ESTANDART: 719 €/m² → 37.315 €
+🌅 Terraza abierta de 25 m² incluida en el precio – integrada en la estructura, sin coste adicional.
 
 🌿 Geometría limpia, claridad natural, estructura honesta
-Este modelo de 40 m² ofrece una síntesis equilibrada de forma y función: volumen compacto, líneas puras, terraza protegida bajo el voladizo. Pensada para quien busca lo esencial con una presencia arquitectónica clara.
+Este modelo de 51,89 m² ofrece una síntesis equilibrada de forma y función: volumen compacto, líneas puras, terraza protegida bajo el voladizo. Pensada para quien busca lo esencial con una presencia arquitectónica clara.
 Una vivienda sencilla, bien diseñada y adaptada al clima de las Islas Canarias.
 
 🏡 Distribución abierta, con carácter
@@ -88,13 +88,15 @@ El interior propone un espacio principal con cocina lineal, comedor y sala integ
 📐 Ideal para vivir con claridad, sin renunciar al diseño.
 
 📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: 
-✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
-✔️ tabiquería interior con placas de yeso + pintura blanca final 
-✔️ fachada exterior en machihembrado vertical 19 mm 
-✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
-📌 Otros acabados disponibles bajo pedido: revoco exterior, paneles compuestos, madera interior, etc.
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior 
+✔️ Aislamiento completo 
+✔️ Suelo técnico OSB 22 mm 
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
+✔️ Tabiquería interior con yeso y pintura blanca final 
+✔️ Fachada exterior en machihembrado 19 mm 
+✔️ Instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
 Las puertas y ventanas no están incluidas en el precio, pero se instalan si son suministradas por el cliente.
@@ -106,7 +108,7 @@ vivienda compacta de uso diario
 alquiler turístico en montaña o costa
 parejas o teletrabajo con estilo
 quien valora sencillez, orden y presencia
-🧭 40 m² bien resueltos. Pura intención. Puro equilibrio.`
+🧭 51,89 m² bien resueltos. Pura intención. Puro equilibrio.`
         },
         {
           size: "60 м²",
