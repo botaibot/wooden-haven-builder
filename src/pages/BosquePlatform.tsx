@@ -33,13 +33,13 @@ const BosquePlatform = () => {
             "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
             "/lovable-uploads/d5b7a3e7-b058-4ef1-b267-99bb4158c40e.png"
           ],
-          description: `🏠 Techo Simple 29 m² – Modelo MonoRoof
+          description: `🏠 Techo Simple 35,58 m² – Modelo MonoRoof (útil 29 m2)
 💶 Precio cerrado:
-🔧 BÁSICO: 760 €/m² → 22.050 €
-🏗 STRUCTURA: 850 €/m² → 24.569 €
+🏗 ESTANDART: 789 €/m² → 28.100 €
+🌅 Terraza cubierta de 21 m² bajo voladizo — incluida en el precio
 
 🌿 Compacta, luminosa, sin excesos
-Este modelo de 29 m² es perfecto para empezar. Una casa pequeña, pero con lo esencial: espacio para vivir, para descansar, para respirar. La cubierta a un agua y la fachada en machihembrado vertical le dan una estética limpia, sobria y natural.
+Este modelo de 35,58 m² es perfecto para empezar. Una casa pequeña, pero con lo esencial: espacio para vivir, para descansar, para respirar. La cubierta a un agua y la fachada en machihembrado vertical le dan una estética limpia, sobria y natural.
 Todo está donde debe estar — sin complicaciones, sin adornos.
 
 🏡 Distribución abierta, interior flexible
@@ -47,12 +47,14 @@ El corazón del proyecto es un espacio abierto con cocina, comedor y sala integr
 📐 Ideal para vivir simple, sin renunciar al confort.
 
 📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados posteriores personalizados.
-🏗 STRUCTURA Incluye todo lo anterior, más: 
-✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
-✔️ tabiquería interior con yeso y pintura blanca final 
-✔️ fachada exterior en machihembrado vertical 19 mm 
-✔️ instalaciones preinstaladas (sin conexión)
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior 
+✔️ Aislamiento completo 
+✔️ Suelo técnico OSB 22 mm 
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos
+✔️ Tabiquería interior con yeso y pintura blanca final 
+✔️ Fachada exterior en machihembrado 19 mm 
+✔️ Instalaciones preinstaladas (sin conexión)
 📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
