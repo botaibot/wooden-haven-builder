@@ -17,62 +17,17 @@ import type { UseEmblaCarouselType } from "embla-carousel-react";
 // 4. Материалы, кровля и утепление
 // 5. Интерьер и окружение
 const images = [
-  // 1. Готовые конструкции и общие виды
-  "/lovable-uploads/dab85b12-7deb-4a1a-8368-7094f85c69ca.png",
-  "/lovable-uploads/fc859afe-e49f-4783-ad9c-30acc39a2233.png",
-  "/lovable-uploads/fc859307-802f-4db4-8f30-54aee918bf8a.png",
-  "/lovable-uploads/6ce96eb0-f617-42ab-9b16-46c0c4f92eef.png",
-  "/lovable-uploads/08325bc9-f5c2-4e44-a92f-ac24d1fdd2e1.png",
-  "/lovable-uploads/1fcff38f-77ef-4172-a6d4-8695e335866d.png", // Дом в горах
-  
-  // 2. Процесс строительства и укладка стен
-  "/lovable-uploads/2de7c5a9-d9dc-48da-a9da-620fd9fb8ff2.png",
-  "/lovable-uploads/dea3ce08-ef42-4a0e-8139-e7a6064a2ea1.png",
-  "/lovable-uploads/3a74622e-68cc-4b48-8350-af1029dc3708.png",
-  "/lovable-uploads/13ee9daf-b4f5-4a79-8a3d-eddd42b91dd1.png",
-  "/lovable-uploads/e4aade66-f345-47ad-99e4-df3bdd828a4d.png",
-  "/lovable-uploads/cd50dce6-b79a-4ef1-a511-db6164273120.png",
-  "/lovable-uploads/b3f065d5-9ac1-4193-906e-16267d849a4b.png",
-  "/lovable-uploads/cc4b9d36-d466-477d-965b-74b0d11ba405.png", // Крыша дома
-  "/lovable-uploads/d3ecd02b-51fb-4cf0-bf73-0818bc3de3b4.png", // Интерьер с выходом
-  "/lovable-uploads/53432e33-734e-4c37-a618-ec4d69f342a5.png", // Интерьер с выходом на террасу
-  "/lovable-uploads/f970ba98-1128-4b9a-8186-fd09325c62ad.png", // Комната с деревянными стенами
-  
-  // Новые изображения процесса строительства
-  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png", // Светлая комната с видом на лес
-  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Комната с окном и видом на лес
-  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Светлый интерьер деревянного дома
-  
-  // 3. Детали, соединения и коммуникации
-  "/lovable-uploads/9e0b6fcd-bd9a-4149-a72b-14151871ab5b.png",
-  "/lovable-uploads/c7e465c6-1958-47d5-8a12-8a165ea79277.png",
-  "/lovable-uploads/7395f239-f442-4b96-a7de-aba63a604ea0.png",
-  "/lovable-uploads/af7ea266-bb00-467d-99d4-aa1b0e1971c4.png",
-  "/lovable-uploads/a662b2d4-ca9d-4090-9829-1b1899de891e.png",
-  "/lovable-uploads/0ba5df66-280b-4d2f-8788-d6846a81f794.png",
-  "/lovable-uploads/f774696e-01a1-4689-9978-e647611118a4.png",
-  "/lovable-uploads/9c7608b9-d224-491a-8cf9-e6c5f3783bed.png", 
-  "/lovable-uploads/bf7ab5e2-5ac4-4b64-8c23-2eb608fb3266.png",
-  "/lovable-uploads/0c336174-8a70-4ee8-bbab-5df7497ef968.png",
-  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Деталь кровли
-  "/lovable-uploads/6c56f6d2-bc2d-474b-a5f5-2596108b177c.png", // Чёрный радиатор
-  
-  // 4. Материалы, утепление, кровля, гидроизоляция
-  "/lovable-uploads/2eb5015a-dfa4-4a3f-92a7-1502051b75bf.png",
-  "/lovable-uploads/04c6a15b-be68-4768-ba87-5176309f85c3.png",
-  "/lovable-uploads/cdbfc857-a3af-46d9-8311-921a28f35340.png",
-  "/lovable-uploads/e4898af6-2f45-4c0b-a4ab-acb2db392aaa.png",
-  "/lovable-uploads/853a0e4d-0c9a-4047-a26e-b360ebeb321d.png",
-  "/lovable-uploads/9ccc4b6f-aa86-4287-a1c4-ebd682a85303.png",
-  "/lovable-uploads/220a31fc-ad86-4fde-9794-e2a2b8659011.png",
-  "/lovable-uploads/2369764e-e4f1-4111-b81d-1338106e01d5.png",
-  "/lovable-uploads/4b830e79-1c28-47d9-b24e-0ad3f853a6ab.png", // Кровельный материал
-  
-  // 5. Интерьер и внешнее окружение
-  "/lovable-uploads/f9a48d53-bc9c-4d4e-a9fc-6b6154054fdb.png", // Террасы с креслами ночью
-  "/lovable-uploads/8940b3de-919e-46fa-95ab-9628f5dca170.png", // Светлый интерьер
-  "/lovable-uploads/f1f164ee-e2e8-442d-80d6-d4fe903eb1d0.png", // Интерьер с окном
-  "/lovable-uploads/d844cf60-cc34-493c-b850-3ee35243c84e.png"  // Светлая комната с окном
+  // Новые фото проектов от пользователя
+  "/lovable-uploads/9e830c13-a417-40a1-adc3-314e44c747aa.png", // Каркасная конструкция в цеху
+  "/lovable-uploads/8bc27e5f-2dc8-450e-b039-c72358b72a55.png", // Дом с деревянной и белой отделкой в производстве
+  "/lovable-uploads/0e8f8d7f-be6e-886e-902d-59b3f2fd6614.png", // Строительство фундамента на закате
+  "/lovable-uploads/d92ca92a-18cc-493d-a1d9-5b965f7bdc9a.png", // Воздушный вид строительства дома
+  "/lovable-uploads/4fff0cff-41d6-456f-8838-8a32d6323f92.png", // Модульные элементы дома на стройплощадке
+  "/lovable-uploads/130e09df-2a0f-4ea9-a746-7f541420e1f0.png", // Дом в процессе строительства на фоне гор
+  "/lovable-uploads/d9ce7565-5ed2-4c73-9612-6d662ae64897.png", // Готовая конструкция дома на холме
+  "/lovable-uploads/4422f9c7-32b0-4343-91d9-4151adc3af25.png", // Дом с оранжевой и серой отделкой
+  "/lovable-uploads/ef76f748-0b2b-4d54-8db2-46155bfbb608.png", // Современный дом на горном склоне
+  "/lovable-uploads/35ffcd40-27ab-4e46-91ef-038a6d629429.png"  // Завершенный дом с панорамным видом
 ];
 
 const ProjectGalleryCarousel = () => {
@@ -117,9 +72,9 @@ const ProjectGalleryCarousel = () => {
           >
             <CarouselContent>
               {images.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/2">
                   <div className="p-1">
-                    <div className="overflow-hidden rounded-lg aspect-video bg-gray-100 relative">
+                    <div className="overflow-hidden rounded-lg aspect-[4/3] bg-gray-100 relative">
                       {loading && (
                         <Skeleton className="w-full h-full absolute inset-0" />
                       )}
