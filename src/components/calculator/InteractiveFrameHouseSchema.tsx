@@ -164,9 +164,9 @@ const InteractiveFrameHouseSchema = () => {
                   className="max-h-[60vh] rounded-md border border-gray-200"
                 />
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <div className="text-gray-700 leading-relaxed whitespace-pre-line">
                 {selectedWallDetail.description}
-              </p>
+              </div>
             </div>
           )}
         </DialogContent>
