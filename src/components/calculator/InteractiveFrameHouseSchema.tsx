@@ -148,7 +148,7 @@ const InteractiveFrameHouseSchema = () => {
 
       {/* Диалог с подробной информацией */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
           <DialogHeader>
             <DialogTitle>
               {selectedWallDetail?.title}
@@ -156,12 +156,12 @@ const InteractiveFrameHouseSchema = () => {
           </DialogHeader>
           
           {selectedWallDetail && (
-            <div className="space-y-4">
+            <div className="overflow-y-auto flex-1 space-y-4">
               <div className="flex justify-center">
                 <img 
                   src={selectedWallDetail.image} 
                   alt={selectedWallDetail.title}
-                  className="max-h-[60vh] rounded-md border border-gray-200"
+                  className="max-h-[40vh] rounded-md border border-gray-200"
                 />
               </div>
               <div className="text-gray-700 leading-relaxed whitespace-pre-line">
