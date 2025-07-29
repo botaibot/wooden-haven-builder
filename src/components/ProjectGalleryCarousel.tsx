@@ -88,10 +88,10 @@ const ProjectGalleryCarousel = () => {
   };
 
   return (
-    <section className="py-16 bg-wood-light/20">
+    <section className="py-8 bg-wood-light/20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest text-center mb-4">Наши работы - Галерея проектов</h2>
-        <p className="text-lg text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest text-center mb-2">Наши работы - Галерея проектов</h2>
+        <p className="text-lg text-center text-gray-600 mb-6 max-w-3xl mx-auto">
           Фотографии наших реальных проектов деревянных домов на Канарских островах в разных стадиях строительства: от фундамента до готового дома.
         </p>
         <div className="relative mx-auto max-w-5xl">
@@ -169,7 +169,7 @@ const ProjectGalleryCarousel = () => {
             ))}
           </div>
           
-          <p className="text-center text-gray-500 mt-8">
+          <p className="text-center text-gray-500 mt-4">
             Fotografías de nuestros proyectos reales en diferentes etapas de construcción: desde la cimentación hasta la casa terminada.
           </p>
         </div>

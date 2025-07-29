@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 
 const SupportSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-wood-light/10 to-nature-light/10">
+    <section className="py-8 bg-gradient-to-br from-wood-light/10 to-nature-light/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-wood-dark">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-wood-dark">
             Мы рядом, когда это нужно
           </h2>
           
-          <div className="text-lg text-gray-700 mb-8 space-y-4">
+          <div className="text-lg text-gray-700 mb-6 space-y-2">
             <p className="leading-relaxed">
               Дерево — это не просто товар, а начало вашего проекта.
             </p>
@@ -22,7 +22,7 @@ const SupportSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div className="bg-white rounded-lg p-6 shadow-md">
               <div className="w-12 h-12 bg-wood/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Ruler className="w-6 h-6 text-wood" />
