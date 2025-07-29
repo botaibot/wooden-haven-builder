@@ -42,8 +42,8 @@ const wallDetails: { [key: string]: WallDetail } = {
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   roof: {
-    title: "Кровельный пирог",
-    description: "Структура кровли включает в себя несколько слоев для обеспечения надежной защиты и теплоизоляции. Кровельный пирог состоит из стропильной системы, утеплителя, пароизоляции, ветрозащитной мембраны и финишного покрытия.",
+    title: "🏠 Cubierta",
+    description: "En las casas de entramado ligero BOSQUE se utiliza una cubierta a un agua o a dos aguas con una composición constructiva eficiente, adaptada al clima de las Islas Canarias.\n\nSistema tipo:\nVigas de 60×140 mm (si es necesario, 60×160 mm), con paso de 500 mm.\nRevestimiento interior con machihembrado de 19 mm (techo visible).\nSobre él — membrana inteligente de control de vapor (por ejemplo, INTELLO Plus).\nLuego — tablas de 45×95 mm colocadas de canto, alineadas con las vigas.\nAislante mineral de 80–90 mm de espesor, instalado entre las tablas.\nContralistones de 48×48 mm, que aseguran una cámara de ventilación.\nOSB de 18 mm, instalado a rompejuntas, con juntas de dilatación de 3–4 mm.\nSobre el OSB — membrana impermeable y transpirable WÜTOP 2SK.\nAcabado final — teja asfáltica Tegola Americana u otra similar.\n\n🔸 Todos los elementos están seleccionados para ofrecer aislamiento térmico y respirabilidad en un clima soleado y húmedo.",
     image: "/lovable-uploads/675ff4d5-ce2d-4aba-ae5f-fa43015f51a1.png"
   }
 };
