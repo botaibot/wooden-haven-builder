@@ -585,7 +585,7 @@ comenzar con lo esencial, con margen para personalizar
                 variant="ghost"
                 size="lg"
                 onClick={handleConsultationClick}
-                className="p-4 hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                className="p-4 transition-all duration-300 hover:scale-105"
               >
                 <img 
                   src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
