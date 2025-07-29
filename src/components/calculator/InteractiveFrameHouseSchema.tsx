@@ -22,8 +22,8 @@ const wallDetails: { [key: string]: WallDetail } = {
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   insulation: {
-    title: "Утеплитель",
-    description: "Минеральная вата заполняет пространство между стойками каркаса. Толщина утеплителя соответствует толщине каркаса (120мм или 195мм).",
+    title: "🪵 Suelo del edificio",
+    description: "En el sistema BOSQUE PLATFORM el suelo se monta siempre como una estructura resistente, aislada y transpirable.\n🔹 Estructura típica:\n• Vigas de 45×195 mm con paso óptimo de 417 mm (calculado para una luz de 2,8 m, garantiza una flecha inferior a 1 mm),\n• Tablero OSB de 22 mm montado con adhesivo y clavos, para formar una capa monolítica estructural que distribuye cargas (diafragma rígido),\n• Aislamiento mineral entre las vigas,\n• Acabado interior según necesidad: madera, tarima, suelo técnico, etc.\n🔸 En caso de suelos aislados (con calefacción o en zonas frías):\n• Se utiliza aislamiento mineral de espesor adecuado,\n• Desde el lado interior se instala una membrana inteligente (como Pro Clima Intello Plus o Vario KM Duplex UV), que regula el paso del vapor según las condiciones del clima,\n• Si no se requiere aislamiento, se deja una cámara ventilada para la evacuación de humedad.\n🔸 Protección inferior:\n• Por debajo del OSB se instala una membrana hidro- y cortaviento, igual que en las paredes exteriores,\n• Esta protección es imprescindible en suelos elevados o sobre pilotes.\n🏡 Como resultado: el suelo es estructuralmente estable, cálido, transpirable y protegido frente a la humedad.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   vapor: {
@@ -99,7 +99,7 @@ const InteractiveFrameHouseSchema = () => {
         onClick={() => handleDetailClick('insulation')}
       >
         <Info className="h-4 w-4 mr-1" />
-        Утеплитель
+        Suelo
       </Button>
 
       {/* Пароизоляция */}
