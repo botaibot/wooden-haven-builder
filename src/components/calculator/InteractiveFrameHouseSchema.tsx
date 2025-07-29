@@ -143,7 +143,7 @@ const InteractiveFrameHouseSchema = () => {
         onClick={() => handleDetailClick('roof')}
       >
         <Info className="h-4 w-4 mr-1" />
-        Крыша
+        Cubierta
       </Button>
 
       {/* Диалог с подробной информацией */}
