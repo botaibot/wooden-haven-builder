@@ -5,7 +5,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
-import InteractiveFrameHouseSchema from "./InteractiveFrameHouseSchema";
+
 
 interface HouseTypeSelectorProps {
   form: UseFormReturn<FormValues>;
@@ -50,16 +50,6 @@ const HouseTypeSelector = ({ form }: HouseTypeSelectorProps) => {
             </RadioGroup>
           </FormControl>
 
-          {/* Показываем интерактивную схему только для каркасных домов */}
-          {watchHouseType === "frame" && (
-            <div className="mt-6">
-              <h3 className="text-lg font-medium mb-4">Конструкция каркасного дома</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Нажмите на элементы схемы, чтобы узнать подробности о конструкции
-              </p>
-              <InteractiveFrameHouseSchema />
-            </div>
-          )}
 
           <FormMessage />
         </FormItem>

@@ -54,7 +54,7 @@ const HouseSelection = () => {
 
           {/* Интерактивная схема каркасного дома */}
           <div className="mb-12">
-            <div className="bg-blue-50 rounded-lg p-6">
+            <div className="rounded-lg p-6">
               <h3 className="text-2xl font-semibold text-center mb-4 text-wood-darkest">
                 Конструкция каркасного дома
               </h3>
