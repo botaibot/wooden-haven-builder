@@ -581,18 +581,16 @@ comenzar con lo esencial, con margen para personalizar
             </div>
             
             <div className="text-center">
-              <Button 
-                variant="ghost"
-                size="lg"
+              <button 
                 onClick={handleConsultationClick}
-                className="p-4 transition-all duration-300 hover:scale-105"
+                className="p-4 transition-all duration-300 hover:scale-105 bg-transparent border-none outline-none"
               >
                 <img 
                   src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
                   alt="Консультация" 
                   className="w-32 h-32 object-contain"
                 />
-              </Button>
+              </button>
             </div>
           </div>
         </div>
