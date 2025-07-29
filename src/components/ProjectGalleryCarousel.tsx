@@ -17,7 +17,7 @@ import type { UseEmblaCarouselType } from "embla-carousel-react";
 // 4. Материалы, кровля и утепление
 // 5. Интерьер и окружение
 const images = [
-  // Новые фото проектов от пользователя
+  // Первая партия - готовые дома и строительство на участках
   "/lovable-uploads/9e830c13-a417-40a1-adc3-314e44c747aa.png", // Каркасная конструкция в цеху
   "/lovable-uploads/8bc27e5f-2dc8-450e-b039-c72358b72a55.png", // Дом с деревянной и белой отделкой в производстве
   "/lovable-uploads/0e8f8d7f-be6e-486e-902d-59b3f2fd6614.png", // Строительство фундамента на закате
@@ -27,7 +27,19 @@ const images = [
   "/lovable-uploads/d9ce7565-5ed2-4c73-9612-6d662ae64897.png", // Готовая конструкция дома на холме
   "/lovable-uploads/4422f9c7-32b0-4343-91d9-4151adc3af25.png", // Дом с оранжевой и серой отделкой
   "/lovable-uploads/ef76f748-0b2b-4d54-8db2-46155bfbb608.png", // Современный дом на горном склоне
-  "/lovable-uploads/35ffcd40-27ab-4e46-91ef-038a6d629429.png"  // Завершенный дом с панорамным видом
+  "/lovable-uploads/35ffcd40-27ab-4e46-91ef-038a6d629429.png", // Завершенный дом с панорамным видом
+
+  // Вторая партия - производство в цеху, каркасные конструкции
+  "/lovable-uploads/5c3167c9-6401-4dc7-82e3-c1ab92ffc450.png", // Деревянная платформа в производственном цеху
+  "/lovable-uploads/9b50b5ab-e898-40a6-93ac-a0f77dd09efe.png", // Каркасная конструкция дома в сборке
+  "/lovable-uploads/02bd75f7-dbda-4f8f-afef-0c550bc2f319.png", // Каркас дома с рабочими в цеху
+  "/lovable-uploads/e707aa30-15ba-4062-ab2a-d661bb5dc2a1.png", // Деревянная конструкция стен с рабочими
+  "/lovable-uploads/0d73afa9-3c53-4377-b617-c2185c385fd4.png", // Дом с OSB панелями в производстве
+  "/lovable-uploads/feb37c4d-7cdf-465a-9851-3d80817dfe6a.png", // Готовые стены из OSB в цеху
+  "/lovable-uploads/0d06d97f-2d47-4720-b9f5-41c2b359a123.png", // Сборка крыши деревянного дома
+  "/lovable-uploads/9ef0eff3-4590-4b7b-a5b6-d52be9957c15.png", // Процесс установки крыши с рабочими
+  "/lovable-uploads/9d2cd472-8f60-4aaf-a705-ac58f423379a.png", // Готовый дом с террасой в цеху
+  "/lovable-uploads/b972a077-da79-4ff7-863e-3b529e4816dc.png"  // Деревянный дом с комбинированной отделкой
 ];
 
 const ProjectGalleryCarousel = () => {
