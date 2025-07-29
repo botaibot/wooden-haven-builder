@@ -17,8 +17,8 @@ const wallDetails: { [key: string]: WallDetail } = {
     image: "/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png"
   },
   frame: {
-    title: "Каркас стены",
-    description: "Деревянный каркас из досок 50x150мм или 50x195мм образует основу стены. Стойки устанавливаются с шагом 600мм для обеспечения прочности конструкции.",
+    title: "Paredes exteriores",
+    description: "El sistema BOSQUE PLATFORM utiliza una estructura portante de madera con aislamiento mineral. La composición puede variar según el acabado, pero siempre se basa en materiales confiables y fácilmente disponibles.\n\n🔹 Estructura portante típica:\n• montantes de 45×120 mm con paso de 600 mm, (si se necesita mayor resistencia estructural, se utilizan secciones de 45×145 mm o 45×195 mm),\n• travesaños horizontales a 1,2–1,3 m (para rigidez y facilitar la instalación),\n• paneles OSB estructurales instalados por defecto en ambas caras del muro, lo que garantiza una rigidez espacial elevada,\n• barrera cortaviento transpirable (membrana),\n• cámara de ventilación y acabado exterior (madera, revoco, fachada ventilada, etc.).\n\n🧰 Características clave:\n• aislamiento mineral de 600 mm de ancho (instalado con ajuste a presión),\n• posibilidad de instalar una membrana inteligente por el interior en zonas frías o húmedas,\n• acabado interior sobre rastreles o directamente sobre OSB.\n\n🏠 Esta pared no solo protege del frío y del calor, sino que asegura la resistencia, rigidez y durabilidad de toda la vivienda.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   insulation: {
@@ -88,7 +88,7 @@ const InteractiveFrameHouseSchema = () => {
         onClick={() => handleDetailClick('frame')}
       >
         <Info className="h-4 w-4 mr-1" />
-        Каркас
+        Paredes
       </Button>
 
       {/* Утеплитель */}
