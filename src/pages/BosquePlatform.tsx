@@ -615,9 +615,30 @@ comenzar con lo esencial, con margen para personalizar
               <Button 
                 size="lg"
                 onClick={handleConsultationClick}
-                className="bg-wood hover:bg-wood-dark text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base"
+                className="bg-wood hover:bg-wood-dark text-white px-8 md:px-10 py-4 md:py-6 text-base md:text-lg rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3"
               >
-                Получить консультацию по системе
+                <div className="relative">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg 
+                      viewBox="0 0 24 24" 
+                      className="w-5 h-5 fill-current"
+                    >
+                      <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                      <path d="M7 8h5v3H7z"/>
+                    </svg>
+                  </div>
+                  <div className="absolute top-0.5 left-0.5 w-3 h-3">
+                    <svg viewBox="0 0 16 16" className="w-full h-full fill-white">
+                      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <span>Получить консультацию по системе</span>
+                <div className="flex flex-col gap-1">
+                  <div className="w-6 h-0.5 bg-white/60 rounded"></div>
+                  <div className="w-6 h-0.5 bg-white/60 rounded"></div>
+                  <div className="w-6 h-0.5 bg-white/60 rounded"></div>
+                </div>
               </Button>
             </div>
           </div>
