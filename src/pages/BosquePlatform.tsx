@@ -28,7 +28,7 @@ const BosquePlatform = () => {
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
         {
-          size: "29 м²",
+          size: "35 м²",
           images: [
             "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
             "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png"
@@ -69,7 +69,7 @@ vivir con lo justo, pero bien hecho
 🧭 Una casa pequeña, honesta y clara. Empieza mucho con muy poco.`
         },
         {
-          size: "41 м²",
+          size: "52 м²",
           images: [
             "/lovable-uploads/24f984b3-7c67-4428-936e-9c1c396aa1c0.png",
             "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
@@ -111,7 +111,7 @@ quien valora sencillez, orden y presencia
 🧭 51,89 m² bien resueltos. Pura intención. Puro equilibrio.`
         },
         {
-          size: "60 м²",
+          size: "67 м²",
           images: [
             "/lovable-uploads/6ab7167c-38b8-4d8b-9395-4edf250c2263.png",
             "/lovable-uploads/9af6cd26-eb12-4502-82fe-af4a52f17dca.png"
