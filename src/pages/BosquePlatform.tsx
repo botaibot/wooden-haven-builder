@@ -613,14 +613,15 @@ comenzar con lo esencial, con margen para personalizar
             
             <div className="text-center">
               <Button 
+                variant="ghost"
                 size="lg"
                 onClick={handleConsultationClick}
-                className="bg-wood hover:bg-wood-dark text-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="p-4 hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               >
                 <img 
-                  src="/lovable-uploads/12cc9228-efcc-49e3-a91d-0bea702651ff.png" 
+                  src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
                   alt="Консультация" 
-                  className="w-12 h-12 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
               </Button>
             </div>
