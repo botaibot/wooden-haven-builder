@@ -590,7 +590,7 @@ comenzar con lo esencial, con margen para personalizar
                 <img 
                   src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
                   alt="Консультация" 
-                  className="w-16 h-16 object-contain"
+                  className="w-32 h-32 object-contain"
                 />
               </Button>
             </div>
