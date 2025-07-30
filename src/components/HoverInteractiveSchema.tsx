@@ -176,8 +176,8 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               {/* Крыша */}
               <Button
                 size="sm"
-                variant="secondary"
-                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white shadow-lg"
+                variant="default"
+                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white shadow-lg border-0"
                 onClick={() => handleDetailClick('roof')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -187,8 +187,8 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               {/* Каркас стены */}
               <Button
                 size="sm"
-                variant="secondary"
-                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white shadow-lg"
+                variant="default"
+                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white shadow-lg border-0"
                 onClick={() => handleDetailClick('frame')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -198,8 +198,8 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               {/* Пол */}
               <Button
                 size="sm"
-                variant="secondary"
-                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white shadow-lg"
+                variant="default"
+                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white shadow-lg border-0"
                 onClick={() => handleDetailClick('insulation')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -209,8 +209,8 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               {/* Фундамент */}
               <Button
                 size="sm"
-                variant="secondary"
-                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg"
+                variant="default"
+                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg border-0"
                 onClick={() => handleDetailClick('foundation')}
               >
                 <Info className="h-4 w-4 mr-1" />
