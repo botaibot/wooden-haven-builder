@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 
@@ -46,171 +46,84 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
   };
 
   const handleDetailClick = (detailKey: string) => {
-    console.log('Button clicked:', detailKey);
     setSelectedDetail(detailKey);
-    console.log('Selected detail set:', detailKey);
     setIsDialogOpen(true);
-    console.log('Dialog opened');
   };
 
   const selectedWallDetail = selectedDetail ? wallDetails[selectedDetail] : null;
 
   return (
     <div className="relative">
-      {/* Заголовок перед схемой */}
-      <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-wood-darkest mb-2">
-          Как устроены наши дома
-        </h2>
-      </div>
-      
       <div onClick={handleSchemaClick}>
         {children}
       </div>
       
-      {/* Полноэкранная подстраница с интерактивной схемой */}
-      {isSchemaOpen && (
-        <div className="fixed inset-0 bg-white z-[100] overflow-y-auto">
-          {/* Заголовок с кнопкой закрытия */}
-          <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
-            <h1 className="text-2xl font-bold text-wood-darkest">
-              Casa de entramado ligero
-            </h1>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setIsSchemaOpen(false)}
-              className="text-gray-600 hover:text-gray-800"
-            >
-              ✕ Cerrar
-            </Button>
-          </div>
+      {/* Диалог с интерактивной схемой */}
+      <Dialog open={isSchemaOpen} onOpenChange={setIsSchemaOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+          <DialogHeader>
+            <DialogTitle>
+              Схема конструкции Casa de entramado ligero
+            </DialogTitle>
+          </DialogHeader>
           
-          {/* Информационный блок о системе BOSQUE PLATFORM */}
-          <div className="max-w-4xl mx-auto px-6 py-6">
-            <div className="rounded-lg p-6 mb-8">
-              <h2 className="text-3xl font-bold text-wood-darkest mb-4">
-                О системе BOSQUE PLATFORM
-              </h2>
-              <p className="text-lg text-gray-700 mb-6">
-                Надёжная каркасная технология, адаптированная к Канарским островам
-              </p>
-              
-              <div className="space-y-6">
-                {/* Основа — платформенный каркас */}
-                <div className="border-l-4 border-wood-medium pl-4">
-                  <h3 className="text-xl font-semibold text-wood-darkest mb-2 flex items-center">
-                    🧱 Основа — платформенный каркас
-                  </h3>
-                  <p className="text-gray-700">
-                    Методика BOSQUE PLATFORM основана на международных стандартах:<br/>
-                    WFCM (Wood Frame Construction Manual, США) и Platform Framing (Канада, Европа).
-                  </p>
-                </div>
-
-                {/* Адаптация под Канары */}
-                <div className="border-l-4 border-wood-medium pl-4">
-                  <h3 className="text-xl font-semibold text-wood-darkest mb-2 flex items-center">
-                    ☀️ Адаптация под Канары
-                  </h3>
-                  <p className="text-gray-700 mb-2">
-                    Мы учли климатические и логистические особенности региона:
-                  </p>
-                  <ul className="text-gray-700 space-y-1">
-                    <li>• 🌊 Повышенная влажность в горах</li>
-                    <li>• ☀️ Солнечная нагрузка и солёный воздух на побережье</li>
-                    <li>• 🚫 Отсутствие снеговых нагрузок</li>
-                    <li>• 🚚 Особенности местной логистики</li>
-                  </ul>
-                </div>
-
-                {/* Преимущества технологии */}
-                <div className="border-l-4 border-wood-medium pl-4">
-                  <h3 className="text-xl font-semibold text-wood-darkest mb-2 flex items-center">
-                    ✅ Преимущества технологии
-                  </h3>
-                  <ul className="text-gray-700 space-y-1">
-                    <li>• Геометрия, энергоэффективность и вентиляция</li>
-                    <li>• Быстрый монтаж без мокрых процессов</li>
-                    <li>• Гибкость: от простых до сложных архитектур</li>
-                    <li>• Вся инженерия — внутри стен, без штробления</li>
-                  </ul>
-                </div>
-
-                {/* Вы легко разберётесь */}
-                <div className="border-l-4 border-wood-medium pl-4">
-                  <h3 className="text-xl font-semibold text-wood-darkest mb-2 flex items-center">
-                    🧱 Вы легко разберётесь:
-                  </h3>
-                  <ul className="text-gray-700 space-y-1">
-                    <li>• Как устроены стены, крыша и пол</li>
-                    <li>• Зачем нужна каждая деталь</li>
-                    <li>• Как конструкция сохраняет тепло и дышит</li>
-                  </ul>
-                </div>
-
-                {/* Только проверенные материалы */}
-                <div className="border-l-4 border-wood-medium pl-4">
-                  <h3 className="text-xl font-semibold text-wood-darkest mb-2 flex items-center">
-                    🪵 Только проверенные материалы
-                  </h3>
-                  <p className="text-gray-700 mb-2">Мы используем:</p>
-                  <ul className="text-gray-700 space-y-1">
-                    <li>Сухую строганую доску C24 из Германии и Австрии</li>
-                    <li>OSB, фанеру и брус, соответствующие нагрузкам</li>
-                    <li>Только те материалы, которые проверены на практике и в наличии на Тенерифе</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Контент с интерактивной схемой */}
-          <div className="flex justify-center py-8 px-4">
-            <div className="relative w-full max-w-4xl">
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="relative w-full max-w-2xl mx-auto">
               <img 
                 src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
                 alt="Схема каркасного дома" 
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg scale-130"
               />
               
               {/* Кнопки для различных элементов конструкции */}
               
               {/* Крыша */}
-              <button
-                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm shadow-lg"
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white"
                 onClick={() => handleDetailClick('roof')}
               >
+                <Info className="h-4 w-4 mr-1" />
                 Cubierta
-              </button>
+              </Button>
 
               {/* Каркас стены */}
-              <button
-                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white px-3 py-1 rounded text-sm shadow-lg"
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white"
                 onClick={() => handleDetailClick('frame')}
               >
+                <Info className="h-4 w-4 mr-1" />
                 Paredes
-              </button>
+              </Button>
 
               {/* Пол */}
-              <button
-                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm shadow-lg"
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white"
                 onClick={() => handleDetailClick('insulation')}
               >
+                <Info className="h-4 w-4 mr-1" />
                 Suelo
-              </button>
+              </Button>
 
               {/* Фундамент */}
-              <button
-                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm shadow-lg"
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white"
                 onClick={() => handleDetailClick('foundation')}
               >
+                <Info className="h-4 w-4 mr-1" />
                 Cimentación
-              </button>
+              </Button>
             </div>
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
 
       {/* Диалог с подробной информацией */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -219,9 +132,6 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
             <DialogTitle>
               {selectedWallDetail?.title}
             </DialogTitle>
-            <DialogDescription>
-              Детальная информация о конструктивном элементе
-            </DialogDescription>
           </DialogHeader>
           
           {selectedWallDetail && (

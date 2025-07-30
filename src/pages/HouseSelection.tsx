@@ -52,6 +52,18 @@ const HouseSelection = () => {
             </p>
           </div>
 
+          {/* Интерактивная схема каркасного дома */}
+          <div className="mb-12">
+            <div className="rounded-lg p-6">
+              <h3 className="text-2xl font-semibold text-center mb-4 text-wood-darkest">
+                Конструкция каркасного дома
+              </h3>
+              <p className="text-center text-gray-600 mb-6">
+                Нажмите на элементы схемы, чтобы узнать подробности о конструкции
+              </p>
+              <InteractiveFrameHouseSchema />
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Casa de entramado ligero */}
