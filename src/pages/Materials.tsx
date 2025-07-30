@@ -282,7 +282,6 @@ const Materials = () => {
       sizes: [
         { label: "4000 мм x 144 мм x 25 мм", value: "144mm", price: 24.5, width: 144, length: 4000 },
       ],
-      isNew: true,
       category: "Отделочные материалы"
     },
     {
@@ -300,7 +299,6 @@ const Materials = () => {
         { label: "3900 мм x 146 мм x 19 мм", value: "146mm", price: 12.5, width: 146, length: 3900 },
         { label: "3900 мм x 196 мм x 19 мм", value: "196mm", price: 17, width: 196, length: 3900 },
       ],
-      isNew: true,
       category: "Отделочные материалы"
     },
     {
@@ -324,7 +322,6 @@ const Materials = () => {
         { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 87 },
         { label: "6000 мм x 140 мм x 140 мм", value: "140x140", price: 110 },
       ],
-      isNew: true,
       category: "Брус и доска"
     },
     {
@@ -337,7 +334,6 @@ const Materials = () => {
       sizes: [
         { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 70 },
       ],
-      isNew: true,
       category: "Брус и доска"
     },
     {
@@ -356,7 +352,6 @@ const Materials = () => {
         { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 112 },
         { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 99.5 },
       ],
-      isNew: true,
       category: "Брус и доска"
     },
     {
@@ -375,7 +370,6 @@ const Materials = () => {
         { label: "2500 мм x 1220 мм x 18 мм", value: "18mm", price: 72 },
         { label: "2500 мм x 1220 мм x 22 мм", value: "22mm", price: 80 },
       ],
-      isNew: true,
       category: "Фанера"
     },
     {
@@ -392,7 +386,6 @@ const Materials = () => {
         { label: "2500 мм x 1250 мм x 18 мм", value: "18mm", price: 41 },
         { label: "2500 мм x 1250 мм x 22 мм", value: "22mm", price: 47 },
       ],
-      isNew: true,
       category: "Фанера"
     },
     {
@@ -407,7 +400,6 @@ const Materials = () => {
         { label: "4000 мм x 121 мм x 14 мм", value: "121mm", price: 17, width: 121, length: 4000 },
         { label: "4000 мм x 146 мм x 19 мм", value: "146mm", price: 20, width: 146, length: 4000 },
       ],
-      isNew: true,
       category: "Отделочные материалы"
     },
     {
@@ -421,7 +413,6 @@ const Materials = () => {
         { label: "4000 мм x 116 мм x 19 мм", value: "19mm", price: 20, width: 116, length: 4000 },
         { label: "4000 мм x 116 мм x 24 мм", value: "24mm", price: 27, width: 116, length: 4000 },
       ],
-      isNew: true,
       category: "Отделочные материалы",
       detailsButtonBottom: true
     },
@@ -435,7 +426,6 @@ const Materials = () => {
       sizes: [
         { label: "4000 мм x 146 мм x 27 мм", value: "146mm", price: 28.5, width: 146, length: 4000 },
       ],
-      isNew: true,
       category: "Отделочные материалы"
     },
     {
@@ -452,7 +442,6 @@ const Materials = () => {
         { label: "3900 мм x 48 мм x 38 мм", value: "48x38", price: 5.75 },
         { label: "3900 мм x 48 мм x 23 мм", value: "48x23", price: 3.5 },
       ],
-      isNew: true,
       category: "Брус и доска"
     }
   ];
