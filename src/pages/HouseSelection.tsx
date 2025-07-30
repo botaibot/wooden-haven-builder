@@ -140,9 +140,6 @@ const HouseSelection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest mb-4">
               Comparación de tecnologías de construcción
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Te ayudamos a elegir el tipo de casa ideal que corresponda a tus necesidades y al clima de las Islas Canarias.
-            </p>
           </div>
 
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
