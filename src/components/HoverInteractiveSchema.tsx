@@ -177,44 +177,36 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               {/* Кнопки для различных элементов конструкции */}
               
               {/* Крыша */}
-              <Button
-                size="sm"
-                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white shadow-lg border-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              <button
+                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm shadow-lg"
                 onClick={() => handleDetailClick('roof')}
               >
-                <Info className="h-4 w-4 mr-1" />
                 Cubierta
-              </Button>
+              </button>
 
               {/* Каркас стены */}
-              <Button
-                size="sm"
-                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white shadow-lg border-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              <button
+                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white px-3 py-1 rounded text-sm shadow-lg"
                 onClick={() => handleDetailClick('frame')}
               >
-                <Info className="h-4 w-4 mr-1" />
                 Paredes
-              </Button>
+              </button>
 
               {/* Пол */}
-              <Button
-                size="sm"
-                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white shadow-lg border-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              <button
+                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm shadow-lg"
                 onClick={() => handleDetailClick('insulation')}
               >
-                <Info className="h-4 w-4 mr-1" />
                 Suelo
-              </Button>
+              </button>
 
               {/* Фундамент */}
-              <Button
-                size="sm"
-                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg border-0 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+              <button
+                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm shadow-lg"
                 onClick={() => handleDetailClick('foundation')}
               >
-                <Info className="h-4 w-4 mr-1" />
                 Cimentación
-              </Button>
+              </button>
             </div>
           </div>
         </div>
