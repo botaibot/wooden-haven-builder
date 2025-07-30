@@ -210,7 +210,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               <Button
                 size="sm"
                 variant="secondary"
-                className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg"
+                className="absolute bottom-[15%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg"
                 onClick={() => handleDetailClick('foundation')}
               >
                 <Info className="h-4 w-4 mr-1" />
