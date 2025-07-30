@@ -46,8 +46,11 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
   };
 
   const handleDetailClick = (detailKey: string) => {
+    console.log('Button clicked:', detailKey);
     setSelectedDetail(detailKey);
+    console.log('Selected detail set:', detailKey);
     setIsDialogOpen(true);
+    console.log('Dialog opened');
   };
 
   const selectedWallDetail = selectedDetail ? wallDetails[selectedDetail] : null;
