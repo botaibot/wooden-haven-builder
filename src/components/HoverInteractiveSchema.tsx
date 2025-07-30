@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 
@@ -219,6 +219,9 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
             <DialogTitle>
               {selectedWallDetail?.title}
             </DialogTitle>
+            <DialogDescription>
+              Детальная информация о конструктивном элементе
+            </DialogDescription>
           </DialogHeader>
           
           {selectedWallDetail && (
