@@ -159,7 +159,7 @@ const MaterialCard = ({
       <MaterialCardCarousel images={images} alt={title} />
       
       {isNew && (
-        <div className="absolute top-4 left-4 bg-nature-dark text-white px-3 py-1 rounded-full text-sm">
+        <div className="absolute top-4 left-4 bg-nature-dark text-white px-2 py-1 rounded-full text-xs z-10">
           Новинка
         </div>
       )}
