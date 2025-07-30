@@ -64,7 +64,7 @@ const InteractiveFrameHouseSchema = () => {
       <img 
         src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
         alt="Схема каркасного дома" 
-        className="w-full h-auto rounded-lg shadow-lg"
+        className="w-full h-auto rounded-lg shadow-lg scale-130"
       />
       
       {/* Кнопки для различных элементов конструкции */}
@@ -106,11 +106,11 @@ const InteractiveFrameHouseSchema = () => {
       <Button
         size="sm"
         variant="secondary"
-        className="absolute bottom-[10%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white"
+        className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white"
         onClick={() => handleDetailClick('foundation')}
       >
         <Info className="h-4 w-4 mr-1" />
-        Фундамент
+        Cimentación
       </Button>
 
       {/* Диалог с подробной информацией */}
