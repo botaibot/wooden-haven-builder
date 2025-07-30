@@ -63,7 +63,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
           <DialogHeader>
             <DialogTitle>
-              Схема конструкции Casa de entramado ligero
+              Sobre BOSQUE PLATFORM
             </DialogTitle>
           </DialogHeader>
           
