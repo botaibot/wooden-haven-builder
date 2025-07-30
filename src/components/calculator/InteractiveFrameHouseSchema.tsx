@@ -72,7 +72,7 @@ const InteractiveFrameHouseSchema = () => {
       {/* Крыша */}
       <Button
         size="sm"
-        variant="default"
+        variant="secondary"
         className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white border-0"
         onClick={() => handleDetailClick('roof')}
       >
@@ -83,7 +83,7 @@ const InteractiveFrameHouseSchema = () => {
       {/* Каркас стены */}
       <Button
         size="sm"
-        variant="default"
+        variant="secondary"
         className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white border-0"
         onClick={() => handleDetailClick('frame')}
       >
@@ -94,7 +94,7 @@ const InteractiveFrameHouseSchema = () => {
       {/* Пол */}
       <Button
         size="sm"
-        variant="default"
+        variant="secondary"
         className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white border-0"
         onClick={() => handleDetailClick('insulation')}
       >
@@ -105,7 +105,7 @@ const InteractiveFrameHouseSchema = () => {
       {/* Фундамент */}
       <Button
         size="sm"
-        variant="default"
+        variant="secondary"
         className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white border-0"
         onClick={() => handleDetailClick('foundation')}
       >
