@@ -71,7 +71,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
           {/* Заголовок с кнопкой закрытия */}
           <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
             <h1 className="text-2xl font-bold text-wood-darkest">
-              Схема конструкции Casa de entramado ligero
+              Casa de entramado ligero
             </h1>
             <Button
               variant="outline"
