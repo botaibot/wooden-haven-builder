@@ -582,6 +582,9 @@ comenzar con lo esencial, con margen para personalizar
             </div>
             
             <div className="text-center -mt-8 mb-8">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Как устроены наши дома
+              </h3>
               <HoverInteractiveSchema>
                 <button 
                   className="p-4 transition-all duration-300 hover:scale-105 bg-transparent border-none outline-none"
