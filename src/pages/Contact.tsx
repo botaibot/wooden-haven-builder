@@ -62,20 +62,20 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Телефон</h3>
                     <div className="flex items-center gap-2 text-gray-700">
-                      <p>+34 675 46 65 10</p>
-                      <a href="https://wa.me/34675466510" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
+                      <p>+34 659 94 62 34</p>
+                      <a href="https://wa.me/34659946234" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
                         <MessageCircle size={18} />
                       </a>
-                      <a href="https://t.me/+34675466510" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+                      <a href="https://t.me/+34659946234" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
                         <MessageSquare size={18} />
                       </a>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700">
-                      <p>+34 603 70 16 67</p>
-                      <a href="https://wa.me/34603701667" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
+                      <p>+34 606 85 65 06</p>
+                      <a href="https://wa.me/34606856506" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
                         <MessageCircle size={18} />
                       </a>
-                      <a href="https://t.me/+34603701667" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+                      <a href="https://t.me/+34606856506" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
                         <MessageSquare size={18} />
                       </a>
                     </div>

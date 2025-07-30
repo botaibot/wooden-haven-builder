@@ -64,7 +64,7 @@ const SupportSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <div className="flex items-center gap-2 text-gray-700">
                 <Phone size={18} className="text-wood" />
-                <span>WhatsApp: +34 659 94 62 34</span>
+                <span>WhatsApp: +34 659 94 62 34 | +34 606 85 65 06</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <Mail size={18} className="text-wood" />
