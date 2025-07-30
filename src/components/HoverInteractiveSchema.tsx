@@ -37,9 +37,13 @@ interface HoverInteractiveSchemaProps {
 }
 
 const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ children }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isSchemaOpen, setIsSchemaOpen] = useState(false);
   const [selectedDetail, setSelectedDetail] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleSchemaClick = () => {
+    setIsSchemaOpen(true);
+  };
 
   const handleDetailClick = (detailKey: string) => {
     setSelectedDetail(detailKey);
@@ -50,70 +54,76 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
 
   return (
     <div className="relative">
-      <div 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div onClick={handleSchemaClick}>
         {children}
       </div>
       
-      {isHovered && (
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 bg-white rounded-lg shadow-2xl border-2 border-gray-200 p-4">
-          <div className="relative w-96 h-64">
-            <img 
-              src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
-              alt="Схема каркасного дома" 
-              className="w-full h-full object-contain rounded-lg"
-            />
-            
-            {/* Кнопки для различных элементов конструкции */}
-            
-            {/* Крыша */}
-            <Button
-              size="sm"
-              variant="secondary"
-              className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white text-xs px-2 py-1"
-              onClick={() => handleDetailClick('roof')}
-            >
-              <Info className="h-3 w-3 mr-1" />
-              Cubierta
-            </Button>
+      {/* Диалог с интерактивной схемой */}
+      <Dialog open={isSchemaOpen} onOpenChange={setIsSchemaOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+          <DialogHeader>
+            <DialogTitle>
+              Схема конструкции Casa de entramado ligero
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="relative w-full max-w-2xl mx-auto">
+              <img 
+                src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
+                alt="Схема каркасного дома" 
+                className="w-full h-auto rounded-lg shadow-lg scale-130"
+              />
+              
+              {/* Кнопки для различных элементов конструкции */}
+              
+              {/* Крыша */}
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white"
+                onClick={() => handleDetailClick('roof')}
+              >
+                <Info className="h-4 w-4 mr-1" />
+                Cubierta
+              </Button>
 
-            {/* Каркас стены */}
-            <Button
-              size="sm"
-              variant="secondary"
-              className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white text-xs px-2 py-1"
-              onClick={() => handleDetailClick('frame')}
-            >
-              <Info className="h-3 w-3 mr-1" />
-              Paredes
-            </Button>
+              {/* Каркас стены */}
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white"
+                onClick={() => handleDetailClick('frame')}
+              >
+                <Info className="h-4 w-4 mr-1" />
+                Paredes
+              </Button>
 
-            {/* Пол */}
-            <Button
-              size="sm"
-              variant="secondary"
-              className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white text-xs px-2 py-1"
-              onClick={() => handleDetailClick('insulation')}
-            >
-              <Info className="h-3 w-3 mr-1" />
-              Suelo
-            </Button>
+              {/* Пол */}
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white"
+                onClick={() => handleDetailClick('insulation')}
+              >
+                <Info className="h-4 w-4 mr-1" />
+                Suelo
+              </Button>
 
-            {/* Фундамент */}
-            <Button
-              size="sm"
-              variant="secondary"
-              className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1"
-              onClick={() => handleDetailClick('foundation')}
-            >
-              <Info className="h-3 w-3 mr-1" />
-              Cimentación
-            </Button>
+              {/* Фундамент */}
+              <Button
+                size="sm"
+                variant="secondary"
+                className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white"
+                onClick={() => handleDetailClick('foundation')}
+              >
+                <Info className="h-4 w-4 mr-1" />
+                Cimentación
+              </Button>
+            </div>
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
 
       {/* Диалог с подробной информацией */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
