@@ -58,21 +58,31 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
         {children}
       </div>
       
-      {/* Диалог с интерактивной схемой */}
-      <Dialog open={isSchemaOpen} onOpenChange={setIsSchemaOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
-          <DialogHeader>
-            <DialogTitle>
+      {/* Полноэкранная подстраница с интерактивной схемой */}
+      {isSchemaOpen && (
+        <div className="fixed inset-0 bg-white z-[100] overflow-y-auto">
+          {/* Заголовок с кнопкой закрытия */}
+          <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
+            <h1 className="text-2xl font-bold text-wood-darkest">
               Схема конструкции Casa de entramado ligero
-            </DialogTitle>
-          </DialogHeader>
+            </h1>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIsSchemaOpen(false)}
+              className="text-gray-600 hover:text-gray-800"
+            >
+              ✕ Cerrar
+            </Button>
+          </div>
           
-          <div className="flex-1 overflow-y-auto p-4">
-            <div className="relative w-full max-w-2xl mx-auto">
+          {/* Контент с интерактивной схемой */}
+          <div className="flex justify-center py-8 px-4">
+            <div className="relative w-full max-w-4xl">
               <img 
                 src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
                 alt="Схема каркасного дома" 
-                className="w-full h-auto rounded-lg shadow-lg scale-130"
+                className="w-full h-auto rounded-lg shadow-lg"
               />
               
               {/* Кнопки для различных элементов конструкции */}
@@ -81,7 +91,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               <Button
                 size="sm"
                 variant="secondary"
-                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white"
+                className="absolute top-[10%] left-[40%] bg-red-500 hover:bg-red-600 text-white shadow-lg"
                 onClick={() => handleDetailClick('roof')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -92,7 +102,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               <Button
                 size="sm"
                 variant="secondary"
-                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white"
+                className="absolute top-[40%] left-[10%] bg-amber-500 hover:bg-amber-600 text-white shadow-lg"
                 onClick={() => handleDetailClick('frame')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -103,7 +113,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               <Button
                 size="sm"
                 variant="secondary"
-                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white"
+                className="absolute top-[60%] right-[25%] bg-green-500 hover:bg-green-600 text-white shadow-lg"
                 onClick={() => handleDetailClick('insulation')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -114,7 +124,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               <Button
                 size="sm"
                 variant="secondary"
-                className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white"
+                className="absolute bottom-[5%] left-[30%] bg-blue-500 hover:bg-blue-600 text-white shadow-lg"
                 onClick={() => handleDetailClick('foundation')}
               >
                 <Info className="h-4 w-4 mr-1" />
@@ -122,8 +132,8 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               </Button>
             </div>
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
 
       {/* Диалог с подробной информацией */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
