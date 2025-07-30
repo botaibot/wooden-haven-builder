@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import ImageViewer from "@/components/ImageViewer";
+import HoverInteractiveSchema from "@/components/HoverInteractiveSchema";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -581,16 +582,18 @@ comenzar con lo esencial, con margen para personalizar
             </div>
             
             <div className="text-center -mt-8 mb-8">
-              <button 
-                onClick={handleConsultationClick}
-                className="p-4 transition-all duration-300 hover:scale-105 bg-transparent border-none outline-none"
-              >
-                <img 
-                  src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
-                  alt="Консультация" 
-                  className="w-32 h-32 object-contain"
-                />
-              </button>
+              <HoverInteractiveSchema>
+                <button 
+                  onClick={handleConsultationClick}
+                  className="p-4 transition-all duration-300 hover:scale-105 bg-transparent border-none outline-none"
+                >
+                  <img 
+                    src="/lovable-uploads/e87d112a-83fd-4b68-bbd0-0dc258bb2c74.png" 
+                    alt="Консультация" 
+                    className="w-32 h-32 object-contain"
+                  />
+                </button>
+              </HoverInteractiveSchema>
             </div>
           </div>
         </div>
