@@ -85,7 +85,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
           
           {/* Информационный блок о системе BOSQUE PLATFORM */}
           <div className="max-w-4xl mx-auto px-6 py-6">
-            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+            <div className="rounded-lg p-6 mb-8">
               <h2 className="text-3xl font-bold text-wood-darkest mb-4">
                 О системе BOSQUE PLATFORM
               </h2>
