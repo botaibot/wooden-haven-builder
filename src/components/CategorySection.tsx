@@ -54,51 +54,50 @@ const CategorySection = () => {
   const categories = [
     {
       icon: <Package />,
-      title: "Строительные материалы",
+      title: "Materiales de construcción",
       description: [
-        "Брус, доска, OSB, фанера",
-        "Импорт из Германии, Австрии, Бельгии", 
-        "Класс С34, сухая строганная древесина",
-        "В наличии на Тенерифе",
-        "Доставка по всем островам"
+        "Madera, tableros, OSB, contrachapado",
+        "Importación desde Alemania, Austria, Bélgica", 
+        "Clase C34, madera cepillada y seca",
+        "En stock en Tenerife",
+        "Entrega a todas las islas"
       ],
-      buttonText: "Каталог материалов",
+      buttonText: "Catálogo de materiales",
       buttonLink: "/materials"
     },
     {
       icon: <Hammer />,
       title: "BOSQUE PLATFORM",
       description: [
-        "Несущая конструкция + утеплитель + OSB + мембраны",
-        "Радиумный модуль, шаг 600 мм",
-        "Совместимость узлов",
-        "Комплектация BASE или STRUCTURA"
+        "Estructura portante + aislamiento + OSB + membranas",
+        "Módulo racional, paso de 600 mm",
+        "Compatibilidad de uniones",
+        "Versiones BASE o STRUCTURA"
       ],
-      buttonText: "Подробнее о системе",
+      buttonText: "Más detalles del sistema",
       buttonLink: "/bosque-platform"
     },
     {
       icon: <Home />,
-      title: "Дома из клеёного бруса", 
+      title: "Casas de madera laminada", 
       description: [
-        "Натуральная древесина без отделки",
-        "Стены — конструкция и интерьер в одном",
-        "Быстрый, сухой монтаж",
-        "Толщина от 100 до 240 мм"
+        "Madera natural sin acabado",
+        "Las paredes son la estructura y el acabado interior al mismo tiempo",
+        "Montaje rápido y seco",
+        "Espesor de 100 a 240 mm"
       ],
-      buttonText: "Подробнее о системе",
+      buttonText: "Más detalles del sistema",
       buttonLink: "/houses"
     },
     {
       icon: <Users />,
-      title: "Сопровождение проектов",
+      title: "Acompañamiento de proyectos",
       description: [
-        "Помощь в выборе конструкции и комплектации",
-        "Технические консультации", 
-        "Вывод на объект",
-        "Комплектации и документация для сборщиков"
+        "Asistencia en la elección de estructura y componentes",
+        "Consultas técnicas", 
+        "Supervisión en obra"
       ],
-      buttonText: "Запросить консультацию",
+      buttonText: "Solicitar consulta",
       buttonLink: "/contact"
     }
   ];
@@ -108,12 +107,14 @@ const CategorySection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">
-            BOSQUE От доски до готового дома — по системе
+            BOSQUE: De la tabla a la casa terminada— como sistema
           </h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-            BOSQUE — это команда, которая уже более 6 лет помогает воплощать деревянные проекты на Канарских островах.
-            Мы не просто продаём материалы — мы предлагаем решения.
-            От выбора доски до строительства дома — вы получаете поддержку, основанную на практике, опыте и любви к качеству.
+            BOSQUE es un equipo que lleva más de 6 años ayudando a realizar proyectos de madera en las Islas
+            Canarias.
+            No solo vendemos materiales — ofrecemos soluciones.
+            Desde la elección de la
+            madera hasta la construcción de la casa, ofrecemos un acompañamiento basado en práctica, experiencia y compromiso con la calidad.
           </p>
         </div>
 
