@@ -90,9 +90,9 @@ const ProjectGalleryCarousel = () => {
   return (
     <section className="py-8 bg-wood-light/20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest text-center mb-2">Наши работы - Галерея проектов</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-wood-darkest text-center mb-2">Nuestros proyectos — Galería</h2>
         <p className="text-lg text-center text-gray-600 mb-6 max-w-3xl mx-auto">
-          Фотографии наших реальных проектов деревянных домов на Канарских островах в разных стадиях строительства: от фундамента до готового дома.
+          Fotografías de nuestros proyectos reales de casas de madera en las Islas Canarias en diferentes etapas de construcción: desde la cimentación hasta la casa terminada.
         </p>
         <div className="relative mx-auto max-w-5xl">
           <Carousel 
