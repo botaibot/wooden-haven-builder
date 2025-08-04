@@ -27,21 +27,21 @@ const Hero = () => {
         {/* Левая колонка с текстом */}
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-wood-dark mb-4 animate-fade-in">
-            Деревянные дома и строительные материалы <br />
-            <span className="text-nature">для климата Канарских островов</span>
+            Casas de madera y materiales de construcción <br />
+            <span className="text-nature">para el clima de las Islas Canarias</span>
           </h1>
           <p className="text-xl text-gray-700 mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
-            <strong>Каркасные и клеёные конструкции.</strong><br />
-            Материалы напрямую от европейских производителей.<br />
-            Проекты, доставка и поддержка — по всем островам.
+            <strong>Estructuras de entramado ligero y madera laminada.</strong><br />
+            Materiales directamente de fabricantes europeos.<br />
+            Proyectos, entrega y soporte — en todas las islas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
             <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
-              <Link to="/houses">Посмотреть проекты домов</Link>
+              <Link to="/houses">Ver proyectos de casas</Link>
             </Button>
             <Button asChild variant="outline" className="border-wood text-wood hover:bg-wood/10 px-5 py-4 text-base">
               <Link to="/materials" className="flex items-center gap-2">
-                Открыть каталог материалов <ArrowRight size={14} />
+                Abrir catálogo de materiales <ArrowRight size={14} />
               </Link>
             </Button>
           </div>
