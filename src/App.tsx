@@ -11,7 +11,7 @@ import HouseDetail from "./pages/HouseDetail";
 import HouseSelection from "./pages/HouseSelection";
 import Materials from "./pages/Materials";
 import BosquePlatform from "./pages/BosquePlatform";
-import About from "./pages/About";
+
 import Contact from "./pages/Contact";
 import Calculator from "./pages/Calculator";
 import Stories from "./pages/Stories";
@@ -51,7 +51,7 @@ const App = () => (
               <Route path="/house-selection" element={<HouseSelection />} />
               <Route path="/materials" element={<Materials />} />
               <Route path="/bosque-platform" element={<BosquePlatform />} />
-              <Route path="/about" element={<About />} />
+              
               <Route path="/contact" element={<Contact />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/stories" element={<Stories />} />
