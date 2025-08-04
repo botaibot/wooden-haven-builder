@@ -280,7 +280,7 @@ const Materials = () => {
       priceRange: "€24,50",
       unit: "м²",
       sizes: [
-        { label: "4000 мм x 144 мм x 25 мм", value: "144mm", price: 24.5, width: 144, length: 4000 },
+        { label: "4000 мм x 144 мм x 25 мм", value: "144mm", price: 27.5, width: 144, length: 4000 },
       ],
       isNew: false,
       category: "Отделочные материалы"
@@ -322,7 +322,7 @@ const Materials = () => {
         { label: "6000 мм x 160 мм x 60 мм", value: "160x60", price: 55 },
         { label: "6000 мм x 160 мм x 80 мм", value: "160x80", price: 70 },
         { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 87 },
-        { label: "6000 мм x 140 мм x 140 мм", value: "140x140", price: 110 },
+        { label: "6000 мм x 140 мм x 140 мм", value: "140x140", price: 130 },
       ],
       isNew: false,
       category: "Брус и доска"
@@ -355,6 +355,7 @@ const Materials = () => {
         { label: "6000 мм x 160 мм x 80 мм", value: "160x80", price: 96.3 },
         { label: "6000 мм x 200 мм x 80 мм", value: "200x80", price: 112 },
         { label: "6000 мм x 120 мм x 120 мм", value: "120x120", price: 99.5 },
+        { label: "6000 мм x 140 мм x 140 мм", value: "140x140_glued", price: 130 },
       ],
       isNew: false,
       category: "Брус и доска"
@@ -387,7 +388,7 @@ const Materials = () => {
       unit: "шт",
       sizes: [
         { label: "2500 мм x 1250 мм x 9 мм", value: "9mm", price: 19.5 },
-        { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 24.5 },
+        { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 25.5 },
         { label: "2500 мм x 1250 мм x 15 мм", value: "15mm", price: 33 },
         { label: "2500 мм x 1250 мм x 18 мм", value: "18mm", price: 41 },
         { label: "2500 мм x 1250 мм x 22 мм", value: "22mm", price: 47 },
