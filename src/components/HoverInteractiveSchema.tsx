@@ -68,46 +68,43 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
           </DialogHeader>
           
           <div className="flex-1 overflow-y-auto p-4">
-            {/* Добавленный текст */}
             <div className="mb-6 space-y-4 max-w-4xl mx-auto">
-              <h3 className="text-xl font-bold text-primary flex items-center gap-2">
-                🛠 Base — sistema de plataforma (Platform Framing)
+              <h3 className="text-xl font-bold text-primary text-center">
+                BOSQUE PLATFORM
               </h3>
-              <div className="space-y-3 text-muted-foreground">
+              <h4 className="text-lg font-semibold text-primary text-center">
+                Soluciones en entramado ligero
+              </h4>
+              
+              <div className="space-y-4 text-muted-foreground">
+                <p className="text-center">
+                  En la base de BOSQUE PLATFORM se encuentran distintas formas<br />
+                  sobre un mismo sistema constructivo.<br />
+                  Elige la forma que más te guste
+                </p>
+                
                 <p>
-                  Nuestra construcción se basa en la metodología expuesta en el manual oficial WFCM (Wood Frame Construction Manual, EE.UU.). 
-                  La construcción con entramado de madera es una tecnología probada sobre la que se han construido millones de casas en EE.UU., Canadá y el norte de Europa. 
-                  La hemos adaptado al clima de las Islas Canarias y a los materiales disponibles aquí, para crear una solución fiable y práctica.
+                  Construimos según una lógica estructural clara: módulos repetitivos, uniones confiables y compatibilidad total en obra.
+                </p>
+                
+                <p>
+                  Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica: adaptado al clima de Canarias y preparado para el montaje.
                 </p>
                 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">✅ Ventajas de BOSQUE PLATFORM</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Geometría limpia, eficiencia energética y ventilación</li>
-                    <li>Montaje rápido sin procesos húmedos</li>
-                    <li>Flexibilidad de distribuciones: desde compactas hasta formas complejas</li>
-                    <li>Toda la ingeniería dentro de las paredes, sin rozas ni daños</li>
+                  <h4 className="font-semibold text-foreground mb-3">Líneas de modelos</h4>
+                  <ul className="space-y-2">
+                    <li>• <strong>Techo Simple</strong> — minimalismo, geometría clara, tejado a una agua (35–90 m²)</li>
+                    <li>• <strong>Techo Volado</strong> — asimetría, voladizo, acento arquitectónico (35–80 m²)</li>
+                    <li>• <strong>Estilo Moderno</strong> — cubierta plana y estética contemporánea (40–90 m²)</li>
+                    <li>• <strong>Techo Alto</strong> — cubiertas altas a dos aguas, amplitud y verticalidad (36–90+ m²)</li>
+                    <li>• <strong>Bosque Kit</strong> — formato para autoconstrucción o montaje con terceros</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">🧱 Entenderás fácilmente:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Cómo están hechas las paredes, el techo y el suelo</li>
-                    <li>Para qué sirve cada detalle</li>
-                    <li>Cómo la construcción conserva el calor y respira</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">🪵 Solo materiales probados</h4>
-                  <p className="mb-2">Utilizamos:</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Madera seca cepillada C24 de Alemania y Austria</li>
-                    <li>OSB, contrachapado y vigas que corresponden a las cargas</li>
-                    <li>Solo aquellos materiales que están probados en la práctica y disponibles en Tenerife</li>
-                  </ul>
-                </div>
+                <h4 className="font-semibold text-foreground text-center mt-6">
+                  Cómo están hechas nuestras casas
+                </h4>
               </div>
             </div>
             
