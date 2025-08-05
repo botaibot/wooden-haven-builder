@@ -283,7 +283,7 @@ const Materials = () => {
         { label: "4000 мм x 144 мм x 25 мм", value: "144mm", price: 27.5, width: 144, length: 4000 },
       ],
       isNew: false,
-      category: "Отделочные материалы"
+      category: "Materiales de acabado"
     },
     {
       id: "brushed-board",
@@ -301,7 +301,7 @@ const Materials = () => {
         { label: "3900 мм x 196 мм x 19 мм", value: "196mm", price: 17, width: 196, length: 3900 },
       ],
       isNew: false,
-      category: "Отделочные материалы"
+      category: "Materiales de acabado"
     },
     {
       id: "planed-beam",
@@ -325,7 +325,7 @@ const Materials = () => {
         { label: "6000 мм x 140 мм x 140 мм", value: "140x140", price: 130 },
       ],
       isNew: false,
-      category: "Брус и доска"
+      category: "Vigas y tablas"
     },
     {
       id: "beam-with-grooves",
@@ -338,7 +338,7 @@ const Materials = () => {
         { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 70 },
       ],
       isNew: false,
-      category: "Брус и доска"
+      category: "Vigas y tablas"
     },
     {
       id: "glued-beam",
@@ -358,7 +358,7 @@ const Materials = () => {
         { label: "6000 мм x 140 мм x 140 мм", value: "140x140_glued", price: 130 },
       ],
       isNew: false,
-      category: "Брус и доска"
+      category: "Vigas y tablas"
     },
     {
       id: "plywood-eucalyptus",
@@ -377,7 +377,7 @@ const Materials = () => {
         { label: "2500 мм x 1220 мм x 22 мм", value: "22mm", price: 80 },
       ],
       isNew: false,
-      category: "Фанера"
+      category: "Contrachapado"
     },
     {
       id: "osb-3-panels",
@@ -394,7 +394,7 @@ const Materials = () => {
         { label: "2500 мм x 1250 мм x 22 мм", value: "22mm", price: 47 },
       ],
       isNew: false,
-      category: "Фанера"
+      category: "Contrachapado"
     },
     {
       id: "vagonka",
@@ -409,7 +409,7 @@ const Materials = () => {
         { label: "4000 мм x 146 мм x 19 мм", value: "146mm", price: 20, width: 146, length: 4000 },
       ],
       isNew: false,
-      category: "Отделочные материалы"
+      category: "Materiales de acabado"
     },
     {
       id: "imitation-brus",
@@ -423,7 +423,7 @@ const Materials = () => {
         { label: "4000 мм x 116 мм x 24 мм", value: "24mm", price: 27, width: 116, length: 4000 },
       ],
       isNew: false,
-      category: "Отделочные материалы",
+      category: "Materiales de acabado",
       detailsButtonBottom: true
     },
     {
@@ -437,7 +437,7 @@ const Materials = () => {
         { label: "4000 мм x 146 мм x 27 мм", value: "146mm", price: 28.5, width: 146, length: 4000 },
       ],
       isNew: false,
-      category: "Отделочные материалы"
+      category: "Materiales de acabado"
     },
     {
       id: "dry-planed-lumber",
@@ -454,17 +454,17 @@ const Materials = () => {
         { label: "3900 мм x 48 мм x 23 мм", value: "48x23", price: 3.5 },
       ],
       isNew: false,
-      category: "Брус и доска"
+      category: "Vigas y tablas"
     }
   ];
 
   const categories = [
-    "Все материалы", "Брус и доска", "Фанера", "Отделочные материалы"
+    "Todos los materiales", "Vigas y tablas", "Contrachapado", "Materiales de acabado"
   ];
   
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const filteredMaterials = activeCategory === "Все материалы" 
+  const filteredMaterials = activeCategory === "Todos los materiales" 
     ? materials 
     : materials.filter(material => material.category === activeCategory);
 
