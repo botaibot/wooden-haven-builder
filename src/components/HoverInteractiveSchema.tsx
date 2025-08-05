@@ -78,9 +78,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
               
               <div className="space-y-4 text-muted-foreground">
                 <p className="text-center">
-                  En la base de BOSQUE PLATFORM se encuentran distintas formas<br />
-                  sobre un mismo sistema constructivo.<br />
-                  Elige la forma que más te guste
+                  En la base de BOSQUE PLATFORM se encuentran distintas formas sobre un mismo sistema constructivo. Elige la forma que más te guste
                 </p>
                 
                 <p>
