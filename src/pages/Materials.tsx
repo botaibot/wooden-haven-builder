@@ -218,6 +218,13 @@ const MaterialCard = ({
                 </Button>
               </div>
             </div>
+            <Button
+              onClick={handleAddToCart}
+              className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
+            >
+              <ShoppingCart size={16} />
+              <span>Al carrito</span>
+            </Button>
           </div>
         )}
         
@@ -230,26 +237,12 @@ const MaterialCard = ({
           </div>
         )}
         
-        <div className="flex justify-between items-center">
-          <span className="font-bold text-nature-dark">
-            {sizes.length > 0 
-              ? selectedSize 
-                ? `€${getSelectedSizePrice().toFixed(2)} / ${unit}`
-                : "Elija el tamaño" 
-              : priceRange 
-                ? priceRange 
-                : `от €8`} 
-            {unit && !sizes.length && `/ ${unit}`}
-          </span>
-          {sizes.length > 0 ? (
-            <Button
-              onClick={handleAddToCart}
-              className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
-            >
-              <ShoppingCart size={16} />
-              <span>Al carrito</span>
-            </Button>
-          ) : (
+        {!sizes.length && (
+          <div className="flex justify-between items-center">
+            <span className="font-bold text-nature-dark">
+              {priceRange ? priceRange : `от €8`} 
+              {unit && `/ ${unit}`}
+            </span>
             <a 
               href="/contact"
               className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
@@ -257,8 +250,8 @@ const MaterialCard = ({
               <Package size={16} />
               <span>Pedir</span>
             </a>
-          )}
-        </div>
+          </div>
+        )}
       </CardContent>
       
       <CardFooter className="px-6 pb-6 pt-0">
