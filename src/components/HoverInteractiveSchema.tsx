@@ -71,41 +71,41 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
             {/* Добавленный текст */}
             <div className="mb-6 space-y-4 max-w-4xl mx-auto">
               <h3 className="text-xl font-bold text-primary flex items-center gap-2">
-                🛠 Основа — платформенная система (Platform Framing)
+                🛠 Base — sistema de plataforma (Platform Framing)
               </h3>
               <div className="space-y-3 text-muted-foreground">
                 <p>
-                  Наша конструкция опирается на методику, изложенную в официальном руководстве WFCM (Wood Frame Construction Manual, США). 
-                  Каркасное строительство — проверенная технология, на основе которой построены миллионы домов в США, Канаде и Северной Европе. 
-                  Мы адаптировали её под климат Канарских островов и доступные здесь материалы, чтобы создать надёжное и практичное решение.
+                  Nuestra construcción se basa en la metodología expuesta en el manual oficial WFCM (Wood Frame Construction Manual, EE.UU.). 
+                  La construcción con entramado de madera es una tecnología probada sobre la que se han construido millones de casas en EE.UU., Canadá y el norte de Europa. 
+                  La hemos adaptado al clima de las Islas Canarias y a los materiales disponibles aquí, para crear una solución fiable y práctica.
                 </p>
                 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">✅ Преимущества BOSQUE PLATFORM</h4>
+                  <h4 className="font-semibold text-foreground mb-2">✅ Ventajas de BOSQUE PLATFORM</h4>
                   <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Чистая геометрия, энергоэффективность и вентиляция</li>
-                    <li>Быстрый монтаж без мокрых процессов</li>
-                    <li>Гибкость планировок: от компактных до сложных форм</li>
-                    <li>Вся инженерия — внутри стен, без штробления и повреждений</li>
+                    <li>Geometría limpia, eficiencia energética y ventilación</li>
+                    <li>Montaje rápido sin procesos húmedos</li>
+                    <li>Flexibilidad de distribuciones: desde compactas hasta formas complejas</li>
+                    <li>Toda la ingeniería dentro de las paredes, sin rozas ni daños</li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">🧱 Вы легко разберётесь:</h4>
+                  <h4 className="font-semibold text-foreground mb-2">🧱 Entenderás fácilmente:</h4>
                   <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Как устроены стены, крыша и пол</li>
-                    <li>Зачем нужна каждая деталь</li>
-                    <li>Как конструкция сохраняет тепло и дышит</li>
+                    <li>Cómo están hechas las paredes, el techo y el suelo</li>
+                    <li>Para qué sirve cada detalle</li>
+                    <li>Cómo la construcción conserva el calor y respira</li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">🪵 Только проверенные материалы</h4>
-                  <p className="mb-2">Мы используем:</p>
+                  <h4 className="font-semibold text-foreground mb-2">🪵 Solo materiales probados</h4>
+                  <p className="mb-2">Utilizamos:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Сухую строганую доску C24 из Германии и Австрии</li>
-                    <li>OSB, фанеру и брус, соответствующие нагрузкам</li>
-                    <li>Только те материалы, которые проверены на практике и в наличии на Тенерифе</li>
+                    <li>Madera seca cepillada C24 de Alemania y Austria</li>
+                    <li>OSB, contrachapado y vigas que corresponden a las cargas</li>
+                    <li>Solo aquellos materiales que están probados en la práctica y disponibles en Tenerife</li>
                   </ul>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const HoverInteractiveSchema: React.FC<HoverInteractiveSchemaProps> = ({ childre
             <div className="relative w-full max-w-2xl mx-auto">
               <img 
                 src="/lovable-uploads/d2d8ccd9-ed8c-46be-8d95-6330da758c49.png" 
-                alt="Схема каркасного дома" 
+                alt="Esquema de casa con entramado de madera" 
                 className="w-full h-auto rounded-lg shadow-lg scale-130"
               />
               
