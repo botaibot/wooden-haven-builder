@@ -155,10 +155,10 @@ quienes valoran luz, orden y estructura
       ]
     },
     {
-      name: "Flying Roof", 
-      description: "Асимметрия, вынос, архитектурный акцент.",
-      sizes: "29, 40, 60, 80 м²",
-      quote: "Стиль, который бросается в глаза.",
+      name: "Techo Volado", 
+      description: "Asimetría, voladizo, acento arquitectónico.",
+      sizes: "35–80 m²",
+      quote: "Estilo que llama la atención.",
       image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
       models: [
         {
@@ -264,24 +264,24 @@ comenzar con lo esencial, con margen para personalizar
       ]
     },
     {
-      name: "Modern Flat",
-      description: "Плоская кровля, строгие формы, премиальность.",
-      sizes: "от 40 до 90 м²", 
-      quote: "Модуль для города с премиум-отделкой.",
+      name: "Estilo Moderno",
+      description: "Cubierta plana y estética contemporánea.",
+      sizes: "40–90 m²", 
+      quote: "Módulo urbano con acabados premium.",
       image: "/lovable-uploads/04e241c4-f827-4fc2-b77f-4ea27ce7093d.png"
     },
     {
-      name: "Barndominium",
-      description: "Высокие двускатные крыши, простор, эмоция.",
-      sizes: "от 36 до 90+ м²",
-      quote: "Пространство как стиль жизни.",
+      name: "Techo Alto",
+      description: "Cubiertas altas a dos aguas, amplitud y verticalidad.",
+      sizes: "36–90+ m²",
+      quote: "Espacio como estilo de vida.",
       image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
     },
     {
-      name: "Bosque Básico",
-      description: "Бюджетная база. Всё необходимое внутри.",
-      sizes: "18–36 м²",
-      quote: "Básico — всё необходимое. Остальное — вы решаете.",
+      name: "Bosque Kit",
+      description: "Formato para autoconstrucción o montaje con terceros.",
+      sizes: "18–36 m²",
+      quote: "Kit básico — todo lo necesario. El resto lo decides tú.",
       image: "/lovable-uploads/ef6c249e-c0e4-4067-aded-4a577418842c.png"
     }
   ];
@@ -582,7 +582,7 @@ comenzar con lo esencial, con margen para personalizar
             
             <div className="text-center -mt-8 mb-8">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                Как устроены наши дома
+                Cómo están hechas nuestras casas
               </h3>
               <HoverInteractiveSchema>
                 <button 
