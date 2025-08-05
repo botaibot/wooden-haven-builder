@@ -106,8 +106,8 @@ const MaterialCard = ({
   const handleAddToCart = () => {
     if (!selectedSize) {
       toast({
-        title: "Выберите размер",
-        description: "Пожалуйста, выберите размер перед добавлением в корзину",
+        title: "Elija el tamaño",
+        description: "Por favor, elija el tamaño antes de añadir al carrito",
         variant: "destructive"
       });
       return;
@@ -133,8 +133,8 @@ const MaterialCard = ({
     });
 
     toast({
-      title: "Добавлено в корзину",
-      description: `${title} (${getSelectedSizeLabel()}) - ${quantity} шт.`,
+      title: "Añadido al carrito",
+      description: `${title} (${getSelectedSizeLabel()}) - ${quantity} ud.`,
     });
   };
 
@@ -145,7 +145,7 @@ const MaterialCard = ({
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="w-full mx-auto text-xs px-3 py-1 flex items-center justify-center gap-1 h-auto">
           <Info className="h-3 w-3" />
-          <span>Подробнее</span>
+          <span>Más detalles</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 max-h-60 overflow-y-auto">
@@ -173,7 +173,7 @@ const MaterialCard = ({
           <div className="mb-4">
             <Select value={selectedSize} onValueChange={handleSizeChange}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Выберите размер" />
+                <SelectValue placeholder="Elija el tamaño" />
               </SelectTrigger>
               <SelectContent>
                 {sizes.map((size, index) => (
@@ -189,7 +189,7 @@ const MaterialCard = ({
         {sizes.length > 0 && (
           <div className="flex items-center justify-between gap-2 mb-4">
             <div className="flex items-center">
-              <span className="text-sm text-gray-500 mr-2">Количество:</span>
+              <span className="text-sm text-gray-500 mr-2">Cantidad:</span>
               <div className="flex items-center">
                 <Button 
                   type="button" 
@@ -224,8 +224,8 @@ const MaterialCard = ({
         {selectedSize && sizes.length > 0 && (
           <div className="bg-nature-light/20 p-3 rounded-md mb-4">
             <p className="font-medium text-nature-dark">
-              Общая стоимость: €{calculateTotalCost().toFixed(2)}
-              <span className="text-sm text-gray-600 ml-1">за {quantity} {unit === "м²" ? "м²" : "шт."}</span>
+              Suma total: €{calculateTotalCost().toFixed(2)}
+              <span className="text-sm text-gray-600 ml-1">por {quantity} {unit === "м²" ? "м²" : "ud."}</span>
             </p>
           </div>
         )}
@@ -235,7 +235,7 @@ const MaterialCard = ({
             {sizes.length > 0 
               ? selectedSize 
                 ? `€${getSelectedSizePrice().toFixed(2)} / ${unit}`
-                : "Выберите размер" 
+                : "Elija el tamaño" 
               : priceRange 
                 ? priceRange 
                 : `от €8`} 
@@ -247,7 +247,7 @@ const MaterialCard = ({
               className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
             >
               <ShoppingCart size={16} />
-              <span>В корзину</span>
+              <span>Al carrito</span>
             </Button>
           ) : (
             <a 
@@ -255,7 +255,7 @@ const MaterialCard = ({
               className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
             >
               <Package size={16} />
-              <span>Заказать</span>
+              <span>Pedir</span>
             </a>
           )}
         </div>
@@ -473,8 +473,8 @@ const Materials = () => {
       <Navbar />
       
       <PageBanner 
-        title="Строительные материалы" 
-        description="Широкий ассортимент высококачественных пиломатериалов для строительства и отделки: брус, фанера, доска, вагонка и многое другое"
+        title="Materiales de construcción" 
+        description="Amplia gama de maderas de alta calidad para construcción y acabados: vigas, contrachapado, tablas, machihembrado y mucho más"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
