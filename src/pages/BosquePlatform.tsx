@@ -500,16 +500,13 @@ comenzar con lo esencial, con margen para personalizar
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-wood-dark">
                 En la base de BOSQUE PLATFORM<br />
-                se encuentran distintas formas<br />
-                sobre un mismo sistema constructivo.<br />
+                se encuentran distintas formas sobre un mismo sistema constructivo.<br />
                 Elige la forma que más te guste
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
-                Construimos según una lógica estructural clara:<br />
-                módulos repetitivos, uniones confiables y compatibilidad total en obra.
+                Construimos según una lógica estructural clara: módulos repetitivos, uniones confiables y compatibilidad total en obra.
                 <br className="hidden md:block" />
-                Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica:<br />
-                adaptado al clima de Canarias y preparado para el montaje.
+                Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica: adaptado al clima de Canarias y preparado para el montaje.
               </p>
             </div>
 
