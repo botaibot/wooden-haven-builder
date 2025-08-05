@@ -22,10 +22,10 @@ const BosquePlatform = () => {
 
   const architecturalLines = [
     {
-      name: "Techo Simple",
-      description: "Minimalismo, geometría clara, tejado a una agua.",
-      sizes: "35–90 m²",
-      quote: "Minimalismo, que se puede escalar.",
+      name: "Mono Roof",
+      description: "Минимализм, чёткая геометрия, односкатная крыша.",
+      sizes: "от 29 до 60 м²",
+      quote: "Минимализм, который можно масштабировать.",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
         {
@@ -155,10 +155,10 @@ quienes valoran luz, orden y estructura
       ]
     },
     {
-      name: "Techo Volado", 
-      description: "Asimetría, voladizo, acento arquitectónico.",
-      sizes: "35–80 m²",
-      quote: "Estilo que llama la atención.",
+      name: "Flying Roof", 
+      description: "Асимметрия, вынос, архитектурный акцент.",
+      sizes: "29, 40, 60, 80 м²",
+      quote: "Стиль, который бросается в глаза.",
       image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
       models: [
         {
@@ -264,24 +264,24 @@ comenzar con lo esencial, con margen para personalizar
       ]
     },
     {
-      name: "Estilo Moderno",
-      description: "Cubierta plana y estética contemporánea.",
-      sizes: "40–90 m²", 
-      quote: "Módulo urbano con acabados premium.",
+      name: "Modern Flat",
+      description: "Плоская кровля, строгие формы, премиальность.",
+      sizes: "от 40 до 90 м²", 
+      quote: "Модуль для города с премиум-отделкой.",
       image: "/lovable-uploads/04e241c4-f827-4fc2-b77f-4ea27ce7093d.png"
     },
     {
-      name: "Techo Alto",
-      description: "Cubiertas altas a dos aguas, amplitud y verticalidad.",
-      sizes: "36–90+ m²",
-      quote: "Espacio como estilo de vida.",
+      name: "Barndominium",
+      description: "Высокие двускатные крыши, простор, эмоция.",
+      sizes: "от 36 до 90+ м²",
+      quote: "Пространство как стиль жизни.",
       image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
     },
     {
-      name: "Bosque Kit",
-      description: "Formato para autoconstrucción o montaje con terceros.",
-      sizes: "18–36 m²",
-      quote: "Kit básico — todo lo necesario. El resto lo decides tú.",
+      name: "Bosque Básico",
+      description: "Бюджетная база. Всё необходимое внутри.",
+      sizes: "18–36 м²",
+      quote: "Básico — всё необходимое. Остальное — вы решаете.",
       image: "/lovable-uploads/ef6c249e-c0e4-4067-aded-4a577418842c.png"
     }
   ];
@@ -353,13 +353,13 @@ comenzar con lo esencial, con margen para personalizar
               variant="outline" 
               className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
             >
-              📎 Ver modelos
+              📎 Смотреть модели
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-wood-dark">
-                Modelos {line.name}
+                Модели {line.name}
               </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
@@ -478,7 +478,7 @@ comenzar con lo esencial, con margen para personalizar
           variant="outline" 
           className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
         >
-          📎 Ver modelos
+          📎 Смотреть модели
         </Button>
       );
     }
@@ -490,7 +490,7 @@ comenzar con lo esencial, con margen para personalizar
       
       <PageBanner 
         title="BOSQUE PLATFORM" 
-        description="Soluciones en entramado ligero"
+        description="Архитектурные линейки на одной инженерной базе"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
@@ -499,35 +499,44 @@ comenzar con lo esencial, con margen para personalizar
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-wood-dark">
-                En la base de BOSQUE PLATFORM se encuentran distintas formas<br />
-                sobre un mismo sistema constructivo.<br />
-                Elige la forma que más te guste
+                Архитектура по системе.<br />
+                Выберите форму, которая близка вам.
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
-                Construimos según una lógica estructural clara: módulos repetitivos, uniones confiables y compatibilidad total en obra.
+                Архитектура BOSQUE PLATFORM — это разные формы на одной инженерной базе.
                 <br className="hidden md:block" />
-                Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica: adaptado al clima de Canarias y preparado para el montaje.
+                Мы используем одну конструктивную систему: шаг 600 мм, проверенные узлы, комплектация BASE или STRUCTURA.
+                <br className="hidden md:block" />
+                От Mono до Barndominium — всё работает по одной логике: адаптировано к климату Канарских островов, рассчитано под сборку.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
               {/* First 3 cards */}
               {architecturalLines.slice(0, 3).map((line, index) => (
-                 <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
-                   <CardHeader className="pb-4 text-center">
-                     <CardTitle className="text-lg md:text-xl text-wood-dark">
-                       {line.name}
-                     </CardTitle>
-                   </CardHeader>
+                <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
+                  <CardHeader className="pb-4 text-center">
+                    <div className="text-wood-dark mb-2">
+                      <img 
+                        src={line.image} 
+                        alt={line.name}
+                        className="w-20 h-20 mx-auto mb-4 object-contain"
+                      />
+                    </div>
+                    <CardTitle className="text-lg md:text-xl text-wood-dark">
+                      {line.name}
+                    </CardTitle>
+                  </CardHeader>
                    <CardContent className="flex-1 flex flex-col px-4 md:px-6">
                      <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                        {line.description}
                      </p>
-                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                      Tamaños: {line.sizes}
-                    </p>
+                     <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
+                       Размеры: {line.sizes}
+                     </p>
                      <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                       <p className="text-sm text-gray-600 italic">
+                       <p className="text-sm text-gray-600 italic flex items-start gap-2">
+                         <span>💬</span>
                          {line.quote}
                        </p>
                      </div>
@@ -540,24 +549,32 @@ comenzar con lo esencial, con margen para personalizar
             {/* Last 2 cards centered */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12 max-w-2xl mx-auto">
               {architecturalLines.slice(3).map((line, index) => (
-                 <Card key={index + 3} className="hover:shadow-xl transition-shadow h-full flex flex-col">
-                   <CardHeader className="pb-4 text-center">
-                     <CardTitle className="text-lg md:text-xl text-wood-dark">
-                       {line.name}
-                     </CardTitle>
-                   </CardHeader>
+                <Card key={index + 3} className="hover:shadow-xl transition-shadow h-full flex flex-col">
+                  <CardHeader className="pb-4 text-center">
+                    <div className="text-wood-dark mb-2">
+                      <img 
+                        src={line.image} 
+                        alt={line.name}
+                        className="w-20 h-20 mx-auto mb-4 object-contain"
+                      />
+                    </div>
+                    <CardTitle className="text-lg md:text-xl text-wood-dark">
+                      {line.name}
+                    </CardTitle>
+                  </CardHeader>
                   <CardContent className="flex-1 flex flex-col px-4 md:px-6">
                     <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                       {line.description}
                     </p>
-                   <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                     Tamaños: {line.sizes}
-                   </p>
-                   <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                     <p className="text-sm text-gray-600 italic">
-                       {line.quote}
-                     </p>
-                   </div>
+                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
+                      Размеры: {line.sizes}
+                    </p>
+                    <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
+                      <p className="text-sm text-gray-600 italic flex items-start gap-2">
+                        <span>💬</span>
+                        {line.quote}
+                      </p>
+                    </div>
                     {renderModelButton(line, index + 3)}
                   </CardContent>
                 </Card>
@@ -566,7 +583,7 @@ comenzar con lo esencial, con margen para personalizar
             
             <div className="text-center -mt-8 mb-8">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                Cómo están hechas nuestras casas
+                Как устроены наши дома
               </h3>
               <HoverInteractiveSchema>
                 <button 
