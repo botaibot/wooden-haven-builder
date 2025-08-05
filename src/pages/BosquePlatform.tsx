@@ -353,7 +353,7 @@ comenzar con lo esencial, con margen para personalizar
               variant="outline" 
               className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
             >
-              📎 Ver modelos
+              Ver modelos
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
@@ -478,7 +478,7 @@ comenzar con lo esencial, con margen para personalizar
           variant="outline" 
           className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
         >
-          📎 Ver modelos
+          Ver modelos
         </Button>
       );
     }
@@ -533,15 +533,7 @@ comenzar con lo esencial, con margen para personalizar
                      <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                        {line.description}
                      </p>
-                     <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                       Размеры: {line.sizes}
-                     </p>
-                     <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                       <p className="text-sm text-gray-600 italic flex items-start gap-2">
-                         <span>💬</span>
-                         {line.quote}
-                       </p>
-                     </div>
+                      {/* Removed size text and quote section */}
                      {renderModelButton(line, index)}
                   </CardContent>
                 </Card>
@@ -568,15 +560,7 @@ comenzar con lo esencial, con margen para personalizar
                     <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                       {line.description}
                     </p>
-                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                      Размеры: {line.sizes}
-                    </p>
-                    <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                      <p className="text-sm text-gray-600 italic flex items-start gap-2">
-                        <span>💬</span>
-                        {line.quote}
-                      </p>
-                    </div>
+                     {/* Removed size text and quote section */}
                     {renderModelButton(line, index + 3)}
                   </CardContent>
                 </Card>
