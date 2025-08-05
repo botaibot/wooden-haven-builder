@@ -513,19 +513,12 @@ comenzar con lo esencial, con margen para personalizar
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
               {/* First 3 cards */}
               {architecturalLines.slice(0, 3).map((line, index) => (
-                <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
-                  <CardHeader className="pb-4 text-center">
-                    <div className="text-wood-dark mb-2">
-                      <img 
-                        src={line.image} 
-                        alt={line.name}
-                        className="w-20 h-20 mx-auto mb-4 object-contain"
-                      />
-                    </div>
-                    <CardTitle className="text-lg md:text-xl text-wood-dark">
-                      {line.name}
-                    </CardTitle>
-                  </CardHeader>
+                 <Card key={index} className="hover:shadow-xl transition-shadow h-full flex flex-col">
+                   <CardHeader className="pb-4 text-center">
+                     <CardTitle className="text-lg md:text-xl text-wood-dark">
+                       {line.name}
+                     </CardTitle>
+                   </CardHeader>
                    <CardContent className="flex-1 flex flex-col px-4 md:px-6">
                      <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                        {line.description}
@@ -534,8 +527,7 @@ comenzar con lo esencial, con margen para personalizar
                       Tamaños: {line.sizes}
                     </p>
                      <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                       <p className="text-sm text-gray-600 italic flex items-start gap-2">
-                         <span>💬</span>
+                       <p className="text-sm text-gray-600 italic">
                          {line.quote}
                        </p>
                      </div>
@@ -548,19 +540,12 @@ comenzar con lo esencial, con margen para personalizar
             {/* Last 2 cards centered */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12 max-w-2xl mx-auto">
               {architecturalLines.slice(3).map((line, index) => (
-                <Card key={index + 3} className="hover:shadow-xl transition-shadow h-full flex flex-col">
-                  <CardHeader className="pb-4 text-center">
-                    <div className="text-wood-dark mb-2">
-                      <img 
-                        src={line.image} 
-                        alt={line.name}
-                        className="w-20 h-20 mx-auto mb-4 object-contain"
-                      />
-                    </div>
-                    <CardTitle className="text-lg md:text-xl text-wood-dark">
-                      {line.name}
-                    </CardTitle>
-                  </CardHeader>
+                 <Card key={index + 3} className="hover:shadow-xl transition-shadow h-full flex flex-col">
+                   <CardHeader className="pb-4 text-center">
+                     <CardTitle className="text-lg md:text-xl text-wood-dark">
+                       {line.name}
+                     </CardTitle>
+                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col px-4 md:px-6">
                     <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                       {line.description}
@@ -568,12 +553,11 @@ comenzar con lo esencial, con margen para personalizar
                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
                      Tamaños: {line.sizes}
                    </p>
-                    <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
-                      <p className="text-sm text-gray-600 italic flex items-start gap-2">
-                        <span>💬</span>
-                        {line.quote}
-                      </p>
-                    </div>
+                   <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
+                     <p className="text-sm text-gray-600 italic">
+                       {line.quote}
+                     </p>
+                   </div>
                     {renderModelButton(line, index + 3)}
                   </CardContent>
                 </Card>
