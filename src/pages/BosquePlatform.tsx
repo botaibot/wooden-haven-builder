@@ -22,10 +22,10 @@ const BosquePlatform = () => {
 
   const architecturalLines = [
     {
-      name: "Mono Roof",
-      description: "Минимализм, чёткая геометрия, односкатная крыша.",
-      sizes: "от 29 до 60 м²",
-      quote: "Минимализм, который можно масштабировать.",
+      name: "Techo Simple",
+      description: "minimalismo, geometría clara, tejado a una agua (35–90 m²)",
+      sizes: "35–90 m²",
+      quote: "",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
         {
@@ -155,10 +155,10 @@ quienes valoran luz, orden y estructura
       ]
     },
     {
-      name: "Flying Roof", 
-      description: "Асимметрия, вынос, архитектурный акцент.",
-      sizes: "29, 40, 60, 80 м²",
-      quote: "Стиль, который бросается в глаза.",
+      name: "Techo Volado", 
+      description: "asimetría, voladizo, acento arquitectónico (35–80 m²)",
+      sizes: "35–80 m²",
+      quote: "",
       image: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
       models: [
         {
@@ -264,24 +264,24 @@ comenzar con lo esencial, con margen para personalizar
       ]
     },
     {
-      name: "Modern Flat",
-      description: "Плоская кровля, строгие формы, премиальность.",
-      sizes: "от 40 до 90 м²", 
-      quote: "Модуль для города с премиум-отделкой.",
+      name: "Estilo Moderno",
+      description: "cubierta plana y estética contemporánea (40–90 m²)",
+      sizes: "40–90 m²", 
+      quote: "",
       image: "/lovable-uploads/04e241c4-f827-4fc2-b77f-4ea27ce7093d.png"
     },
     {
-      name: "Barndominium",
-      description: "Высокие двускатные крыши, простор, эмоция.",
-      sizes: "от 36 до 90+ м²",
-      quote: "Пространство как стиль жизни.",
+      name: "Techo Alto",
+      description: "cubiertas altas a dos aguas, amplitud y verticalidad (36–90+ m²)",
+      sizes: "36–90+ m²",
+      quote: "",
       image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
     },
     {
-      name: "Bosque Básico",
-      description: "Бюджетная база. Всё необходимое внутри.",
+      name: "Bosque Kit",
+      description: "formato para autoconstrucción o montaje con terceros",
       sizes: "18–36 м²",
-      quote: "Básico — всё необходимое. Остальное — вы решаете.",
+      quote: "",
       image: "/lovable-uploads/ef6c249e-c0e4-4067-aded-4a577418842c.png"
     }
   ];
@@ -345,7 +345,7 @@ comenzar con lo esencial, con margen para personalizar
   };
 
   const renderModelButton = (line, index) => {
-    if (line.name === "Mono Roof" || line.name === "Flying Roof") {
+    if (line.name === "Techo Simple" || line.name === "Techo Volado") {
       return (
         <Dialog>
           <DialogTrigger asChild>
@@ -353,13 +353,13 @@ comenzar con lo esencial, con margen para personalizar
               variant="outline" 
               className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
             >
-              📎 Смотреть модели
+              📎 Ver modelos
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-wood-dark">
-                Модели {line.name}
+                Modelos {line.name}
               </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
@@ -398,7 +398,7 @@ comenzar con lo esencial, con margen para personalizar
                             {line.name} {model.size}
                           </h3>
                           <div className="text-sm text-gray-600 whitespace-pre-line">
-                            {line.name === "Mono Roof" ? (
+                            {line.name === "Techo Simple" ? (
                               <div>
                                 <div>{getShortDescription(model.description)}</div>
                                 {expandedModels[`${line.name}-${model.size}`] && (
@@ -415,7 +415,7 @@ comenzar con lo esencial, con margen para personalizar
                                   {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
                                 </Button>
                               </div>
-                            ) : line.name === "Flying Roof" ? (
+                            ) : line.name === "Techo Volado" ? (
                               <div>
                                 <div>{getShortDescription(model.description)}</div>
                                 {expandedModels[`${line.name}-${model.size}`] && (
@@ -478,7 +478,7 @@ comenzar con lo esencial, con margen para personalizar
           variant="outline" 
           className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
         >
-          📎 Смотреть модели
+          📎 Ver modelos
         </Button>
       );
     }
@@ -490,7 +490,7 @@ comenzar con lo esencial, con margen para personalizar
       
       <PageBanner 
         title="BOSQUE PLATFORM" 
-        description="Архитектурные линейки на одной инженерной базе"
+        description="Soluciones en entramado ligero"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
@@ -499,15 +499,14 @@ comenzar con lo esencial, con margen para personalizar
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-wood-dark">
-                Архитектура по системе.<br />
-                Выберите форму, которая близка вам.
+                En la base de BOSQUE PLATFORM se encuentran distintas formas<br />
+                sobre un mismo sistema constructivo.<br />
+                Elige la forma que más te guste
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
-                Архитектура BOSQUE PLATFORM — это разные формы на одной инженерной базе.
+                Construimos según una lógica estructural clara: módulos repetitivos, uniones confiables y compatibilidad total en obra.
                 <br className="hidden md:block" />
-                Мы используем одну конструктивную систему: шаг 600 мм, проверенные узлы, комплектация BASE или STRUCTURA.
-                <br className="hidden md:block" />
-                От Mono до Barndominium — всё работает по одной логике: адаптировано к климату Канарских островов, рассчитано под сборку.
+                Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica: adaptado al clima de Canarias y preparado para el montaje.
               </p>
             </div>
 
@@ -583,7 +582,7 @@ comenzar con lo esencial, con margen para personalizar
             
             <div className="text-center -mt-8 mb-8">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                Как устроены наши дома
+                Cómo están hechas nuestras casas
               </h3>
               <HoverInteractiveSchema>
                 <button 
