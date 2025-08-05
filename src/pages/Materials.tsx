@@ -509,17 +509,23 @@ const Materials = () => {
       <section className="py-10 bg-nature-light/30">
         <div className="container mx-auto px-4">
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-wood-dark mb-4">Оптовым покупателям</h2>
+            <h2 className="text-2xl font-bold text-wood-dark mb-4">Compradores al por mayor</h2>
             <p className="text-gray-700 mb-6">
-              Для оптовых покупателей у нас действуют специальные цены на все виды пиломатериалов. 
-              Мы обеспечиваем быструю доставку по всему острову Тенерифе и предлагаем 
-              индивидуальные условия сотрудничества.
+              Para compradores al por mayor ofrecemos precios especiales en todos los tipos de maderas:
+              <br />
+              • Compras de €10.000 - <strong>descuento del 10%</strong>
+              <br />
+              • Compras de €50.000 - <strong>descuento del 20%</strong>
+              <br />
+              • Para pedidos mayores ofrecemos un enfoque individual y condiciones especiales de cooperación.
+              <br /><br />
+              Garantizamos entrega rápida en toda la isla de Tenerife.
             </p>
             <a
               href="/contact"
               className="inline-block px-6 py-2 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
             >
-              Запросить оптовый прайс
+              Solicitar precio al por mayor
             </a>
           </div>
         </div>
