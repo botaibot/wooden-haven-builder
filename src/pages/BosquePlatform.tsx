@@ -22,10 +22,10 @@ const BosquePlatform = () => {
 
   const architecturalLines = [
     {
-      name: "Mono Roof",
-      description: "Минимализм, чёткая геометрия, односкатная крыша.",
-      sizes: "от 29 до 60 м²",
-      quote: "Минимализм, который можно масштабировать.",
+      name: "Techo Simple",
+      description: "Minimalismo, geometría clara, tejado a una agua.",
+      sizes: "35–90 m²",
+      quote: "Minimalismo, que se puede escalar.",
       image: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
       models: [
         {
@@ -353,13 +353,13 @@ comenzar con lo esencial, con margen para personalizar
               variant="outline" 
               className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
             >
-              📎 Смотреть модели
+              📎 Ver modelos
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-wood-dark">
-                Модели {line.name}
+                Modelos {line.name}
               </DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
@@ -478,7 +478,7 @@ comenzar con lo esencial, con margen para personalizar
           variant="outline" 
           className="w-full border-wood text-wood hover:bg-wood hover:text-white text-sm md:text-base"
         >
-          📎 Смотреть модели
+          📎 Ver modelos
         </Button>
       );
     }
@@ -490,7 +490,7 @@ comenzar con lo esencial, con margen para personalizar
       
       <PageBanner 
         title="BOSQUE PLATFORM" 
-        description="Архитектурные линейки на одной инженерной базе"
+        description="Soluciones en entramado ligero"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
@@ -499,15 +499,14 @@ comenzar con lo esencial, con margen para personalizar
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-wood-dark">
-                Архитектура по системе.<br />
-                Выберите форму, которая близка вам.
+                En la base de BOSQUE PLATFORM se encuentran distintas formas<br />
+                sobre un mismo sistema constructivo.<br />
+                Elige la forma que más te guste
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
-                Архитектура BOSQUE PLATFORM — это разные формы на одной инженерной базе.
+                Construimos según una lógica estructural clara: módulos repetitivos, uniones confiables y compatibilidad total en obra.
                 <br className="hidden md:block" />
-                Мы используем одну конструктивную систему: шаг 600 мм, проверенные узлы, комплектация BASE или STRUCTURA.
-                <br className="hidden md:block" />
-                От Mono до Barndominium — всё работает по одной логике: адаптировано к климату Канарских островов, рассчитано под сборку.
+                Desde Techo Simple hasta Bosque Kit — todo se basa en una misma lógica: adaptado al clima de Canarias y preparado para el montaje.
               </p>
             </div>
 
@@ -531,9 +530,9 @@ comenzar con lo esencial, con margen para personalizar
                      <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                        {line.description}
                      </p>
-                     <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                       Размеры: {line.sizes}
-                     </p>
+                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
+                      Tamaños: {line.sizes}
+                    </p>
                      <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
                        <p className="text-sm text-gray-600 italic flex items-start gap-2">
                          <span>💬</span>
@@ -566,9 +565,9 @@ comenzar con lo esencial, con margen para personalizar
                     <p className="text-sm md:text-base text-gray-700 mb-3 text-center">
                       {line.description}
                     </p>
-                    <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
-                      Размеры: {line.sizes}
-                    </p>
+                   <p className="text-sm font-semibold text-wood-dark mb-3 text-center">
+                     Tamaños: {line.sizes}
+                   </p>
                     <div className="bg-nature-light/20 p-3 rounded-lg mb-4 flex-1">
                       <p className="text-sm text-gray-600 italic flex items-start gap-2">
                         <span>💬</span>
