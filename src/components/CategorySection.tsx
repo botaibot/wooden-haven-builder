@@ -107,14 +107,12 @@ const CategorySection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">
-            BOSQUE: De la tabla a la casa terminada— como sistema
+            BOSQUE: De la tabla a la casa terminada
           </h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-            BOSQUE es un equipo que lleva más de 6 años ayudando a realizar proyectos de madera en las Islas
-            Canarias.
-            No solo vendemos materiales — ofrecemos soluciones.
-            Desde la elección de la
-            madera hasta la construcción de la casa, ofrecemos un acompañamiento basado en práctica, experiencia y compromiso con la calidad.
+            Somos un equipo que lleva más de 6 años acompañando proyectos de madera en las Islas Canarias.<br />
+            No solo vendemos materiales — ofrecemos un proceso completo: desde la elección de la madera hasta el montaje final, con apoyo en cada etapa.<br />
+            Experiencia, práctica y compromiso con la calidad en cada proyecto.
           </p>
         </div>
 
