@@ -7,6 +7,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -19,23 +20,65 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     
-    // В реальном приложении здесь будет отправка данных на сервер
-    toast({
-      title: "Сообщение отправлено",
-      description: "Спасибо за ваше обращение! Мы свяжемся с вами в ближайшее время.",
-    });
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Ошибка",
+        description: "Пожалуйста, заполните все обязательные поля",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
+    
+    const contactData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      type: "contact_form",
+      timestamp: new Date().toISOString()
+    };
+    
+    try {
+      console.log("Отправка данных на webhook:", webhookUrl, contactData);
+      
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(contactData),
+      });
+      
+      toast({
+        title: "Сообщение отправлено",
+        description: "Спасибо за ваше обращение! Мы свяжемся с вами в ближайшее время.",
+      });
 
-    // Очистка формы
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+      // Очистка формы
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Ошибка при отправке:", error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить сообщение. Пожалуйста, попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -102,8 +145,12 @@ const ContactForm = () => {
         />
       </div>
 
-      <Button type="submit" className="w-full bg-wood hover:bg-wood-dark">
-        Отправить сообщение
+      <Button 
+        type="submit" 
+        className="w-full bg-wood hover:bg-wood-dark"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Отправка..." : "Отправить сообщение"}
       </Button>
     </form>
   );
