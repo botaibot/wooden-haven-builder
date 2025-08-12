@@ -34,7 +34,7 @@ const BosquePlatform = () => {
             "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
             "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png"
           ],
-          description: `🏠 Techo Simple 35,58 m² – Modelo MonoRoof (útil 29 m2)
+          description: `🏠 Techo Simple 35,58 m² (útil 29 m2)
 💶 Precio cerrado:
 🏗 ESTANDART: 789 €/m² → 28.100 €
 🌅 Terraza cubierta de 21 m² bajo voladizo — incluida en el precio
@@ -75,7 +75,7 @@ vivir con lo justo, pero bien hecho
             "/lovable-uploads/24f984b3-7c67-4428-936e-9c1c396aa1c0.png",
             "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
           ],
-          description: `🏠 Techo Simple 51,89 m² – Modelo MonoRoof (útil 41 m2)
+          description: `🏠 Techo Simple 51,89 m² (útil 41 m2)
 💶 Precio cerrado:
 🏗 ESTANDART: 719 €/m² → 37.315 €
 🌅 Terraza abierta de 25 m² incluida en el precio – integrada en la estructura, sin coste adicional.
@@ -117,13 +117,13 @@ quien valora sencillez, orden y presencia
             "/lovable-uploads/6ab7167c-38b8-4d8b-9395-4edf250c2263.png",
             "/lovable-uploads/9af6cd26-eb12-4502-82fe-af4a52f17dca.png"
           ],
-          description: `🏠 Techo Simple 67 m² – Modelo MonoRoof (útil 60 m2)
+          description: `🏠 Techo Simple 67 m² (útil 60 m2)
 💶 Precio cerrado:
 🏗 ESTANDART: 751 €/m² → 50.333 €
 🌅 Terraza cubierta de 31 m² bajo voladizo — incluida en el precio
 
 🌿 El equilibrio perfecto entre espacio, claridad y estructura
-Este modelo de 60 m² actúa como modelo de referencia de la serie MonoRoof. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
+Este modelo de 60 m² actúa como modelo de referencia de la serie Techo Simple. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
 La pérgola integrada da sombra sin recargar el diseño. Cada elemento tiene una función precisa.
 
 🏡 Distribución abierta y flexible
@@ -167,13 +167,13 @@ quienes valoran luz, orden y estructura
             "/lovable-uploads/bc53684c-1eae-477f-a924-037a54f88395.png",
             "/lovable-uploads/aebac7a2-b4f2-4df9-b813-6756932fab63.png"
           ],
-          description: `🏠 Techo Volado 35,58 m²– Modelo Flying Roof (útil 29 m2)
+          description: `🏠 Techo Volado 35,58 m² (útil 29 m2)
 💶 Precio cerrado:
 🏗   ESTANTADT: 830 €/m² → 29.536 €
 🌅 Terraza abierta de 21 m² incluida en el precio – integrada en la estructura, sin coste adicional.
 
 🌄 Arquitectura con carácter. Minimalismo con vuelo.
-Flying Roof no es solo una casa pequeña. Es una declaración arquitectónica en 35 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
+Techo Volado no es solo una casa pequeña. Es una declaración arquitectónica en 35 m²: asimetría, luz, líneas prolongadas y un tejado que "vuela" hacia el horizonte. Minimalista. Funcional. Contemporáneo. Pensado para paisajes del sur — desde Canarias hasta Cataluña.
 
 🧭 Distribución eficiente y expresiva
 Zona SALÓN-COCINA (~17,7 m²): 
@@ -217,7 +217,7 @@ Contraste entre luz y sombra
 Geometría expresiva
 Mínimos elementos, máximo sentido
 Pensado para sol intenso y horizontes abiertos
-🟢 Flying Roof 35 m² no es solo una casa — es una idea. La idea de que incluso 35 m² pueden parecer arquitectura.`
+🟢 Techo Volado 35 m² no es solo una casa — es una idea. La idea de que incluso 35 m² pueden parecer arquitectura.`
         },
         {
           size: "46 м²",
@@ -225,7 +225,7 @@ Pensado para sol intenso y horizontes abiertos
             "/lovable-uploads/3b23cd21-4831-4c6b-ae2e-bbcc1a7c96b7.png",
             "/lovable-uploads/9c622b89-a3f1-45c4-8a7e-67a684e33a6c.png"
           ],
-          description: `🏠 Techo Volado 46 m²– Modelo Flying Roof (útil 40 m2)
+          description: `🏠 Techo Volado 46 m² (útil 40 m2)
 💶 Precio cerrado:
 🏗 ESTANDART: 868 €/m² → 39.943 €
 🌅 Terraza abierta de 10 m² incluida en el precio – integrada en la estructura, sin coste adicional.
