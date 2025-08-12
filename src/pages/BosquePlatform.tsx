@@ -123,7 +123,7 @@ quien valora sencillez, orden y presencia
 🌅 Terraza cubierta de 31 m² bajo voladizo — incluida en el precio
 
 🌿 El equilibrio perfecto entre espacio, claridad y estructura
-Este modelo de 60 m² actúa como modelo de referencia de la serie Techo Simple. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
+Este modelo de 60 m² actúa como modelo de referencia de la serie MonoRoof. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
 La pérgola integrada da sombra sin recargar el diseño. Cada elemento tiene una función precisa.
 
 🏡 Distribución abierta y flexible
@@ -132,13 +132,9 @@ La entrada principal es frontal, con posibilidad de ventilación cruzada. El ba�
 📐 Claridad, funcionalidad y libertad de uso.
 
 📦 Versiones disponibles
-🔧 BÁSICO Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior, aislamiento completo, suelo técnico OSB 22 mm, fachada en machihembrado 19 mm, y preinstalación de tubos eléctricos y de fontanería en pared. 🛠 Para autoconstrucción o acabados personalizados.
-🏗 ESTANDART Incluye todo lo anterior, más: 
-✔️ instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos 
-✔️ tabiquería interior con placas de yeso + pintura blanca final 
-✔️ fachada exterior en machihembrado vertical 19 mm 
-✔️ instalaciones eléctricas e hidráulicas preinstaladas (sin conexión)
-📌 Otros acabados disponibles bajo pedido (revoco, paneles compuestos, acabados interiores de diseño...)
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior ✔️ Aislamiento completo ✔️ Suelo técnico OSB 22 mm ✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ Tabiquería interior con yeso y pintura blanca final ✔️ Fachada exterior en machihembrado 19 mm ✔️ Instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
 Puertas y ventanas no están incluidas en el precio base.
