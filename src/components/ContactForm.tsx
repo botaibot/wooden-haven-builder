@@ -34,26 +34,24 @@ const ContactForm = () => {
     
     setIsSubmitting(true);
     
-    const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
+    const baseWebhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Отправляем данные как отдельные переменные верхнего уровня
-    const contactData = {
+    // Отправляем данные через URL параметры
+    const params = new URLSearchParams({
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
       message: formData.message
-    };
+    });
+    
+    const webhookUrl = `${baseWebhookUrl}?${params.toString()}`;
     
     try {
-      console.log("Отправка данных на webhook:", webhookUrl, contactData);
+      console.log("Отправка данных на webhook через URL:", webhookUrl);
       
       const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify(contactData),
+        method: "GET",
+        mode: "no-cors"
       });
       
       toast({
