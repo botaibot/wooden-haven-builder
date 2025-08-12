@@ -62,39 +62,35 @@ const Cart = () => {
     
     setIsSubmitting(true);
     
-    // Webhook URL для отправки заказа
-    const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
+    const baseWebhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Формируем данные заказа
-    const orderData = {
-      orderType: "Материалы",
-      customerName: orderForm.name,
-      customerEmail: orderForm.email,
-      customerPhone: orderForm.phone,
-      deliveryAddress: `${orderForm.address}, ${orderForm.city} ${orderForm.postalCode}`,
-      notes: orderForm.notes,
-      items: items.map(item => ({
-        title: item.title,
-        size: item.size,
-        quantity: item.quantity,
-        price: item.price,
-        total: item.price * item.quantity
-      })),
-      totalItems: getTotalItems(),
-      totalPrice: getTotalPrice(),
-      orderDate: new Date().toISOString()
-    };
+    // Формируем список товаров как строку
+    const itemsList = items.map(item => 
+      `${item.title} (${item.size}) - ${item.quantity} шт. по €${item.price.toFixed(2)} = €${(item.price * item.quantity).toFixed(2)}`
+    ).join('; ');
+    
+    // Отправляем данные через URL параметры
+    const params = new URLSearchParams({
+      order_type: "Материалы",
+      name: orderForm.name,
+      email: orderForm.email,
+      phone: orderForm.phone,
+      address: `${orderForm.address}, ${orderForm.city} ${orderForm.postalCode}`,
+      notes: orderForm.notes || '',
+      items: itemsList,
+      total_items: getTotalItems().toString(),
+      total_price: getTotalPrice().toFixed(2),
+      order_date: new Date().toISOString()
+    });
+    
+    const webhookUrl = `${baseWebhookUrl}?${params.toString()}`;
     
     try {
-      console.log("Отправка заказа на webhook:", webhookUrl, orderData);
+      console.log("Отправка заказа на webhook через URL:", webhookUrl);
       
       const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify(orderData),
+        method: "GET",
+        mode: "no-cors"
       });
       
       toast({
