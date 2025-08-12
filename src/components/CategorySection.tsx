@@ -58,7 +58,7 @@ const CategorySection = () => {
       description: [
         "Madera, tableros, OSB, contrachapado",
         "Importación desde Alemania, Austria, Bélgica", 
-        "Clase C34, madera cepillada y seca",
+        "Clase C24, madera cepillada y seca",
         "En stock en Tenerife",
         "Entrega a todas las islas"
       ],
@@ -71,8 +71,7 @@ const CategorySection = () => {
       description: [
         "Estructura portante + aislamiento + OSB + membranas",
         "Módulo racional, paso de 600 mm",
-        "Compatibilidad de uniones",
-        "Versiones BASE o STRUCTURA"
+        "Compatibilidad de uniones"
       ],
       buttonText: "Más detalles del sistema",
       buttonLink: "/bosque-platform"
