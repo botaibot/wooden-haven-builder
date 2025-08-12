@@ -36,13 +36,15 @@ const ContactForm = () => {
     
     const webhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
+    // Отправляем данные как отдельные переменные
     const contactData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-      type: "contact_form",
-      timestamp: new Date().toISOString()
+      contact_name: formData.name,
+      contact_email: formData.email,
+      contact_phone: formData.phone,
+      contact_message: formData.message,
+      form_type: "contact_form",
+      submitted_at: new Date().toISOString(),
+      source_url: window.location.href
     };
     
     try {
