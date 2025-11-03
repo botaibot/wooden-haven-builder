@@ -16,8 +16,7 @@ import Contact from "./pages/Contact";
 import Calculator from "./pages/Calculator";
 import Stories from "./pages/Stories";
 import NotFound from "./pages/NotFound";
-import ChatAssistant from "@/components/ChatAssistant";
-import ConsultationChat from "@/components/ConsultationChat";
+import MessengerButtons from "@/components/MessengerButtons";
 import { CartProvider } from "./context/CartContext";
 import { CookieConsentProvider } from "./components/CookieConsent.jsx";
 import AnalyticsAndPixels from "./components/AnalyticsAndPixels.jsx";
@@ -60,10 +59,8 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-            {/* Добавляем ChatAssistant глобально */}
-            <ChatAssistant />
-            {/* Добавляем ConsultationChat глобально */}
-            <ConsultationChat />
+            {/* Кнопки мессенджеров глобально */}
+            <MessengerButtons />
             {/* Аналитика и пиксели с управлением согласия */}
             <AnalyticsAndPixels />
           </BrowserRouter>
