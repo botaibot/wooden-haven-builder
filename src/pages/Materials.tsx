@@ -431,7 +431,7 @@ const Materials = () => {
       priceRange: "€28,50",
       unit: "м²",
       sizes: [
-        { label: "4000 мм x 146 мм x 27 мм", value: "146mm", price: 28.5, width: 146, length: 4000 },
+        { label: "4000 мм x 146 мм x 27 мм", value: "146mm", price: 29.50, width: 146, length: 4000 },
       ],
       isNew: false,
       category: "Materiales de acabado"
@@ -506,17 +506,23 @@ const Materials = () => {
       <section className="py-10 bg-nature-light/30">
         <div className="container mx-auto px-4">
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-wood-dark mb-4">Compradores al por mayor</h2>
+            <h2 className="text-2xl font-bold text-wood-dark mb-4">🪵 Compradores al por mayor</h2>
             <p className="text-gray-700 mb-6">
-              Para compradores al por mayor ofrecemos precios especiales en todos los tipos de maderas:
-              <br />
-              • Compras de €10.000 - <strong>descuento del 10%</strong>
-              <br />
-              • Compras de €50.000 - <strong>descuento del 20%</strong>
-              <br />
-              • Para pedidos mayores ofrecemos un enfoque individual y condiciones especiales de cooperación.
+              Para compras al por mayor ofrecemos descuentos especiales en todos los tipos de madera aserrada:
               <br /><br />
-              Garantizamos entrega rápida en toda la isla de Tenerife.
+              De 1.000 € a 2.999 € → <strong>5 %</strong>
+              <br />
+              De 3.000 € a 6.999 € → <strong>8 %</strong>
+              <br />
+              De 7.000 € a 14.999 € → <strong>12 %</strong>
+              <br />
+              A partir de 15.000 € → <strong>18 %</strong>
+              <br /><br />
+              📌 El descuento se aplica sobre el valor del material, no incluye transporte ni servicios adicionales.
+              <br /><br />
+              Para pedidos mayores ofrecemos un enfoque individual y condiciones especiales de cooperación.
+              <br /><br />
+              🚚 Garantizamos entrega rápida en toda la isla de Tenerife.
             </p>
             <a
               href="/contact"
