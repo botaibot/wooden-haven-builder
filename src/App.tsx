@@ -19,8 +19,9 @@ import NotFound from "./pages/NotFound";
 import ChatAssistant from "@/components/ChatAssistant";
 import ConsultationChat from "@/components/ConsultationChat";
 import { CartProvider } from "./context/CartContext";
-import { CookieConsentProvider } from "./components/cookie-consent/CookieConsentContext";
-import { CookieBanner } from "./components/cookie-consent/CookieBanner";
+import { CookieConsentProvider } from "./components/CookieConsent.jsx";
+import AnalyticsAndPixels from "./components/AnalyticsAndPixels.jsx";
+import Privacidad from "./pages/Privacidad.jsx";
 
 // Компонент для прокрутки вверх при изменении маршрута
 const ScrollToTop = () => {
@@ -55,6 +56,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/stories" element={<Stories />} />
+              <Route path="/privacidad" element={<Privacidad />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -62,8 +64,8 @@ const App = () => (
             <ChatAssistant />
             {/* Добавляем ConsultationChat глобально */}
             <ConsultationChat />
-            {/* Добавляем CookieBanner глобально */}
-            <CookieBanner />
+            {/* Аналитика и пиксели с управлением согласия */}
+            <AnalyticsAndPixels />
           </BrowserRouter>
         </CookieConsentProvider>
       </CartProvider>
