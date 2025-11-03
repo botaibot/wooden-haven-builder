@@ -9,7 +9,7 @@ const MessengerButtons = () => {
   };
 
   const handleTelegramClick = () => {
-    window.open('https://t.me/your_telegram_bot', '_blank');
+    window.open('https://t.me/casamodulbot', '_blank');
   };
 
   const handleBotClick = () => {
