@@ -8,7 +8,7 @@ import HeroSection from "@/components/house-detail/HeroSection";
 import FloorPlanSection from "@/components/house-detail/FloorPlanSection";
 import GallerySection from "@/components/house-detail/GallerySection";
 import PriceSection from "@/components/house-detail/PriceSection";
-import FloatingContactButton from "@/components/house-detail/FloatingContactButton";
+
 
 const HouseDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -38,7 +38,7 @@ const HouseDetail = () => {
           </div>
         </div>
 
-        <FloatingContactButton />
+        
       </main>
 
       <Footer />
