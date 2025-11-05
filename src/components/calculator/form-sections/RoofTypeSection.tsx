@@ -52,18 +52,18 @@ const RoofTypeSection = ({ form, roofCost }: RoofTypeSectionProps) => {
                         htmlFor={type}
                         className="flex flex-col items-start justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary cursor-pointer transition-all min-h-[120px]"
                       >
-                        <div className="w-full flex items-center gap-3">
-                          <img 
-                            src={roofTypeIcons[type]} 
-                            alt={getRoofTypeLabel(type)}
-                            className="w-12 h-12 object-contain flex-shrink-0"
-                          />
+                        <div className="w-full flex items-center gap-3 justify-between">
                           <div className="flex-1">
                             <div className="font-semibold">{getRoofTypeLabel(type)}</div>
                             <div className="text-sm text-muted-foreground mt-1">
                               {PRICES.ROOF_TYPE[type]}€ por m²
                             </div>
                           </div>
+                          <img 
+                            src={roofTypeIcons[type]} 
+                            alt={getRoofTypeLabel(type)}
+                            className="w-12 h-12 object-contain flex-shrink-0 mix-blend-multiply"
+                          />
                         </div>
                         <div className="w-full flex items-end justify-between mt-2">
                           <div className="text-lg font-bold text-primary">
