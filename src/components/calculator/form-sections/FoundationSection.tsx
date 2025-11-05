@@ -41,7 +41,7 @@ const FoundationSection = ({ form, foundationCost }: FoundationSectionProps) => 
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <Home className="h-5 w-5" /> Tipo de fundación
+            <Home className="h-5 w-5" /> Tipo de cimentación
           </FormLabel>
           <FormControl>
             <RadioGroup
@@ -75,7 +75,7 @@ const FoundationSection = ({ form, foundationCost }: FoundationSectionProps) => 
                             onClick={(e) => e.stopPropagation()}
                           >
                             <Info className="h-3 w-3" />
-                            Подробнее
+                            Ver más
                           </div>
                         </div>
                       </Label>

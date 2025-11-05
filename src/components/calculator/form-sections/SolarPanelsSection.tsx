@@ -22,7 +22,7 @@ const SolarPanelsSection = ({ form }: SolarPanelsSectionProps) => {
           <FormItem className="space-y-4">
             <div className="flex items-center justify-between">
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <Sun className="h-5 w-5" /> Солнечные панели
+                <Sun className="h-5 w-5" /> Paneles solares
               </FormLabel>
               <FormControl>
                 <Switch
@@ -32,7 +32,7 @@ const SolarPanelsSection = ({ form }: SolarPanelsSectionProps) => {
               </FormControl>
             </div>
             <FormDescription>
-              Добавить комплект солнечных панелей (1400 €/кВт)
+              Añadir kit de paneles solares (1400 €/kW)
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -45,7 +45,7 @@ const SolarPanelsSection = ({ form }: SolarPanelsSectionProps) => {
           name="solarPower"
           render={({ field: { value, onChange } }) => (
             <FormItem>
-              <FormLabel>Мощность системы (кВт)</FormLabel>
+              <FormLabel>Potencia del sistema (kW)</FormLabel>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <FormControl>
@@ -59,24 +59,24 @@ const SolarPanelsSection = ({ form }: SolarPanelsSectionProps) => {
                     />
                   </FormControl>
                   <span className="ml-4 min-w-16 text-right">
-                    {value ?? 5} кВт
+                    {value ?? 5} kW
                   </span>
                 </div>
                 <div className="flex justify-between text-xs text-muted-foreground">
-                  <span>5 кВт</span>
-                  <span>20 кВт</span>
+                  <span>5 kW</span>
+                  <span>20 kW</span>
                 </div>
               </div>
               <FormDescription>
                 <div className="mt-2 space-y-1 bg-slate-50 p-3 rounded-md">
-                  <p>Комплектация системы:</p>
+                  <p>Configuración del sistema:</p>
                   <ul className="list-disc pl-5 text-sm mt-1">
-                    <li>Солнечные панели</li>
-                    <li>Инвертор (преобразователь)</li>
-                    <li>Аккумуляторы</li>
-                    <li>Монтаж "под ключ"</li>
+                    <li>Paneles solares</li>
+                    <li>Inversor (convertidor)</li>
+                    <li>Baterías</li>
+                    <li>Instalación "llave en mano"</li>
                   </ul>
-                  <p className="mt-2 text-sm font-medium">Стоимость: {formatCurrency(value * 1400)}</p>
+                  <p className="mt-2 text-sm font-medium">Costo: {formatCurrency(value * 1400)}</p>
                 </div>
               </FormDescription>
               <FormMessage />

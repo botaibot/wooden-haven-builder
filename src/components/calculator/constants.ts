@@ -48,15 +48,15 @@ export const formatCurrency = (value: number) => {
 
 export const getRoofInsulationLabel = (value: string): string => {
   switch(value) {
-    case "polystyrene_40mm": return "Пенополистирол 80 мм";
-    case "custom": return "Индивидуальная толщина (по запросу)";
+    case "polystyrene_40mm": return "Poliestireno 80 mm";
+    case "custom": return "Grosor personalizado (bajo pedido)";
     default: return value;
   }
 };
 
 export const getFoundationLabel = (value: string): string => {
   switch(value) {
-    case "adjustable_metal": return "Металлические опоры";
+    case "adjustable_metal": return "Soportes metálicos ajustables";
     case "strip": return "Zapata corrida";
     case "monolithic": return "Losa monolítica";
     default: return value;

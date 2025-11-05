@@ -21,7 +21,7 @@ const HouseTypeSelector = ({ form }: HouseTypeSelectorProps) => {
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <Home className="h-5 w-5" /> Тип дома
+            <Home className="h-5 w-5" /> Tipo de casa
           </FormLabel>
           <FormControl>
             <RadioGroup
@@ -32,18 +32,18 @@ const HouseTypeSelector = ({ form }: HouseTypeSelectorProps) => {
               <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-gray-50">
                 <RadioGroupItem value="frame" id="frame" />
                 <label htmlFor="frame" className="flex-1 cursor-pointer">
-                  <div className="font-medium">Каркасные дома</div>
+                  <div className="font-medium">Casas de entramado ligero</div>
                   <div className="text-sm text-muted-foreground">
-                    Быстрое строительство, отличная теплоизоляция
+                    Construcción rápida, excelente aislamiento térmico
                   </div>
                 </label>
               </div>
               <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-gray-50">
                 <RadioGroupItem value="glued_beam" id="glued_beam" />
                 <label htmlFor="glued_beam" className="flex-1 cursor-pointer">
-                  <div className="font-medium">Дома из клееного бруса</div>
+                  <div className="font-medium">Casas de madera laminada</div>
                   <div className="text-sm text-muted-foreground">
-                    Экологичность, прочность, красивый внешний вид
+                    Ecológico, resistente, bella apariencia
                   </div>
                 </label>
               </div>

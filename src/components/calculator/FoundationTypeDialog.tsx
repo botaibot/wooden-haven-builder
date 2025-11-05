@@ -11,14 +11,14 @@ interface FoundationTypeDialogProps {
 
 const FOUNDATION_DETAILS = {
   adjustable_metal: {
-    title: "Регулируемая металлическая опора",
-    description: "Характеристики и особенности металлической опоры",
+    title: "Soporte metálico ajustable",
+    description: "Características y particularidades del soporte metálico",
     content: {
-      text: "Толщина металла 6 мм. Регулируемые металлические опоры — базовый и самый экономичный вариант. Позволяет быстро установить дом на подготовленной площадке и при необходимости регулировать высоту.",
-      details: "Для маленьких домов до 30м² выкапывается земля под металлические опоры размером 50×50×50 см, делается подсыпка щебня и песка, укладывается бетонный блок, к которому прикручиваются опоры.",
-      pricing: "Стоимость одной опоры: 100 € (с установкой)",
-      consumption: "Примерный расход: 7 опор на каждые 10 м² площади пола",
-      note: "Входит в базовую комплектацию"
+      text: "Espesor de metal 6 mm. Los soportes metálicos ajustables son la opción básica y más económica. Permite instalar rápidamente la casa en el terreno preparado y ajustar la altura si es necesario.",
+      details: "Para casas pequeñas de hasta 30m², se excava tierra para soportes metálicos de 50×50×50 cm, se hace un relleno de grava y arena, se coloca un bloque de hormigón al cual se atornillan los soportes.",
+      pricing: "Costo por soporte: 100 € (con instalación)",
+      consumption: "Consumo aproximado: 7 soportes cada 10 m² de superficie",
+      note: "Incluido en la configuración básica"
     },
     image: "/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png"
   },
@@ -86,9 +86,7 @@ const FoundationTypeDialog = ({ type, children }: FoundationTypeDialogProps) => 
             </div>
             
             <p className="text-sm bg-amber-50 p-3 rounded">
-              <span className="font-medium">Важно:</span> Выбор типа фундамента зависит от особенностей грунта и 
-              характеристик вашего участка. Для получения наиболее точной оценки рекомендуем 
-              проконсультироваться с нашими специалистами.
+              <span className="font-medium">Importante:</span> La elección del tipo de cimentación depende de las características del suelo y las particularidades de su terreno. Para obtener la evaluación más precisa, recomendamos consultar con nuestros especialistas.
             </p>
           </div>
         </ScrollArea>

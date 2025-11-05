@@ -42,7 +42,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
           <FormItem className="space-y-4">
             <div className="flex items-center justify-between">
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <TreePalm className="h-5 w-5" /> Терраса
+                <TreePalm className="h-5 w-5" /> Terraza
               </FormLabel>
               <FormControl>
                 <Switch
@@ -52,7 +52,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
               </FormControl>
             </div>
             <FormDescription>
-              Добавить террасу к дому (200 €/м²)
+              Añadir terraza a la casa (200 €/m²)
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -62,13 +62,13 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
       {form.watch("terrace") && (
         <div className="bg-green-50/30 p-4 rounded-md border border-green-100 mb-4">
           <h4 className="text-sm font-medium mb-2 flex items-center gap-1">
-            <Calculator className="h-4 w-4" /> Расчет площади террасы
+            <Calculator className="h-4 w-4" /> Cálculo de superficie de terraza
           </h4>
-          <p className="text-xs mb-3">Площадь = Длина × Ширина</p>
+          <p className="text-xs mb-3">Superficie = Largo × Ancho</p>
           
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
-              <label className="text-xs block mb-1">Длина (м)</label>
+              <label className="text-xs block mb-1">Largo (m)</label>
               <Input 
                 type="number" 
                 min="0" 
@@ -79,7 +79,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
               />
             </div>
             <div>
-              <label className="text-xs block mb-1">Ширина (м)</label>
+              <label className="text-xs block mb-1">Ancho (m)</label>
               <Input 
                 type="number" 
                 min="0" 
@@ -94,8 +94,8 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
           <div className="flex justify-between items-center">
             <span className="text-sm font-medium">
               {terraceLength > 0 && terraceWidth > 0 
-                ? `Итого: ${(terraceLength * terraceWidth).toFixed(1)} м²` 
-                : 'Укажите размеры для расчета площади'}
+                ? `Total: ${(terraceLength * terraceWidth).toFixed(1)} m²` 
+                : 'Indique dimensiones para calcular superficie'}
             </span>
           </div>
         </div>
@@ -108,7 +108,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
           <FormItem className="space-y-4">
             <div className="flex items-center justify-between">
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <TreePalm className="h-5 w-5" /> Навес
+                <TreePalm className="h-5 w-5" /> Marquesina
               </FormLabel>
               <FormControl>
                 <Switch
@@ -118,7 +118,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
               </FormControl>
             </div>
             <FormDescription>
-              Добавить навес (200 €/м²)
+              Añadir marquesina (200 €/m²)
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -128,13 +128,13 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
       {form.watch("canopy") && (
         <div className="bg-green-50/30 p-4 rounded-md border border-green-100 mb-4">
           <h4 className="text-sm font-medium mb-2 flex items-center gap-1">
-            <Calculator className="h-4 w-4" /> Расчет площади навеса
+            <Calculator className="h-4 w-4" /> Cálculo de superficie de marquesina
           </h4>
-          <p className="text-xs mb-3">Площадь = Длина × Ширина</p>
+          <p className="text-xs mb-3">Superficie = Largo × Ancho</p>
           
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
-              <label className="text-xs block mb-1">Длина (м)</label>
+              <label className="text-xs block mb-1">Largo (m)</label>
               <Input 
                 type="number" 
                 min="0" 
@@ -145,7 +145,7 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
               />
             </div>
             <div>
-              <label className="text-xs block mb-1">Ширина (м)</label>
+              <label className="text-xs block mb-1">Ancho (m)</label>
               <Input 
                 type="number" 
                 min="0" 
@@ -160,8 +160,8 @@ const OutdoorSpacesSection = ({ form }: OutdoorSpacesSectionProps) => {
           <div className="flex justify-between items-center">
             <span className="text-sm font-medium">
               {canopyLength > 0 && canopyWidth > 0 
-                ? `Итого: ${(canopyLength * canopyWidth).toFixed(1)} м²` 
-                : 'Укажите размеры для расчета площади'}
+                ? `Total: ${(canopyLength * canopyWidth).toFixed(1)} m²` 
+                : 'Indique dimensiones para calcular superficie'}
             </span>
           </div>
         </div>

@@ -18,7 +18,7 @@ const RoofInsulationSection = ({ form }: RoofInsulationSectionProps) => {
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <Layers className="h-5 w-5" /> Утепление стен
+            <Layers className="h-5 w-5" /> Aislamiento de paredes
             <RoofInfoDialog />
           </FormLabel>
           <FormMessage />

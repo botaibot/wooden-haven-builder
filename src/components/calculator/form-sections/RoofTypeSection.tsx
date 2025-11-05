@@ -74,7 +74,7 @@ const RoofTypeSection = ({ form, roofCost }: RoofTypeSectionProps) => {
                             onClick={(e) => e.stopPropagation()}
                           >
                             <Info className="h-3 w-3" />
-                            Подробнее
+                            Ver más
                           </div>
                         </div>
                       </Label>

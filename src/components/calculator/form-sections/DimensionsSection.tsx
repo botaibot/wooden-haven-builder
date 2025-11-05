@@ -20,7 +20,7 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
           render={({ field: { value, onChange } }) => (
             <FormItem>
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <Home className="h-5 w-5" /> Ширина дома (м)
+                <Home className="h-5 w-5" /> Ancho de la casa (m)
               </FormLabel>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -44,7 +44,7 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
                 </div>
               </div>
               <FormDescription>
-                Укажите желаемую ширину дома.
+                Indique el ancho deseado de la casa.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -57,7 +57,7 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
           render={({ field: { value, onChange } }) => (
             <FormItem>
               <FormLabel className="text-lg font-medium flex items-center gap-2">
-                <Ruler className="h-5 w-5" /> Длина дома (м)
+                <Ruler className="h-5 w-5" /> Largo de la casa (m)
               </FormLabel>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -81,7 +81,7 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
                 </div>
               </div>
               <FormDescription>
-                Укажите желаемую длину дома.
+                Indique el largo deseado de la casa.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -91,9 +91,9 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
 
       <div className="bg-slate-50 p-4 rounded-md border border-slate-100">
         <div className="space-y-2">
-          <h3 className="text-md font-medium">Площадь дома: {(form.watch("width") * form.watch("length")).toFixed(1)} м²</h3>
+          <h3 className="text-md font-medium">Superficie de la casa: {(form.watch("width") * form.watch("length")).toFixed(1)} m²</h3>
           <p className="text-lg font-semibold text-primary">
-            Базовая комплектация: {((form.watch("width") * form.watch("length")) * (form.watch("houseType") === "frame" ? 850 : 1000)).toLocaleString()} €
+            Configuración básica: {((form.watch("width") * form.watch("length")) * (form.watch("houseType") === "frame" ? 850 : 1000)).toLocaleString()} €
           </p>
         </div>
       </div>

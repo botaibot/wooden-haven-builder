@@ -41,9 +41,9 @@ const PriceDetails = ({
     const calculationData = {
       type: "detailed_calculation_request",
       calculationDetails: {
-        houseType: formValues.houseType === "frame" ? "Каркасный дом" : "Дом из клееного бруса",
-        dimensions: `${formValues.width} × ${formValues.length} м`,
-        houseArea: `${(formValues.width * formValues.length).toFixed(1)} м²`,
+        houseType: formValues.houseType === "frame" ? "Casa de entramado ligero" : "Casa de madera laminada",
+        dimensions: `${formValues.width} × ${formValues.length} m`,
+        houseArea: `${(formValues.width * formValues.length).toFixed(1)} m²`,
         thickness: formValues.thickness,
         roofInsulation: getRoofInsulationLabel(formValues.roofInsulation),
         foundation: getFoundationLabel(formValues.foundation),
@@ -61,7 +61,7 @@ const PriceDetails = ({
         } : { enabled: false },
         solarPanels: formValues.solarPanels ? {
           enabled: true,
-          power: `${formValues.solarPower} кВт`,
+          power: `${formValues.solarPower} kW`,
           cost: formatCurrency(formValues.solarPower * 1400)
         } : { enabled: false },
         fireProtection: formValues.fireProtection ? {
@@ -69,7 +69,7 @@ const PriceDetails = ({
           points: 20,
           cost: formatCurrency(800)
         } : { enabled: false },
-        totalArea: `${totalArea.toFixed(1)} м²`,
+        totalArea: `${totalArea.toFixed(1)} m²`,
         totalPrice: formatCurrency(totalPrice),
         basePrice: formValues.houseType === "frame" ? "550 €" : "800 €",
         timestamp: new Date().toISOString(),
@@ -91,18 +91,18 @@ const PriceDetails = ({
       });
       
       toast({
-        title: "Запрос отправлен",
-        description: "Данные предварительного расчета переданы менеджеру. Мы свяжемся с вами для предоставления детального расчета.",
+        title: "Solicitud enviada",
+        description: "Los datos del cálculo preliminar han sido enviados al gerente. Nos pondremos en contacto para proporcionar un cálculo detallado.",
       });
       
       // Вызываем оригинальный onSubmit для совместимости
       onSubmit();
       
     } catch (error) {
-      console.error("Ошибка при отправке детального расчета:", error);
+      console.error("Error al enviar el cálculo detallado:", error);
       toast({
-        title: "Ошибка",
-        description: "Не удалось отправить данные. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.",
+        title: "Error",
+        description: "No se pudieron enviar los datos. Por favor, inténtelo más tarde o contáctenos directamente.",
         variant: "destructive",
       });
     } finally {
@@ -119,10 +119,10 @@ const PriceDetails = ({
       >
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 mb-4">
           <div>
-            <p className="text-sm font-medium text-muted-foreground">Предварительная стоимость:</p>
+            <p className="text-sm font-medium text-muted-foreground">Costo preliminar:</p>
             <p className="text-2xl font-bold text-wood-dark">{formatCurrency(totalPrice)}</p>
             <p className="text-xs text-muted-foreground mt-1">
-              Каркасный дом с крышей, без окон, дверей, сантехники, электрики, водоснабжения
+              Casa de entramado ligero con techo, sin ventanas, puertas, fontanería, electricidad, suministro de agua
             </p>
           </div>
           <CollapsibleTrigger asChild>
@@ -131,88 +131,88 @@ const PriceDetails = ({
               size="sm"
               className="text-sm"
             >
-              {isDetailsOpen ? "Скрыть детали" : "Показать детали"}
+              {isDetailsOpen ? "Ocultar detalles" : "Mostrar detalles"}
             </Button>
           </CollapsibleTrigger>
         </div>
 
         <CollapsibleContent className="space-y-2">
           <div className="grid grid-cols-2 gap-2 text-sm">
-            <div className="text-muted-foreground">Тип дома:</div>
+            <div className="text-muted-foreground">Tipo de casa:</div>
             <div>
               {formValues.houseType === "frame"
-                ? "Каркасный дом"
-                : "Дом из клееного бруса"}
+                ? "Casa de entramado ligero"
+                : "Casa de madera laminada"}
             </div>
 
-            <div className="text-muted-foreground">Базовая стоимость:</div>
+            <div className="text-muted-foreground">Costo base:</div>
             <div>
-              {formValues.houseType === "frame" ? "550 €" : "800 €"} за м²
+              {formValues.houseType === "frame" ? "550 €" : "800 €"} por m²
             </div>
 
-            <div className="text-muted-foreground">Размеры дома:</div>
+            <div className="text-muted-foreground">Dimensiones de la casa:</div>
             <div>
-              {formValues.width} × {formValues.length} м
+              {formValues.width} × {formValues.length} m
             </div>
 
-            <div className="text-muted-foreground">Площадь дома:</div>
+            <div className="text-muted-foreground">Superficie de la casa:</div>
             <div>
-              {(formValues.width * formValues.length).toFixed(1)} м²
+              {(formValues.width * formValues.length).toFixed(1)} m²
             </div>
 
-            <div className="text-muted-foreground">Утепление крыши:</div>
+            <div className="text-muted-foreground">Aislamiento de techo:</div>
             <div>
               {getRoofInsulationLabel(formValues.roofInsulation)}
             </div>
 
-            <div className="text-muted-foreground">Тип фундамента:</div>
+            <div className="text-muted-foreground">Tipo de cimentación:</div>
             <div>
               {getFoundationLabel(formValues.foundation)}
             </div>
 
             {formValues.foundation === "adjustable_metal" && (
               <>
-                <div className="text-muted-foreground">Металлические опоры:</div>
-                <div>{metalSupportsCount} шт. ({formatCurrency(metalSupportsCost)})</div>
+                <div className="text-muted-foreground">Soportes metálicos:</div>
+                <div>{metalSupportsCount} uds. ({formatCurrency(metalSupportsCost)})</div>
               </>
             )}
 
             {formValues.terrace && (
               <>
-                <div className="text-muted-foreground">Площадь террасы:</div>
-                <div>{formValues.terraceSize} м²</div>
+                <div className="text-muted-foreground">Superficie de terraza:</div>
+                <div>{formValues.terraceSize} m²</div>
               </>
             )}
 
             {formValues.canopy && (
               <>
-                <div className="text-muted-foreground">Площадь навеса:</div>
-                <div>{formValues.canopySize} м²</div>
+                <div className="text-muted-foreground">Superficie de marquesina:</div>
+                <div>{formValues.canopySize} m²</div>
               </>
             )}
 
             {formValues.solarPanels && (
               <>
-                <div className="text-muted-foreground">Солнечные панели:</div>
-                <div>{formValues.solarPower} кВт ({formatCurrency(formValues.solarPower * 1400)})</div>
+                <div className="text-muted-foreground">Paneles solares:</div>
+                <div>{formValues.solarPower} kW ({formatCurrency(formValues.solarPower * 1400)})</div>
               </>
             )}
 
             {formValues.fireProtection && (
               <>
-                <div className="text-muted-foreground">Противопожарная защита:</div>
-                <div>20 точек ({formatCurrency(800)})</div>
+                <div className="text-muted-foreground">Protección antiincendios:</div>
+                <div>20 puntos ({formatCurrency(800)})</div>
               </>
             )}
 
-            <div className="text-muted-foreground">Общая площадь:</div>
+            <div className="text-muted-foreground">Superficie total:</div>
             <div>
-              {totalArea.toFixed(1)} м²
+              {totalArea.toFixed(1)} m²
             </div>
           </div>
           
           <div className="mt-4 pt-3 border-t text-xs text-muted-foreground">
-            <p>В указанную стоимость входит каркасный дом с крышей. Не включены: окна, двери, сантехника, электрика, водоснабжение.</p>
+            <p>El costo indicado incluye casa de entramado ligero con techo. No incluye: ventanas, puertas, fontanería, electricidad, suministro de agua.</p>
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -224,7 +224,7 @@ const PriceDetails = ({
           disabled={isSubmitting}
           className="bg-wood text-white hover:bg-wood-dark w-full sm:w-auto"
         >
-          {isSubmitting ? "Отправка..." : "Получить детальный расчет"}
+          {isSubmitting ? "Enviando..." : "Obtener cálculo detallado"}
         </Button>
         
         <Button 
@@ -232,7 +232,7 @@ const PriceDetails = ({
           onClick={() => setIsOrderFormOpen(true)}
           className="border-wood text-wood hover:bg-wood/10 w-full sm:w-auto"
         >
-          Отправить расчет менеджеру
+          Enviar cálculo al gerente
         </Button>
       </div>
       

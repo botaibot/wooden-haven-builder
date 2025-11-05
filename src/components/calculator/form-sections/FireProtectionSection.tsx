@@ -21,7 +21,7 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
           <div className="flex flex-row items-center justify-between">
             <FormLabel className="text-lg font-medium flex items-center gap-2 cursor-pointer">
               <ShieldCheck className="h-5 w-5 text-red-600" /> 
-              <span>Противопожарная подготовка</span>
+              <span>Preparación antiincendios</span>
             </FormLabel>
             <FormControl>
               <Switch
@@ -32,7 +32,7 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
           </div>
           
           <FormDescription className="mt-2">
-            <p className="font-medium text-red-800">Противопожарная система добавляется уже в завершенный дом на чистовой отделке.</p>
+            <p className="font-medium text-red-800">El sistema antiincendios se añade en la casa terminada con acabados finales.</p>
           </FormDescription>
           
           {field.value && (
@@ -40,10 +40,10 @@ const FireProtectionSection = ({ form }: FireProtectionSectionProps) => {
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-medium">
-                    {PRICES.FIRE_PROTECTION.points} точек (розетки и выключатели)
+                    {PRICES.FIRE_PROTECTION.points} puntos (enchufes e interruptores)
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Защита от возгорания
+                    Protección contra incendios
                   </p>
                 </div>
                 <p className="font-semibold text-lg">

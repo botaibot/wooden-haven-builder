@@ -18,7 +18,7 @@ const ThicknessSection = ({ form }: ThicknessSectionProps) => {
       render={() => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <Ruler className="h-5 w-5" /> Толщина каркаса
+            <Ruler className="h-5 w-5" /> Grosor de la estructura
             <FrameThicknessDialog houseType="frame" />
           </FormLabel>
         </FormItem>
