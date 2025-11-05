@@ -35,7 +35,6 @@ const HouseCalculatorForm = ({ form, foundationCost, roofCost }: HouseCalculator
     <>
       <HouseTypeSelector form={form} />
       <DimensionsSection form={form} />
-      <ThicknessSection form={form} />
       <FoundationSection 
         form={form} 
         foundationCost={foundationCost}
@@ -44,6 +43,7 @@ const HouseCalculatorForm = ({ form, foundationCost, roofCost }: HouseCalculator
         form={form} 
         roofCost={roofCost}
       />
+      <ThicknessSection form={form} />
       <RoofInsulationSection form={form} />
       <FloorSection form={form} />
       <SolarPanelsSection form={form} />
