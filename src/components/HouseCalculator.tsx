@@ -18,18 +18,20 @@ const HouseCalculator = () => {
   const [totalArea, setTotalArea] = useState(0);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [foundationCost, setFoundationCost] = useState(0);
+  const [roofCost, setRoofCost] = useState(0);
 
   const defaultValues: FormValues = {
     houseType: "frame",
     width: 6,
     length: 8,
     thickness: "120mm",
+    foundation: "adjustable_metal",
+    roofType: "simple",
     terrace: false,
     terraceSize: 0,
     canopy: false,
     canopySize: 0,
     roofInsulation: "polystyrene_40mm",
-    foundation: "adjustable_metal",
     solarPanels: false,
     solarPower: 5,
     fireProtection: false,
@@ -90,6 +92,10 @@ const HouseCalculator = () => {
     
     setFoundationCost(foundationPrice);
     
+    // Calculate roof type cost
+    const roofPrice = houseArea * PRICES.ROOF_TYPE[values.roofType];
+    setRoofCost(roofPrice);
+    
     // Calculate solar panels cost
     const solarPanelsPrice = values.solarPanels 
       ? Math.max(values.solarPower, PRICES.SOLAR_PANELS.min_power) * PRICES.SOLAR_PANELS.price_per_kw
@@ -101,7 +107,7 @@ const HouseCalculator = () => {
       : 0;
     
     const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + 
-      foundationPrice + solarPanelsPrice + fireProtectionPrice;
+      foundationPrice + roofPrice + solarPanelsPrice + fireProtectionPrice;
     
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
@@ -150,6 +156,7 @@ const HouseCalculator = () => {
               <HouseCalculatorForm 
                 form={form} 
                 foundationCost={foundationCost}
+                roofCost={roofCost}
               />
               
               <PriceDetails 

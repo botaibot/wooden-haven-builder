@@ -6,6 +6,12 @@ export const PRICES = {
     frame: 850,
     glued_beam: 1000
   },
+  ROOF_TYPE: {
+    simple: 100,      // Techo Simple - 100€ за м²
+    volado: 150,      // Techo Volado - 150€ за м²
+    moderno: 200,     // Estilo Moderno - 200€ за м²
+    alto: 150         // Techo Alto - 150€ за м²
+  },
   TERRACE_PRICE_PER_SQM: 200,
   CANOPY_PRICE_PER_SQM: 200,
   ROOF_INSULATION: {
@@ -53,6 +59,16 @@ export const getFoundationLabel = (value: string): string => {
     case "adjustable_metal": return "Металлические опоры";
     case "strip": return "Ленточный фундамент";
     case "monolithic": return "Монолитная подушка";
+    default: return value;
+  }
+};
+
+export const getRoofTypeLabel = (value: string): string => {
+  switch(value) {
+    case "simple": return "Techo Simple";
+    case "volado": return "Techo Volado";
+    case "moderno": return "Estilo Moderno";
+    case "alto": return "Techo Alto";
     default: return value;
   }
 };

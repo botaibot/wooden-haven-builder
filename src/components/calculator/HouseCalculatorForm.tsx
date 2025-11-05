@@ -7,6 +7,7 @@ import DimensionsSection from "./form-sections/DimensionsSection";
 import ThicknessSection from "./form-sections/ThicknessSection";
 import RoofInsulationSection from "./form-sections/RoofInsulationSection";
 import FoundationSection from "./form-sections/FoundationSection";
+import RoofTypeSection from "./form-sections/RoofTypeSection";
 import SolarPanelsSection from "./form-sections/SolarPanelsSection";
 import OutdoorSpacesSection from "./form-sections/OutdoorSpacesSection";
 import FireProtectionSection from "./form-sections/FireProtectionSection";
@@ -15,9 +16,10 @@ import FloorSection from "./form-sections/FloorSection";
 interface HouseCalculatorFormProps {
   form: UseFormReturn<FormValues>;
   foundationCost: number;
+  roofCost: number;
 }
 
-const HouseCalculatorForm = ({ form, foundationCost }: HouseCalculatorFormProps) => {
+const HouseCalculatorForm = ({ form, foundationCost, roofCost }: HouseCalculatorFormProps) => {
   const watchHouseType = form.watch("houseType");
   
   useEffect(() => {
@@ -34,12 +36,16 @@ const HouseCalculatorForm = ({ form, foundationCost }: HouseCalculatorFormProps)
       <HouseTypeSelector form={form} />
       <DimensionsSection form={form} />
       <ThicknessSection form={form} />
-      <RoofInsulationSection form={form} />
-      <FloorSection form={form} />
       <FoundationSection 
         form={form} 
         foundationCost={foundationCost}
       />
+      <RoofTypeSection 
+        form={form} 
+        roofCost={roofCost}
+      />
+      <RoofInsulationSection form={form} />
+      <FloorSection form={form} />
       <SolarPanelsSection form={form} />
       <OutdoorSpacesSection form={form} />
       <FireProtectionSection form={form} />
