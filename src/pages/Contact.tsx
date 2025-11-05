@@ -12,8 +12,8 @@ const Contact = () => {
       <Navbar />
 
       <PageBanner 
-        title="Контакты" 
-        description="Свяжитесь с нами любым удобным способом, и мы ответим на все ваши вопросы"
+        title="Contacto" 
+        description="Contáctenos de cualquier forma conveniente y responderemos todas sus preguntas"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 
@@ -21,10 +21,10 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div>
-              <h2 className="section-title mb-8">Контактная информация</h2>
+              <h2 className="section-title mb-8">Información de contacto</h2>
               <div className="bg-white p-8 rounded-lg shadow-md space-y-6">
                 <div className="mb-8">
-                  <h3 className="font-bold text-lg text-wood-darkest mb-4">Наши адреса</h3>
+                  <h3 className="font-bold text-lg text-wood-darkest mb-4">Nuestras direcciones</h3>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold text-wood-darkest mb-1">Norte de Tenerife</h4>
@@ -60,7 +60,7 @@ const Contact = () => {
                     <Phone size={24} className="text-nature-dark" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-wood-darkest mb-1">Телефон</h3>
+                    <h3 className="font-semibold text-wood-darkest mb-1">Teléfono</h3>
                     <div className="flex items-center gap-2 text-gray-700">
                       <p>+34 659 94 62 34</p>
                       <a href="https://wa.me/34659946234" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
@@ -96,16 +96,16 @@ const Contact = () => {
                     <Clock size={24} className="text-nature-dark" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-wood-darkest mb-1">Часы работы</h3>
-                    <p className="text-gray-700">Пн-Пт: 10:00 - 17:00</p>
-                    <p className="text-gray-700">Сб: По предварительной записи</p>
-                    <p className="text-gray-700">Вс: Выходной</p>
+                    <h3 className="font-semibold text-wood-darkest mb-1">Horario de atención</h3>
+                    <p className="text-gray-700">L-V: 10:00 - 17:00</p>
+                    <p className="text-gray-700">S: Con cita previa</p>
+                    <p className="text-gray-700">D: Cerrado</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-2">
-              <h2 className="section-title mb-8">Напишите нам</h2>
+              <h2 className="section-title mb-8">Escríbanos</h2>
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <ContactForm />
               </div>
@@ -116,7 +116,7 @@ const Contact = () => {
 
       <section className="py-10 bg-wood-light/20">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-8">Мы на карте</h2>
+          <h2 className="section-title text-center mb-8">Nuestra ubicación</h2>
           <div className="rounded-lg overflow-hidden shadow-lg mb-8">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.6034252686183!2d-16.64238322467732!3d28.029519975959598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a9b212e5abc45%3A0x78affe51d3bcb75d!2sC.%20Arcilla%2C%202%2C%2038632%20Guargacho%2C%20Santa%20Cruz%20de%20Tenerife%2C%20Spain!5e0!3m2!1sen!2sus!4v1713034839641!5m2!1sen!2sus" 

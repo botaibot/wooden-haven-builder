@@ -29,11 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </Link>
           </div>
           
-          {/* Desktop Navigation - распределяем по всей ширине */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center justify-evenly w-full max-w-6xl gap-2">
               <Link to="/" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-xs">
-                Главная
+                Principal
               </Link>
               <Link to="/materials" className="text-wood-dark hover:text-nature-dark transition-colors whitespace-nowrap uppercase text-xs">
                 Materiales
@@ -106,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             className="block px-3 py-2 text-base font-medium text-wood-dark hover:text-nature-dark uppercase"
             onClick={() => setIsMenuOpen(false)}
           >
-            Главная
+            Principal
           </Link>
           <Link
             to="/materials"

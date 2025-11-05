@@ -38,20 +38,20 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
         
         {item.dimensions && (
           <p className="text-sm font-medium text-wood-dark mb-2">
-            Размеры: {item.dimensions}
+            Dimensiones: {item.dimensions}
           </p>
         )}
         
         {item.customizable && (
           <p className="text-sm text-nature-dark mb-4">
-            Возможно изготовление по индивидуальным размерам
+            Fabricación según medidas individuales
           </p>
         )}
         
         <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
           <div className="flex flex-col">
             <span className="font-bold text-nature-dark">
-              от €{item.price}
+              desde €{item.price}
             </span>
             {item.priceWithAddons && (
               <span className="text-sm text-gray-600">
@@ -69,7 +69,7 @@ const FurnitureCard = ({ item }: { item: FurnitureItem }) => {
             className="flex items-center gap-1 py-2 px-4 bg-wood text-white rounded-md hover:bg-wood-dark transition-colors"
           >
             <ShoppingCart size={16} />
-            <span>Заказать</span>
+            <span>Pedir</span>
           </a>
         </div>
       </CardContent>
@@ -81,13 +81,13 @@ const Furniture = () => {
   const furnitureItems: FurnitureItem[] = [
     {
       id: "cabinet",
-      title: "Тумба из натуральной ольхи в стиле рустик",
-      description: "Добавьте в интерьер тепло и характер с нашей авторской тумбой ручной работы. Изготовленная из отборной ольхи на собственном производстве, эта модель сочетает в себе естественную красоту древесины и неповторимый стиль рустик.",
-      dimensions: "80 см × 50 см × 80 см (длина × глубина × высота)",
+      title: "Mueble de aliso natural estilo rústico",
+      description: "Añade calidez y carácter a tu interior con nuestro mueble artesanal hecho a mano. Fabricado con aliso seleccionado en nuestra propia producción, este modelo combina la belleza natural de la madera y el estilo rústico inconfundible.",
+      dimensions: "80 cm × 50 cm × 80 cm (largo × fondo × alto)",
       customizable: true,
       price: 300,
       priceWithAddons: 500,
-      priceAddonDescription: "с раковиной и краном",
+      priceAddonDescription: "con lavabo y grifo",
       images: [
         "/lovable-uploads/4f0c9eee-e1c5-4e86-a958-5bb2693498d6.png",
         "/lovable-uploads/2daf04c1-edd2-4ac4-9062-092369a0ad24.png"
@@ -96,9 +96,9 @@ const Furniture = () => {
     },
     {
       id: "benches",
-      title: "Лавки и скамейки из ольхи — тепло природы в каждой детали",
-      description: "Уют начинается с простых вещей. Наши лавки и скамейки, выполненные из натуральной ольхи, станут не только практичным элементом интерьера, но и настоящим акцентом вашего пространства. Мы производим их на собственной мастерской, вручную отбирая каждую доску. Живые текстуры, массив, тепло древесины и характерная небрежность стиля рустик — всё это делает каждое изделие уникальным.",
-      dimensions: "100 см × 45 см × 45 см (длина × ширина × высота)",
+      title: "Bancos y banquetas de aliso — el calor de la naturaleza en cada detalle",
+      description: "La comodidad comienza con cosas simples. Nuestros bancos y banquetas, hechos de aliso natural, serán no solo un elemento práctico del interior, sino también un verdadero acento de su espacio. Los producimos en nuestro propio taller, seleccionando manualmente cada tabla. Texturas vivas, madera maciza, calidez de la madera y el estilo rústico característico hacen que cada producto sea único.",
+      dimensions: "100 cm × 45 cm × 45 cm (largo × ancho × alto)",
       customizable: true,
       price: 250,
       images: [
@@ -109,8 +109,8 @@ const Furniture = () => {
     },
     {
       id: "outdoor-chairs",
-      title: "Деревянные кресла из ольхи — для тишины, свежего воздуха и комфорта",
-      description: "Погрузитесь в атмосферу отдыха с нашими удобными креслами из натуральной ольхи, созданными специально для экстерьера. Это мебель, которая отлично чувствует себя на свежем воздухе — будь то веранда, терраса, сад или зона у костра. Мы тщательно продумали эргономику и посадку: удобная спинка, широкие подлокотники и устойчивая конструкция делают это кресло идеальным для долгих тёплых вечеров на природе.",
+      title: "Sillas de madera de aliso — para tranquilidad, aire fresco y comodidad",
+      description: "Sumérgete en la atmósfera de descanso con nuestras cómodas sillas de aliso natural, creadas especialmente para exteriores. Este es un mueble que se siente excelente al aire libre, ya sea en una terraza, jardín o zona junto al fuego. Hemos pensado cuidadosamente en la ergonomía: respaldo cómodo, apoyabrazos amplios y construcción estable hacen de esta silla ideal para largas tardes cálidas en la naturaleza.",
       price: 400,
       images: [
         "/lovable-uploads/8f722547-79d9-419c-9a42-dc313ffce0f3.png",
@@ -120,9 +120,9 @@ const Furniture = () => {
     },
     {
       id: "coffee-table",
-      title: "Журнальный стол из соснового бруса 140×140 — массивный акцент в интерьере",
-      description: "Брутальность и природная эстетика — в одном предмете. Этот журнальный стол изготовлен из массивного соснового бруса сечением 140×140 мм и станет настоящим центром притяжения в вашей гостиной. Толстые брусья с естественной фактурой, трещинами, сучками и живыми линиями подчеркивают натуральность и характер материала. Устойчивое основание из металла добавляет современности и делает конструкцию надёжной.",
-      dimensions: "100 см × 100 см (длина × ширина)",
+      title: "Mesa de centro de viga de pino 140×140 — acento masivo en el interior",
+      description: "Brutalidad y estética natural en un solo objeto. Esta mesa de centro está fabricada con vigas macizas de pino de 140×140 mm y se convertirá en el verdadero centro de atracción de su salón. Vigas gruesas con textura natural, grietas, nudos y líneas vivas enfatizan la naturalidad y el carácter del material. Base estable de metal añade modernidad y hace la construcción confiable.",
+      dimensions: "100 cm × 100 cm (largo × ancho)",
       customizable: true,
       price: 250,
       images: [
@@ -132,13 +132,13 @@ const Furniture = () => {
     },
     {
       id: "dining-tables",
-      title: "Столы из ольхи и дуба — дерево, которое вдохновляет",
-      description: "Создаём столы, которые становятся центром пространства — будь то обеденная зона, кабинет или переговорная. В основе — натуральная ольха и дуб: прочные, тёплые, с ярко выраженной текстурой и характером. Каждое изделие — это результат ручной работы и уважения к материалу. Мы не маскируем дерево — мы подчёркиваем его. Живые края, сучки, текстура и натуральный цвет — всё это делает каждый стол уникальным.",
-      dimensions: "160 см × 70 см (длина × ширина)",
+      title: "Mesas de aliso y roble — madera que inspira",
+      description: "Creamos mesas que se convierten en el centro del espacio, ya sea zona de comedor, despacho o sala de reuniones. En la base: aliso natural y roble, fuertes, cálidos, con textura pronunciada y carácter. Cada producto es resultado de trabajo manual y respeto al material. No ocultamos la madera, la destacamos. Bordes vivos, nudos, textura y color natural hacen cada mesa única.",
+      dimensions: "160 cm × 70 cm (largo × ancho)",
       customizable: true,
       price: 400,
       priceWithMaterial: 600,
-      priceWithMaterialDescription: "из дуба",
+      priceWithMaterialDescription: "de roble",
       images: [
         "/lovable-uploads/ba2e57fb-1851-4295-8d27-0a8d2810b79a.png",
         "/lovable-uploads/66c08602-1489-4196-8d1d-7038ddc7c2ed.png"
@@ -147,12 +147,12 @@ const Furniture = () => {
     },
     {
       id: "aspen-oak-furniture",
-      title: "Мебель из осины и дуба — лёгкость, прочность и натуральная эстетика",
-      description: "Мы изготавливаем мебель из натуральной осины и дуба — пород, которые прекрасно сочетаются между собой как по цвету, так и по характеристикам.\n\nОсина — светлая, ровная, лёгкая.\nДуб — прочный, выразительный, с красивой текстурой.\n\nЭто отличный тандем для создания мебели с характером — тёплой, надёжной и стильной.",
+      title: "Muebles de álamo temblón y roble — ligereza, resistencia y estética natural",
+      description: "Fabricamos muebles de álamo temblón natural y roble, especies que se combinan perfectamente tanto en color como en características.\n\nÁlamo temblón: claro, uniforme, ligero.\nRoble: resistente, expresivo, con hermosa textura.\n\nEste es un tándem excelente para crear muebles con carácter: cálidos, confiables y elegantes.",
       customizable: true,
       price: 350,
       priceWithMaterial: 450,
-      priceWithMaterialDescription: "из дуба",
+      priceWithMaterialDescription: "de roble",
       images: [
         "/lovable-uploads/c9eb8364-afe9-4216-9d3d-db95f9b4902d.png"
       ],
@@ -165,18 +165,18 @@ const Furniture = () => {
       <Navbar />
       
       <PageBanner 
-        title="Мебель из натурального дерева" 
-        description="Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома"
+        title="Muebles de madera natural" 
+        description="Producimos muebles de calidad de madera maciza que complementarán perfectamente el interior de su hogar"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">Наши изделия</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-wood-dark">Nuestros productos</h2>
             <p className="text-lg text-gray-700">
-              Мы производим качественную мебель из массива дерева, которая прекрасно дополнит интерьер вашего дома. 
-              Каждое изделие создано вручную нашими мастерами с вниманием к деталям и качеству.
+              Producimos muebles de calidad de madera maciza que complementarán perfectamente el interior de su hogar. 
+              Cada producto está creado a mano por nuestros maestros con atención a los detalles y la calidad.
             </p>
           </div>
           

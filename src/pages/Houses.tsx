@@ -39,8 +39,8 @@ const HouseCard = ({ id, title, imageUrl, area, price }: HouseCardProps) => {
           <h3 className="text-xl font-semibold text-wood-darkest mb-2">{title}</h3>
           <div className="flex justify-between items-center mb-4">
             <span className="font-bold text-nature-dark flex items-center gap-1">
-              {title === "Ecopino 42" ? "от 850 " : 
-               title === "Ecopino Lux Studio" ? "от 600 " : "от 550 "}
+              {title === "Ecopino 42" ? "desde 850 " : 
+               title === "Ecopino Lux Studio" ? "desde 600 " : "desde 550 "}
               <Euro size={16} />
               /м²
             </span>

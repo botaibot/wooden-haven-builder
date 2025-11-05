@@ -100,7 +100,7 @@ const HouseCalculator = () => {
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
     
-    // Сохраняем выбор пользователя при каждом изменении
+    // Guardamos la elección del usuario en cada cambio
     saveCalculatorChoice({
       formValues: values,
       totalPrice: calculatedPrice,
@@ -114,8 +114,8 @@ const HouseCalculator = () => {
 
   const onSubmit = () => {
     toast({
-      title: "Предварительный расчет стоимости",
-      description: `Общая стоимость: ${formatCurrency(totalPrice)}`,
+      title: "Cálculo preliminar del coste",
+      description: `Coste total: ${formatCurrency(totalPrice)}`,
     });
     
     console.log("Form values:", watchAllFields);
@@ -132,11 +132,11 @@ const HouseCalculator = () => {
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-wood-dark flex items-center gap-2 mb-4">
               <Calculator className="h-6 w-6" /> 
-              Калькулятор стоимости дома
+              Calculadora del coste de la casa
             </h2>
             <p className="text-muted-foreground">
-              Укажите параметры вашего будущего дома, чтобы получить предварительную оценку стоимости.
-              Окончательная цена может отличаться и будет рассчитана после консультации со специалистом.
+              Especifique los parámetros de su futura casa para obtener una estimación preliminar del coste.
+              El precio final puede variar y se calculará después de la consulta con un especialista.
             </p>
           </div>
 

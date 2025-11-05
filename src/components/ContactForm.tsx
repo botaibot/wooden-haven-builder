@@ -25,8 +25,8 @@ const ContactForm = () => {
     
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Ошибка",
-        description: "Пожалуйста, заполните все обязательные поля",
+        title: "Error",
+        description: "Por favor, complete todos los campos obligatorios",
         variant: "destructive",
       });
       return;
@@ -36,7 +36,7 @@ const ContactForm = () => {
     
     const baseWebhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Отправляем данные через URL параметры
+    // Enviamos datos a través de parámetros URL
     const params = new URLSearchParams({
       name: formData.name,
       email: formData.email,
@@ -47,7 +47,7 @@ const ContactForm = () => {
     const webhookUrl = `${baseWebhookUrl}?${params.toString()}`;
     
     try {
-      console.log("Отправка данных на webhook через URL:", webhookUrl);
+      console.log("Enviando datos al webhook vía URL:", webhookUrl);
       
       const response = await fetch(webhookUrl, {
         method: "GET",
@@ -55,11 +55,11 @@ const ContactForm = () => {
       });
       
       toast({
-        title: "Сообщение отправлено",
-        description: "Спасибо за ваше обращение! Мы свяжемся с вами в ближайшее время.",
+        title: "Mensaje enviado",
+        description: "¡Gracias por su mensaje! Nos pondremos en contacto con usted en breve.",
       });
 
-      // Очистка формы
+      // Limpieza del formulario
       setFormData({
         name: "",
         email: "",
@@ -67,10 +67,10 @@ const ContactForm = () => {
         message: "",
       });
     } catch (error) {
-      console.error("Ошибка при отправке:", error);
+      console.error("Error al enviar:", error);
       toast({
-        title: "Ошибка",
-        description: "Не удалось отправить сообщение. Пожалуйста, попробуйте позже.",
+        title: "Error",
+        description: "No se pudo enviar el mensaje. Por favor, inténtelo más tarde.",
         variant: "destructive",
       });
     } finally {
@@ -83,14 +83,14 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium text-gray-700">
-            Ваше имя
+            Su nombre
           </label>
           <Input
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Введите ваше имя"
+            placeholder="Introduzca su nombre"
             required
             className="w-full"
           />
@@ -106,7 +106,7 @@ const ContactForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Введите ваш email"
+            placeholder="Introduzca su email"
             required
             className="w-full"
           />
@@ -115,28 +115,28 @@ const ContactForm = () => {
 
       <div className="space-y-2">
         <label htmlFor="phone" className="text-sm font-medium text-gray-700">
-          Номер телефона
+          Número de teléfono
         </label>
         <Input
           id="phone"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="Введите ваш номер телефона"
+          placeholder="Introduzca su número de teléfono"
           className="w-full"
         />
       </div>
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-gray-700">
-          Сообщение
+          Mensaje
         </label>
         <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Напишите ваше сообщение"
+          placeholder="Escriba su mensaje"
           required
           className="w-full min-h-[120px]"
         />
@@ -147,7 +147,7 @@ const ContactForm = () => {
         className="w-full bg-wood hover:bg-wood-dark"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Отправка..." : "Отправить сообщение"}
+        {isSubmitting ? "Enviando..." : "Enviar mensaje"}
       </Button>
     </form>
   );

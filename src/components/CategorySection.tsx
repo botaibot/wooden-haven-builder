@@ -18,7 +18,7 @@ const CategoryCard = ({
 }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow h-full flex flex-col">
-      {/* Иконка */}
+      {/* Icono */}
       <div className="h-24 mb-6 flex items-center justify-center bg-wood/10 rounded-lg">
         <div className="bg-wood/20 p-3 rounded-full">
           {React.cloneElement(icon as React.ReactElement, { size: 40, className: "text-wood-dark" })}

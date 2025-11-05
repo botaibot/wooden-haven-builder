@@ -11,8 +11,8 @@ const Calculator = () => {
       <Navbar />
       
       <PageBanner 
-        title="Калькулятор стоимости дома" 
-        description="Настройте параметры вашего будущего дома и получите предварительную оценку стоимости"
+        title="Calculadora del coste de la casa" 
+        description="Configure los parámetros de su futura casa y obtenga una estimación preliminar del coste"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
 

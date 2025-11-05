@@ -38,7 +38,7 @@ const ConsultationChat = () => {
   return (
     <div className="fixed bottom-4 right-4 z-50 bg-white rounded-lg shadow-xl border p-4 max-w-sm">
       <h3 className="text-lg font-bold text-wood-dark mb-4 text-center">
-        Выберите способ консультации
+        Elija el método de consulta
       </h3>
       
       <div className="space-y-3">
@@ -63,7 +63,7 @@ const ConsultationChat = () => {
           className="w-full bg-wood hover:bg-wood-dark text-white flex items-center justify-center gap-2"
         >
           <MessageSquare size={20} />
-          <span>Онлайн на сайте</span>
+          <span>En línea en el sitio</span>
         </Button>
         
         <Button
@@ -71,7 +71,7 @@ const ConsultationChat = () => {
           variant="outline"
           className="w-full text-gray-600"
         >
-          Закрыть
+          Cerrar
         </Button>
       </div>
     </div>

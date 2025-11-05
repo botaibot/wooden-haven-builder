@@ -22,7 +22,7 @@ import { CookieConsentProvider } from "./components/CookieConsent.jsx";
 import AnalyticsAndPixels from "./components/AnalyticsAndPixels.jsx";
 import Privacidad from "./pages/Privacidad.jsx";
 
-// Компонент для прокрутки вверх при изменении маршрута
+// Componente para desplazar hacia arriba al cambiar de ruta
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
@@ -59,9 +59,9 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-            {/* Кнопки мессенджеров глобально */}
+            {/* Botones de mensajería globalmente */}
             <MessengerButtons />
-            {/* Аналитика и пиксели с управлением согласия */}
+            {/* Analítica y píxeles con gestión de consentimiento */}
             <AnalyticsAndPixels />
           </BrowserRouter>
         </CookieConsentProvider>

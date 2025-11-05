@@ -10,16 +10,16 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import type { UseEmblaCarouselType } from "embla-carousel-react";
 
-// Организованный массив изображений по категориям:
-// 1. Готовые конструкции
-// 2. Процесс строительства
-// 3. Детали и соединения
-// 4. Материалы, кровля и утепление
-// 5. Интерьер и окружение
+// Array organizado de imágenes por categorías:
+// 1. Estructuras terminadas
+// 2. Proceso de construcción
+// 3. Detalles y conexiones
+// 4. Materiales, cubierta y aislamiento
+// 5. Interior y entorno
 const images = [
-  // Первая партия - готовые дома и строительство на участках
-  "/lovable-uploads/9e830c13-a417-40a1-adc3-314e44c747aa.png", // Каркасная конструкция в цеху
-  "/lovable-uploads/8bc27e5f-2dc8-450e-b039-c72358b72a55.png", // Дом с деревянной и белой отделкой в производстве
+  // Primera parte - casas terminadas y construcción en parcelas
+  "/lovable-uploads/9e830c13-a417-40a1-adc3-314e44c747aa.png", // Estructura de entramado en taller
+  "/lovable-uploads/8bc27e5f-2dc8-450e-b039-c72358b72a55.png", // Casa con acabado de madera y blanco en producción
   "/lovable-uploads/0e8f8d7f-be6e-486e-902d-59b3f2fd6614.png", // Строительство фундамента на закате
   "/lovable-uploads/d92ca92a-18cc-493d-a1d9-5b965f7bdc9a.png", // Воздушный вид строительства дома
   "/lovable-uploads/4fff0cff-41d6-456f-8838-8a32d6323f92.png", // Модульные элементы дома на стройплощадке

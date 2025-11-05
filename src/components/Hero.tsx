@@ -24,7 +24,7 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-20">
-        {/* Левая колонка с текстом */}
+        {/* Columna izquierda con texto */}
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-wood-dark mb-4 animate-fade-in">
             Casas de madera y materiales de construcción <br />
@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Правая колонка - теперь пустая, так как фон занимает всю область */}
+        {/* Columna derecha - ahora vacía, ya que el fondo ocupa toda el área */}
         <div className="hidden md:block"></div>
       </div>
     </div>

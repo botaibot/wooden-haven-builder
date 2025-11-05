@@ -39,8 +39,8 @@ const Cart = () => {
   const handleCheckout = () => {
     if (items.length === 0) {
       toast({
-        title: "Корзина пуста",
-        description: "Добавьте товары в корзину перед оформлением заказа",
+        title: "Carrito vacío",
+        description: "Agregue productos al carrito antes de realizar el pedido",
         variant: "destructive",
       });
       return;
@@ -53,8 +53,8 @@ const Cart = () => {
     
     if (!orderForm.name || !orderForm.email || !orderForm.phone || !orderForm.address) {
       toast({
-        title: "Ошибка",
-        description: "Пожалуйста, заполните все обязательные поля",
+        title: "Error",
+        description: "Por favor, complete todos los campos obligatorios",
         variant: "destructive",
       });
       return;
@@ -64,14 +64,14 @@ const Cart = () => {
     
     const baseWebhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
     
-    // Формируем список товаров как строку
+    // Formamos la lista de productos como cadena
     const itemsList = items.map(item => 
-      `${item.title} (${item.size}) - ${item.quantity} шт. по €${item.price.toFixed(2)} = €${(item.price * item.quantity).toFixed(2)}`
+      `${item.title} (${item.size}) - ${item.quantity} uds. a €${item.price.toFixed(2)} = €${(item.price * item.quantity).toFixed(2)}`
     ).join('; ');
     
-    // Отправляем данные через URL параметры
+    // Enviamos datos a través de parámetros URL
     const params = new URLSearchParams({
-      order_type: "Материалы",
+      order_type: "Materiales",
       name: orderForm.name,
       email: orderForm.email,
       phone: orderForm.phone,
@@ -86,7 +86,7 @@ const Cart = () => {
     const webhookUrl = `${baseWebhookUrl}?${params.toString()}`;
     
     try {
-      console.log("Отправка заказа на webhook через URL:", webhookUrl);
+      console.log("Enviando pedido al webhook vía URL:", webhookUrl);
       
       const response = await fetch(webhookUrl, {
         method: "GET",
@@ -94,11 +94,11 @@ const Cart = () => {
       });
       
       toast({
-        title: "Заказ отправлен!",
-        description: "Мы получили ваш заказ и свяжемся с вами в ближайшее время",
+        title: "¡Pedido enviado!",
+        description: "Hemos recibido su pedido y nos pondremos en contacto con usted en breve",
       });
       
-      // Очищаем корзину и форму
+      // Limpiamos el carrito y el formulario
       clearCart();
       setOrderForm({
         name: "",
@@ -112,10 +112,10 @@ const Cart = () => {
       setShowCheckoutForm(false);
       setIsOpen(false);
     } catch (error) {
-      console.error("Ошибка при отправке заказа:", error);
+      console.error("Error al enviar el pedido:", error);
       toast({
-        title: "Ошибка",
-        description: "Не удалось отправить заказ. Пожалуйста, попробуйте позже.",
+        title: "Error",
+        description: "No se pudo enviar el pedido. Por favor, inténtelo más tarde.",
         variant: "destructive",
       });
     } finally {
@@ -136,7 +136,7 @@ const Cart = () => {
           variant="outline" 
           size="icon" 
           className="relative bg-white hover:bg-gray-50"
-          aria-label="Корзина"
+          aria-label="Carrito"
           onClick={handleCartClick}
         >
           <ShoppingCart className="h-5 w-5" />
@@ -149,7 +149,7 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-md overflow-y-auto z-[99999]">
         <SheetHeader>
-          <SheetTitle className="text-center text-xl">Корзина</SheetTitle>
+          <SheetTitle className="text-center text-xl">Carrito</SheetTitle>
         </SheetHeader>
         
         {!showCheckoutForm ? (
@@ -158,7 +158,7 @@ const Cart = () => {
               <div className="flex flex-col items-center justify-center h-64">
                 <Package className="h-12 w-12 text-gray-400" />
                 <p className="mt-4 text-gray-500 text-center">
-                  Ваша корзина пуста
+                  Su carrito está vacío
                 </p>
               </div>
             ) : (
@@ -181,7 +181,7 @@ const Cart = () => {
                       <div className="flex-1 min-w-0">
                         <h3 className="font-medium text-sm truncate">{item.title}</h3>
                         <p className="text-sm text-gray-500">{item.size}</p>
-                        <p className="text-nature-dark font-semibold">€{item.price.toFixed(2)} / шт</p>
+                        <p className="text-nature-dark font-semibold">€{item.price.toFixed(2)} / ud</p>
                         
                         <div className="flex justify-between items-center mt-2">
                           <div className="flex items-center gap-2">
@@ -219,7 +219,7 @@ const Cart = () => {
                 
                 <div className="border-t pt-4">
                   <div className="flex justify-between font-semibold text-lg">
-                    <span>Итого:</span>
+                    <span>Total:</span>
                     <span>€{getTotalPrice().toFixed(2)}</span>
                   </div>
                   
@@ -227,7 +227,7 @@ const Cart = () => {
                     className="w-full mt-4 bg-wood hover:bg-wood-dark relative z-[100000]"
                     onClick={handleCheckout}
                   >
-                    Оформить заказ
+                    Realizar pedido
                   </Button>
                 </div>
               </div>
@@ -241,20 +241,20 @@ const Cart = () => {
                 onClick={() => setShowCheckoutForm(false)}
                 className="p-0 h-auto text-sm"
               >
-                ← Вернуться к корзине
+                ← Volver al carrito
               </Button>
             </div>
             
             <form onSubmit={handleSubmitOrder} className="space-y-4">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Имя *</Label>
+                  <Label htmlFor="name">Nombre *</Label>
                   <Input
                     id="name"
                     name="name"
                     value={orderForm.name}
                     onChange={handleInputChange}
-                    placeholder="Ваше имя"
+                    placeholder="Su nombre"
                     required
                   />
                 </div>
@@ -273,60 +273,60 @@ const Cart = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Телефон *</Label>
+                  <Label htmlFor="phone">Teléfono *</Label>
                   <Input
                     id="phone"
                     name="phone"
                     value={orderForm.phone}
                     onChange={handleInputChange}
-                    placeholder="+7 (999) 123-45-67"
+                    placeholder="+34 (999) 123-45-67"
                     required
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="address">Адрес доставки *</Label>
+                  <Label htmlFor="address">Dirección de entrega *</Label>
                   <Input
                     id="address"
                     name="address"
                     value={orderForm.address}
                     onChange={handleInputChange}
-                    placeholder="Улица, дом, квартира"
+                    placeholder="Calle, número, piso"
                     required
                   />
                 </div>
                 
                 <div className="grid grid-cols-2 gap-2">
                   <div className="space-y-2">
-                    <Label htmlFor="city">Город</Label>
+                    <Label htmlFor="city">Ciudad</Label>
                     <Input
                       id="city"
                       name="city"
                       value={orderForm.city}
                       onChange={handleInputChange}
-                      placeholder="Город"
+                      placeholder="Ciudad"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="postalCode">Индекс</Label>
+                    <Label htmlFor="postalCode">Código postal</Label>
                     <Input
                       id="postalCode"
                       name="postalCode"
                       value={orderForm.postalCode}
                       onChange={handleInputChange}
-                      placeholder="12345"
+                      placeholder="38000"
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="notes">Комментарий</Label>
+                  <Label htmlFor="notes">Comentario</Label>
                   <Textarea
                     id="notes"
                     name="notes"
                     value={orderForm.notes}
                     onChange={handleInputChange}
-                    placeholder="Дополнительные пожелания"
+                    placeholder="Deseos adicionales"
                     rows={3}
                   />
                 </div>
@@ -334,7 +334,7 @@ const Cart = () => {
               
               <div className="border-t pt-4">
                 <div className="flex justify-between font-semibold text-lg mb-4">
-                  <span>Итого к доставке:</span>
+                  <span>Total a entregar:</span>
                   <span>€{getTotalPrice().toFixed(2)}</span>
                 </div>
                 
@@ -343,7 +343,7 @@ const Cart = () => {
                   className="w-full bg-wood text-white hover:bg-wood-dark relative z-[100000]"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Отправка заказа..." : "Подтвердить заказ"}
+                  {isSubmitting ? "Enviando pedido..." : "Confirmar pedido"}
                 </Button>
               </div>
             </form>
