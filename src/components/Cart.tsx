@@ -62,7 +62,7 @@ const Cart = () => {
     
     setIsSubmitting(true);
     
-    const baseWebhookUrl = 'https://hook.eu2.make.com/5cwhtg1q0ri4qpvw3ihaueqonng7g8a0';
+    const baseWebhookUrl = 'https://casamodul.app.n8n.cloud/webhook/38071c0f-bd68-4f65-956b-c89a4b8aabd6';
     
     // Formamos la lista de productos como cadena
     const itemsList = items.map(item => 
