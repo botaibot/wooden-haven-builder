@@ -17,8 +17,7 @@ const HouseCalculator = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalArea, setTotalArea] = useState(0);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const [metalSupportsCount, setMetalSupportsCount] = useState(0);
-  const [metalSupportsCost, setMetalSupportsCost] = useState(0);
+  const [foundationCost, setFoundationCost] = useState(0);
 
   const defaultValues: FormValues = {
     houseType: "frame",
@@ -73,16 +72,23 @@ const HouseCalculator = () => {
     const roofInsulationPrice = houseArea * PRICES.ROOF_INSULATION[values.roofInsulation];
     
     // Calculate foundation cost
-    const foundationPrice = values.foundation !== "monolithic" 
-      ? houseArea * PRICES.FOUNDATION[values.foundation]
-      : 0; // Monolithic foundation is priced by request
+    let foundationPrice = 0;
+    if (values.foundation === "adjustable_metal") {
+      // 7 опор на 10 м², 100€ за опору с установкой
+      const supports = Math.ceil(houseArea / 10 * PRICES.METAL_SUPPORT.units_per_10sqm);
+      foundationPrice = supports * PRICES.METAL_SUPPORT.price_per_unit;
+    } else if (values.foundation === "strip") {
+      // Периметр + одна лента посередине (меньшая сторона)
+      const perimeter = (values.width + values.length) * 2;
+      const middleStrip = Math.min(values.width, values.length);
+      const totalMeters = perimeter + middleStrip;
+      foundationPrice = totalMeters * PRICES.STRIP_FOUNDATION.price_per_meter;
+    } else if (values.foundation === "monolithic") {
+      // Площадь дома × 500€
+      foundationPrice = houseArea * PRICES.MONOLITHIC_FOUNDATION.price_per_sqm;
+    }
     
-    // Calculate metal supports count and cost for adjustable metal foundation
-    const supports = Math.ceil(houseArea / 10 * PRICES.METAL_SUPPORT.units_per_10sqm);
-    const supportsCost = supports * (PRICES.METAL_SUPPORT.price_per_unit + PRICES.METAL_SUPPORT.additional_costs);
-    
-    setMetalSupportsCount(supports);
-    setMetalSupportsCost(supportsCost);
+    setFoundationCost(foundationPrice);
     
     // Calculate solar panels cost
     const solarPanelsPrice = values.solarPanels 
@@ -95,7 +101,7 @@ const HouseCalculator = () => {
       : 0;
     
     const calculatedPrice = housePrice + terracePrice + canopyPrice + roofInsulationPrice + 
-      foundationPrice + (values.foundation === "monolithic" ? 0 : solarPanelsPrice) + fireProtectionPrice;
+      foundationPrice + solarPanelsPrice + fireProtectionPrice;
     
     setTotalArea(houseArea + (values.terraceSize || 0) + (values.canopySize || 0));
     setTotalPrice(calculatedPrice);
@@ -105,8 +111,8 @@ const HouseCalculator = () => {
       formValues: values,
       totalPrice: calculatedPrice,
       totalArea: houseArea + (values.terraceSize || 0) + (values.canopySize || 0),
-      metalSupportsCount: supports,
-      metalSupportsCost: supportsCost,
+      metalSupportsCount: 0,
+      metalSupportsCost: foundationPrice,
       timestamp: new Date().toISOString(),
       page: window.location.pathname
     });
@@ -121,8 +127,7 @@ const HouseCalculator = () => {
     console.log("Form values:", watchAllFields);
     console.log("Total price:", totalPrice);
     console.log("Total area:", totalArea);
-    console.log("Metal supports:", metalSupportsCount);
-    console.log("Metal supports cost:", metalSupportsCost);
+    console.log("Foundation cost:", foundationCost);
   };
 
   return (
@@ -144,8 +149,7 @@ const HouseCalculator = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <HouseCalculatorForm 
                 form={form} 
-                metalSupportsCount={metalSupportsCount} 
-                metalSupportsCost={metalSupportsCost} 
+                foundationCost={foundationCost}
               />
               
               <PriceDetails 
@@ -153,8 +157,8 @@ const HouseCalculator = () => {
                 setIsDetailsOpen={setIsDetailsOpen}
                 totalPrice={totalPrice}
                 totalArea={totalArea}
-                metalSupportsCount={metalSupportsCount}
-                metalSupportsCost={metalSupportsCost}
+                metalSupportsCount={0}
+                metalSupportsCost={foundationCost}
                 formValues={watchAllFields}
                 onSubmit={onSubmit}
               />

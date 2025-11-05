@@ -17,9 +17,14 @@ export const PRICES = {
     monolithic: 0,     // по запросу
   },
   METAL_SUPPORT: {
-    price_per_unit: 60,
-    additional_costs: 40, // работа, щебень, блоки и т.д.
+    price_per_unit: 100, // Цена с установкой
     units_per_10sqm: 7
+  },
+  STRIP_FOUNDATION: {
+    price_per_meter: 300, // Цена за погонный метр
+  },
+  MONOLITHIC_FOUNDATION: {
+    price_per_sqm: 500, // Цена за м²
   },
   SOLAR_PANELS: {
     price_per_kw: 1400,
@@ -45,8 +50,9 @@ export const getRoofInsulationLabel = (value: string): string => {
 
 export const getFoundationLabel = (value: string): string => {
   switch(value) {
-    case "adjustable_metal": return "Регулируемая металлическая опора";
-    case "monolithic": return "Монолитный фундамент (по запросу)";
+    case "adjustable_metal": return "Металлические опоры";
+    case "strip": return "Ленточный фундамент";
+    case "monolithic": return "Монолитная подушка";
     default: return value;
   }
 };

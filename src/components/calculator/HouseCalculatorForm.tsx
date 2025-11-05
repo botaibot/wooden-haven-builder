@@ -14,11 +14,10 @@ import FloorSection from "./form-sections/FloorSection";
 
 interface HouseCalculatorFormProps {
   form: UseFormReturn<FormValues>;
-  metalSupportsCount: number;
-  metalSupportsCost: number;
+  foundationCost: number;
 }
 
-const HouseCalculatorForm = ({ form, metalSupportsCount, metalSupportsCost }: HouseCalculatorFormProps) => {
+const HouseCalculatorForm = ({ form, foundationCost }: HouseCalculatorFormProps) => {
   const watchHouseType = form.watch("houseType");
   
   useEffect(() => {
@@ -39,8 +38,7 @@ const HouseCalculatorForm = ({ form, metalSupportsCount, metalSupportsCost }: Ho
       <FloorSection form={form} />
       <FoundationSection 
         form={form} 
-        metalSupportsCount={metalSupportsCount} 
-        metalSupportsCost={metalSupportsCost} 
+        foundationCost={foundationCost}
       />
       <SolarPanelsSection form={form} />
       <OutdoorSpacesSection form={form} />

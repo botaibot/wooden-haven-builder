@@ -10,11 +10,10 @@ import { formatCurrency } from "../constants";
 
 interface FoundationSectionProps {
   form: UseFormReturn<FormValues>;
-  metalSupportsCount: number;
-  metalSupportsCost: number;
+  foundationCost: number;
 }
 
-const FoundationSection = ({ form, metalSupportsCount, metalSupportsCost }: FoundationSectionProps) => {
+const FoundationSection = ({ form, foundationCost }: FoundationSectionProps) => {
   return (
     <FormField
       control={form.control}
@@ -32,26 +31,18 @@ const FoundationSection = ({ form, metalSupportsCount, metalSupportsCost }: Foun
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              <SelectItem value="adjustable_metal">Регулируемая металлическая опора</SelectItem>
-              <SelectItem value="monolithic">Монолитный фундамент (по запросу)</SelectItem>
+              <SelectItem value="adjustable_metal">Металлические опоры</SelectItem>
+              <SelectItem value="strip">Ленточный фундамент</SelectItem>
+              <SelectItem value="monolithic">Монолитная подушка</SelectItem>
             </SelectContent>
           </Select>
-          <FormDescription>
-            {field.value === "adjustable_metal" && (
-              <div className="mt-2 space-y-1">
-                <p>Базовая комплектация включает регулируемые металлические опоры толщиной 6 мм.</p>
-                <p><strong>Необходимое количество:</strong> {metalSupportsCount} шт.</p>
-                <p><strong>Стоимость опор:</strong> {formatCurrency(metalSupportsCost)}</p>
-                <p className="text-xs text-muted-foreground">(примерно 7 опор на каждые 10 м² площади, 60 € за опору + 40 € за установку)</p>
-              </div>
-            )}
-            {field.value === "monolithic" && (
-              <span className="text-amber-600">
-                Стоимость монолитного фундамента зависит от многих факторов и требует индивидуального расчета. 
-                Пожалуйста, проконсультируйтесь с нашими специалистами.
-              </span>
-            )}
-          </FormDescription>
+          {foundationCost > 0 && (
+            <div className="mt-2 flex justify-end">
+              <p className="text-lg font-semibold text-primary">
+                + {formatCurrency(foundationCost)}
+              </p>
+            </div>
+          )}
           <FormMessage />
         </FormItem>
       )}

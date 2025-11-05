@@ -12,7 +12,7 @@ export const calculatorFormSchema = z.object({
   canopy: z.boolean(),
   canopySize: z.number().min(0).max(50).optional(),
   roofInsulation: z.enum(["polystyrene_40mm", "custom"]),
-  foundation: z.enum(["adjustable_metal", "monolithic"]),
+  foundation: z.enum(["adjustable_metal", "strip", "monolithic"]),
   solarPanels: z.boolean().default(false),
   solarPower: z.number().min(0).max(20).default(5),
   fireProtection: z.boolean().default(false),
