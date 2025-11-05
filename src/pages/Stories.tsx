@@ -7,120 +7,120 @@ const Stories = () => {
   const stories = [
     {
       id: 1,
-      title: "Почему OSB укладывается с зазором?",
+      title: "¿Por qué se instala OSB con espacios entre placas?",
       content: [
         {
-          subtitle: "Зазор между листами OSB",
-          text: "OSB расширяется при изменении влажности. Если уложить плотно, плиты вспучиваются, создавая дефекты отделки. Мы всегда оставляем зазор 3–4 мм между листами. Это правило зафиксировано в стандартах (EN 1995, Egger, Kronospan) и обязательно для соблюдения."
+          subtitle: "Espacio entre placas de OSB",
+          text: "El OSB se expande con los cambios de humedad. Si se instala sin espacios, las placas se hinchan, creando defectos en el acabado. Siempre dejamos un espacio de 3–4 mm entre placas. Esta regla está establecida en las normas (EN 1995, Egger, Kronospan) y es obligatoria."
         },
         {
-          subtitle: "Как работает вентилируемый фасад?",
-          text: "Между фасадной отделкой (например, вагонкой) и стеной оставляется воздушный зазор — обычно 30–48 мм. Он позволяет влаге испаряться наружу, защищает стену от перегрева и продлевает срок службы отделки. Без вентиляции — риск накопления влаги и разрушения конструкции."
+          subtitle: "¿Cómo funciona una fachada ventilada?",
+          text: "Entre el acabado de fachada (por ejemplo, revestimiento de madera) y la pared se deja un espacio de aire — normalmente 30–48 mm. Permite que la humedad se evapore hacia el exterior, protege la pared del sobrecalentamiento y prolonga la vida útil del acabado. Sin ventilación existe riesgo de acumulación de humedad y deterioro de la estructura."
         },
         {
-          subtitle: "Почему мы не используем XPS в стенах?",
-          text: "XPS не пропускает пар. Если он оказывается в середине пирога стены, пар скапливается и не выходит. Это приводит к скрытому увлажнению, гниению и проблемам. Поэтому в каркасных стенах мы используем только паропроницаемые материалы (вата + умная пароизоляция + мембрана)."
+          subtitle: "¿Por qué no usamos XPS en las paredes?",
+          text: "El XPS no deja pasar el vapor. Si queda en medio del muro, el vapor se acumula y no puede salir. Esto conduce a humedades ocultas, pudrición y problemas. Por eso en muros de entramado solo usamos materiales permeables al vapor (lana mineral + barrera de vapor inteligente + membrana)."
         },
         {
-          subtitle: "Что такое точка росы — и почему важна пароизоляция?",
-          text: "Когда тёплый воздух изнутри дома проходит сквозь стену и остывает, при определённой температуре пар превращается в воду — это точка росы. Если она находится внутри утеплителя и нет пароизоляции, влага остаётся в стене. С умной пароизоляцией пар выходит дозированно и безопасно."
+          subtitle: "¿Qué es el punto de rocío y por qué es importante la barrera de vapor?",
+          text: "Cuando el aire cálido del interior de la casa atraviesa la pared y se enfría, a cierta temperatura el vapor se convierte en agua — ese es el punto de rocío. Si se encuentra dentro del aislamiento y no hay barrera de vapor, la humedad queda en la pared. Con una barrera de vapor inteligente el vapor sale de forma controlada y segura."
         },
         {
-          subtitle: "Почему вагонка не монтируется прямо на пароизоляцию?",
-          text: "Между пароизоляцией и внутренней отделкой (вагонкой, гипсом) всегда делается обрешётка. Она создаёт вентиляционный зазор и защищает мембрану от повреждений. Иначе пар не выйдет, мембрана будет мокнуть, а отделка быстро испортится."
+          subtitle: "¿Por qué el revestimiento interior no se monta directamente sobre la barrera de vapor?",
+          text: "Entre la barrera de vapor y el acabado interior (revestimiento, yeso) siempre se coloca un rastrelado. Crea un espacio de ventilación y protege la membrana de daños. De lo contrario el vapor no saldrá, la membrana se humedecerá y el acabado se deteriorará rápidamente."
         },
         {
-          subtitle: "Почему OSB внутри, если есть отделка?",
-          text: "OSB 9 мм с внутренней стороны — это не отделка, а конструктивная стабилизация. Он удерживает стойки, защищает утеплитель и создаёт монтажную базу. Поверх OSB уже можно крепить гипс, панели или вагонку."
+          subtitle: "¿Por qué OSB en el interior si hay acabado?",
+          text: "El OSB de 9 mm en el interior no es acabado, sino estabilización estructural. Sujeta los montantes, protege el aislamiento y crea una base de montaje. Sobre el OSB ya se puede fijar yeso, paneles o revestimiento."
         }
       ]
     },
     {
       id: 2,
-      title: "Почему мы не строим из SIP-панелей",
+      title: "Por qué no construimos con paneles SIP",
       content: [
         {
-          subtitle: "1. SIP-панель — это сэндвич",
-          text: "Это щит из двух плит (обычно OSB), между которыми находится утеплитель (пенопласт или PUR). Всё это склеивается на заводе."
+          subtitle: "1. Panel SIP — es un sándwich",
+          text: "Es un panel de dos placas (normalmente OSB), entre las cuales hay aislamiento (poliestireno o PUR). Todo se pega en fábrica."
         },
         {
-          subtitle: "2. На словах звучит удобно",
-          text: "Быстро строится, хорошо держит тепло, ровные стены — вроде бы идеально."
+          subtitle: "2. En teoría suena conveniente",
+          text: "Construcción rápida, buen aislamiento térmico, paredes planas — parece ideal."
         },
         {
-          subtitle: "3. Но на практике — много скрытых проблем",
-          text: "Проблемы включают:",
+          subtitle: "3. Pero en la práctica — muchos problemas ocultos",
+          text: "Los problemas incluyen:",
           list: [
-            "Закрытая конструкция — влага не может выйти, она скапливается внутри",
-            "OSB внутри панели боится влаги, может разрушаться со временем",
-            "Невозможно изменить конструкцию — нельзя легко провести проводку, изменить проём, добавить элементы",
-            "Требует идеальной герметизации — любая ошибка и панель теряет свойства",
-            "Опасность перегрева — в жарком климате панели сильно нагреваются"
+            "Construcción cerrada — la humedad no puede salir, se acumula dentro",
+            "OSB dentro del panel teme la humedad, puede deteriorarse con el tiempo",
+            "Imposible modificar la estructura — no se puede pasar cableado fácilmente, cambiar huecos, añadir elementos",
+            "Requiere sellado perfecto — cualquier error y el panel pierde propiedades",
+            "Peligro de sobrecalentamiento — en clima cálido los paneles se calientan mucho"
           ]
         },
         {
-          subtitle: "4. На Канарских островах особенно важно:",
-          text: "Влажность, солнце и перепады температур — SIP-панель плохо справляется без особых защитных мер. Панель не дышит — если где-то попала влага, она остаётся внутри."
+          subtitle: "4. En las Islas Canarias es especialmente importante:",
+          text: "Humedad, sol y cambios de temperatura — el panel SIP no funciona bien sin medidas de protección especiales. El panel no respira — si entra humedad en algún punto, queda dentro."
         },
         {
-          subtitle: "5. Что мы делаем вместо этого?",
-          text: "Мы строим открытую каркасную систему:",
+          subtitle: "5. ¿Qué hacemos en su lugar?",
+          text: "Construimos un sistema de entramado abierto:",
           list: [
-            "Стены «дышат», влага может выходить",
-            "Все слои можно контролировать и менять",
-            "Можно легко прокладывать коммуникации",
-            "Стены не зависят от заводской сборки — мы всё делаем сами, надёжно и прозрачно"
+            "Las paredes 'respiran', la humedad puede salir",
+            "Todas las capas se pueden controlar y modificar",
+            "Se pueden tender instalaciones fácilmente",
+            "Las paredes no dependen del montaje de fábrica — lo hacemos todo nosotros, de forma fiable y transparente"
           ]
         },
         {
-          subtitle: "📌 Вывод:",
-          text: "Мы не используем SIP, потому что это закрытая и рискованная система. Нам важнее: качество, долговечность и контроль. Поэтому мы выбираем каркас BOSQUE PLATFORM — открытую, надёжную систему, адаптированную для Канарских островов."
+          subtitle: "📌 Conclusión:",
+          text: "No usamos SIP porque es un sistema cerrado y arriesgado. Para nosotros es más importante: calidad, durabilidad y control. Por eso elegimos el entramado BOSQUE PLATFORM — un sistema abierto, fiable, adaptado a las Islas Canarias."
         }
       ]
     },
     {
       id: 3,
-      title: "Где можно строить из SIP-панелей",
+      title: "Dónde se puede construir con paneles SIP",
       content: [
         {
-          subtitle: "📍1. Канада и США",
-          text: "Самые активные рынки SIP. Используются в основном в сухом, холодном или умеренном климате. Часто — для временных построек, бюджетных домов, пристроек, небольших зданий. Система подходит, если грамотно организована вентиляция и защита от влаги."
+          subtitle: "📍1. Canadá y EE.UU.",
+          text: "Los mercados más activos de SIP. Se usan principalmente en clima seco, frío o templado. A menudo — para construcciones temporales, casas económicas, anexos, edificios pequeños. El sistema funciona si se organiza correctamente la ventilación y protección contra humedad."
         },
         {
-          subtitle: "📍2. Скандинавия (в ограниченном объёме)",
-          text: "В Норвегии, Швеции иногда применяются SIP-панели, но преимущественно:",
+          subtitle: "📍2. Escandinavia (de forma limitada)",
+          text: "En Noruega y Suecia a veces se usan paneles SIP, pero principalmente:",
           list: [
-            "для хозяйственных построек",
-            "с внешней защитой и в сухих зонах",
-            "не в виде массовой технологии"
+            "para construcciones auxiliares",
+            "con protección exterior y en zonas secas",
+            "no como tecnología masiva"
           ],
-          additionalText: "Традиционный каркас с утеплением предпочитается гораздо чаще."
+          additionalText: "El entramado tradicional con aislamiento se prefiere mucho más."
         },
         {
-          subtitle: "📍3. Польша, Чехия, Румыния, Прибалтика",
-          text: "SIP используется для дешёвых быстровозводимых домов. Часто — для экспорта. Внутри страны — больше в эконом-сегменте. Практически не применяется в высококачественном жилье."
+          subtitle: "📍3. Polonia, Chequia, Rumanía, Países Bálticos",
+          text: "SIP se usa para casas económicas de construcción rápida. A menudo — para exportación. Dentro del país — más en el segmento económico. Prácticamente no se usa en viviendas de alta calidad."
         },
         {
-          subtitle: "⚠️ Европа в целом — не использует SIP в массовом строительстве",
-          text: "Причины:",
+          subtitle: "⚠️ Europa en general — no usa SIP en construcción masiva",
+          text: "Razones:",
           list: [
-            "Пожарные нормы — пенополистирол и PUR требуют строгой защиты",
-            "Энергоэффективность — SIP не даёт хорошей паропроницаемости без сложных решений",
-            "Стандарты долговечности — SIP вызывает сомнения при эксплуатации больше 30 лет",
-            "Модульность — европейцы любят менять планировки, SIP не даёт такой гибкости"
+            "Normativas de incendios — el poliestireno y PUR requieren protección estricta",
+            "Eficiencia energética — SIP no ofrece buena permeabilidad al vapor sin soluciones complejas",
+            "Estándares de durabilidad — SIP genera dudas en uso por más de 30 años",
+            "Modularidad — los europeos prefieren poder cambiar distribuciones, SIP no da esa flexibilidad"
           ]
         },
         {
-          subtitle: "📌 Где не стоит строить из SIP:",
+          subtitle: "📌 Dónde no conviene construir con SIP:",
           list: [
-            "В зонах высокой влажности или с перепадами температур (например, Канарские острова, прибрежные районы)",
-            "Там, где важна долговечность, адаптация конструкции и простота коммуникаций",
-            "При строительстве домов, рассчитанных на десятилетия, а не на 15–20 лет"
+            "En zonas de alta humedad o con cambios de temperatura (por ejemplo, Islas Canarias, zonas costeras)",
+            "Donde es importante la durabilidad, adaptación de la estructura y simplicidad de instalaciones",
+            "En construcción de casas pensadas para décadas, no para 15–20 años"
           ]
         },
         {
-          subtitle: "🧾 Вывод:",
-          text: "В Европе SIP-панели используются крайне ограниченно, чаще — как быстровозводимая технология или временное жильё. Для серьёзного, надёжного и долговечного дома предпочитают каркасную систему, CLT, или кирпич/блок."
+          subtitle: "🧾 Conclusión:",
+          text: "En Europa los paneles SIP se usan de forma muy limitada, más como tecnología de construcción rápida o vivienda temporal. Para una casa seria, fiable y duradera se prefiere el sistema de entramado, CLT, o ladrillo/bloque."
         }
       ]
     }
@@ -132,7 +132,7 @@ const Stories = () => {
       
       <PageBanner 
         title="Diario de construcción" 
-        description="Узнайте больше о наших подходах к строительству и почему мы выбираем именно каркасные технологии"
+        description="Conozca más sobre nuestros enfoques de construcción y por qué elegimos específicamente tecnologías de entramado de madera"
         backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
       />
       
