@@ -6,6 +6,7 @@ import { Info } from "lucide-react";
 
 interface FoundationTypeDialogProps {
   type: "adjustable_metal" | "strip" | "monolithic";
+  children: React.ReactNode;
 }
 
 const FOUNDATION_DETAILS = {
@@ -47,21 +48,13 @@ const FOUNDATION_DETAILS = {
   }
 };
 
-const FoundationTypeDialog = ({ type }: FoundationTypeDialogProps) => {
+const FoundationTypeDialog = ({ type, children }: FoundationTypeDialogProps) => {
   const details = FOUNDATION_DETAILS[type];
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="h-auto p-1 text-primary hover:text-primary/80"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Info className="h-4 w-4 mr-1" />
-          Подробнее
-        </Button>
+        {children}
       </DialogTrigger>
       <DialogContent className="max-w-4xl">
         <DialogHeader>
