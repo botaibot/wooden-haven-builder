@@ -57,8 +57,8 @@ export const getRoofInsulationLabel = (value: string): string => {
 export const getFoundationLabel = (value: string): string => {
   switch(value) {
     case "adjustable_metal": return "Металлические опоры";
-    case "strip": return "Ленточный фундамент";
-    case "monolithic": return "Монолитная подушка";
+    case "strip": return "Zapata corrida";
+    case "monolithic": return "Losa monolítica";
     default: return value;
   }
 };

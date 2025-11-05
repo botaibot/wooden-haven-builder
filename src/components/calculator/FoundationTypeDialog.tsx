@@ -23,28 +23,28 @@ const FOUNDATION_DETAILS = {
     image: "/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png"
   },
   strip: {
-    title: "Ленточный фундамент",
-    description: "Прочный и надежный фундамент для долговечных построек",
+    title: "Zapata corrida",
+    description: "Fundación resistente y fiable para construcciones duraderas",
     content: {
-      text: "Ленточный фундамент представляет собой железобетонную конструкцию, проходящую по периметру здания и под несущими стенами. Обеспечивает равномерное распределение нагрузки и высокую устойчивость.",
-      details: "Фундамент закладывается по периметру дома плюс одна лента посередине для дополнительной прочности. Глубина заложения зависит от типа грунта и климатических условий.",
-      pricing: "Стоимость: 300 € за погонный метр",
-      consumption: "Расчет: периметр дома + одна центральная лента по меньшей стороне",
-      note: "Рекомендуется для постоянного проживания"
+      text: "La zapata corrida es una estructura de hormigón armado que recorre el perímetro del edificio y bajo los muros portantes. Proporciona una distribución uniforme de la carga y alta estabilidad.",
+      details: "La fundación se coloca alrededor del perímetro de la casa más una franja en el centro para mayor resistencia. La profundidad de colocación depende del tipo de suelo y las condiciones climáticas.",
+      pricing: "Costo: 300 € por metro lineal",
+      consumption: "Cálculo: perímetro de la casa + una franja central por el lado menor",
+      note: "Recomendado para residencia permanente"
     },
-    image: "/lovable-uploads/foundation-strip.jpg"
+    image: "/lovable-uploads/zapata-corrida.jpeg"
   },
   monolithic: {
-    title: "Монолитная подушка",
-    description: "Максимально прочное и стабильное основание",
+    title: "Losa monolítica",
+    description: "Base extremadamente resistente y estable",
     content: {
-      text: "Монолитная плита — это сплошное железобетонное основание под всей площадью дома. Обеспечивает максимальную устойчивость и равномерное распределение нагрузки на грунт.",
-      details: "Идеально подходит для сложных грунтов, обеспечивает защиту от промерзания и влаги. Монолитная конструкция исключает появление трещин и деформаций.",
-      pricing: "Стоимость: 500 € за м²",
-      consumption: "Расчет: площадь дома × 500 €",
-      note: "Оптимальный выбор для капитального строительства"
+      text: "La losa monolítica es una base continua de hormigón armado bajo toda el área de la casa. Proporciona máxima estabilidad y distribución uniforme de la carga sobre el suelo.",
+      details: "Ideal para suelos complejos, proporciona protección contra heladas y humedad. La construcción monolítica elimina la aparición de grietas y deformaciones.",
+      pricing: "Costo: 500 € por m²",
+      consumption: "Cálculo: área de la casa × 500 €",
+      note: "Opción óptima para construcción permanente"
     },
-    image: "/lovable-uploads/foundation-monolithic.jpg"
+    image: "/lovable-uploads/losa-monolitica.jpeg"
   }
 };
 
