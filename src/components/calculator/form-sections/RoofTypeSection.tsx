@@ -16,6 +16,13 @@ interface RoofTypeSectionProps {
 const RoofTypeSection = ({ form, roofCost }: RoofTypeSectionProps) => {
   const houseArea = form.watch("width") * form.watch("length");
 
+  const roofTypeIcons: Record<string, string> = {
+    simple: "/lovable-uploads/35499c13-25ef-4b1d-90dc-9f754301fe36.png",
+    volado: "/lovable-uploads/457a07f4-54a5-40fb-bcfe-b0ad56bd6578.png",
+    moderno: "/lovable-uploads/04e241c4-f827-4fc2-b77f-4ea27ce7093d.png",
+    alto: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
+  };
+
   return (
     <FormField
       control={form.control}
@@ -45,10 +52,17 @@ const RoofTypeSection = ({ form, roofCost }: RoofTypeSectionProps) => {
                         htmlFor={type}
                         className="flex flex-col items-start justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary cursor-pointer transition-all min-h-[120px]"
                       >
-                        <div className="w-full">
-                          <div className="font-semibold">{getRoofTypeLabel(type)}</div>
-                          <div className="text-sm text-muted-foreground mt-1">
-                            {PRICES.ROOF_TYPE[type]}€ por m²
+                        <div className="w-full flex items-center gap-3">
+                          <img 
+                            src={roofTypeIcons[type]} 
+                            alt={getRoofTypeLabel(type)}
+                            className="w-12 h-12 object-contain flex-shrink-0"
+                          />
+                          <div className="flex-1">
+                            <div className="font-semibold">{getRoofTypeLabel(type)}</div>
+                            <div className="text-sm text-muted-foreground mt-1">
+                              {PRICES.ROOF_TYPE[type]}€ por m²
+                            </div>
                           </div>
                         </div>
                         <div className="w-full flex items-end justify-between mt-2">
