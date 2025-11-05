@@ -4,7 +4,7 @@ import { Home } from "lucide-react";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "../types";
-import FoundationInfoDialog from "../FoundationInfoDialog";
+import FoundationTypeDialog from "../FoundationTypeDialog";
 import { formatCurrency, getFoundationLabel, PRICES } from "../constants";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -42,7 +42,6 @@ const FoundationSection = ({ form, foundationCost }: FoundationSectionProps) => 
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
             <Home className="h-5 w-5" /> Tipo de fundación
-            <FoundationInfoDialog />
           </FormLabel>
           <FormControl>
             <RadioGroup
@@ -64,7 +63,10 @@ const FoundationSection = ({ form, foundationCost }: FoundationSectionProps) => 
                       className="flex flex-col items-start justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary cursor-pointer transition-all"
                     >
                       <div className="w-full">
-                        <div className="font-semibold">{getFoundationLabel(type)}</div>
+                        <div className="flex items-center justify-between">
+                          <div className="font-semibold">{getFoundationLabel(type)}</div>
+                          <FoundationTypeDialog type={type} />
+                        </div>
                       </div>
                       <div className="text-lg font-bold text-primary mt-2">
                         + {formatCurrency(price)}
