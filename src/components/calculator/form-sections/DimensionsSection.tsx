@@ -90,7 +90,12 @@ const DimensionsSection = ({ form }: DimensionsSectionProps) => {
       </div>
 
       <div className="bg-slate-50 p-4 rounded-md border border-slate-100">
-        <h3 className="text-md font-medium mb-2">Площадь дома: {(form.watch("width") * form.watch("length")).toFixed(1)} м²</h3>
+        <div className="space-y-2">
+          <h3 className="text-md font-medium">Площадь дома: {(form.watch("width") * form.watch("length")).toFixed(1)} м²</h3>
+          <p className="text-lg font-semibold text-primary">
+            Базовая комплектация: {((form.watch("width") * form.watch("length")) * (form.watch("houseType") === "frame" ? 850 : 1000)).toLocaleString()} €
+          </p>
+        </div>
       </div>
     </>
   );

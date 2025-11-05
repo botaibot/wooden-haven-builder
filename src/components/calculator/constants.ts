@@ -3,8 +3,8 @@
 
 export const PRICES = {
   BASE_PRICE_PER_SQM: {
-    frame: 550,
-    glued_beam: 800
+    frame: 850,
+    glued_beam: 1000
   },
   TERRACE_PRICE_PER_SQM: 200,
   CANOPY_PRICE_PER_SQM: 200,
