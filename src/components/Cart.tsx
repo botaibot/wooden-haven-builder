@@ -62,35 +62,40 @@ const Cart = () => {
     
     setIsSubmitting(true);
     
-    const baseWebhookUrl = 'https://casamodul.app.n8n.cloud/webhook/38071c0f-bd68-4f65-956b-c89a4b8aabd6';
+    const webhookUrl = 'https://casamodul.app.n8n.cloud/webhook-test/38071c0f-bd68-4f65-956b-c89a4b8aabd6';
     
-    // Formamos la lista de productos como cadena
-    const itemsList = items.map(item => 
-      `${item.title} (${item.size}) - ${item.quantity} uds. a €${item.price.toFixed(2)} = €${(item.price * item.quantity).toFixed(2)}`
-    ).join('; ');
-    
-    // Enviamos datos a través de parámetros URL
-    const params = new URLSearchParams({
+    // Formamos los datos del pedido
+    const orderData = {
       order_type: "Materiales",
       name: orderForm.name,
       email: orderForm.email,
       phone: orderForm.phone,
-      address: `${orderForm.address}, ${orderForm.city} ${orderForm.postalCode}`,
+      address: orderForm.address,
+      city: orderForm.city,
+      postalCode: orderForm.postalCode,
       notes: orderForm.notes || '',
-      items: itemsList,
-      total_items: getTotalItems().toString(),
-      total_price: getTotalPrice().toFixed(2),
+      items: items.map(item => ({
+        title: item.title,
+        size: item.size,
+        quantity: item.quantity,
+        price: item.price,
+        total: item.price * item.quantity
+      })),
+      total_items: getTotalItems(),
+      total_price: getTotalPrice(),
       order_date: new Date().toISOString()
-    });
-    
-    const webhookUrl = `${baseWebhookUrl}?${params.toString()}`;
+    };
     
     try {
-      console.log("Enviando pedido al webhook vía URL:", webhookUrl);
+      console.log("Enviando pedido al webhook:", webhookUrl, orderData);
       
       const response = await fetch(webhookUrl, {
-        method: "GET",
-        mode: "no-cors"
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(orderData)
       });
       
       toast({
