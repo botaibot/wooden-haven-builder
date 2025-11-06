@@ -18,7 +18,7 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
         <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-white border border-gray-200">
           <img 
             src={house.floorPlanImage} 
-            alt="План этажа" 
+            alt="Plano de planta" 
             className="w-full h-full object-contain"
           />
         </AspectRatio>
@@ -32,38 +32,38 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div>
             <p className="text-2xl font-bold text-nature-dark">{house.area}</p>
-            <p className="text-gray-600">общая площадь</p>
+            <p className="text-gray-600">área total</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-nature-dark">{house.dimensions}</p>
-            <p className="text-gray-600">линейные размеры</p>
+            <p className="text-gray-600">dimensiones</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-nature-dark">{house.floors}</p>
-            <p className="text-gray-600">этажа</p>
+            <p className="text-gray-600">planta{house.floors > 1 ? 's' : ''}</p>
           </div>
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
           <div className="flex justify-between py-2 border-b border-gray-200">
-            <span>Спальни</span>
+            <span>Dormitorios</span>
             <span className="font-medium">{house.bedrooms}</span>
           </div>
           <div className="flex justify-between py-2 border-b border-gray-200">
-            <span>Санузлы</span>
+            <span>Baños</span>
             <span className="font-medium">{house.bathrooms}</span>
           </div>
           <div className="flex justify-between py-2 border-b border-gray-200">
-            <span>Балкон</span>
-            <span className="font-medium">{house.balcony ? 'Есть' : 'Нет'}</span>
+            <span>Balcón</span>
+            <span className="font-medium">{house.balcony ? 'Sí' : 'No'}</span>
           </div>
           <div className="flex justify-between py-2 border-b border-gray-200">
-            <span>Терраса</span>
-            <span className="font-medium">{house.terrace ? 'Есть' : 'Нет'}</span>
+            <span>Terraza</span>
+            <span className="font-medium">{house.terrace ? 'Sí' : 'No'}</span>
           </div>
           <div className="flex justify-between py-2 border-b border-gray-200">
-            <span>Крыльцо</span>
-            <span className="font-medium">{house.porch ? 'Есть' : 'Нет'}</span>
+            <span>Porche</span>
+            <span className="font-medium">{house.porch ? 'Sí' : 'No'}</span>
           </div>
         </div>
         
@@ -76,7 +76,7 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
                   className={activeFloor === floor ? "bg-wood-dark text-white" : "bg-gray-200 text-gray-800"}
                   onClick={() => setActiveFloor(floor)}
                 >
-                  {floor} этаж
+                  Planta {floor}
                 </Button>
               ))}
             </div>
