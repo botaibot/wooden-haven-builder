@@ -12,8 +12,8 @@ interface WallDetail {
 
 const wallDetails: { [key: string]: WallDetail } = {
   foundation: {
-    title: "Регулируемая металлическая опора",
-    description: "Толщина металла 6 мм. Регулируемые металлические опоры — базовый и самый экономичный вариант. Позволяет быстро установить дом на подготовленной площадке и при необходимости регулировать высоту. Для маленьких домов до 30м² выкапывается земля под металлические опоры размером 50×50×50 см, делается подсыпка щебня и песка, укладывается бетонный блок, к которому прикручиваются опоры. Входит в базовую комплектацию. Стоимость одной опоры: 60 € + 40 € (работа, материалы). Примерный расход: 7 опор на каждые 10 м² площади пола.",
+    title: "Soporte metálico regulable",
+    description: "Espesor del metal 6 mm. Los soportes metálicos regulables son la opción básica y más económica. Permiten instalar rápidamente la casa sobre una superficie preparada y ajustar la altura cuando sea necesario. Para casas pequeñas de hasta 30m² se excava tierra para soportes metálicos de 50×50×50 cm, se hace un relleno de grava y arena, se coloca un bloque de hormigón al que se atornillan los soportes. Incluido en la configuración básica. Coste de un soporte: 60 € + 40 € (mano de obra, materiales). Consumo aproximado: 7 soportes por cada 10 m² de superficie de suelo.",
     image: "/lovable-uploads/85729617-ae77-4f48-831a-aca0d62cf8c1.png"
   },
   frame: {
@@ -27,18 +27,18 @@ const wallDetails: { [key: string]: WallDetail } = {
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   vapor: {
-    title: "Пароизоляция",
-    description: "Умная пароизоляция защищает утеплитель от влаги изнутри дома, при этом позволяя конструкции 'дышать' при необходимости.",
+    title: "Barrera de vapor",
+    description: "La barrera de vapor inteligente protege el aislamiento de la humedad interior de la vivienda, permitiendo que la construcción 'respire' cuando sea necesario.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   membrane: {
-    title: "Ветрозащитная мембрана",
-    description: "Диффузионная мембрана защищает от ветра и влаги снаружи, но пропускает пар изнутри конструкции наружу.",
+    title: "Membrana cortaviento",
+    description: "La membrana transpirable protege del viento y la humedad exterior, pero permite el paso del vapor desde el interior hacia el exterior de la construcción.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   facade: {
-    title: "Фасадная отделка",
-    description: "Вентилируемый фасад с воздушным зазором 30-48мм обеспечивает долговечность отделки и дополнительную защиту стены.",
+    title: "Acabado de fachada",
+    description: "La fachada ventilada con cámara de aire de 30-48mm garantiza la durabilidad del acabado y proporciona protección adicional a la pared.",
     image: "/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png"
   },
   roof: {
