@@ -21,9 +21,9 @@ const HeroSection = ({ house }: HeroSectionProps) => {
       <div className="absolute bottom-0 left-0 right-0 z-20 p-4 md:p-8 bg-gradient-to-t from-black/80 to-transparent">
         <div className="container mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">{house.title}</h1>
-          {house.id !== 6 && <p className="text-2xl text-white/90 mb-6">{house.area}</p>}
+          {house.id !== 6 && house.id !== 8 && <p className="text-2xl text-white/90 mb-6">{house.area}</p>}
           
-          {house.id !== 6 && (
+          {house.id !== 6 && house.id !== 8 && (
             <div className="flex flex-col md:flex-row gap-4 justify-start">
               <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
                 <div className="flex flex-col items-center">
