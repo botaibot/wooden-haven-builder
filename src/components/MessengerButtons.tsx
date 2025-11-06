@@ -17,7 +17,7 @@ const MessengerButtons = () => {
   };
 
   const handleTelegramClick = () => {
-    window.open('https://t.me/casamodulbot', '_blank');
+    window.open('https://t.me/Ktoshkabot', '_blank');
   };
 
   const handleBotClick = () => {

@@ -19,7 +19,7 @@ const ConsultationChat = () => {
   }, []);
 
   const handleTelegramClick = () => {
-    window.open('https://t.me/your_telegram_bot', '_blank');
+    window.open('https://t.me/Ktoshkabot', '_blank');
     setShowConsultationOptions(false);
   };
 
