@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="max-w-md text-center">
             <h4 className="font-semibold text-lg mb-4">Síguenos en redes sociales</h4>
             <div className="flex gap-4 justify-center">
-              <a href="https://instagram.com/bosque_nordico" target="_blank" rel="noopener noreferrer" 
+              <a href="https://instagram.com/bosquenordico" target="_blank" rel="noopener noreferrer" 
                 className="bg-wood p-2 rounded-full hover:bg-nature-dark transition-colors">
                 <Instagram size={24} />
               </a>
