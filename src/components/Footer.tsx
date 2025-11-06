@@ -16,50 +16,10 @@ const Footer = () => {
   return (
     <footer className="bg-wood-darkest text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">
-              <span className="text-nature-light">Wood</span>Tenerife
-            </h3>
-            <p className="text-gray-300">
-              Мы специализируемся на строительстве и производстве 
-              деревянных домов на Тенерифе, а также продаже 
-              высококачественных строительных материалов.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Навигация</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-nature-light transition-colors">
-                  Главная
-                </Link>
-              </li>
-              <li>
-                <Link to="/houses" className="text-gray-300 hover:text-nature-light transition-colors">
-                  Дома
-                </Link>
-              </li>
-              <li>
-                <Link to="/materials" className="text-gray-300 hover:text-nature-light transition-colors">
-                  Материалы
-                </Link>
-              </li>
-              <li>
-                <Link to="/furniture" className="text-gray-300 hover:text-nature-light transition-colors">
-                  Мебель
-                </Link>
-              </li>
-              <li>
-                <PrivacySettingsButton />
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Мы в соцсетях</h4>
-            <div className="flex gap-4">
+        <div className="flex justify-center">
+          <div className="max-w-md text-center">
+            <h4 className="font-semibold text-lg mb-4">Síguenos en redes sociales</h4>
+            <div className="flex gap-4 justify-center">
               <a href="https://instagram.com/bosque_nordico" target="_blank" rel="noopener noreferrer" 
                 className="bg-wood p-2 rounded-full hover:bg-nature-dark transition-colors">
                 <Instagram size={24} />
@@ -71,14 +31,14 @@ const Footer = () => {
             </div>
             <div className="mt-4">
               <p className="text-gray-300 text-sm">
-                Подписывайтесь на нас в социальных сетях, чтобы быть в курсе новостей и акций.
+                Síguenos en las redes sociales para estar al día de noticias y promociones.
               </p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} Bosque Nórdico. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} Bosque Nórdico. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
