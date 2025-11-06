@@ -271,7 +271,35 @@ comenzar con lo esencial, con margen para personalizar
       description: "cubiertas altas a dos aguas, amplitud y verticalidad (36–90+ m²)",
       sizes: "36–90+ m²",
       quote: "",
-      image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png"
+      image: "/lovable-uploads/e216aff7-3ceb-4cb2-8806-e4b7de5053bf.png",
+      models: [
+        {
+          size: "Modelo Barn",
+          images: [
+            "/lovable-uploads/barn1.jpg",
+            "/lovable-uploads/barn2.jpg",
+            "/lovable-uploads/barn3.jpg",
+            "/lovable-uploads/barn5.png",
+            "/lovable-uploads/barn4.png",
+            "/lovable-uploads/barn6.png"
+          ],
+          description: `🏠 Techo Alto - Modelo Barn
+💶 Precio: Por consultar
+
+🌿 Descripción disponible próximamente
+Este modelo presenta una cubierta alta a dos aguas que maximiza el espacio interior y crea una sensación de amplitud y verticalidad única.
+
+Características principales:
+✔️ Cubierta a dos aguas con alta inclinación
+✔️ Máximo aprovechamiento del espacio vertical
+✔️ Diseño tipo barn contemporáneo
+✔️ Amplias zonas de cristal para máxima luminosidad
+✔️ Acabados en madera natural
+
+📦 Más información próximamente
+Para más detalles sobre este modelo, contacte con nuestro equipo.`
+        }
+      ]
     },
     {
       name: "Bosque Kit",
@@ -341,7 +369,7 @@ comenzar con lo esencial, con margen para personalizar
   };
 
   const renderModelButton = (line, index) => {
-    if (line.name === "Techo Simple" || line.name === "Techo Volado") {
+    if (line.name === "Techo Simple" || line.name === "Techo Volado" || line.name === "Techo Alto") {
       return (
         <Dialog>
           <DialogTrigger asChild>
@@ -412,6 +440,23 @@ comenzar con lo esencial, con margen para personalizar
                                 </Button>
                               </div>
                             ) : line.name === "Techo Volado" ? (
+                              <div>
+                                <div>{getShortDescription(model.description)}</div>
+                                {expandedModels[`${line.name}-${model.size}`] && (
+                                  <div className="mt-4">
+                                    {getFullDescription(model.description)}
+                                  </div>
+                                )}
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
+                                  className="mt-2 text-wood hover:text-wood-dark"
+                                >
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                </Button>
+                              </div>
+                            ) : line.name === "Techo Alto" ? (
                               <div>
                                 <div>{getShortDescription(model.description)}</div>
                                 {expandedModels[`${line.name}-${model.size}`] && (
