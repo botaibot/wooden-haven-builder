@@ -8,12 +8,12 @@ const FloorInfoDialog = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" className="ml-2">
-          Подробнее о полах
+          Más sobre suelos
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Структура полов</DialogTitle>
+          <DialogTitle>Estructura del suelo</DialogTitle>
         </DialogHeader>
         
         <div className="flex justify-center p-4">
@@ -23,7 +23,7 @@ const FloorInfoDialog = () => {
           >
             <img 
               src="/lovable-uploads/f3c6717b-8e54-4e38-9bcf-b8630ac7b079.png" 
-              alt="Структура пола" 
+              alt="Estructura del suelo"
               className="rounded-md border border-gray-200 max-h-[60vh]"
             />
           </div>

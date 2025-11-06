@@ -18,7 +18,7 @@ const FloorSection = ({ form }: FloorSectionProps) => {
       render={() => (
         <FormItem>
           <FormLabel className="text-lg font-medium flex items-center gap-2">
-            <LayoutGrid className="h-5 w-5" /> Толщина полов
+            <LayoutGrid className="h-5 w-5" /> Espesor de los suelos
             <FloorInfoDialog />
           </FormLabel>
         </FormItem>

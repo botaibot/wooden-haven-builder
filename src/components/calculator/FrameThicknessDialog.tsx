@@ -8,13 +8,13 @@ const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" className="ml-2">
-          Подробнее о {houseType === "frame" ? "каркасе" : "брусе"}
+          Más sobre {houseType === "frame" ? "entramado" : "madera laminada"}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-3xl">
         <DialogHeader>
           <DialogTitle>
-            Структура {houseType === "frame" ? "каркаса" : "клееного бруса"}
+            Estructura de {houseType === "frame" ? "entramado" : "madera laminada"}
           </DialogTitle>
         </DialogHeader>
         
@@ -25,7 +25,7 @@ const FrameThicknessDialog = ({ houseType }: { houseType: string }) => {
           >
             <img 
               src="/lovable-uploads/665821f0-29b3-4a9b-87cb-4aedd75f3eff.png" 
-              alt="Структура каркаса" 
+              alt="Estructura del entramado" 
               className="rounded-md border border-gray-200 max-h-[70vh]"
             />
           </div>

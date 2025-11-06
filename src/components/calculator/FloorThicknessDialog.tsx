@@ -8,24 +8,24 @@ const FloorThicknessDialog = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" className="ml-2">
-          Подробнее о толщине пола
+          Más sobre espesor del suelo
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Структура пола</DialogTitle>
+          <DialogTitle>Estructura del suelo</DialogTitle>
           <DialogDescription>
-            Толщина и структура пола
+            Espesor y estructura del suelo
           </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-3 pt-2">
-          <p className="text-sm">1 Клеёный брус 120 мм x 120 мм</p>
-          <p className="text-sm">2 Балка класса C24 195 мм x 45 мм</p>
-          <p className="text-sm">3 Опорная рейка 48 мм x 48 мм</p>
-          <p className="text-sm">4 OSB 9 мм или 12 мм</p>
-          <p className="text-sm">5 Пенополистирольная панель</p>
-          <p className="text-sm">6 OSB 22 мм</p>
+          <p className="text-sm">1 Madera laminada 120 mm x 120 mm</p>
+          <p className="text-sm">2 Viga clase C24 195 mm x 45 mm</p>
+          <p className="text-sm">3 Listón de soporte 48 mm x 48 mm</p>
+          <p className="text-sm">4 OSB 9 mm o 12 mm</p>
+          <p className="text-sm">5 Panel de poliestireno expandido</p>
+          <p className="text-sm">6 OSB 22 mm</p>
         </div>
       </DialogContent>
     </Dialog>

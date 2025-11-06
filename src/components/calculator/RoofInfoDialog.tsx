@@ -11,21 +11,21 @@ const RoofInfoDialog = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" size="sm" className="ml-2">
-          Подробнее о кровле
+          Más sobre cubierta
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-5xl">
         <DialogHeader>
-          <DialogTitle>Информация о кровельном пироге</DialogTitle>
+          <DialogTitle>Información sobre la cubierta</DialogTitle>
           <DialogDescription>
-            Структура и состав кровельного пирога
+            Estructura y composición de la cubierta
           </DialogDescription>
         </DialogHeader>
         
         <ScrollArea className="h-[60vh]">
           <Tabs defaultValue="structure" className="mt-4">
             <TabsList className="grid grid-cols-1 mb-4">
-              <TabsTrigger value="structure">Структура кровли</TabsTrigger>
+              <TabsTrigger value="structure">Estructura de la cubierta</TabsTrigger>
             </TabsList>
             
             <TabsContent value="structure" className="space-y-4">
@@ -37,7 +37,7 @@ const RoofInfoDialog = () => {
                   >
                     <img 
                       src="/lovable-uploads/675ff4d5-ce2d-4aba-ae5f-fa43015f51a1.png" 
-                      alt="Схема кровельного пирога 1" 
+                      alt="Esquema de la cubierta 1" 
                       className="rounded-md border border-gray-200 w-full mb-4"
                     />
                   </div>
@@ -49,7 +49,7 @@ const RoofInfoDialog = () => {
                   >
                     <img 
                       src="/lovable-uploads/987076e2-de0c-4064-bd33-cb6674da2578.png" 
-                      alt="Схема кровельного пирога 2" 
+                      alt="Esquema de la cubierta 2" 
                       className="rounded-md border border-gray-200 w-full"
                     />
                   </div>
@@ -57,11 +57,11 @@ const RoofInfoDialog = () => {
               </div>
               
               <div className="bg-slate-50 p-4 rounded-md border border-slate-100 text-center mt-6">
-                <h4 className="font-medium">Нужна помощь с выбором?</h4>
+                <h4 className="font-medium">¿Necesita ayuda con la elección?</h4>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Наши специалисты помогут подобрать оптимальное решение для вашего проекта
+                  Nuestros especialistas le ayudarán a encontrar la solución óptima para su proyecto
                 </p>
-                <Button variant="outline" className="mt-3">Связаться с нами</Button>
+                <Button variant="outline" className="mt-3">Contactar con nosotros</Button>
               </div>
             </TabsContent>
           </Tabs>
