@@ -16,7 +16,7 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
   
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-      {house.id !== 2 && (
+      {house.id !== 2 && house.id !== 1 && (
         <div className="p-4 bg-gray-50">
           <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-white border border-gray-200">
             <img 
