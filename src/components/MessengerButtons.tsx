@@ -6,9 +6,8 @@ import botIcon from "@/assets/bot.png";
 const MessengerButtons = () => {
   const handleWhatsAppClick = () => {
     const phone = '34651715998';
-    const text = encodeURIComponent('Hola quiero hacer un pedido');
-    const waUrl = `https://wa.me/${phone}?text=${text}`;
-    const apiUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+    const waUrl = `https://wa.me/${phone}`;
+    const apiUrl = `https://api.whatsapp.com/send?phone=${phone}`;
 
     // Try wa.me in a new tab; fallback to api.whatsapp.com if blocked
     const win = window.open(waUrl, '_blank', 'noopener');
