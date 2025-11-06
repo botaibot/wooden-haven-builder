@@ -6,7 +6,7 @@ import botIcon from "@/assets/bot.png";
 const MessengerButtons = () => {
   const handleWhatsAppClick = () => {
     try {
-      const whatsappUrl = 'https://wa.me/34659946234';
+      const whatsappUrl = 'https://wa.me/34651715998?text=Hola%20quiero%20hacer%20un%20pedido';
       window.location.href = whatsappUrl;
     } catch (error) {
       console.error('Error opening WhatsApp:', error);
