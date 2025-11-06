@@ -24,11 +24,14 @@ const ConsultationChat = () => {
   };
 
   const handleWhatsAppClick = () => {
-    try {
-      const whatsappUrl = 'https://wa.me/34651715998?text=Hola%20quiero%20hacer%20un%20pedido';
-      window.location.href = whatsappUrl;
-    } catch (error) {
-      console.error('Error opening WhatsApp:', error);
+    const phone = '34651715998';
+    const text = encodeURIComponent('Hola quiero hacer un pedido');
+    const waUrl = `https://wa.me/${phone}?text=${text}`;
+    const apiUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+
+    const win = window.open(waUrl, '_blank', 'noopener');
+    if (!win) {
+      window.location.href = apiUrl;
     }
     setShowConsultationOptions(false);
   };
