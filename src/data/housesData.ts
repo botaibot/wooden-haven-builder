@@ -61,7 +61,7 @@ const houses: HouseData[] = [
   {
     id: 8,
     title: "Black Eco Box",
-    area: "60 м² плюс терраса 22 м²",
+    area: "60 m² más terraza 22 m²",
     dimensions: "10.6 x 5.7 м",
     floors: 1,
     bedrooms: 2,
@@ -88,7 +88,7 @@ const houses: HouseData[] = [
   {
     id: 10,
     title: "Ecopino Lux Studio",
-    area: "29 м² плюс терраса 5 м²",
+    area: "29 m² más terraza 5 m²",
     dimensions: "7 x 4.5 м",
     floors: 1,
     bedrooms: 1,
