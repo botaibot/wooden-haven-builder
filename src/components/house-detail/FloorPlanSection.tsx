@@ -16,15 +16,17 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
   
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-      <div className="p-4 bg-gray-50">
-        <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-white border border-gray-200">
-          <img 
-            src={house.floorPlanImage} 
-            alt="Plano de planta" 
-            className="w-full h-full object-contain"
-          />
-        </AspectRatio>
-      </div>
+      {house.id !== 2 && (
+        <div className="p-4 bg-gray-50">
+          <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-white border border-gray-200">
+            <img 
+              src={house.floorPlanImage} 
+              alt="Plano de planta" 
+              className="w-full h-full object-contain"
+            />
+          </AspectRatio>
+        </div>
+      )}
 
       <div className="p-6 md:p-6">
         {!isSimplified && (
