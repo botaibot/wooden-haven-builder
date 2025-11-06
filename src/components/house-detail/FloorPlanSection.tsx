@@ -11,6 +11,8 @@ interface FloorPlanSectionProps {
 
 const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
   const [activeFloor, setActiveFloor] = useState(1);
+  const simplifiedHouses = [6, 8, 10, 9, 2, 1, 3];
+  const isSimplified = simplifiedHouses.includes(house.id);
   
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
@@ -25,7 +27,7 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
       </div>
 
       <div className="p-6 md:p-6">
-        {house.id !== 6 && house.id !== 8 && (
+        {!isSimplified && (
           <h2 className="text-2xl font-bold text-wood-darkest mb-6">ПЛАН БУДУЩЕГО ДОМА</h2>
         )}
         

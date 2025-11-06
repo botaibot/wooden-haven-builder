@@ -14,6 +14,8 @@ const HouseDetail = () => {
   const { id } = useParams<{ id: string }>();
   const houseId = parseInt(id || "1");
   const house = getHouseById(houseId);
+  const simplifiedHouses = [6, 8, 10, 9, 2, 1, 3];
+  const isSimplified = simplifiedHouses.includes(house.id);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -33,7 +35,7 @@ const HouseDetail = () => {
             {/* Right Column - Gallery & Price Options */}
             <div>
               <GallerySection house={house} />
-              {house.id !== 6 && house.id !== 8 && <PriceSection house={house} />}
+              {!isSimplified && <PriceSection house={house} />}
             </div>
           </div>
         </div>
