@@ -62,7 +62,7 @@ const Cart = () => {
     
     setIsSubmitting(true);
     
-    const webhookUrl = 'https://casamodul.app.n8n.cloud/webhook-test/38071c0f-bd68-4f65-956b-c89a4b8aabd6';
+    const webhookUrl = 'https://casamodul.app.n8n.cloud/webhook/38071c0f-bd68-4f65-956b-c89a4b8aabd6';
     
     // Formamos los datos del pedido
     const orderData = {
