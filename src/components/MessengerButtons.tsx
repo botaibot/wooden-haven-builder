@@ -5,7 +5,12 @@ import botIcon from "@/assets/bot.png";
 
 const MessengerButtons = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/34659946234', '_blank');
+    try {
+      const whatsappUrl = 'https://wa.me/34659946234';
+      window.location.href = whatsappUrl;
+    } catch (error) {
+      console.error('Error opening WhatsApp:', error);
+    }
   };
 
   const handleTelegramClick = () => {
