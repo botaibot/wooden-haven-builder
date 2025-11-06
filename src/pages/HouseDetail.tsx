@@ -33,7 +33,7 @@ const HouseDetail = () => {
             {/* Right Column - Gallery & Price Options */}
             <div>
               <GallerySection house={house} />
-              <PriceSection house={house} />
+              {house.id !== 6 && <PriceSection house={house} />}
             </div>
           </div>
         </div>

@@ -25,7 +25,9 @@ const FloorPlanSection = ({ house }: FloorPlanSectionProps) => {
       </div>
 
       <div className="p-6 md:p-6">
-        <h2 className="text-2xl font-bold text-wood-darkest mb-6">ПЛАН БУДУЩЕГО ДОМА</h2>
+        {house.id !== 6 && (
+          <h2 className="text-2xl font-bold text-wood-darkest mb-6">ПЛАН БУДУЩЕГО ДОМА</h2>
+        )}
         
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div>

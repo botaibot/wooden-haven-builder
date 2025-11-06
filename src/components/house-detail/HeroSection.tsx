@@ -23,40 +23,50 @@ const HeroSection = ({ house }: HeroSectionProps) => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">{house.title}</h1>
           <p className="text-2xl text-white/90 mb-6">{house.area}</p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-start">
-            <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
-              <div className="flex flex-col items-center">
-                <span className="font-bold">СИЛОВОЙ КАРКАС</span>
-                <span className="flex items-center gap-1">
-                  {house.frameCost} <Euro size={18} />
-                </span>
-              </div>
-            </Button>
-            
-            <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
-              <div className="flex flex-col items-center">
-                <span className="font-bold">ТЁПЛЫЙ КОНТУР</span>
-                <span className="flex items-center gap-1">
-                  {house.warmContourCost} <Euro size={18} />
-                </span>
-              </div>
-            </Button>
-            
-            <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
-              <div className="flex flex-col items-center">
-                <span className="font-bold">ПОД КЛЮЧ</span>
-                <span className="flex items-center gap-1">
-                  {house.turnkeyCost} <Euro size={18} />
-                </span>
-              </div>
-            </Button>
-            
+          {house.id !== 6 && (
+            <div className="flex flex-col md:flex-row gap-4 justify-start">
+              <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
+                <div className="flex flex-col items-center">
+                  <span className="font-bold">СИЛОВОЙ КАРКАС</span>
+                  <span className="flex items-center gap-1">
+                    {house.frameCost} <Euro size={18} />
+                  </span>
+                </div>
+              </Button>
+              
+              <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
+                <div className="flex flex-col items-center">
+                  <span className="font-bold">ТЁПЛЫЙ КОНТУР</span>
+                  <span className="flex items-center gap-1">
+                    {house.warmContourCost} <Euro size={18} />
+                  </span>
+                </div>
+              </Button>
+              
+              <Button className="bg-gray-700/80 hover:bg-gray-600/80 text-white text-lg rounded-full px-8 py-6">
+                <div className="flex flex-col items-center">
+                  <span className="font-bold">ПОД КЛЮЧ</span>
+                  <span className="flex items-center gap-1">
+                    {house.turnkeyCost} <Euro size={18} />
+                  </span>
+                </div>
+              </Button>
+              
+              <Button asChild className="bg-nature-dark hover:bg-nature-dark/90 text-white text-lg rounded-full px-8 py-6">
+                <Link to="/contact" className="flex flex-col items-center">
+                  <span className="font-bold">ОСТАВИТЬ ЗАЯВКУ</span>
+                </Link>
+              </Button>
+            </div>
+          )}
+          
+          {house.id === 6 && (
             <Button asChild className="bg-nature-dark hover:bg-nature-dark/90 text-white text-lg rounded-full px-8 py-6">
               <Link to="/contact" className="flex flex-col items-center">
                 <span className="font-bold">ОСТАВИТЬ ЗАЯВКУ</span>
               </Link>
             </Button>
-          </div>
+          )}
         </div>
       </div>
     </div>
