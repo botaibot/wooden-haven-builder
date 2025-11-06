@@ -24,7 +24,7 @@ const ConsultationChat = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/your_whatsapp_number', '_blank');
+    window.open('https://wa.me/34659946234', '_blank');
     setShowConsultationOptions(false);
   };
 
