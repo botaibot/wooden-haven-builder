@@ -9,13 +9,13 @@ function AnalyticsAndPixels(){
       // Google Analytics
       const s = document.createElement("script");
       s.async = true; 
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-150ZGWDF6C";
       document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
       function gtag(){ window.dataLayer.push(arguments); }
       window.gtag = gtag; 
       gtag("js", new Date()); 
-      gtag("config","G-XXXXXXX");
+      gtag("config","G-150ZGWDF6C");
       
       console.log("✅ Google Analytics cargado con consentimiento");
     }
