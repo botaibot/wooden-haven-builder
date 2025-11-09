@@ -24,7 +24,7 @@ const ConsultationChat = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const phone = '34651715998';
+    const phone = '34659946234';
     const waUrl = `https://wa.me/${phone}`;
     const apiUrl = `https://api.whatsapp.com/send?phone=${phone}`;
 
