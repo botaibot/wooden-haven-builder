@@ -298,7 +298,7 @@ const Materials = () => {
     },
     {
       id: "planed-beam",
-      title: "Viga cepillada de abeto del norte.",
+      title: "Viga cepillada de abeto del norte",
       description: "Viga cepillada de abeto macizo: material de construcción universal de madera ecológica. Se utiliza para la construcción de casas de madera, techos, suelos, paredes, cenadores y pérgolas. Sobre la viga, así como sobre el entablado, se pueden montar: tabla de suelo, OSB y cualquier otro material de acabado.\n\nPrecio indicado por unidad. Seleccione el ancho de la viga (95, 120, 140, 145, 160, 195 o 200 mm) y añádala al carrito. En el carrito puede indicar la cantidad de unidades de cada producto en su pedido.",
       imageUrl: [
         "/lovable-uploads/5a3437b6-3793-456c-bee8-f82ecbdf1dde.png",
@@ -307,9 +307,9 @@ const Materials = () => {
       priceRange: "€22,50–€110.00",
       unit: "ud.",
       sizes: [
-        { label: "6000 мм x 95 мм x 45 мм", value: "95x45", price: 22.5 },
+        { label: "6000 мм x 95 мм x 45 мм", value: "95x45", price: 23 },
         { label: "6000 мм x 120 мм x 45 мм", value: "120x45", price: 29 },
-        { label: "6000 мм x 145 мм x 45 мм", value: "145x45", price: 34.5 },
+        { label: "6000 мм x 145 мм x 45 мм", value: "145x45", price: 35.5 },
         { label: "6000 мм x 195 мм x 45 мм", value: "195x45", price: 47 },
         { label: "6000 мм x 140 мм x 60 мм", value: "140x60", price: 47 },
         { label: "6000 мм x 160 мм x 60 мм", value: "160x60", price: 55 },
