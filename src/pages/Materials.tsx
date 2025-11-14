@@ -266,7 +266,7 @@ const Materials = () => {
     {
       id: "terrace-deck",
       title: "Tabla para terraza. Tratada anticorcoma y antihumedad.",
-      description: "Подходит для мощения террас, патио и зон вокруг бассейнов.\n\nПрозрачная пропитка на водной основе на основе льняного масла для защиты от гниения, насекомых и термитов.\n\nЦена указана за м². Выберите характеристики материала из доступных вариантов (цена зависит от качества) и добавьте его в корзину.\n\nДля расчета необходимого количества укажите размеры длины и ширины желаемой стены или потолка.",
+      description: "Ideal para pavimentar terrazas, patios y zonas alrededor de piscinas.\n\nImpregnación transparente a base de agua con aceite de linaza para protección contra putrefacción, insectos y termitas.\n\nPrecio indicado por m². Seleccione las características del material de las opciones disponibles (el precio depende de la calidad) y añádalo al carrito.\n\nPara calcular la cantidad necesaria, indique las dimensiones de largo y ancho de la pared o techo deseado.",
       imageUrl: [
         "/lovable-uploads/6a6d8e61-066e-449d-b673-7c4c18678636.png"
       ],
@@ -285,12 +285,12 @@ const Materials = () => {
     {
       id: "brushed-board",
       title: "Tabla cepillada. Grosor 19 mm",
-      description: "Выберите характеристики материала из доступных вариантов и добавьте его в корзину. В корзине вы можете указать количество штук для каждого товара в вашем заказе.",
+      description: "Seleccione las características del material de las opciones disponibles y añádalo al carrito. En el carrito puede indicar la cantidad de unidades de cada producto en su pedido.",
       imageUrl: [
         "/lovable-uploads/f43efb08-1cc6-45bf-b1c3-874197d6fd34.png"
       ],
       priceRange: "€8,50–€17,00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "3900 мм x 96 мм x 19 мм", value: "96mm", price: 8.5, width: 96, length: 3900 },
         { label: "3900 мм x 116 мм x 19 мм", value: "116mm", price: 10.5, width: 116, length: 3900 },
@@ -303,13 +303,13 @@ const Materials = () => {
     {
       id: "planed-beam",
       title: "Viga cepillada de abeto del norte.",
-      description: "Строганный брус из массива ели – универсальный строительный материал из экологически чистой древесины. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На балку, как и на обрешетку, можно монтировать: доску пола, OSB и любые другие материалы для отделки.\n\nЦена указана за единицу. Выберите ширину балки (95, 120, 140, 145, 160, 195 или 200 мм) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      description: "Viga cepillada de abeto macizo: material de construcción universal de madera ecológica. Se utiliza para la construcción de casas de madera, techos, suelos, paredes, cenadores y pérgolas. Sobre la viga, así como sobre el entablado, se pueden montar: tabla de suelo, OSB y cualquier otro material de acabado.\n\nPrecio indicado por unidad. Seleccione el ancho de la viga (95, 120, 140, 145, 160, 195 o 200 mm) y añádala al carrito. En el carrito puede indicar la cantidad de unidades de cada producto en su pedido.",
       imageUrl: [
         "/lovable-uploads/5a3437b6-3793-456c-bee8-f82ecbdf1dde.png",
         "/lovable-uploads/dab0c018-25c3-4986-af1b-9bf4dc384633.png"
       ],
       priceRange: "€22,50–€110.00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "6000 мм x 95 мм x 45 мм", value: "95x45", price: 22.5 },
         { label: "6000 мм x 120 мм x 45 мм", value: "120x45", price: 29 },
@@ -327,10 +327,10 @@ const Materials = () => {
     {
       id: "beam-with-grooves",
       title: "Viga cepillada machihembrada de abeto nordico",
-      description: "Откройте для себя универсальность и качество нашего строганного бруса с готовым соединением шип-паз.\n\nПри длине 6000 мм и ширине 200 мм этот экологически чистый строительный материал идеально подходит для различных проектов, от деревянных домов до беседок.\n\nВыберите количество в соответствии с вашими потребностями и добавьте его в корзину. \nВ случае затруднений мы можем помочь вам рассчитать необходимое количество.\n\nЭтот шпунтованный брус обладает исключительной универсальностью, позволяя создавать аутентичный вид бревенчатого сруба.\n\nДобавьте качество и экологичность в свой строительный проект с помощью нашего строганного шпунтованного бруса из северной ели.",
+      description: "Descubra la versatilidad y calidad de nuestra viga cepillada con unión machihembrada lista.\n\nCon una longitud de 6000 mm y un ancho de 200 mm, este material de construcción ecológico es ideal para diversos proyectos, desde casas de madera hasta cenadores.\n\nSeleccione la cantidad según sus necesidades y añádala al carrito.\nEn caso de dificultades, podemos ayudarle a calcular la cantidad necesaria.\n\nEsta viga machihembrada posee una versatilidad excepcional, permitiendo crear una apariencia auténtica de construcción de troncos.\n\nAñada calidad y ecología a su proyecto de construcción con nuestra viga cepillada machihembrada de abeto nórdico.",
       imageUrl: "/lovable-uploads/ac34849d-7441-404a-b84d-d57fed166458.png",
       priceRange: "€70.00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "6000 мм x 200 мм x 60 мм", value: "200x60", price: 70 },
       ],
@@ -340,10 +340,10 @@ const Materials = () => {
     {
       id: "glued-beam",
       title: "Viga laminada de abeto del norte",
-      description: "Клееный брус – универсальный и долговечный строительный материал, с повышенными характеристиками прочности. Применяется для строительства деревянных домов, крыш, полов, стен, беседок, пергол. На клееный брус, как и на обрешетку, можно монтировать: доску пола, имитацию бревна.\n\nЦена указана за единицу. Выберите ширину и толщину балки (100 x 100, 60 x 120, 60 х 160, 80 x 160, 80 x 200, 120 x 120, 140 х 140) и добавьте ее в корзину. В корзине вы можете указать количество единиц каждого товара в вашем заказе.",
+      description: "Viga laminada: material de construcción universal y duradero con características de resistencia mejoradas. Se utiliza para la construcción de casas de madera, techos, suelos, paredes, cenadores y pérgolas. Sobre la viga laminada, así como sobre el entablado, se pueden montar: tabla de suelo, imitación de tronco.\n\nPrecio indicado por unidad. Seleccione el ancho y grosor de la viga (100 x 100, 60 x 120, 60 x 160, 80 x 160, 80 x 200, 120 x 120, 140 x 140) y añádala al carrito. En el carrito puede indicar la cantidad de unidades de cada producto en su pedido.",
       imageUrl: "/lovable-uploads/d4f5ff73-1cce-42ce-98ba-8b0a069b291f.png",
       priceRange: "€49,50–€112.00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "6000 мм x 100 мм x 100 мм", value: "100x100", price: 71.50 },
         { label: "6000 мм x 120 мм x 60 мм", value: "120x60", price: 53 },
@@ -360,10 +360,10 @@ const Materials = () => {
     {
       id: "plywood-eucalyptus",
       title: "Contrachapado Eucalipto / Chopo",
-      description: "Легкая плита с сердцевиной из европейского тополя и декоративными фасадами из плантационного эвкалипта, отличительной особенностью которой является ее эстетические качества и хорошая лрочность. Устойчивая сердцевина из тополя, высаженного с соблюдением принципов устойчивого развития, помимо исключительной легкости и простоты обработки, придает этим доскам отличную устойчивость и качество поверхности.\n\nЦена указана за один лист. В корзине вы можете указать количество листов для каждого товара в вашем заказе",
+      description: "Panel ligero con núcleo de chopo europeo y caras decorativas de eucalipto de plantación, cuya característica distintiva son sus cualidades estéticas y buena resistencia. El núcleo estable de chopo, plantado siguiendo principios de desarrollo sostenible, además de una ligereza excepcional y facilidad de procesamiento, proporciona a estos paneles una excelente estabilidad y calidad superficial.\n\nPrecio indicado por hoja. En el carrito puede indicar la cantidad de hojas de cada producto en su pedido",
       imageUrl: "/lovable-uploads/704021dd-eb0c-408e-ab56-cf8054d4f60b.png",
       priceRange: "€20.00–€80.00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "2500 мм x 1220 мм x 3,6 мм", value: "3.6mm", price: 20 },
         { label: "2500 мм x 1220 мм x 5 мм", value: "5mm", price: 25 },
@@ -379,10 +379,10 @@ const Materials = () => {
     {
       id: "osb-3-panels",
       title: "Planchas OSB -3 PEFC certificadas",
-      description: "Откройте для себя влагостойкие плиты OSB -3 PEFC в Bosque Nordico по СУПЕР ЦЕНЕ!\nЭти плиты идеально подходят для строительства и проживания в здоровом и экологичном стиле.\n\nКроме того, она позволяет использовать клеи, краски и лаки, с глянцевой поверхностью отличного качества.\n\nОна используется для стен, полов, кровельных конструкций снаружи и внутри помещений. Цена OSB зависит от толщины шпона (9, 12, 15, 18 или 22 мм).\n\nНепревзойденное соотношение цены и качества! Доступна на Канарских островах, размеры 2500 мм x 1250 мм, толщина 9 мм, 12 мм, 15 мм, 18 мм или 22 мм.\n\nВоспользуйтесь этим предложением и улучшите свои строительные проекты и внутреннюю/внешнюю облицовку.",
+      description: "¡Descubra los paneles OSB-3 PEFC resistentes a la humedad en Bosque Nordico a SÚPER PRECIO!\nEstos paneles son ideales para la construcción y para vivir con un estilo saludable y ecológico.\n\nAdemás, permite el uso de adhesivos, pinturas y barnices, con una superficie brillante de excelente calidad.\n\nSe utiliza para paredes, suelos, estructuras de techos en exteriores e interiores. El precio del OSB depende del grosor del panel (9, 12, 15, 18 o 22 mm).\n\n¡Relación calidad-precio inigualable! Disponible en las Islas Canarias, dimensiones 2500 mm x 1250 mm, grosor 9 mm, 12 mm, 15 mm, 18 mm o 22 mm.\n\nAproveche esta oferta y mejore sus proyectos de construcción y revestimiento interior/exterior.",
       imageUrl: "/lovable-uploads/ef1e32d7-1ae0-4762-b7aa-55a6d7f44584.png",
       priceRange: "€19,50–€47,00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "2500 мм x 1250 мм x 9 мм", value: "9mm", price: 19.5 },
         { label: "2500 мм x 1250 мм x 12 мм", value: "12mm", price: 25.5 },
@@ -439,10 +439,10 @@ const Materials = () => {
     {
       id: "dry-planed-lumber",
       title: "Listón cepillado",
-      description: "Брусок сухой строганый с 3-х сторон - универсальный продукт из древесины (сосны). Используется как обрешетка для деревянных конструкций, деревянных трельяжей, основания пола. На обрешетку можно монтировать: имитацию бревна, половую доску, строганную доску.",
+      description: "Listón seco cepillado por 3 caras: producto universal de madera de pino. Se utiliza como entablado para estructuras de madera, enrejados de madera, base de suelo. Sobre el entablado se pueden montar: imitación de tronco, tabla de suelo, tabla cepillada.",
       imageUrl: "/lovable-uploads/bf7d1fc2-c414-4ca1-a6ca-436172c2104b.png",
       priceRange: "€3,50–€21,00",
-      unit: "шт",
+      unit: "ud.",
       sizes: [
         { label: "3900 мм x 70 мм x 70 мм", value: "70x70", price: 21 },
         { label: "3900 мм x 78 мм x 48 мм", value: "78x48", price: 11.8 },
