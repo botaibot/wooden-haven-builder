@@ -270,14 +270,10 @@ const Materials = () => {
       imageUrl: [
         "/lovable-uploads/6a6d8e61-066e-449d-b673-7c4c18678636.png"
       ],
-      priceRange: "€24,50",
+      priceRange: "€29,50",
       unit: "м²",
       sizes: [
-        { label: "6000 мм x 95 мм x 45 мм", value: "95x45", price: 25.80 },
-        { label: "6000 мм x 120 мм x 45 мм", value: "120x45", price: 32.60 },
-        { label: "6000 мм x 145 мм x 45 мм", value: "145x45", price: 39 },
-        { label: "6000 мм x 195 мм x 45 мм", value: "195x45", price: 53 },
-        { label: "6000 мм x 140 мм x 45 мм", value: "140x45", price: 54 },
+        { label: "4000 mm x 144 mm x 25 mm", value: "144x25", price: 29.50 },
       ],
       isNew: false,
       category: "Materiales de acabado"
