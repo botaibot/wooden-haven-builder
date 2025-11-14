@@ -160,7 +160,7 @@ const MaterialCard = ({
       
       {isNew && (
         <div className="absolute top-4 left-4 bg-nature-dark text-white px-2 py-1 rounded-full text-xs z-10">
-          Новинка
+          Nuevo
         </div>
       )}
       
@@ -396,7 +396,7 @@ const Materials = () => {
     {
       id: "vagonka",
       title: "Machihembrado grosor (12.5 mm, 14 mm, 19 mm)",
-      description: "Идеальна.для облицовки стен и потолков, этот материал предлагает естественную и долговечную эстетику.\n\nИспользуется для облицовки стен и потолков.\n\nЦена указана за м². В корзине вы можете указать площадь каждого товара в вашем заказе.\n\nДля расчета необходимого количества укажите размеры длины и ширины желаемой стены или потолка.",
+      description: "Ideal para revestimiento de paredes y techos, este material ofrece una estética natural y duradera.\n\nSe utiliza para revestimiento de paredes y techos.\n\nPrecio indicado por m². En el carrito puede indicar la superficie de cada producto en su pedido.\n\nPara calcular la cantidad necesaria, indique las dimensiones de largo y ancho de la pared o techo deseado.",
       imageUrl: "/lovable-uploads/c2a9e56d-15d9-4081-a1a3-be82154650d9.png",
       priceRange: "€13,50–€17,00",
       unit: "м²",
@@ -411,7 +411,7 @@ const Materials = () => {
     {
       id: "imitation-brus",
       title: "Machihembrado media tronco grosor 19 mm o 24 mm",
-      description: "Имитация бревна с соединением шип-паз (блок-хаус) - материал для отделки в виде полубревна. Используется для отделки стен внутри помещений и для придания внешнего вида деревянному дому снаружи. Может монтироваться на обрешетку или непосредственно на доски.",
+      description: "Imitación de tronco con unión machihembrada (block-house): material de acabado en forma de media caña. Se utiliza para revestimiento de paredes interiores y para dar apariencia de casa de madera en el exterior. Puede montarse sobre entablado o directamente sobre tablas.",
       imageUrl: "/lovable-uploads/da1621c6-6731-4c3c-9787-7502256e4aea.png",
       priceRange: "€20,00–€27,00",
       unit: "м²",
@@ -426,7 +426,7 @@ const Materials = () => {
     {
       id: "floor-board",
       title: "Suelo/Tarima del piso",
-      description: "Доска пола - деревянный отделочный материал. Используется для покрытия стен и полов. В отличие от имитации бревна и полубревна, имеет гладкую поверхность. Шпунтованная профильная доска может монтироваться на обрешетку, доску и на поверхность стены или перекрытия.",
+      description: "Tabla de suelo: material de acabado de madera. Se utiliza para revestimiento de paredes y suelos. A diferencia de la imitación de tronco, tiene una superficie lisa. La tabla perfilada machihembrada puede montarse sobre entablado, tablas y directamente sobre la superficie de pared o forjado.",
       imageUrl: "/lovable-uploads/ae35f8fc-9500-4744-97f7-0217d03b8938.png",
       priceRange: "€28,50",
       unit: "м²",
