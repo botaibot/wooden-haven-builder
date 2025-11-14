@@ -436,7 +436,7 @@ Para más detalles sobre este modelo, contacte con nuestro equipo.`
                                   onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
                                   className="mt-2 text-wood hover:text-wood-dark"
                                 >
-                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Ocultar detalles" : "Ver más"}
                                 </Button>
                               </div>
                             ) : line.name === "Techo Volado" ? (
@@ -453,7 +453,7 @@ Para más detalles sobre este modelo, contacte con nuestro equipo.`
                                   onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
                                   className="mt-2 text-wood hover:text-wood-dark"
                                 >
-                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Ocultar detalles" : "Ver más"}
                                 </Button>
                               </div>
                             ) : line.name === "Techo Alto" ? (
@@ -470,7 +470,7 @@ Para más detalles sobre este modelo, contacte con nuestro equipo.`
                                   onClick={() => toggleModelDescription(`${line.name}-${model.size}`)}
                                   className="mt-2 text-wood hover:text-wood-dark"
                                 >
-                                  {expandedModels[`${line.name}-${model.size}`] ? "Скрыть детали" : "Подробнее"}
+                                  {expandedModels[`${line.name}-${model.size}`] ? "Ocultar detalles" : "Ver más"}
                                 </Button>
                               </div>
                             ) : (
