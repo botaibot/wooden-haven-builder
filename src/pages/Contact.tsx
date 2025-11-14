@@ -87,7 +87,6 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Email</h3>
-                    <p className="text-gray-700">bosquenordico@gmail.com</p>
                     <p className="text-gray-700">info@bosquenordico.com</p>
                   </div>
                 </div>
@@ -98,8 +97,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-wood-darkest mb-1">Horario de atención</h3>
                     <p className="text-gray-700">L-V: 10:00 - 17:00</p>
-                    <p className="text-gray-700">S: Con cita previa</p>
-                    <p className="text-gray-700">D: Cerrado</p>
+                    <p className="text-gray-700">S-D: Cerrado</p>
                   </div>
                 </div>
               </div>
