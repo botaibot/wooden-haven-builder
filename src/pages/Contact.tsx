@@ -20,9 +20,9 @@ const Contact = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div>
+            <div className="h-full flex flex-col">
               <h2 className="section-title mb-8">Información de contacto</h2>
-              <div className="bg-white p-8 rounded-lg shadow-md space-y-6">
+              <div className="bg-white p-8 rounded-lg shadow-md space-y-6 flex-1">
                 <div className="mb-8">
                   <h3 className="font-bold text-lg text-wood-darkest mb-4">Nuestras direcciones</h3>
                   
@@ -102,9 +102,9 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 h-full flex flex-col">
               <h2 className="section-title mb-8">Escríbanos</h2>
-              <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="bg-white p-8 rounded-lg shadow-md flex-1">
                 <ContactForm />
               </div>
             </div>
