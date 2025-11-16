@@ -13,6 +13,10 @@ import techoSimple52Image1 from "@/assets/Techo_Simple_52_1.jpg";
 import techoSimple52Image2 from "@/assets/Techo_Simple_52_2.jpg";
 import techoSimple67Image1 from "@/assets/Techo_Simple_67_1.jpg";
 import techoSimple67Image2 from "@/assets/Techo_Simple_67_2.jpg";
+import techoSimple89Image1 from "@/assets/Techo_Simple_89_1.jpg";
+import techoSimple89Image2 from "@/assets/Techo_Simple_89_2.jpg";
+import techoSimple89Image3 from "@/assets/Techo_Simple_89_3.jpg";
+import techoSimple89Plano from "@/assets/Techo_Simple_89_plano.jpg";
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -162,6 +166,59 @@ familias pequeñas con visión de futuro
 turismo rural o alquiler con confort
 quienes valoran luz, orden y estructura
 🧭 Una bien casa pensada. Luminosa, funcional, sin excesos. El siguiente paso lo decide el cliente.`
+        },
+        {
+          size: "89 м²",
+          images: [
+            techoSimple89Image1,
+            techoSimple89Image2,
+            techoSimple89Image3,
+            techoSimple89Plano
+          ],
+          description: `🏠 Techo Simple 89 m² – (útil 78 m2)
+💶 Precio cerrado:
+🏗 ESTANDART: 827 €/m² → 73.617 €
+🌅 Terraza cubierta de 23 m² bajo voladizo — incluida en el precio
+
+🧱 Arquitectura L en clave minimalista
+Este modelo representa una evolución lógica y elegante dentro de la línea Techo Simple. Con sus 89 m², ofrece una arquitectura clara y funcional, articulada en forma de L, donde cada volumen tiene un propósito definido.
+La terraza se integra entre los dos cuerpos y crea un espacio de transición que puede convertirse en un auténtico patio interior, íntimo y protegido — ideal para el clima de las Islas Canarias. La cubierta a un agua se mantiene como sello de identidad: líneas limpias, sin aleros innecesarios y con proporciones controladas.
+
+🏡 Doble zona de vida – conectadas pero independientes
+La distribución está pensada para ofrecer comodidad, privacidad y flexibilidad:
+🔹 Bloque principal (zona social): salón-comedor con cocina lineal, corazón del hogar.
+🔹 Ala lateral (zona privada):
+• Suite principal con vestidor y baño propio — un espacio amplio y luminoso pensado para máxima comodidad.
+• Segunda habitación — perfecta como dormitorio infantil, para invitados o despacho, con acceso a un baño independiente.
+Los accesos pueden mantenerse separados o integrarse. El diseño admite uso familiar, alquiler parcial o alojamiento para visitas con entrada propia.
+
+📐 Este modelo permite:
+• crecer hasta 130 m² si se desea
+• reflejar (espejar) el ala lateral
+• evolucionar hacia una forma en U, generando un patio central
+• integrar nuevos usos sin romper la composición
+
+📦 Versiones disponibles
+🏗 ESTANDART 
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 12 mm exterior y OSB 9 mm interior
+✔️ Aislamiento completo
+✔️ Suelo técnico OSB 22 mm
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos
+✔️ Tabiquería interior con yeso y pintura blanca final
+✔️ Fachada exterior en machihembrado 19 mm
+✔️ Instalaciones preinstaladas (sin conexión)
+📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
+
+⚠️ Notas:
+La cimentación no está incluida en el precio base. Se cotiza según terreno y ubicación.
+La conexión final de electricidad y agua debe realizarse por técnicos autorizados. Nosotros dejamos las preinstalaciones listas.
+Cocina, sanitarios, enchufes, luminarias, así como ventanas y puertas no están incluidos en el precio base. Solo se incluye su instalación si se suministran por parte del cliente.
+
+✅ Ideal para:
+vivienda principal con 2–3 dormitorios
+uso mixto: hogar + despacho + visitas
+máxima flexibilidad interior
+🧭 Una casa clara, ampliable y perfectamente integrada en la estética MonoRoof. Arquitectura moderna, racional y adaptada al clima isleño.`
         }
       ]
     },
