@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import techoSimple35Image1 from "@/assets/Techo_Simple_35_1.jpg";
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -32,7 +33,8 @@ const BosquePlatform = () => {
           size: "35 м²",
           images: [
             "/lovable-uploads/58d93ef7-c4b1-4962-93ea-beb999296e61.png",
-            "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png"
+            "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png",
+            techoSimple35Image1
           ],
           description: `🏠 Techo Simple 35,58 m² (útil 29 m2)
 💶 Precio cerrado:
