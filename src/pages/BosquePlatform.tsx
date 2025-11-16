@@ -11,6 +11,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import techoSimple35Image1 from "@/assets/Techo_Simple_35_1.jpg";
 import techoSimple52Image1 from "@/assets/Techo_Simple_52_1.jpg";
 import techoSimple52Image2 from "@/assets/Techo_Simple_52_2.jpg";
+import techoSimple67Image1 from "@/assets/Techo_Simple_67_1.jpg";
+import techoSimple67Image2 from "@/assets/Techo_Simple_67_2.jpg";
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -120,15 +122,17 @@ quien valora sencillez, orden y presencia
           size: "67 м²",
           images: [
             "/lovable-uploads/6ab7167c-38b8-4d8b-9395-4edf250c2263.png",
-            "/lovable-uploads/9af6cd26-eb12-4502-82fe-af4a52f17dca.png"
+            "/lovable-uploads/9af6cd26-eb12-4502-82fe-af4a52f17dca.png",
+            techoSimple67Image1,
+            techoSimple67Image2
           ],
-          description: `🏠 Techo Simple 67 m² (útil 60 m2)
+          description: `🏠 Techo Simple 67 m² – (útil 60 m2)
 💶 Precio cerrado:
-🏗 ESTANDART: 751 €/m² → 50.333 €
+🏗 ESTANDART: 851 €/m² → 57.044 €
 🌅 Terraza cubierta de 31 m² bajo voladizo — incluida en el precio
 
 🌿 El equilibrio perfecto entre espacio, claridad y estructura
-Este modelo de 60 m² actúa como modelo de referencia de la serie MonoRoof. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
+Este modelo de 67 m² actúa como modelo de referencia de la serie Techo Simple. Volumen bien proporcionado, líneas limpias, fachada clara. Tres ventanales verticales conectan el interior con la terraza y el entorno: luz natural, ventilación cruzada y amplitud visual.
 La pérgola integrada da sombra sin recargar el diseño. Cada elemento tiene una función precisa.
 
 🏡 Distribución abierta y flexible
@@ -138,7 +142,13 @@ La entrada principal es frontal, con posibilidad de ventilación cruzada. El ba�
 
 📦 Versiones disponibles
 🏗 ESTANDART 
-✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior ✔️ Aislamiento completo ✔️ Suelo técnico OSB 22 mm ✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ Tabiquería interior con yeso y pintura blanca final ✔️ Fachada exterior en machihembrado 19 mm ✔️ Instalaciones preinstaladas (sin conexión)
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 12 mm exterior y OSB 9 mm interior
+✔️ Aislamiento completo
+✔️ Suelo técnico OSB 22 mm
+✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos
+✔️ Tabiquería interior con yeso y pintura blanca final
+✔️ Fachada exterior en machihembrado 19 mm
+✔️ Instalaciones preinstaladas (sin conexión)
 📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
@@ -151,7 +161,7 @@ vivienda principal o segunda residencia
 familias pequeñas con visión de futuro
 turismo rural o alquiler con confort
 quienes valoran luz, orden y estructura
-🧭 Una casa pensada. Luminosa, funcional, sin excesos. El siguiente paso lo decide el cliente.`
+🧭 Una bien casa pensada. Luminosa, funcional, sin excesos. El siguiente paso lo decide el cliente.`
         }
       ]
     },
