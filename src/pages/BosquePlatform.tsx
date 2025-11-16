@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import techoSimple35Image1 from "@/assets/Techo_Simple_35_1.jpg";
+import techoSimple52Image1 from "@/assets/Techo_Simple_52_1.jpg";
+import techoSimple52Image2 from "@/assets/Techo_Simple_52_2.jpg";
 
 const BosquePlatform = () => {
   const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -68,7 +70,9 @@ vivir con lo justo, pero bien hecho
         {
           size: "52 м²",
           images: [
-            "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
+            "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png",
+            techoSimple52Image1,
+            techoSimple52Image2
           ],
           description: `🏠 Techo Simple 51,89 m² – (útil 41 m2)
 💶 Precio cerrado:
