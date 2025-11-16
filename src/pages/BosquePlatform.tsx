@@ -82,9 +82,9 @@ vivir con lo justo, pero bien hecho
         {
           size: "52 м²",
           images: [
-            "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png",
             techoSimple52Image1,
-            techoSimple52Image2
+            techoSimple52Image2,
+            "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
           ],
           description: `🏠 Techo Simple 51,89 m² – (útil 41 m2)
 💶 Precio cerrado:
