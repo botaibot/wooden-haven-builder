@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "@/components/Cart";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 interface NavbarProps {
   className?: string;
@@ -22,8 +23,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
-                className="h-8 w-8 rounded-full object-cover"
-                src="/lovable-uploads/ca89cdb6-b7f4-44dc-9705-929eddef2f0e.png"
+                className="h-12 w-auto object-contain"
+                src={logo}
                 alt="Bosque Nórdico"
               />
             </Link>
