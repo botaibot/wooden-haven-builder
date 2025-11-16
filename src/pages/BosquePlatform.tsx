@@ -36,9 +36,9 @@ const BosquePlatform = () => {
             "/lovable-uploads/0f4a7d96-b590-49b2-9622-78768f76403a.png",
             techoSimple35Image1
           ],
-          description: `🏠 Techo Simple 35,58 m² (útil 29 m2)
+          description: `🏠 Techo Simple 35,58 m² – (útil 29 m2)
 💶 Precio cerrado:
-🏗 ESTANDART: 789 €/m² → 28.100 €
+🏗 ESTANDART: 989 €/m² → 35.201 €
 🌅 Terraza cubierta de 21 m² bajo voladizo — incluida en el precio
 
 🌿 Compacta, luminosa, sin excesos
@@ -51,13 +51,7 @@ El corazón del proyecto es un espacio abierto con cocina, comedor y sala integr
 
 📦 Versiones disponibles
 🏗 ESTANDART 
-✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 9 mm exterior e interior 
-✔️ Aislamiento completo 
-✔️ Suelo técnico OSB 22 mm 
-✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos
-✔️ Tabiquería interior con yeso y pintura blanca final 
-✔️ Fachada exterior en machihembrado 19 mm 
-✔️ Instalaciones preinstaladas (sin conexión)
+✔️ Estructura BOSQUE PLATFORM con cerramiento OSB 12 mm exterior y OSB 9 mm interior ✔️ Aislamiento completo ✔️ Suelo técnico OSB 22 mm ✔️ Instalación de carpinterías exteriores (puertas y ventanas) suministradas por el cliente, con sellado y junta de expansión incluidos ✔️ Tabiquería interior con yeso y pintura blanca final ✔️ Fachada exterior en machihembrado 19 mm ✔️ Instalaciones preinstaladas (sin conexión)
 📌 Otros acabados bajo pedido (revoco, frisos, madera interior, etc.).
 
 ⚠️ Notas:
