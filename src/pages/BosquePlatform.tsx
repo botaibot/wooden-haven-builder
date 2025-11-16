@@ -68,12 +68,11 @@ vivir con lo justo, pero bien hecho
         {
           size: "52 м²",
           images: [
-            "/lovable-uploads/24f984b3-7c67-4428-936e-9c1c396aa1c0.png",
             "/lovable-uploads/95e1f66c-209e-491f-a0c3-c57458b48878.png"
           ],
-          description: `🏠 Techo Simple 51,89 m² (útil 41 m2)
+          description: `🏠 Techo Simple 51,89 m² – (útil 41 m2)
 💶 Precio cerrado:
-🏗 ESTANDART: 719 €/m² → 37.315 €
+🏗 ESTANDART: 864 €/m² → 44.841 €
 🌅 Terraza abierta de 25 m² incluida en el precio – integrada en la estructura, sin coste adicional.
 
 🌿 Geometría limpia, claridad natural, estructura honesta
