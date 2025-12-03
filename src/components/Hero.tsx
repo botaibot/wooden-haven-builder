@@ -66,7 +66,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           
           {/* Block 1 - MATERIALS (left) */}
-          <div className="flex flex-col justify-center animate-fade-in bg-white/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10">
+          <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
               Materiales de madera
             </h2>
@@ -85,7 +85,7 @@ const Hero = () => {
           </div>
 
           {/* Block 2 - CASAS (right) */}
-          <div className="flex flex-col justify-center animate-fade-in bg-white/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10" style={{ animationDelay: "200ms" }}>
+          <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6" style={{ animationDelay: "200ms" }}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
               Casas prefabricadas <span className="text-nature">BOSQUE</span>
             </h2>
