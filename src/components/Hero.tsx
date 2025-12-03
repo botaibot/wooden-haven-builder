@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-20">
         {/* Hidden H1 for SEO */}
         <h1 className="sr-only">
-          Casas de madera y materiales de construcción en las Islas Canarias
+          Casas prefabricadas de madera y materiales de construcción en las Islas Canarias - Bosque Nórdico
         </h1>
         
         {/* Two blocks grid */}
