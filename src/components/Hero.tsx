@@ -15,11 +15,11 @@ const Hero = () => {
         }}
       />
       
-      {/* Gradient overlay - light on left where text is, transparent on right where image shows */}
+      {/* Gradient overlay - covers both text blocks */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, rgba(246, 242, 236, 0.95) 0%, rgba(246, 242, 236, 0.8) 40%, rgba(246, 242, 236, 0.3) 70%, transparent 100%)'
+          background: 'linear-gradient(90deg, rgba(246, 242, 236, 0.95) 0%, rgba(246, 242, 236, 0.9) 50%, rgba(246, 242, 236, 0.85) 80%, rgba(246, 242, 236, 0.7) 100%)'
         }}
       />
       
