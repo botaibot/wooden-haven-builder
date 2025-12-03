@@ -470,7 +470,7 @@ const Materials = () => {
         title="Materiales de construcción" 
         description="Amplia gama de maderas de alta calidad para construcción y acabados: vigas, contrachapado, tablas, machihembrado y mucho más"
         backgroundImage={materialsHeroImage}
-        backgroundPosition="center 70%"
+        backgroundPosition="center 80%"
       />
 
       <TooltipProvider>
