@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import materialsHeroImage from "@/assets/materials-hero.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -468,7 +469,7 @@ const Materials = () => {
       <PageBanner 
         title="Materiales de construcción" 
         description="Amplia gama de maderas de alta calidad para construcción y acabados: vigas, contrachapado, tablas, machihembrado y mucho más"
-        backgroundImage="/lovable-uploads/a3c8109b-ad9e-4cab-aee3-117b5126739e.png"
+        backgroundImage={materialsHeroImage}
       />
 
       <TooltipProvider>
