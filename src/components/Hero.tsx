@@ -48,15 +48,15 @@ const Hero = () => {
 
           {/* Block 2 - CASAS (right) */}
           <div className="flex flex-col justify-center animate-fade-in" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-              Casas prefabricadas <span className="text-cream">BOSQUE</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
+              Casas prefabricadas <span className="text-nature">BOSQUE</span>
             </h2>
-            <p className="text-lg text-white/90 mb-6 drop-shadow-md">
+            <p className="text-lg text-white mb-6 drop-shadow-md">
               Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
               <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
             </p>
             <div>
-              <Button asChild className="bg-white hover:bg-cream text-wood-dark px-5 py-4 text-base">
+              <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
                 <Link to="/houses">Ver proyectos de casas</Link>
               </Button>
             </div>
