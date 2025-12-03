@@ -15,11 +15,11 @@ const Hero = () => {
         }}
       />
       
-      {/* Gradient overlay - covers both text blocks */}
+      {/* Gradient overlay - light on left where text is, transparent on right where image shows */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, rgba(246, 242, 236, 0.95) 0%, rgba(246, 242, 236, 0.9) 50%, rgba(246, 242, 236, 0.85) 80%, rgba(246, 242, 236, 0.7) 100%)'
+          background: 'linear-gradient(90deg, rgba(246, 242, 236, 0.95) 0%, rgba(246, 242, 236, 0.8) 40%, rgba(246, 242, 236, 0.3) 70%, transparent 100%)'
         }}
       />
       
@@ -48,15 +48,15 @@ const Hero = () => {
 
           {/* Block 2 - CASAS (right) */}
           <div className="flex flex-col justify-center animate-fade-in" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
-              Casas prefabricadas <span className="text-nature">BOSQUE</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              Casas prefabricadas <span className="text-cream">BOSQUE</span>
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-white/90 mb-6 drop-shadow-md">
               Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
               <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
             </p>
             <div>
-              <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
+              <Button asChild className="bg-white hover:bg-cream text-wood-dark px-5 py-4 text-base">
                 <Link to="/houses">Ver proyectos de casas</Link>
               </Button>
             </div>
