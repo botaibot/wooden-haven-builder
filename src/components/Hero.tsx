@@ -67,10 +67,10 @@ const Hero = () => {
           
           {/* Block 1 - MATERIALS (left) */}
           <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
               Materiales de madera
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-700 mb-6 drop-shadow-sm">
               Madera estructural C24, OSB, tarima, machihembrado.<br />
               Vigas laminadas GL24, rastreles y accesorios.<br />
               <strong>Importación directa desde Europa.</strong>
@@ -86,10 +86,10 @@ const Hero = () => {
 
           {/* Block 2 - CASAS (right) */}
           <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
               Casas prefabricadas <span className="text-nature">BOSQUE</span>
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-700 mb-6 drop-shadow-sm">
               Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
               <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
             </p>
