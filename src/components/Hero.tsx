@@ -24,6 +24,12 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 relative z-20">
+        {/* H1 for SEO */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-wood-dark mb-10 animate-fade-in">
+          Casas de madera y materiales de construcción <br />
+          <span className="text-nature">en las Islas Canarias</span>
+        </h1>
+        
         {/* Two blocks grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
