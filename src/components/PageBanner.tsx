@@ -5,16 +5,17 @@ interface PageBannerProps {
   title: string;
   description: string;
   backgroundImage: string;
+  backgroundPosition?: string;
 }
 
-const PageBanner = ({ title, description, backgroundImage }: PageBannerProps) => {
+const PageBanner = ({ title, description, backgroundImage, backgroundPosition = "center" }: PageBannerProps) => {
   return (
     <div 
       className="relative py-16" 
       style={{ 
         backgroundImage: `url('${backgroundImage}')`, 
         backgroundSize: "cover", 
-        backgroundPosition: "center", 
+        backgroundPosition: backgroundPosition, 
         backgroundRepeat: "no-repeat" 
       }}
     >
