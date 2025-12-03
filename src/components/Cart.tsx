@@ -51,7 +51,7 @@ const Cart = () => {
   const handleSubmitOrder = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!orderForm.name || !orderForm.email || !orderForm.phone || !orderForm.address) {
+    if (!orderForm.name || !orderForm.email || !orderForm.phone) {
       toast({
         title: "Error",
         description: "Por favor, complete todos los campos obligatorios",
@@ -290,14 +290,13 @@ const Cart = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="address">Dirección de entrega *</Label>
+                  <Label htmlFor="address">Dirección de entrega</Label>
                   <Input
                     id="address"
                     name="address"
                     value={orderForm.address}
                     onChange={handleInputChange}
-                    placeholder="Calle, número, piso"
-                    required
+                    placeholder="Calle, número, piso (opcional)"
                   />
                 </div>
                 
