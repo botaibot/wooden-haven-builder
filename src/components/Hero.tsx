@@ -86,7 +86,7 @@ const Hero = () => {
 
           {/* Block 2 - CASAS (right) */}
           <div className="flex flex-col justify-start animate-fade-in p-4 lg:p-6" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 drop-shadow-md">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
               Casas prefabricadas
             </h2>
             <p className="text-xl text-white mb-6 drop-shadow-lg">
