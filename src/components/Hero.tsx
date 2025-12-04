@@ -70,7 +70,7 @@ const Hero = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
               Materiales de madera
             </h2>
-            <p className="text-2xl text-white mb-6 drop-shadow-lg">
+            <p className="text-2xl text-nature mb-6 drop-shadow-lg">
               Madera estructural C24, OSB, tarima, machihembrado.<br />
               Vigas laminadas GL24, rastreles y accesorios.<br />
               <strong>Importación directa desde Europa.</strong>
