@@ -67,40 +67,36 @@ const Hero = () => {
           
           {/* Block 1 - MATERIALS (left) */}
           <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6">
-            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Materiales de madera
-              </h2>
-              <p className="text-xl text-white/90 mb-6">
-                Madera estructural C24, OSB, tarima, machihembrado.<br />
-                Vigas laminadas GL24, rastreles y accesorios.<br />
-                <strong>Importación directa desde Europa.</strong>
-              </p>
-              <div>
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white/20 px-5 py-4 text-base">
-                  <Link to="/materials" className="flex items-center gap-2">
-                    Abrir catálogo de materiales <ArrowRight size={14} />
-                  </Link>
-                </Button>
-              </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
+              Materiales de madera
+            </h2>
+            <p className="text-xl text-white mb-6 drop-shadow-lg">
+              Madera estructural C24, OSB, tarima, machihembrado.<br />
+              Vigas laminadas GL24, rastreles y accesorios.<br />
+              <strong>Importación directa desde Europa.</strong>
+            </p>
+            <div>
+              <Button asChild variant="outline" className="border-wood text-wood hover:bg-wood/10 px-5 py-4 text-base">
+                <Link to="/materials" className="flex items-center gap-2">
+                  Abrir catálogo de materiales <ArrowRight size={14} />
+                </Link>
+              </Button>
             </div>
           </div>
 
           {/* Block 2 - CASAS (right) */}
           <div className="flex flex-col justify-center animate-fade-in p-4 lg:p-6" style={{ animationDelay: "200ms" }}>
-            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Casas prefabricadas
-              </h2>
-              <p className="text-xl text-white/90 mb-6">
-                Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
-                <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
-              </p>
-              <div>
-                <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
-                  <Link to="/houses">Ver proyectos de casas</Link>
-                </Button>
-              </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
+              Casas prefabricadas
+            </h2>
+            <p className="text-xl text-white mb-6 drop-shadow-lg">
+              Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
+              <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
+            </p>
+            <div>
+              <Button asChild className="bg-wood hover:bg-wood-dark text-white px-5 py-4 text-base">
+                <Link to="/houses">Ver proyectos de casas</Link>
+              </Button>
             </div>
           </div>
 
