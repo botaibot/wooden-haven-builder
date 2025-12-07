@@ -54,10 +54,10 @@ const Hero = () => {
             
             {/* Block 1 - MATERIALS (left) */}
             <div className="flex flex-col justify-center animate-fade-in p-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4 drop-shadow-md">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-wood-dark mb-4" style={{ textShadow: '2px 2px 4px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.8)' }}>
                 Materiales de madera
               </h2>
-              <p className="text-2xl text-nature-dark mb-6 drop-shadow-lg">
+              <p className="text-2xl text-nature-dark mb-6" style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.8)' }}>
                 Madera estructural C24, OSB, tarima, machihembrado.<br />
                 Vigas laminadas GL24, rastreles y accesorios.<br />
                 <strong>Importación directa desde Europa.</strong>
@@ -73,10 +73,10 @@ const Hero = () => {
 
             {/* Block 2 - CASAS (right) */}
             <div className="flex flex-col justify-start animate-fade-in p-6" style={{ animationDelay: "200ms" }}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-md">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>
                 Casas prefabricadas
               </h2>
-              <p className="text-xl text-white mb-6 drop-shadow-lg">
+              <p className="text-xl text-white mb-6" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
                 Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
                 <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
               </p>
@@ -113,10 +113,10 @@ const Hero = () => {
           />
           <div className="container mx-auto px-4 relative z-20 py-8">
             <div className="animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-wood-dark mb-4 drop-shadow-md">
+              <h2 className="text-3xl md:text-4xl font-bold text-wood-dark mb-4" style={{ textShadow: '2px 2px 4px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.8)' }}>
                 Materiales de madera
               </h2>
-              <p className="text-lg text-nature-dark mb-6 drop-shadow-lg">
+              <p className="text-lg text-nature-dark mb-6" style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.8)' }}>
                 Madera estructural C24, OSB, tarima, machihembrado.<br />
                 Vigas laminadas GL24, rastreles y accesorios.<br />
                 <strong>Importación directa desde Europa.</strong>
@@ -147,10 +147,10 @@ const Hero = () => {
           />
           <div className="container mx-auto px-4 relative z-20 py-8">
             <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-md">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' }}>
                 Casas prefabricadas
               </h2>
-              <p className="text-lg text-white mb-6 drop-shadow-lg">
+              <p className="text-lg text-white mb-6" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.5)' }}>
                 Entramado ligero BOSQUE PLATFORM y madera laminada.<br />
                 <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
               </p>
