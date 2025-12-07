@@ -63,7 +63,7 @@ const Hero = () => {
                 <strong>Importación directa desde Europa.</strong>
               </p>
               <div>
-                <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white border-none px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-glow-amber hover:animate-none">
+                <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white border-none px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/materials" className="flex items-center gap-2">
                     Abrir catálogo de materiales <ArrowRight size={18} />
                   </Link>
@@ -81,7 +81,7 @@ const Hero = () => {
                 <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
               </p>
               <div>
-                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-glow-emerald hover:animate-none">
+                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/houses" className="flex items-center gap-2">
                     Ver proyectos de casas <ArrowRight size={18} />
                   </Link>
@@ -124,7 +124,7 @@ const Hero = () => {
                 <strong>Importación directa desde Europa.</strong>
               </p>
               <div>
-                <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white border-none px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-glow-amber hover:animate-none">
+                <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white border-none px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/materials" className="flex items-center gap-2">
                     Abrir catálogo de materiales <ArrowRight size={18} />
                   </Link>
@@ -157,7 +157,7 @@ const Hero = () => {
                 <strong>Proyectos estándar con precio cerrado o diseños a medida.</strong>
               </p>
               <div>
-                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-glow-emerald hover:animate-none">
+                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-5 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/houses" className="flex items-center gap-2">
                     Ver proyectos de casas <ArrowRight size={18} />
                   </Link>
