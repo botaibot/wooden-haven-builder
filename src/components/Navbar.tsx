@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         </div>
       </div>
       {/* Mobile menu, show/hide based on menu state. */}
-      <div className={`${isMenuOpen ? 'block' : 'none'} md:hidden`} id="mobile-menu">
+      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
           <Link
             to="/"
